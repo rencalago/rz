@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook - Practice Website</title>
+    <style>
+        * {
+    font-family: 'lucida grande', helvetica, sans-serif, tahoma, verdana;
+}
+
+body {
+    width: 100%;
+    margin: 0px !important;
+    padding: 0px !important;
+    height:100%;
+
+}
+
+
+
+.front-container {
+    background-color: #f0f2f5;
+    width: 100%;
+    margin: 0 auto;
+    height: 100vh;
+}
+
+.flex-wrapper {
+    width: 85%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 50px;
+    padding-top: 150px;
+}
+
+h1 {
+    color: #1877f2;
+    font-size: 4em;
+    letter-spacing: -.05em;
+}
+
+form {
+    background-color: #fff;
+    box-shadow: 5px 5px 10px 5px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    width: 85%;
+}
+
+input[class="box"] {
+    width: 88%;
+    margin: 10px 0 0 10px;
+    border-radius: 5px;
+    padding: 15px;
+    border: 0.1px solid #d1cfcf;
+}
+
+input[value="Log In"] {
+    width: 95%;
+    margin: 10px 0 0 10px;
+    padding: 15px;
+    background-color: #1877f2;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+input[type="submit"]:hover {
+    cursor: pointer;
+}
+
+form p a {
+    color: #1877f2;
+    margin: 35%;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+.line {
+    background-color: #d1cfcf;
+    width: 90%;
+    height: 1px;
+    margin: 10px auto;
+}
+
+input[value="Creat New Account"] {
+    background-color: #42b72a;
+    color: #fff;
+    padding: 15px 20px;
+    font-size: 1.1em;
+    margin-left: 27%;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+input[value="Creat New Account"]:hover {
+    cursor: pointer;
+}
+
+h4 {
+    font-size: .8em;
+}
+
+h4 a {
+    font-weight: 1000;
+    text-decoration: none;
+    letter-spacing: -.1em;
+}
+
+.left h3 {
+    font-size: 2em;
+    font-weight: 200;
+}
+
+@media (max-width: 500px), (max-width: 800px) {
+    .flex-wrapper {
+        width: 85%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 50px;
+        padding-top: 5px;
+    }
+
+    input[class="box"] {
+        width: 80%;
+        margin: 10px 0 0 10px;
+        border-radius: 5px;
+        padding: 15px;
+        border: 0.1px solid #d1cfcf;
+    }
+
+    input[value="Log In"] {
+        width: 90%;
+    }
+
+    form p a {
+        color: #1877f2;
+        margin: 30%;
+        text-decoration: none;
+        font-size: 0.9em;
+    }
+
+    input[value="Creat New Account"] {
+        margin-left: 15%;
+    }
+
+    form {
+        margin-top: -50px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="front-container">
+        <div class="flex-wrapper">
+            <div class="left">
+                <h1>facebook</h1>
+                <h3>Connect with friends and the world <br/>around you on Facebook.</h3>
+            </div>
+            <div class="right">
+                <form action="/connect-here.html" method="POST">
+                    <input type="text" id="name" name="name" placeholder="Email or Phone Number" class="box">
+                    <input type="password" id="password" name="password" placeholder="Password" class="box">
+                    <input type="submit" value="Log In" class="submitted">
+                    <p><a href="#">Forgot Password?</a></p>
+                    <div class="line"></div>
+                    <input type="submit" value="Creat New Account">
+                </form>
+                <h4><a href="#">Create a Page</a> for a celebrity, brand or business.</h4>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
