@@ -214,13 +214,16 @@ nav {
     background-color: #fff;
     color: var(--clr-2);
   }
+  
+  .hamburger {
+    cursor: pointer;
+  }
 
   .hamburger .box {
     width: 25px;
     height: 5px;
     margin: 5px;
     background-color: #fff;
-    cursor: pointer;
     transition: all 0.5s ease;
   }
 
