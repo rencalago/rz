@@ -1,6 +1,8 @@
 const hamburger = document.querySelector(".hamburger");
 const menuItems = document.querySelector(".menu-items");
 const menuList = document.querySelectorAll(".menulist");
+const blog = document.getElementById("blog");
+const websiteTitle = document.querySelector(".website-title");
 
 //event listener
 hamburger.addEventListener("click", menuBtn);
@@ -37,4 +39,12 @@ instagram.addEventListener("click", function () {
 
 youtube.addEventListener("click", function () {
   window.location = "https://www.youtube.com/rencalago";
+});
+
+blog.addEventListener("click", function () {
+  window.location = "./blog.html";
+});
+
+websiteTitle.addEventListener("click", function () {
+  window.location = "./index.html";
 });

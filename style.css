@@ -45,11 +45,16 @@ nav {
 
 .website-title {
   margin-right: auto;
+  cursor: pointer;
 }
 
 .menulist {
   padding: 10px;
   text-transform: capitalize;
+}
+
+.menulist:hover {
+  cursor: pointer;
 }
 
 .featured-items {
@@ -244,7 +249,7 @@ nav {
 
 .section-center {
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   background-color: antiquewhite;
   padding: 20px 0;
   display: grid;
@@ -263,7 +268,7 @@ nav {
 
 .blog {
   background-color: #fff;
-  height: 90vh;
+  height: 0vh;
   border-radius: 10px;
 }
 
