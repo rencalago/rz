@@ -214,7 +214,7 @@ nav {
     background-color: #fff;
     color: var(--clr-2);
   }
-  
+
   .hamburger {
     cursor: pointer;
   }
@@ -238,4 +238,39 @@ nav {
   .active .box3 {
     transform: translateY(-8px) rotate(-45deg);
   }
+}
+
+/* for the blog */
+
+.section-center {
+  height: 100vh;
+  width: 100vw;
+  background-color: antiquewhite;
+  padding: 20px 0;
+  display: grid;
+  place-items: center;
+}
+
+.main-container {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.blog {
+  background-color: #fff;
+  height: 90vh;
+  border-radius: 10px;
+}
+
+.main-blog {
+  flex: 3;
+}
+
+.right-sidebar {
+  flex: 1;
 }
