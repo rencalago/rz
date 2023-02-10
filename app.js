@@ -24,6 +24,7 @@ const mainPosts = document.querySelector(".mainPost");
 const labelsContainer = document.querySelector(".labels-container");
 const viewBtn = document.querySelector(".vBtn");
 const footerContents = document.querySelector(".footer-contents");
+const home = document.querySelector(".home");
 
 //new variables
 let counter = 0;
@@ -32,11 +33,12 @@ let newItem = [];
 
 //EVENT LISTENER
 window.addEventListener("DOMContentLoaded", function () {
+  homeBtn();
   goSlide();
   heroPosts(recentPosts);
-  setInterval(goSlide, 2500);
   funLabels();
   footerC();
+  setInterval(goSlide, 2500);
 });
 viewBtn.addEventListener("click", viewAll);
 
@@ -48,7 +50,7 @@ const featureItem = newSlide
             <img src="${item.imagesrc}" alt="" class="myImage" />
           </div>
           <div class="slider-contents">
-            <div class="slider-title"><h2>${item.title}</h2></div>
+            <div class="slider-title"><h2><a href="${item.link}">${item.title}</a></h2></div>
             <div class="dotted-dashed"></div>
             <div class="description">
               <p>
@@ -196,4 +198,12 @@ const today = new Date().getFullYear();
 
 function footerC() {
   footerContents.innerHTML = `Copyright © ${today} • rencalago BLOG • All Rights Reserved`;
+}
+
+//HOME BTN
+function homeBtn() {
+  home.addEventListener("click", function (e) {
+    window.location = "https://www.rencalago.com/";
+    console.log(e);
+  });
 }
