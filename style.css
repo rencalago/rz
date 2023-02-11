@@ -138,6 +138,11 @@ header {
   text-transform: uppercase;
   font-family: arial-narrow;
   margin-right: 20px;
+  border-radius: 10px;
+}
+
+.fa-thumbs-up {
+  font-size: 1.3rem;
 }
 
 .newsUpdate {
