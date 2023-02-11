@@ -73,6 +73,9 @@ header {
 .low-head {
   width: 100%;
   flex: 2;
+}
+
+.menu-items {
   display: flex;
   flex-direction: row;
   background-color: var(--clr-3);
@@ -82,7 +85,7 @@ header {
   border-top-right-radius: 7px;
 }
 
-.low-head > div {
+.menu-items > div {
   padding: 20px 10px;
   color: #fff;
   font-weight: 500;
@@ -90,13 +93,13 @@ header {
   transition: all 0.3s ease-in;
 }
 
-.low-head > div:hover {
+.menu-items > div:hover {
   background-color: #fff;
   cursor: pointer;
   color: rgba(0, 0, 0, 0.8);
 }
 
-.low-head > *:nth-child(1):hover {
+.menu-items > *:nth-child(1):hover {
   border-top-left-radius: 7px;
 }
 
@@ -146,9 +149,11 @@ header {
 .slider {
   width: 65%;
   min-height: 50vh;
+  max-height: 100vh;
   margin: 0 auto;
   position: relative;
   overflow: hidden;
+  z-index: 5;
 }
 
 .slider-container {
@@ -217,9 +222,9 @@ header {
   outline: none;
   border: none;
   background-color: var(--clr-3);
-  padding: 12px;
+  padding: 8px;
   margin-top: 20px;
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: #fff;
 }
 
@@ -273,7 +278,8 @@ header {
   display: flex;
   flex-direction: row;
   background-color: var(--clr-8);
-  height: 7vh;
+  min-height: 7vh;
+  max-height: 70vh;
   align-items: center;
 }
 
@@ -490,7 +496,7 @@ input::placeholder {
 
 /* footer elements */
 .footer-container {
-  width: 64%;
+  width: 65%;
   height: 15vh;
   margin: 0 auto;
   display: flex;
@@ -500,4 +506,206 @@ input::placeholder {
   margin-bottom: 20px;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
+}
+
+/* BLOG Page */
+.mainPostTwo {
+  width: 100%;
+  min-height: 70vh;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  padding: 20px;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.posting-meta {
+  margin: 10px 20px;
+  font-size: 0.8rem;
+}
+
+.postDate {
+  margin-left: 20px;
+}
+
+.full-content {
+  margin-top: 30px;
+  line-height: 1.5rem;
+}
+
+.inside-image {
+  margin: 0 auto;
+  text-align: center;
+  margin: 15px 0;
+}
+
+.article-image {
+  width: 90%;
+  height: 90%;
+  object-fit: cover;
+  margin: 0 auto;
+  border-radius: 8px;
+  border: 5px solid var(--clr-3);
+}
+
+/* hamburger menu */
+.hamburger {
+  margin-left: auto;
+  display: none;
+}
+
+.box {
+  width: 25px;
+  height: 5px;
+  margin: 5px 0;
+  background-color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+
+@media screen and (max-width: 992px) {
+  .low-head {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .hamburger {
+    display: block;
+    padding-bottom: 20px;
+  }
+
+  .hamburger:hover {
+    cursor: pointer;
+  }
+
+  .active .box1 {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .active .box2 {
+    opacity: 0;
+  }
+
+  .active .box3 {
+    transform: translateY(-12px) rotate(-45deg);
+  }
+
+  .menu-items {
+    position: fixed;
+    top: 20vh;
+    width: 100%;
+    display: flex;
+    left: -100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    transform: tr;
+    transition: 0.5s;
+    padding: 10px 0;
+  }
+
+  .menu-items > div {
+    padding: 5px 50%;
+  }
+
+  .menu-items.active {
+    left: 0;
+  }
+
+  .top-head {
+    text-align: center;
+  }
+
+  .featured-container {
+    width: 95%;
+  }
+
+  .slider {
+    width: 95%;
+  }
+
+  .slider-title h2 {
+    font-size: 1rem;
+  }
+
+  .description {
+    font-size: 0.8rem;
+  }
+
+  .readmore-btn {
+    visibility: hidden;
+  }
+
+  .box-container {
+    padding-bottom: 20px;
+  }
+
+  .fullPage-container {
+    width: 95%;
+    flex-direction: column;
+  }
+
+  .topHeader {
+    flex-direction: column;
+    padding: 10px 0;
+  }
+
+  .topHeader > div {
+    padding: 5px 0;
+  }
+
+  .search-form {
+    display: none;
+  }
+  .mainPost-container {
+    flex-direction: column;
+    width: 95%;
+  }
+
+  .main-content,
+  .sidebar {
+    flex: 1;
+  }
+
+  .topHeader {
+    width: 100%;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+
+  .footer-container {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .header-container,
+  .featured-container,
+  .slider,
+  .fullPage-container,
+  .footer-container {
+    width: 85%;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .slider {
+    min-height: 80vh !important;
+    max-height: 100vh !important;
+  }
+  .slider-container {
+    flex-direction: column;
+  }
+
+  .breakingNews {
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 460px) {
+  .readmore-btn {
+    visibility: visible;
+  }
 }

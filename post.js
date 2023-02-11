@@ -25,6 +25,9 @@ const labelsContainer = document.querySelector(".labels-container");
 const viewBtn = document.querySelector(".vBtn");
 const footerContents = document.querySelector(".footer-contents");
 const myhome = document.getElementById("home");
+const boxMenu = document.querySelector(".hamburger");
+const menuItems = document.querySelector(".menu-items");
+const menuList = document.querySelectorAll(".menuList");
 
 //new variables
 let counter = 0;
@@ -85,3 +88,15 @@ function footerC() {
 function myMomeBtn(e) {
   window.location = "./";
 }
+
+//Menu on Mobile
+boxMenu.addEventListener("click", function (e) {
+  boxMenu.classList.toggle("active");
+  menuItems.classList.toggle("active");
+  menuList.forEach(function (menu) {
+    menu.addEventListener("click", function () {
+      boxMenu.classList.remove("active");
+      menuItems.classList.remove("active");
+    });
+  });
+});
