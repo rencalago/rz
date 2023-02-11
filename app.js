@@ -1,6 +1,6 @@
 let newPost = [
   {
-    category: "Travel",
+    category: "Cafe",
     imagesrc:
       "https://drive.google.com/uc?id=1n8e8tr-5NeiW7jx7K0YMU7SbmliN2OzI",
     postNumber: 1,
