@@ -114,20 +114,33 @@ header {
 }
 
 .breakingNews {
-  background-color: #fff;
+  background-color: rgba(107, 203, 202, 0.2);
   padding: 17px 5px;
-  position: relative;
+  /* position: relative; */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px;
+  font-size: 0.9rem;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
 .breakAlert {
-  position: absolute;
+  /* position: absolute;
   right: 10px;
-  bottom: 6px;
+  bottom: 6px; */
   background: var(--clr-5);
-  padding: 10px;
+  padding: 10px 20px;
   color: #fff;
   text-transform: uppercase;
   font-family: arial-narrow;
+  margin-right: 20px;
+}
+
+.newsUpdate {
+  margin-left: 20px;
+  color: rgba(0, 0, 0, 0.6);
+  font-style: italic;
 }
 
 .slider {
@@ -141,7 +154,7 @@ header {
 .slider-container {
   height: 100%;
   width: 100%;
-  margin: 15px 0;
+  margin: 0 auto;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -478,7 +491,7 @@ input::placeholder {
 /* footer elements */
 .footer-container {
   width: 64%;
-  height: 10vh;
+  height: 15vh;
   margin: 0 auto;
   display: flex;
   justify-content: center;

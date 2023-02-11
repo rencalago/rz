@@ -24,7 +24,7 @@ const mainPosts = document.querySelector(".mainPost");
 const labelsContainer = document.querySelector(".labels-container");
 const viewBtn = document.querySelector(".vBtn");
 const footerContents = document.querySelector(".footer-contents");
-const home = document.querySelector(".home");
+const myhome = document.getElementById("home");
 
 //new variables
 let counter = 0;
@@ -36,6 +36,7 @@ window.addEventListener("DOMContentLoaded", function () {
   funLabels();
   footerC();
 });
+myhome.addEventListener("click", myMomeBtn);
 
 //LABELS
 function funLabels() {
@@ -81,9 +82,6 @@ function footerC() {
 }
 
 //HOME BTN
-function homeBtn() {
-  home.addEventListener("click", function (e) {
-    window.location = "https://www.rencalago.com/";
-    console.log(e);
-  });
+function myMomeBtn(e) {
+  window.location = "./";
 }

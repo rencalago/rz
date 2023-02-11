@@ -2,13 +2,13 @@ let newPost = [
   {
     category: "Travel",
     imagesrc:
-      "https://drive.google.com/uc?id=1Z66jNKibvN-Hg6QhEwIo1eWU2Wz70ndu",
+      "https://drive.google.com/uc?id=16fR0SpWq1j_5y6cK29xpxYX7Mhg7x6MQ",
     postNumber: 1,
     title: "Tops Cebu Lookout - Busay, Cebu City",
     desc: "See the skyline of Cebu City from up the hill of Busay Cebu City. It has the best view of metropolitan Cebu. I think a month after we visited here, this spot in busay is closed for visitors.",
     datePublished: "1/3/2023",
     comments: "61",
-    link: "https://www.rencalago.com/tops-cebu-look-out",
+    link: "./tops-cebu-look-out.html",
     location: "cebu",
   },
 ];
@@ -24,7 +24,7 @@ const mainPosts = document.querySelector(".mainPost");
 const labelsContainer = document.querySelector(".labels-container");
 const viewBtn = document.querySelector(".vBtn");
 const footerContents = document.querySelector(".footer-contents");
-const home = document.querySelector(".home");
+const myhome = document.getElementById("home");
 
 //new variables
 let counter = 0;
@@ -33,7 +33,6 @@ let newItem = [];
 
 //EVENT LISTENER
 window.addEventListener("DOMContentLoaded", function () {
-  homeBtn();
   goSlide();
   heroPosts(recentPosts);
   funLabels();
@@ -41,6 +40,7 @@ window.addEventListener("DOMContentLoaded", function () {
   setInterval(goSlide, 2500);
 });
 viewBtn.addEventListener("click", viewAll);
+myhome.addEventListener("click", myMomeBtn);
 
 //FEATURED IMAGES
 const featureItem = newSlide
@@ -200,10 +200,6 @@ function footerC() {
   footerContents.innerHTML = `Copyright © ${today} • rencalago BLOG • All Rights Reserved`;
 }
 
-//HOME BTN
-function homeBtn() {
-  home.addEventListener("click", function (e) {
-    window.location = "https://www.rencalago.com/";
-    console.log(e);
-  });
+function myMomeBtn(e) {
+  window.location = "./";
 }
