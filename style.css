@@ -139,6 +139,7 @@ header {
   font-family: arial-narrow;
   margin-right: 20px;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .fa-thumbs-up {

@@ -40,6 +40,7 @@ const myhome = document.getElementById("home");
 const boxMenu = document.querySelector(".hamburger");
 const menuItems = document.querySelector(".menu-items");
 const menuList = document.querySelectorAll(".menuList");
+const thumbsUp = document.querySelector(".breakAlert");
 
 //new variables
 let counter = 0;
@@ -229,4 +230,8 @@ boxMenu.addEventListener("click", function (e) {
       menuItems.classList.remove("active");
     });
   });
+});
+
+thumbsUp.addEventListener("click", function () {
+  window.location = "http://www.rencalagopro.com";
 });
