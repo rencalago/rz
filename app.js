@@ -20,7 +20,7 @@ let newPost = [
     desc: "See the skyline of Cebu City from up the hill of Busay Cebu City. It has the best view of metropolitan Cebu. I think a month after we visited here, this spot in busay is closed for visitors.",
     datePublished: "11 Feb 2023",
     comments: "61",
-    link: "./tops-cebu-look-out.html",
+    link: "./tops-cebu-look-out",
     location: "cebu",
   },
 ];
