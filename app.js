@@ -2,18 +2,30 @@ let newPost = [
   {
     category: "Travel",
     imagesrc:
+      "https://drive.google.com/uc?id=1n8e8tr-5NeiW7jx7K0YMU7SbmliN2OzI",
+    postNumber: 1,
+    title: "Sakada, a cafe on the Mountain",
+    desc: "Order your coffee at this mountain-top restaurant in Pamplona, Negros Oriental. It offers vibrant and cozy atmosphere with views like you've never seen before. ",
+    datePublished: "11 Feb 2023",
+    comments: "2",
+    link: "./",
+    location: "Tanjay City",
+  },
+  {
+    category: "Travel",
+    imagesrc:
       "https://drive.google.com/uc?id=16fR0SpWq1j_5y6cK29xpxYX7Mhg7x6MQ",
     postNumber: 1,
     title: "Tops Cebu Lookout - Busay, Cebu City",
     desc: "See the skyline of Cebu City from up the hill of Busay Cebu City. It has the best view of metropolitan Cebu. I think a month after we visited here, this spot in busay is closed for visitors.",
-    datePublished: "1/3/2023",
+    datePublished: "11 Feb 2023",
     comments: "61",
     link: "./tops-cebu-look-out.html",
     location: "cebu",
   },
 ];
 const recentPosts = newPost.slice(0, 6);
-const sliding = [recentPosts[0]];
+const sliding = [recentPosts[0], recentPosts[1]];
 
 // let mainArticles = recentPosts.slice(0, 2);
 // console.log(mainArticles);
