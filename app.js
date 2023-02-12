@@ -1,6 +1,6 @@
 let newPost = [
   {
-    category: "Cafe",
+    category: "Cafes & Restaurant",
     imagesrc:
       "https://drive.google.com/uc?id=1n8e8tr-5NeiW7jx7K0YMU7SbmliN2OzI",
     postNumber: 1,
@@ -8,7 +8,7 @@ let newPost = [
     desc: "Order your coffee at this mountain-top restaurant in Pamplona, Negros Oriental. It offers vibrant and cozy atmosphere with views like you've never seen before. ",
     datePublished: "11 Feb 2023",
     comments: "2",
-    link: "./sakada-cafe-and-farm-pamplona.html",
+    link: "./sakada-cafe-and-farm-pamplona",
     location: "Tanjay City",
   },
   {
