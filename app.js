@@ -8,7 +8,7 @@ let newPost = [
     desc: "Order your coffee at this mountain-top restaurant in Pamplona, Negros Oriental. It offers vibrant and cozy atmosphere with views like you've never seen before. ",
     datePublished: "11 Feb 2023",
     comments: "2",
-    link: "./",
+    link: "./sakada-cafe-and-farm-pamplona.html",
     location: "Tanjay City",
   },
   {
