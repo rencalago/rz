@@ -10,6 +10,8 @@ let newPost = [
     comments: "2",
     link: "./sakada-cafe-and-farm-pamplona",
     location: "Tanjay City",
+    author: "Ren Calago",
+    postDate: "12 Feb 2023",
   },
   {
     category: "Travel",
@@ -22,6 +24,8 @@ let newPost = [
     comments: "61",
     link: "./tops-cebu-look-out",
     location: "cebu",
+    author: "Ren Calago",
+    postDate: "11 Feb 2023",
   },
 ];
 const recentPosts = newPost.slice(0, 6);
