@@ -715,3 +715,8 @@ input::placeholder {
     visibility: visible;
   }
 }
+
+.footer-contents {
+  padding: 0 10px;
+  text-align: center;
+}
