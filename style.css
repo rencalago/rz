@@ -336,7 +336,8 @@ form input {
 }
 
 input::placeholder {
-  color: #fff;
+  color: #868383;
+  transform: translateY(-6px);
 }
 
 .post-img {
