@@ -1,5 +1,18 @@
 let newPost = [
   {
+    category: "Beach Resort",
+    imagesrc:
+      "https://drive.google.com/uc?id=10nme7clU1_5CXZ7NG6MpgM2whNunI_RX",
+    postNumber: 3,
+    title: "Lalimar Beach Resort - Infinite Relaxation ",
+    desc: "How about taking a dip on its infinite pool while enjoying the sunset view of the horizon? Or just sit in the Cabana with refreshments you craved for.",
+    datePublished: "14 Feb 2023",
+    comments: "14",
+    link: "./lalimar-beach-resort-la-libertad",
+    location: "La Libertad",
+    author: "Ren Calago",
+  },
+  {
     category: "Cafes & Restaurant",
     imagesrc:
       "https://drive.google.com/uc?id=13grQ-pFx34CXhk0NfitlPV0g7n361VyB",
@@ -40,7 +53,12 @@ let newPost = [
   },
 ];
 const recentPosts = newPost.slice(0, 6);
-const sliding = [recentPosts[0], recentPosts[1], recentPosts[2]];
+const sliding = [
+  recentPosts[0],
+  recentPosts[1],
+  recentPosts[2],
+  recentPosts[3],
+];
 
 // let mainArticles = recentPosts.slice(0, 2);
 // console.log(mainArticles);
