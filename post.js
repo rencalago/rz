@@ -1,49 +1,116 @@
-let newPost = [
-  {
-    category: "Travel",
-    imagesrc:
-      "https://drive.google.com/uc?id=1Z66jNKibvN-Hg6QhEwIo1eWU2Wz70ndu",
-    postNumber: 1,
-    title: "Tops Cebu Lookout - Busay, Cebu City",
-    desc: "See the skyline of Cebu City from up the hill of Busay Cebu City. It has the best view of metropolitan Cebu. I think a month after we visited here, this spot in busay is closed for visitors.",
-    datePublished: "1/3/2023",
-    comments: "61",
-    link: "https://www.rencalago.com/tops-cebu-look-out",
-    location: "cebu",
-  },
-];
-const recentPosts = newPost.slice(0, 6);
-const sliding = [recentPosts[0]];
-
-// let mainArticles = recentPosts.slice(0, 2);
-// console.log(mainArticles);
-
-const sliderOption = document.querySelector(".slider");
-const featured = document.querySelector(".featured");
-const mainPosts = document.querySelector(".mainPost");
+//important variables
+const today = new Date().getFullYear();
 const labelsContainer = document.querySelector(".labels-container");
-const viewBtn = document.querySelector(".vBtn");
-const footerContents = document.querySelector(".footer-contents");
-const myhome = document.getElementById("home");
-const boxMenu = document.querySelector(".hamburger");
-const menuItems = document.querySelector(".menu-items");
-const menuList = document.querySelectorAll(".menuList");
-
-//new variables
-let counter = 0;
-let newSlide = sliding.slice(0, 4);
-let newItem = [];
-
-//EVENT LISTENER
+import { newPostTwo } from "./allPost.js";
+//Event Listener
 window.addEventListener("DOMContentLoaded", function () {
+  importantElement();
   funLabels();
-  footerC();
 });
-myhome.addEventListener("click", myMomeBtn);
+
+//Main Menu -- NavBar
+function importantElement() {
+  class myFooter extends HTMLElement {
+    connectedCallback() {
+      this.innerHTML = `<footer>
+      <div class="footer-container">
+        <div class="footer-contents">
+        <p>Copyright © ${today} • rencalago BLOG • All Rights Reserved</p>
+        </div>
+      </div>
+    </footer>`;
+    }
+  }
+  customElements.define("my-footer", myFooter);
+
+  class sideBar extends HTMLElement {
+    connectedCallback() {
+      this.innerHTML = `<div class="topheader-container">
+            <div class="topHeader"><h2>Connect with Us</h2></div>
+              <div class="socialMedia">
+              <a href="https://www.facebook.com/rencalago"
+                ><i class="fa-brands fa-facebook"></i
+              ></a>
+              <a href="https://www.instagram.com/rencalago"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+              <a href="https://www.youtube.com/rencalago"
+                ><i class="fa-brands fa-youtube"></i
+              ></a>
+              <a href="https://www.twitter.com/rencalago"
+                ><i class="fa-brands fa-twitter"></i></i
+              ></a></div>
+          </div>
+          <div class="topheader-container">
+            <div class="topHeader"><h2>Affiliate</h2></div>
+            <div class="box-space"><div class="allAds"><span class="ad-space1">Be Our<br /></span><span class="ad-space2">Partner</span></div></div>
+          </div>`;
+    }
+  }
+  customElements.define("my-sidebar", sideBar);
+
+  class myHeader extends HTMLElement {
+    connectedCallback() {
+      this.innerHTML = `<header>
+      <div class="header-container">
+        <div class="top-head">
+          <h1>
+            <span class="fname">ren</span><span class="lname">calago</span>
+            <span class="lastOne">Blog</span>
+          </h1>
+        </div>
+        <div class="low-head">
+          <div class="menu-items">
+            <div class="menuList" id="home">Home</div>
+            <div class="menuList">Travels</div>
+            <div class="menuList">News</div>
+            <div class="menuList">Tech</div>
+            <div class="menuList">Inspiration</div>
+            <div class="menuList">Contact</div>
+          </div>
+          <div class="hamburger-container">
+            <div class="hamburger">
+              <div class="box box1"></div>
+              <div class="box box2"></div>
+              <div class="box box3"></div>
+            </div>   
+          </div>       
+        </div>
+      </div>
+    </header>`;
+    }
+  }
+  customElements.define("my-header", myHeader);
+
+  const myHome = document.getElementById("home");
+  myHome.addEventListener("click", function () {
+    window.location = "/";
+  });
+
+  const boxMenu = document.querySelector(".hamburger");
+  const menuItems = document.querySelector(".menu-items");
+  const menuList = document.querySelectorAll(".menuList");
+
+  //Menu on Mobile
+  boxMenu.addEventListener("click", function (e) {
+    boxMenu.classList.toggle("active");
+    menuItems.classList.toggle("active");
+    menuList.forEach(function (menu) {
+      menu.addEventListener("click", function () {
+        boxMenu.classList.remove("active");
+        menuItems.classList.remove("active");
+      });
+    });
+  });
+}
+
+//FUNCTIONS
+
+const newPost = newPostTwo;
 
 //LABELS
 function funLabels() {
-  const categories = recentPosts.reduce(
+  const categories = newPost.reduce(
     function (values, item) {
       if (!values.includes(item.category)) {
         values.push(item.category);
@@ -77,26 +144,3 @@ function funLabels() {
     });
   });
 }
-//for the footer
-const today = new Date().getFullYear();
-
-function footerC() {
-  footerContents.innerHTML = `Copyright © ${today} • rencalago BLOG • All Rights Reserved`;
-}
-
-//HOME BTN
-function myMomeBtn(e) {
-  window.location = "./";
-}
-
-//Menu on Mobile
-boxMenu.addEventListener("click", function (e) {
-  boxMenu.classList.toggle("active");
-  menuItems.classList.toggle("active");
-  menuList.forEach(function (menu) {
-    menu.addEventListener("click", function () {
-      boxMenu.classList.remove("active");
-      menuItems.classList.remove("active");
-    });
-  });
-});

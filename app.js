@@ -1,57 +1,60 @@
-let newPost = [
-  {
-    category: "Beach Resort",
-    imagesrc:
-      "https://drive.google.com/uc?id=10nme7clU1_5CXZ7NG6MpgM2whNunI_RX",
-    postNumber: 3,
-    title: "Lalimar Beach Resort - Infinite Relaxation ",
-    desc: "How about taking a dip on its infinite pool while enjoying the sunset view of the horizon? Or just sit in the Cabana with refreshments you craved for.",
-    datePublished: "14 Feb 2023",
-    comments: "14",
-    link: "./lalimar-beach-resort-la-libertad",
-    location: "La Libertad",
-    author: "Ren Calago",
-  },
-  {
-    category: "Cafes & Restaurant",
-    imagesrc:
-      "https://drive.google.com/uc?id=13grQ-pFx34CXhk0NfitlPV0g7n361VyB",
-    postNumber: 3,
-    title: "Victorias Mountainview Resort Tanjay City",
-    desc: "Dine in  while giving your eyes a feast of an amazing view. Victorias Mountainview is simply the best in the city. You will be treated with awesome scenery going to this place.",
-    datePublished: "13 Feb 2023",
-    comments: "",
-    link: "./victorias-mountain-view-tanjay-city",
-    location: "Tanjay City",
-    author: "Ren Calago",
-  },
-  {
-    category: "Cafes & Restaurant",
-    imagesrc:
-      "https://drive.google.com/uc?id=1n8e8tr-5NeiW7jx7K0YMU7SbmliN2OzI",
-    postNumber: 2,
-    title: "Sakada, a cafe on the Mountain",
-    desc: "Order your coffee at this mountain-top restaurant in Pamplona, Negros Oriental. It offers vibrant and cozy atmosphere with views like you've never seen before. ",
-    datePublished: "11 Feb 2023",
-    comments: "2",
-    link: "./sakada-cafe-and-farm-pamplona",
-    location: "Pamplona",
-    author: "Ren Calago",
-  },
-  {
-    category: "Travel",
-    imagesrc:
-      "https://drive.google.com/uc?id=16fR0SpWq1j_5y6cK29xpxYX7Mhg7x6MQ",
-    postNumber: 1,
-    title: "Tops Cebu Lookout - Busay, Cebu City",
-    desc: "See the skyline of Cebu City from up the hill of Busay Cebu City. It has the best view of metropolitan Cebu. I think a month after we visited here, this spot in busay is closed for visitors.",
-    datePublished: "11 Feb 2023",
-    comments: "61",
-    link: "./tops-cebu-look-out",
-    location: "cebu",
-    author: "Ren Calago",
-  },
-];
+// let newPost = [
+//   {
+//     category: "Beach Resort",
+//     imagesrc:
+//       "https://drive.google.com/uc?id=10nme7clU1_5CXZ7NG6MpgM2whNunI_RX",
+//     postNumber: 3,
+//     title: "Lalimar Beach Resort - Infinite Relaxation ",
+//     desc: "How about taking a dip on its infinite pool while enjoying the sunset view of the horizon? Or just sit in the Cabana with refreshments you craved for.",
+//     datePublished: "14 Feb 2023",
+//     comments: "14",
+//     link: "./lalimar-beach-resort-la-libertad",
+//     location: "La Libertad",
+//     author: "Ren Calago",
+//   },
+//   {
+//     category: "Cafes & Restaurant",
+//     imagesrc:
+//       "https://drive.google.com/uc?id=13grQ-pFx34CXhk0NfitlPV0g7n361VyB",
+//     postNumber: 3,
+//     title: "Victorias Mountainview Resort Tanjay City",
+//     desc: "Dine in  while giving your eyes a feast of an amazing view. Victorias Mountainview is simply the best in the city. You will be treated with awesome scenery going to this place.",
+//     datePublished: "13 Feb 2023",
+//     comments: "",
+//     link: "./victorias-mountain-view-tanjay-city",
+//     location: "Tanjay City",
+//     author: "Ren Calago",
+//   },
+//   {
+//     category: "Cafes & Restaurant",
+//     imagesrc:
+//       "https://drive.google.com/uc?id=1n8e8tr-5NeiW7jx7K0YMU7SbmliN2OzI",
+//     postNumber: 2,
+//     title: "Sakada, a cafe on the Mountain",
+//     desc: "Order your coffee at this mountain-top restaurant in Pamplona, Negros Oriental. It offers vibrant and cozy atmosphere with views like you've never seen before. ",
+//     datePublished: "11 Feb 2023",
+//     comments: "2",
+//     link: "./sakada-cafe-and-farm-pamplona",
+//     location: "Pamplona",
+//     author: "Ren Calago",
+//   },
+//   {
+//     category: "Travel",
+//     imagesrc:
+//       "https://drive.google.com/uc?id=16fR0SpWq1j_5y6cK29xpxYX7Mhg7x6MQ",
+//     postNumber: 1,
+//     title: "Tops Cebu Lookout - Busay, Cebu City",
+//     desc: "See the skyline of Cebu City from up the hill of Busay Cebu City. It has the best view of metropolitan Cebu. I think a month after we visited here, this spot in busay is closed for visitors.",
+//     datePublished: "11 Feb 2023",
+//     comments: "61",
+//     link: "./tops-cebu-look-out",
+//     location: "cebu",
+//     author: "Ren Calago",
+//   },
+// ];
+import { newPostTwo } from "./allPost.js";
+const newPost = newPostTwo;
+
 const recentPosts = newPost.slice(0, 6);
 const sliding = [
   recentPosts[0],
@@ -60,8 +63,8 @@ const sliding = [
   recentPosts[3],
 ];
 
-// let mainArticles = recentPosts.slice(0, 2);
-// console.log(mainArticles);
+let mountain = ["everest", "k2"];
+export { mountain };
 
 const sliderOption = document.querySelector(".slider");
 const featured = document.querySelector(".featured");
@@ -70,10 +73,8 @@ const labelsContainer = document.querySelector(".labels-container");
 const viewBtn = document.querySelector(".vBtn");
 const footerContents = document.querySelector(".footer-contents");
 const myhome = document.getElementById("home");
-const boxMenu = document.querySelector(".hamburger");
-const menuItems = document.querySelector(".menu-items");
-const menuList = document.querySelectorAll(".menuList");
 const thumbsUp = document.querySelector(".breakAlert");
+const today = new Date().getFullYear();
 
 //new variables
 let counter = 0;
@@ -82,14 +83,14 @@ let newItem = [];
 
 //EVENT LISTENER
 window.addEventListener("DOMContentLoaded", function () {
+  importantElement();
   goSlide();
   heroPosts(recentPosts);
   funLabels();
-  footerC();
   setInterval(goSlide, 2500);
+  viewBtn.addEventListener("click", viewAll);
+  myhome.addEventListener("click", myMomeBtn);
 });
-viewBtn.addEventListener("click", viewAll);
-myhome.addEventListener("click", myMomeBtn);
 
 //FEATURED IMAGES
 const featureItem = newSlide
@@ -130,6 +131,7 @@ const secondFeature = newSlide
   .join("");
 boxC.innerHTML = secondFeature;
 const slidingBox = boxC.querySelectorAll(".sliding-box");
+
 //functions
 function goSlide(e) {
   sliderContainer.forEach(function (slide) {
@@ -242,29 +244,105 @@ function viewAll() {
   heroPosts(recentPosts);
 }
 
-//for the footer
-const today = new Date().getFullYear();
-
-function footerC() {
-  footerContents.innerHTML = `Copyright © ${today} • rencalago BLOG • All Rights Reserved`;
-}
-
 function myMomeBtn(e) {
   window.location = "./";
 }
 
-//Menu on Mobile
-boxMenu.addEventListener("click", function (e) {
-  boxMenu.classList.toggle("active");
-  menuItems.classList.toggle("active");
-  menuList.forEach(function (menu) {
-    menu.addEventListener("click", function () {
-      boxMenu.classList.remove("active");
-      menuItems.classList.remove("active");
+//Main Menu -- NavBar
+function importantElement() {
+  class myHeader extends HTMLElement {
+    connectedCallback() {
+      this.innerHTML = `<header>
+      <div class="header-container">
+        <div class="top-head">
+          <h1>
+            <span class="fname">ren</span><span class="lname">calago</span>
+            <span class="lastOne">Blog</span>
+          </h1>
+        </div>
+        <div class="low-head">
+          <div class="menu-items">
+            <div class="menuList" id="home">Home</div>
+            <div class="menuList">Travels</div>
+            <div class="menuList">News</div>
+            <div class="menuList">Tech</div>
+            <div class="menuList">Inspiration</div>
+            <div class="menuList">Contact</div>
+          </div>
+          <div class="hamburger-container">
+            <div class="hamburger">
+              <div class="box box1"></div>
+              <div class="box box2"></div>
+              <div class="box box3"></div>
+            </div>   
+          </div>       
+        </div>
+      </div>
+    </header>`;
+    }
+  }
+  customElements.define("my-header", myHeader);
+  const myHome = document.getElementById("home");
+  myHome.addEventListener("click", function () {
+    window.location = "/";
+  });
+
+  const boxMenu = document.querySelector(".hamburger");
+  const menuItems = document.querySelector(".menu-items");
+  const menuList = document.querySelectorAll(".menuList");
+
+  //Menu on Mobile
+  boxMenu.addEventListener("click", function (e) {
+    boxMenu.classList.toggle("active");
+    menuItems.classList.toggle("active");
+    menuList.forEach(function (menu) {
+      menu.addEventListener("click", function () {
+        boxMenu.classList.remove("active");
+        menuItems.classList.remove("active");
+      });
     });
   });
-});
 
-thumbsUp.addEventListener("click", function () {
-  window.location = "http://www.rencalagopro.com";
-});
+  thumbsUp.addEventListener("click", function () {
+    window.location = "http://www.rencalagopro.com";
+  });
+
+  class myFooter extends HTMLElement {
+    connectedCallback() {
+      this.innerHTML = `<footer>
+      <div class="footer-container">
+        <div class="footer-contents">
+        <p>Copyright © ${today} • rencalago BLOG • All Rights Reserved</p>
+        </div>
+      </div>
+    </footer>`;
+    }
+  }
+  customElements.define("my-footer", myFooter);
+
+  class sideBar extends HTMLElement {
+    connectedCallback() {
+      this.innerHTML = `<div class="topheader-container">
+            <div class="topHeader"><h2>Connect with Us</h2></div>
+              <div class="socialMedia">
+              <a href="https://www.facebook.com/rencalago"
+                ><i class="fa-brands fa-facebook"></i
+              ></a>
+              <a href="https://www.instagram.com/rencalago"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+              <a href="https://www.youtube.com/rencalago"
+                ><i class="fa-brands fa-youtube"></i
+              ></a>
+              <a href="https://www.twitter.com/rencalago"
+                ><i class="fa-brands fa-twitter"></i></i
+              ></a></div>
+          </div>
+          <div class="topheader-container">
+            <div class="topHeader"><h2>Affiliate</h2></div>
+            <div class="box-space"><div class="allAds"><span class="ad-space1">Be Our<br /></span><span class="ad-space2">Partner</span></div></div>
+          </div>`;
+    }
+  }
+  customElements.define("my-sidebar", sideBar);
+}
