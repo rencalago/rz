@@ -130,17 +130,7 @@ function funLabels() {
   myBtn.forEach(function (btn) {
     btn.addEventListener("click", function (item) {
       const category = item.currentTarget.dataset.id;
-      //   console.log(category);
-      const menuCategory = newPost.filter(function (ray) {
-        if (ray.category === category) {
-          return ray;
-        }
-      });
-      if (category === "all") {
-        heroPosts(newPost);
-      } else {
-        heroPosts(menuCategory);
-      }
+      window.location = `www.rencalago.com/#`;
     });
   });
 }
