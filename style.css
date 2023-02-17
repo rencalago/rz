@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+
 :root {
   --clr-1: rgb(48, 48, 48);
   --clr-2: rgb(34, 34, 34);
@@ -7,7 +10,10 @@
   --clr-6: rgb(115, 207, 213);
   --clr-7: rgb(238, 238, 238);
   --clr-8: rgb(51, 51, 51);
+  --first-font: "Arial, Helvetica, sans-serif";
   --second-font: "calibri";
+  --third-font: "Poppins";
+  --fourth-font: "Roboto";
 }
 
 *,
@@ -19,7 +25,7 @@
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--fourth-font);
 }
 
 a {
@@ -409,36 +415,48 @@ input::placeholder {
   padding: 30px 0;
 }
 
-.fa-facebook {
+#facebook,
+#footer-facebook {
   color: rgba(16, 148, 244, 0.6);
 }
 
-.fa-facebook:hover {
+#facebook:hover,
+#footer-facebook:hover {
   color: rgba(16, 148, 244, 1);
 }
 
-.fa-instagram {
+#instagram,
+#footer-instagram {
   color: rgba(247, 14, 69, 0.6);
 }
 
-.fa-instagram:hover {
+#instagram:hover,
+#footer-instagram:hover {
   color: rgb(247, 14, 69);
 }
 
-.fa-youtube {
+#youtube,
+#footer-youtube {
   color: rgba(255, 0, 0, 0.6);
 }
 
-.fa-youtube:hover {
+#youtube:hover,
+#footer-youtube:hover {
   color: rgb(255, 0, 0);
 }
 
-.fa-twitter:hover {
+#twitter,
+#footer-twitter {
+  color: rgb(29, 155, 240, 0.6);
+}
+
+#twitter:hover,
+#footer-twitter:hover {
   color: rgba(29, 155, 240, 1);
 }
 
-.fa-twitter {
-  color: rgb(29, 155, 240, 0.6);
+.footer-right {
+  font-size: 2.2rem;
 }
 
 /* end of social media styling */
@@ -502,17 +520,31 @@ input::placeholder {
 }
 
 /* footer elements */
+
 .footer-container {
-  width: 65%;
-  height: 15vh;
   margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--clr-3);
+  margin-top: 35px;
   margin-bottom: 20px;
+}
+
+.footer-contents {
+  width: 65%;
+  min-height: 10vh;
+  max-height: 30vh;
+  margin: 0 auto;
+  font-family: var(--third-font);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  background-color: var(--clr-3);
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
+  padding: 0 20px;
+}
+
+.footer-right {
+  margin-left: auto;
 }
 
 /* BLOG Page */
@@ -693,7 +725,11 @@ input::placeholder {
   .slider,
   .fullPage-container,
   .footer-container {
-    width: 85%;
+    width: 95%;
+  }
+
+  .footer-contents {
+    width: 100%;
   }
 }
 
@@ -715,9 +751,4 @@ input::placeholder {
   .readmore-btn {
     visibility: visible;
   }
-}
-
-.footer-contents {
-  padding: 0 10px;
-  text-align: center;
 }

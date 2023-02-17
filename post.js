@@ -15,7 +15,20 @@ function importantElement() {
       this.innerHTML = `<footer>
       <div class="footer-container">
         <div class="footer-contents">
-        <p>Copyright © ${today} • rencalago BLOG • All Rights Reserved</p>
+          <div class="footer-left"><p>Copyright © ${today} • Ren Calago blog • All Rights Reserved</p></div>
+          <div class="footer-right">
+              <a href="https://www.facebook.com/rencalago"
+                ><i class="fa-brands fa-facebook" id="footer-facebook"></i
+              ></a>
+              <a href="https://www.instagram.com/rencalago"
+                ><i class="fa-brands fa-instagram" id="footer-instagram"></i
+              ></a>
+              <a href="https://www.youtube.com/rencalago"
+                ><i class="fa-brands fa-youtube" id="footer-youtube"></i
+              ></a>
+              <a href="https://www.twitter.com/rencalago"
+                ><i class="fa-brands fa-twitter" id="footer-twitter"></i></i
+              ></a></div></div>
         </div>
       </div>
     </footer>`;
@@ -29,16 +42,16 @@ function importantElement() {
             <div class="topHeader"><h2>Connect with Us</h2></div>
               <div class="socialMedia">
               <a href="https://www.facebook.com/rencalago"
-                ><i class="fa-brands fa-facebook"></i
+                ><i class="fa-brands fa-facebook" id="facebook"></i
               ></a>
               <a href="https://www.instagram.com/rencalago"
-                ><i class="fa-brands fa-instagram"></i
+                ><i class="fa-brands fa-instagram" id="instagram"></i
               ></a>
               <a href="https://www.youtube.com/rencalago"
-                ><i class="fa-brands fa-youtube"></i
+                ><i class="fa-brands fa-youtube" id="youtube"></i
               ></a>
               <a href="https://www.twitter.com/rencalago"
-                ><i class="fa-brands fa-twitter"></i></i
+                ><i class="fa-brands fa-twitter" id="twitter"></i></i
               ></a></div>
           </div>
           <div class="topheader-container">
