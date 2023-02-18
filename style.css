@@ -577,7 +577,7 @@ input::placeholder {
 }
 
 .article-image {
-  width: 90%;
+  width: 98%;
   height: 90%;
   object-fit: cover;
   margin: 0 auto;
