@@ -1,9 +1,22 @@
 let newPostTwo = [
   {
+    category: "Nature",
+    imagesrc:
+      "https://drive.google.com/uc?id=1CdEFIWR21dI3X34Kkv0HpPrQYY4-V6TI",
+    postNumber: 5,
+    title: "A Day In CebuSafari Adventure",
+    desc: "Spend a day surrounded by nature, explore the unfamiliar and see the wilds up close. You'll go back home in awe to your new spot for exploration. Cebu Safari Adventure is a must-visit family friend park.",
+    datePublished: "18 Feb 2023",
+    comments: "",
+    link: "./cebu-safari-adventure",
+    location: "Carmen, Cebu",
+    author: "Ren Calago",
+  },
+  {
     category: "Beach Resort",
     imagesrc:
       "https://drive.google.com/uc?id=10nme7clU1_5CXZ7NG6MpgM2whNunI_RX",
-    postNumber: 3,
+    postNumber: 4,
     title: "Lalimar Beach Resort - Infinite Relaxation ",
     desc: "How about taking a dip on its infinite pool while enjoying the sunset view of the horizon? Or just sit in the Cabana with refreshments you craved for.",
     datePublished: "14 Feb 2023",
@@ -45,7 +58,7 @@ let newPostTwo = [
     postNumber: 1,
     title: "Tops Cebu Lookout - Busay, Cebu City",
     desc: "See the skyline of Cebu City from up the hill of Busay Cebu City. It has the best view of metropolitan Cebu. I think a month after we visited here, this spot in busay is closed for visitors.",
-    datePublished: "11 Feb 2023",
+    datePublished: "10 Feb 2023",
     comments: "61",
     link: "./tops-cebu-look-out",
     location: "cebu",

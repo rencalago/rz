@@ -1,11 +1,13 @@
 //important variables
 const today = new Date().getFullYear();
 const labelsContainer = document.querySelector(".labels-container");
+const postingMeta = document.querySelector(".posting-meta");
 import { newPostTwo } from "./allPost.js";
 //Event Listener
 window.addEventListener("DOMContentLoaded", function () {
   importantElement();
   funLabels();
+  articleEssential();
 });
 
 //Main Menu -- NavBar
@@ -146,4 +148,18 @@ function funLabels() {
       window.location = `www.rencalago.com/#`;
     });
   });
+}
+
+//author and datePublished
+let myDate;
+let myAuthor;
+function articleEssential() {
+  const articleTitle = postingMeta.previousElementSibling.dataset.id;
+  newPost.filter(function (posting) {
+    if (posting.postNumber == articleTitle) {
+      myDate = posting.datePublished;
+      myAuthor = posting.author;
+    }
+  });
+  postingMeta.innerHTML = `<p><span class="author"><i class="fa-solid fa-user"></i> ${myAuthor} </span><span class="postDate"></span><i class="fa-regular fa-clock"></i> ${myDate}</span></p>`;
 }

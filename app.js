@@ -55,16 +55,14 @@
 import { newPostTwo } from "./allPost.js";
 const newPost = newPostTwo;
 
-const recentPosts = newPost.slice(0, 6);
+const recentPosts = newPost.slice(0, 10);
 const sliding = [
   recentPosts[0],
   recentPosts[1],
   recentPosts[2],
   recentPosts[3],
+  recentPosts[4],
 ];
-
-let mountain = ["everest", "k2"];
-export { mountain };
 
 const sliderOption = document.querySelector(".slider");
 const featured = document.querySelector(".featured");
@@ -78,8 +76,7 @@ const today = new Date().getFullYear();
 
 //new variables
 let counter = 0;
-let newSlide = sliding.slice(0, 4);
-let newItem = [];
+let newSlide = sliding.slice(0, 5);
 
 //EVENT LISTENER
 window.addEventListener("DOMContentLoaded", function () {
@@ -140,13 +137,6 @@ function goSlide(e) {
     }
     slide.style.transform = `translateX(-${counter * 100}%)`;
   });
-  /*for (let i = 0; i < slidingBox.length; i++) {
-    if (slidingBox[i].dataset.id == counter) {
-      slidingBox[i].style.backgroundColor = "#1d9bf0";
-    } else {
-      slidingBox[i].style.backgroundColor = "#fff";
-    }
-  } */
 
   slidingBox.forEach(function (box) {
     if (box.dataset.id == counter) {
