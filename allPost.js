@@ -4,8 +4,8 @@ let newPostTwo = [
     imagesrc:
       "https://drive.google.com/uc?id=1CdEFIWR21dI3X34Kkv0HpPrQYY4-V6TI",
     postNumber: 5,
-    title: "A Day In Cebu Safari Adventure",
-    desc: "Spend a day surrounded by nature, explore the unfamiliar and see the wilds up close. You'll go back home in awe to your new spot for exploration. Cebu Safari Adventure is a must-visit family friend park.",
+    title: "A Day In Cebu Safari and Adventure Park",
+    desc: "Spend a day surrounded by nature, explore the unfamiliar and see the wilds up close. You'll go back home in awe to your new spot for exploration. Cebu Safari and Adventure Park is a must-visit family friend park.",
     datePublished: "18 Feb 2023",
     comments: "",
     link: "./cebu-safari-adventure",
