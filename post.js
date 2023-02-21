@@ -164,23 +164,3 @@ function articleEssential() {
   });
   postingMeta.innerHTML = `<p><span class="author"><i class="fa-solid fa-user"></i> ${myAuthor} </span><span class="postDate"></span><i class="fa-regular fa-clock"></i> ${myDate}</span></p>`;
 }
-
-//myAds
-function googleAds() {
-  class myAds extends HTMLElement {
-    connectedCallback() {
-      this.innerHTML = `<script type="text/javascript"><!--
-google_ad_client = "ca-pub-4229724093840415";
-/* backyard */
-google_ad_slot = "7206241397";
-google_ad_width = 250;
-google_ad_height = 250;
-//-->
-</script>
-<script type="text/javascript"
-src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-</script>`;
-    }
-  }
-  customElements.define("my-Ads", myAds);
-}
