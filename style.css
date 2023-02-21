@@ -105,6 +105,10 @@ header {
   color: rgba(0, 0, 0, 0.8);
 }
 
+.menu-items > div a:hover {
+  color: rgba(0, 0, 0, 0.8);
+}
+
 .menu-items > *:nth-child(1):hover {
   border-top-left-radius: 7px;
 }

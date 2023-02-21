@@ -8,7 +8,6 @@ window.addEventListener("DOMContentLoaded", function () {
   importantElement();
   funLabels();
   articleEssential();
-  googleAds();
 });
 
 //Main Menu -- NavBar
@@ -82,7 +81,8 @@ function importantElement() {
             <div class="menuList">News</div>
             <div class="menuList">Tech</div>
             <div class="menuList">Inspiration</div>
-            <div class="menuList">Contact</div>
+            <div class="menuList">About</div>
+            <div class="menuList" id="contact"><a href="https://www.rencalago.com/contact-us">Contact</a></div>
           </div>
           <div class="hamburger-container">
             <div class="hamburger">

@@ -73,6 +73,7 @@ const footerContents = document.querySelector(".footer-contents");
 const myhome = document.getElementById("home");
 const thumbsUp = document.querySelector(".breakAlert");
 const today = new Date().getFullYear();
+const contact = document.getElementById("contact");
 
 //new variables
 let counter = 0;
@@ -257,7 +258,8 @@ function importantElement() {
             <div class="menuList">News</div>
             <div class="menuList">Tech</div>
             <div class="menuList">Inspiration</div>
-            <div class="menuList">Contact</div>
+            <div class="menuList">About</div>
+            <div class="menuList" id="contact"><a href="https://www.rencalago.com/contact-us">Contact</a></div>
           </div>
           <div class="hamburger-container">
             <div class="hamburger">
@@ -349,3 +351,5 @@ function importantElement() {
   }
   customElements.define("my-sidebar", sideBar);
 }
+
+//CONTACT
