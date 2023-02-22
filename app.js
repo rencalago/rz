@@ -69,11 +69,8 @@ const featured = document.querySelector(".featured");
 const mainPosts = document.querySelector(".mainPost");
 const labelsContainer = document.querySelector(".labels-container");
 const viewBtn = document.querySelector(".vBtn");
-const footerContents = document.querySelector(".footer-contents");
-const myhome = document.getElementById("home");
 const thumbsUp = document.querySelector(".breakAlert");
 const today = new Date().getFullYear();
-const contact = document.getElementById("contact");
 
 //new variables
 let counter = 0;
@@ -87,7 +84,7 @@ window.addEventListener("DOMContentLoaded", function () {
   funLabels();
   setInterval(goSlide, 2500);
   viewBtn.addEventListener("click", viewAll);
-  myhome.addEventListener("click", myMomeBtn);
+  myMenu();
 });
 
 //FEATURED IMAGES
@@ -259,7 +256,7 @@ function importantElement() {
             <div class="menuList">Tech</div>
             <div class="menuList">Inspiration</div>
             <div class="menuList">About</div>
-            <div class="menuList" id="contact"><a href="https://www.rencalago.com/contact-us">Contact</a></div>
+            <div class="menuList">Contact</a></div>
           </div>
           <div class="hamburger-container">
             <div class="hamburger">
@@ -352,4 +349,19 @@ function importantElement() {
   customElements.define("my-sidebar", sideBar);
 }
 
-//CONTACT
+//MENULIST
+function myMenu() {
+  const menuList = document.querySelectorAll(".menuList");
+  menuList.forEach(function (menu) {
+    menu.addEventListener("click", function (e) {
+      const menuItem = menu.textContent;
+      if (menuItem == "home") {
+        window.location = "./";
+      } else if (menu.textContent == "Contact") {
+        window.location = "./contact-us.html";
+      } else {
+        window.location = "./#";
+      }
+    });
+  });
+}

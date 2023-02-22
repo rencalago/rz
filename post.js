@@ -8,6 +8,7 @@ window.addEventListener("DOMContentLoaded", function () {
   importantElement();
   funLabels();
   articleEssential();
+  myMenu();
 });
 
 //Main Menu -- NavBar
@@ -163,4 +164,21 @@ function articleEssential() {
     }
   });
   postingMeta.innerHTML = `<p><span class="author"><i class="fa-solid fa-user"></i> ${myAuthor} </span><span class="postDate"></span><i class="fa-regular fa-clock"></i> ${myDate}</span></p>`;
+}
+
+//MENULIST
+function myMenu() {
+  const menuList = document.querySelectorAll(".menuList");
+  menuList.forEach(function (menu) {
+    menu.addEventListener("click", function (e) {
+      const menuItem = menu.textContent;
+      if (menuItem == "home") {
+        window.location = "./";
+      } else if (menu.textContent == "Contact") {
+        window.location = "./contact-us.html";
+      } else {
+        window.location = "./#";
+      }
+    });
+  });
 }
