@@ -171,13 +171,21 @@ function myMenu() {
   const menuList = document.querySelectorAll(".menuList");
   menuList.forEach(function (menu) {
     menu.addEventListener("click", function (e) {
-      const menuItem = menu.textContent;
+      const menuItem = e.currentTarget.textContent;
       if (menuItem == "home") {
         window.location = "./";
-      } else if (menu.textContent == "Contact") {
-        window.location = "./contact-us.html";
-      } else {
+      } else if (menuItem == "News") {
         window.location = "./#";
+      } else if (menuItem == "Tech") {
+        window.location = "./#";
+      } else if (menuItem == "Inspiration") {
+        window.location = "./#";
+      } else if (menuItem == "About") {
+        window.location = "./#";
+      } else if (menuItem == "Contact") {
+        window.location = "./contact-us";
+      } else {
+        window.location = "./";
       }
     });
   });
