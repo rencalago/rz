@@ -2,11 +2,40 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Page Not Found</title>
+    <style>
+      body {
+        background-size: cover;
+        font-family: "arial";
+        overflow: hidden;
+      }
+      main {
+        display: flex;
+        width: 100vw;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      .header404 {
+        font-family: "sans-serif";
+        font-size: 48px;
+      }
+      .content404 {
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
-    nothing to show
+    <main>
+      <h4 class="header404">404</h4>
+      <div class="content-404">
+        Uh-oh! Sorry, we couldn't find the page you are looking for.
+      </div>
+      <p>
+        <a href="./">Go Check our home page</a>
+      </p>
+    </main>
   </body>
 </html>
