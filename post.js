@@ -183,7 +183,7 @@ function myMenu() {
       } else if (menuItem == "About") {
         window.location = "./#";
       } else if (menuItem == "Contact") {
-        window.location = "./contact-us";
+        window.location = "./contact";
       } else {
         window.location = "./";
       }
