@@ -1,5 +1,18 @@
 let newPostTwo = [
   {
+    category: "Cafes and Restaurant",
+    imagesrc:
+      "https://drive.google.com/uc?id=1yr9itZ-TgdHFvJigfhtzuUxP-HQ3pIGs",
+    postNumber: 6,
+    title: "Alimyon Kapehan San Jose",
+    desc: "Alimyon Kapehan is a unique filipino-styled restaurant that offers not just tasty food but good view of the mountain.",
+    datePublished: "25 Feb 2023",
+    comments: "",
+    link: "./alimyon-kapehan-san-jose",
+    location: "San Jose, Negros Oriental",
+    author: "Ren Calago",
+  },
+  {
     category: "Nature",
     imagesrc:
       "https://drive.google.com/uc?id=1CdEFIWR21dI3X34Kkv0HpPrQYY4-V6TI",
