@@ -59,7 +59,7 @@ function importantElement() {
           </div>
           <div class="topheader-container">
             <div class="topHeader"><h2>Affiliate</h2></div>
-            <div class="box-space"><div class="allAds"><span class="ad-space1">Be Our<br /></span><span class="ad-space2">Partner</span></div></div>
+            <div class="box-space"><div class="allAds"><span class="ad-space1">Be Our Ad<br /></span><span class="ad-space2">Partner</span></div></div>
           </div>`;
     }
   }

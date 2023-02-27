@@ -412,11 +412,12 @@ input::placeholder {
 /*social media*/
 .socialMedia {
   width: 100%;
-  height: auto;
   margin: 0 auto;
-  text-align: center;
   font-size: 3rem;
   padding: 30px 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 #facebook,
@@ -491,11 +492,15 @@ input::placeholder {
 
 /* Labels */
 .labels-container {
-  padding: 30px 0;
+  padding: 10px 0;
+}
+
+.labels-container > * {
+  margin: 5px 0;
 }
 
 .label-select {
-  padding: 5px 15px;
+  padding: 10px 15px;
   text-transform: capitalize;
   transition: all 0.3s ease-in-out;
 }
@@ -511,7 +516,9 @@ input::placeholder {
 
 .read-more {
   width: 100%;
+  height: auto;
   text-align: center;
+  margin-top: 50px;
 }
 
 .moreBtn {
@@ -532,7 +539,7 @@ input::placeholder {
 
 .footer-container {
   margin: 0 auto;
-  margin-top: 35px;
+  margin-top: 20px;
   margin-bottom: 20px;
 }
 
@@ -738,6 +745,10 @@ input::placeholder {
 
   .footer-contents {
     width: 100%;
+  }
+
+  .footer-right {
+    display: none;
   }
 }
 
