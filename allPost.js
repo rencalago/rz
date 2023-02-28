@@ -43,7 +43,7 @@ let newPostTwo = [
     imagesrc:
       "https://drive.google.com/uc?id=13grQ-pFx34CXhk0NfitlPV0g7n361VyB",
     postNumber: 3,
-    title: "Victorias Mountainview Resort Tanjay City",
+    title: "Victoria's Mountainview Resort Tanjay City",
     desc: "Dine in  while giving your eyes a feast of an amazing view. Victorias Mountainview is simply the best in the city. You will be treated with awesome scenery going to this place.",
     datePublished: "13 Feb 2023",
     comments: "",
