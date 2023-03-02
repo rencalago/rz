@@ -615,6 +615,42 @@ input::placeholder {
   transition: all 0.3s ease-in-out;
 }
 
+/* for contact details */
+
+.contact-details {
+  width: 100%;
+  margin: 20px auto;
+  background-color: var(--clr-3);
+  padding: 25px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  gap: 15px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.contact-phone,
+.contact-email {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  padding: 15px;
+}
+
+.contact-details > div:hover {
+  background-color: #fff;
+  color: var(--clr-3);
+  font-weight: bold;
+}
+
+.fa-phone,
+.fa-envelope {
+  font-size: 1.5rem;
+  color: teal;
+}
+
 @media screen and (max-width: 992px) {
   .low-head {
     display: flex;
