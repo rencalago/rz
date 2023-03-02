@@ -293,7 +293,7 @@ function importantElement() {
   });
 
   thumbsUp.addEventListener("click", function () {
-    window.location = "http://www.rencalagopro.com";
+    window.location = "https://www.rencalagopro.com";
   });
 
   class myFooter extends HTMLElement {

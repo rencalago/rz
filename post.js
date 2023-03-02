@@ -147,7 +147,7 @@ function funLabels() {
   myBtn.forEach(function (btn) {
     btn.addEventListener("click", function (item) {
       const category = item.currentTarget.dataset.id;
-      window.location = `www.rencalago.com/#`;
+      window.location = `./#`;
     });
   });
 }
