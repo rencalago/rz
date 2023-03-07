@@ -1,5 +1,18 @@
 let newPostTwo = [
   {
+    category: "Travel",
+    imagesrc:
+      "https://drive.google.com/uc?id=14kJ3ou0ndreCtKhk8jvGo0dZpZOGjlnZ",
+    postNumber: 7,
+    title: "First Time at Cebu Ocean Park",
+    desc: "The Cebu Ocean Park is a must-visit in Cebu City. This unique experience is well-suited for people who wants to enjoy discovering our marine biodiversity.",
+    datePublished: "8 Mar 2023",
+    comments: "",
+    link: "./cebu-ocean-park",
+    location: "Cebu City",
+    author: "Ren Calago",
+  },
+  {
     category: "Cafes & Restaurant",
     imagesrc:
       "https://drive.google.com/uc?id=1yr9itZ-TgdHFvJigfhtzuUxP-HQ3pIGs",
