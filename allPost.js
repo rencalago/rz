@@ -2,6 +2,19 @@ let newPostTwo = [
   {
     category: "Travel",
     imagesrc:
+      "https://drive.google.com/uc?id=1b3L0Tqpxi2sOuY_C-RFFthNZePHshdSR",
+    postNumber: 7,
+    title: "Travel to Dumaguete City: Places to Visit",
+    desc: "Dumaguete is known its unique tourist spots like Pulangbato falls, forest camp in Valencia and the twin lake balinsasayao",
+    datePublished: "26 Mar 2023",
+    comments: "",
+    link: "./travel-to-dumaguete-places-to-visit",
+    location: "Dumaguete City",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
+    imagesrc:
       "https://drive.google.com/uc?id=14kJ3ou0ndreCtKhk8jvGo0dZpZOGjlnZ",
     postNumber: 7,
     title: "First Time at Cebu Ocean Park",
