@@ -3,7 +3,7 @@ let newPostTwo = [
     category: "Travel",
     imagesrc:
       "https://drive.google.com/uc?id=1b3L0Tqpxi2sOuY_C-RFFthNZePHshdSR",
-    postNumber: 7,
+    postNumber: 8,
     title: "Travel to Dumaguete City: Places to Visit",
     desc: "Dumaguete is known its unique tourist spots like Pulangbato falls, forest camp in Valencia and the twin lake balinsasayao",
     datePublished: "26 Mar 2023",
