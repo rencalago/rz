@@ -27,7 +27,8 @@ let newPostTwo = [
   },
   {
     category: "Cafes & Restaurant",
-    imagesrc: "/Images/featured-images/alimyon-san-jose-dumaguete.jpeg",
+    imagesrc:
+      "https://drive.google.com/thumbnail?id=1PnHpobsmOVrqYdQLSwYYsW1LiHas6Tai&sz=s4000",
     postNumber: 6,
     title: "Alimyon Kapehan San Jose",
     desc: "Alimyon Kapehan is a unique filipino-styled restaurant that offers not just tasty food but good view of the mountain.",
@@ -40,7 +41,7 @@ let newPostTwo = [
   {
     category: "Nature",
     imagesrc:
-      "/Images/featured-images/cebu-safari-adventure-park-carmen-cebu.jpeg",
+      "https://drive.google.com/thumbnail?id=1CdEFIWR21dI3X34Kkv0HpPrQYY4-V6TI&sz=s4000",
     postNumber: 5,
     title: "A Day In Cebu Safari and Adventure Park",
     desc: "Spend a day surrounded by nature, explore the unfamiliar and see the wilds up close. You'll go back home in awe to your new spot for exploration. Cebu Safari and Adventure Park is a must-visit family friend park.",
@@ -53,7 +54,7 @@ let newPostTwo = [
   {
     category: "Beach Resort",
     imagesrc:
-      "/Images/featured-images/lalimar-resort-la-libertad-negros-oriental.jpeg",
+      "https://drive.google.com/thumbnail?id=10nme7clU1_5CXZ7NG6MpgM2whNunI_RX&sz=s4000",
     postNumber: 4,
     title: "Lalimar Beach Resort - Infinite Relaxation ",
     desc: "How about taking a dip on its infinite pool while enjoying the sunset view of the horizon? Or just sit in the Cabana with refreshments you craved for.",
@@ -66,7 +67,7 @@ let newPostTwo = [
   {
     category: "Cafes & Restaurant",
     imagesrc:
-      "/Images/featured-images/victorias-mountain-view-resort-tanjay-cebu.jpeg",
+      "https://drive.google.com/thumbnail?id=13grQ-pFx34CXhk0NfitlPV0g7n361VyB&sz=s4000",
     postNumber: 3,
     title: "Victoria's Mountainview Resort Tanjay City",
     desc: "Dine in  while giving your eyes a feast of an amazing view. Victorias Mountainview is simply the best in the city. You will be treated with awesome scenery going to this place.",
@@ -78,7 +79,8 @@ let newPostTwo = [
   },
   {
     category: "Cafes & Restaurant",
-    imagesrc: "/Images/featured-images/sakada-main-image.jpg",
+    imagesrc:
+      "https://drive.google.com/thumbnail?id=1n8e8tr-5NeiW7jx7K0YMU7SbmliN2OzI&sz=s4000",
     postNumber: 2,
     title: "Sakada, a cafe on the Mountain",
     desc: "Order your coffee at this mountain-top restaurant in Pamplona, Negros Oriental. It offers vibrant and cozy atmosphere with views like you've never seen before. ",
@@ -90,7 +92,8 @@ let newPostTwo = [
   },
   {
     category: "Travel",
-    imagesrc: "/Images/featured-images/cebu-tops-lookout.jpeg",
+    imagesrc:
+      "https://drive.google.com/thumbnail?id=16fR0SpWq1j_5y6cK29xpxYX7Mhg7x6MQ&sz=s4000",
     postNumber: 1,
     title: "Tops Cebu Lookout - Busay, Cebu City",
     desc: "See the skyline of Cebu City from up the hill of Busay Cebu City. It has the best view of metropolitan Cebu. I think a month after we visited here, this spot in busay is closed for visitors.",
