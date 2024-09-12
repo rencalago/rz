@@ -1,7 +1,8 @@
 let newPostTwo = [
   {
     category: "Travel",
-    imagesrc: "/Images/featured-images/dumaguete-city.jpeg",
+    imagesrc:
+      "https://drive.google.com/thumbnail?id=1b3L0Tqpxi2sOuY_C-RFFthNZePHshdSR&sz=s4000",
     postNumber: 8,
     title: "Travel to Dumaguete City: Places to Visit",
     desc: "Dumaguete is known its unique tourist spots like Pulangbato falls, forest camp in Valencia and the twin lake balinsasayao",
@@ -13,7 +14,8 @@ let newPostTwo = [
   },
   {
     category: "Travel",
-    imagesrc: "/Images/featured-images/cebu-ocean-park.jpeg",
+    imagesrc:
+      "https://drive.google.com/thumbnail?id=1KfeqGfMdeVXZnub2ynT7BKDVOHv_3EJk&sz=s4000",
     postNumber: 7,
     title: "First Time at Cebu Ocean Park",
     desc: "The Cebu Ocean Park is a must-visit in Cebu City. This unique experience is well-suited for people who wants to enjoy discovering our marine biodiversity.",
