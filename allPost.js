@@ -15,7 +15,7 @@ let newPostTwo = [
   {
     category: "Travel",
     imagesrc:
-      "https://drive.google.com/thumbnail?id=1KfeqGfMdeVXZnub2ynT7BKDVOHv_3EJk&sz=s4000",
+      "https://drive.google.com/thumbnail?id=14kJ3ou0ndreCtKhk8jvGo0dZpZOGjlnZ&sz=s4000",
     postNumber: 7,
     title: "First Time at Cebu Ocean Park",
     desc: "The Cebu Ocean Park is a must-visit in Cebu City. This unique experience is well-suited for people who wants to enjoy discovering our marine biodiversity.",
