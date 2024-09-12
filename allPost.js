@@ -2,6 +2,19 @@ let newPostTwo = [
   {
     category: "Travel",
     imagesrc:
+      "https://drive.google.com/thumbnail?id=1wYVQLCG2rfVX6D9L1WTkFz6lQLQ3Vire&sz=s4000",
+    postNumber: 9,
+    title: "Travel to Baguio City - Places to Visit",
+    desc: "Without a doubt, Baguio City is one of the top tourist destination in the Philippines. Thanks to its cool temperature, and numerous fun things to-do!",
+    datePublished: "12 Sep 2023",
+    comments: "",
+    link: "./travel-to-baguio-city-places-to-visit",
+    location: "Baguio City",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
+    imagesrc:
       "https://drive.google.com/thumbnail?id=1b3L0Tqpxi2sOuY_C-RFFthNZePHshdSR&sz=s4000",
     postNumber: 8,
     title: "Travel to Dumaguete City: Places to Visit",
