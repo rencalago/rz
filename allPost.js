@@ -6,7 +6,7 @@ let newPostTwo = [
     postNumber: 9,
     title: "Travel to Baguio City - Places to Visit",
     desc: "Without a doubt, Baguio City is one of the top tourist destination in the Philippines. Thanks to its cool temperature, and numerous fun things to-do!",
-    datePublished: "12 Sep 2023",
+    datePublished: "12 Sep 2024",
     comments: "",
     link: "./travel-to-baguio-city-places-to-visit",
     location: "Baguio City",
