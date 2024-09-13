@@ -8,7 +8,7 @@ let newPostTwo = [
     desc: "The place for fine dining, leisure and pure relaxation. Meet some friends, take a boat ride through the canal or stroll around.",
     datePublished: "14 Sep 2024",
     comments: "",
-    link: "./travel-to-baguio-city-places-to-visit",
+    link: "./vice-grand-canal-mckinley-hill.html",
     location: "Baguio City",
     author: "Ren Calago",
   },
