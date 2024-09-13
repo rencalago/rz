@@ -2,6 +2,19 @@ let newPostTwo = [
   {
     category: "Travel",
     imagesrc:
+      "https://drive.google.com/thumbnail?id=1XTlpJQlYZzI8TL1u077lOkj92Tj6jL4y&sz=s4000",
+    postNumber: 10,
+    title: "The Venice Grand Canal in McKinley Hill, Taguig",
+    desc: "The place for fine dining, leisure and pure relaxation. Meet some friends, take a boat ride through the canal or stroll around.",
+    datePublished: "14 Sep 2024",
+    comments: "",
+    link: "./travel-to-baguio-city-places-to-visit",
+    location: "Baguio City",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
+    imagesrc:
       "https://drive.google.com/thumbnail?id=1wYVQLCG2rfVX6D9L1WTkFz6lQLQ3Vire&sz=s4000",
     postNumber: 9,
     title: "Travel to Baguio City - Places to Visit",

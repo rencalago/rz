@@ -651,6 +651,12 @@ input::placeholder {
   color: teal;
 }
 
+/* BAGUIO CITY */
+.tour-itinerary {
+  background-color: var(--clr-3);
+  padding: 10px 0 10px 10px;
+}
+
 @media screen and (max-width: 992px) {
   .low-head {
     display: flex;
