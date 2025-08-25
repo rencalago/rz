@@ -30,7 +30,7 @@ body {
 
 a {
   text-decoration: none;
-  color: #fff;
+  color: var(--clr-3);
 }
 
 .fname {
