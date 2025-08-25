@@ -1,5 +1,18 @@
 let newPostTwo = [
   {
+    category: "Shopping",
+    imagesrc:
+      "https://drive.google.com/thumbnail?id=1u15qkLx0UJ9ZWFO5Ymsjqw-rqEtZujCt&sz=s4000",
+    postNumber: 10,
+    title: "Metro Gaisano Bais City - First Mall in Bais City",
+    desc: "The Metro in Bais City finally opens its doors on August 15, 2025. Making it the first mall in the city and the first Metro in Negros Oriental",
+    datePublished: "25 Aug 2025",
+    comments: "5",
+    link: "./metro-gaisano-bais-city",
+    location: "Bais City",
+    author: "Ren Calago",
+  },
+  {
     category: "Travel",
     imagesrc:
       "https://drive.google.com/thumbnail?id=1XTlpJQlYZzI8TL1u077lOkj92Tj6jL4y&sz=s4000",
