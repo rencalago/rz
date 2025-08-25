@@ -4,7 +4,7 @@ let newPostTwo = [
     imagesrc:
       "https://drive.google.com/thumbnail?id=1u15qkLx0UJ9ZWFO5Ymsjqw-rqEtZujCt&sz=s4000",
     postNumber: 10,
-    title: "Metro Gaisano Bais City - First Mall in Bais City",
+    title: "Metro Gaisano Bais City - First Mall in the city",
     desc: "The Metro in Bais City finally opens its doors on August 15, 2025. Making it the first mall in the city and the first Metro in Negros Oriental",
     datePublished: "25 Aug 2025",
     comments: "5",
