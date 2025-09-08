@@ -3,9 +3,9 @@ let newPostTwo = [
     category: "Shopping",
     imagesrc:
       "https://drive.google.com/thumbnail?id=1u15qkLx0UJ9ZWFO5Ymsjqw-rqEtZujCt&sz=s4000",
-    postNumber: 10,
+    postNumber: 11,
     title: "Metro Gaisano Bais City - First Mall in the city",
-    desc: "The Metro in Bais City finally opens its doors on August 15, 2025. Making it the first mall in the city and the first Metro in Negros Oriental",
+    desc: "The Metro in Bais City finally opens its doors on August 15, 2025. Making it the first mall in the city and the first Metro in Negros Oriental.",
     datePublished: "25 Aug 2025",
     comments: "5",
     link: "./metro-gaisano-bais-city",
@@ -22,7 +22,7 @@ let newPostTwo = [
     datePublished: "14 Sep 2024",
     comments: "",
     link: "./venice-grand-canal-mckinley-hill",
-    location: "Baguio City",
+    location: "Taguig City",
     author: "Ren Calago",
   },
   {
@@ -95,7 +95,7 @@ let newPostTwo = [
     imagesrc:
       "https://drive.google.com/thumbnail?id=10nme7clU1_5CXZ7NG6MpgM2whNunI_RX&sz=s4000",
     postNumber: 4,
-    title: "Lalimar Beach Resort - Infinite Relaxation ",
+    title: "Lalimar Beach Resort - Infinite Relaxation",
     desc: "How about taking a dip on its infinite pool while enjoying the sunset view of the horizon? Or just sit in the Cabana with refreshments you craved for.",
     datePublished: "14 Feb 2023",
     comments: "14",
