@@ -1,6 +1,6 @@
 let newPostTwo = [
   {
-    category: "Travel, Dining",
+    category: "Dining",
     imagesrc:
       "https://drive.google.com/thumbnail?id=1cPhix6qKoO3DAW-R8KNyc1hxBLK0ZWVc&sz=s4000",
     postNumber: 12,
