@@ -1,5 +1,18 @@
 let newPostTwo = [
   {
+    category: "Travel, Dining",
+    imagesrc:
+      "https://drive.google.com/thumbnail?id=1cPhix6qKoO3DAW-R8KNyc1hxBLK0ZWVc&sz=s4000",
+    postNumber: 12,
+    title: "Going to Sakada Farm to Eat",
+    desc: "The Metro in Bais City finally opens its doors on August 15, 2025. Making it the first mall in the city and the first Metro in Negros Oriental.",
+    datePublished: "02 June 2026",
+    comments: "5",
+    link: "./going-to-sakada-farm-to-eat",
+    location: "Pamplona",
+    author: "Ren Calago",
+  },
+  {
     category: "Shopping",
     imagesrc:
       "https://drive.google.com/thumbnail?id=1u15qkLx0UJ9ZWFO5Ymsjqw-rqEtZujCt&sz=s4000",
