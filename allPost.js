@@ -7,7 +7,7 @@ let newPostTwo = [
     title: "Going to Sakada Farm to Eat",
     desc: "The Metro in Bais City finally opens its doors on August 15, 2025. Making it the first mall in the city and the first Metro in Negros Oriental.",
     datePublished: "02 June 2026",
-    comments: "5",
+    comments: "2",
     link: "./going-to-sakada-farm-to-eat",
     location: "Pamplona",
     author: "Ren Calago",
