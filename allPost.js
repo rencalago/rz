@@ -1,5 +1,18 @@
 let newPostTwo = [
   {
+    category: "Travel",
+    imagesrc:
+      "https://drive.google.com/thumbnail?id=1rkLoQaeT299ceiWMWiFeWAA11yMRq0eP&sz=s4000",
+    postNumber: 13,
+    title: "White Sand Beach of Sipalay City",
+    desc: "Sipalay is popular tourist destination for its white sand beaches, top nature spots, great for relaxation and exploration",
+    datePublished: "03 June 2026",
+    comments: "3",
+    link: "./white-sand-beach-of-sipalay",
+    location: "Sipalay City",
+    author: "Ren Calago",
+  },
+  {
     category: "Dining",
     imagesrc:
       "https://drive.google.com/thumbnail?id=1cPhix6qKoO3DAW-R8KNyc1hxBLK0ZWVc&sz=s4000",
