@@ -2,6 +2,19 @@ let newPostTwo = [
   {
     category: "Travel",
     imagesrc:
+      "https://drive.google.com/thumbnail?id=1b3L0Tqpxi2sOuY_C-RFFthNZePHshdSR&sz=s4000",
+    postNumber: 14,
+    title: "Dumaguete vs Cebu: Which Should You Visit First?",
+    desc: "Dumaguete or Cebu first? Compare the vibe, things to do, food, budget, and getting around to pick the best Visayas stop for your first trip.",
+    datePublished: "28 September 2026",
+    comments: "2",
+    link: "./dumaguete-vs-cebu-which-to-visit-first",
+    location: "Cebu City and Dumaguete City",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
+    imagesrc:
       "https://drive.google.com/thumbnail?id=1rkLoQaeT299ceiWMWiFeWAA11yMRq0eP&sz=s4000",
     postNumber: 13,
     title: "White Sand Beach of Sipalay City",
