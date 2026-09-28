@@ -1,5 +1,18 @@
 let newPostTwo = [
   {
+  category: "Travel",
+  imagesrc:
+    "https://drive.google.com/thumbnail?id=1b3L0Tqpxi2sOuY_C-RFFthNZePHshdSR&sz=s4000",
+  postNumber: 15,
+  title: "A First-Timer's Food Trip in Dumaguete",
+  desc: "Discover what to eat on your first food trip to Dumaguete, from silvanas and sans rival to local breakfast favorites, seafood, street food, and boulevard dining.",
+  datePublished: "28 September 2026",
+  comments: "0",
+  link: "./a-first-timers-food-trip-in-dumaguete.html",
+  location: "Dumaguete City",
+  author: "Ren Calago",
+},
+  {
     category: "Travel",
     imagesrc:
       "https://drive.google.com/thumbnail?id=1b3L0Tqpxi2sOuY_C-RFFthNZePHshdSR&sz=s4000",
