@@ -15,7 +15,7 @@ let newPostTwo = [
   {
   category: "Travel",
   imagesrc:
-    "https://drive.google.com/thumbnail?id=1QCKoRYuSDUg0ubJ0uvbnUNWQMpmzCGPk&sz=s4000",
+    "https://drive.google.com/thumbnail?id=1QCKoRYuSDUg0ubJ0uvbnUNWQMpmzCGPk&&sz=s4000",
   postNumber: 19,
   title: "Robinsons Dumaguete Expansion Is Now Open: What's New in 2026",
   desc: "Robinsons Dumaguete has officially opened its major 2026 expansion, bringing new stores, dining, entertainment and more space to the city.",
