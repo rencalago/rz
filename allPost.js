@@ -2,6 +2,19 @@ let newPostTwo = [
   {
   category: "Travel",
   imagesrc:
+    "https://drive.google.com/thumbnail?id=1QCKoRYuSDUg0ubJ0uvbnUNWQMpmzCGPk&sz=s4000",
+  postNumber: 19,
+  title: "Robinsons Dumaguete Expansion Is Now Open: What's New in 2026",
+  desc: "Robinsons Dumaguete has officially opened its major 2026 expansion, bringing new stores, dining, entertainment and more space to the city.",
+  datePublished: "29 September 2026",
+  comments: "2",
+  link: "./robinsons-dumaguete-expansion-new-activity",
+  location: "Dumaguete City",
+  author: "Ren Calago",
+},
+  {
+  category: "Travel",
+  imagesrc:
     "https://drive.google.com/thumbnail?id=17RHAmRHMl89wslhXFDpC3iPZGzHMMWmd&sz=s4000",
   postNumber: 18,
   title: "Cebu's Best Local Food to Try: Beyond Lechon",
