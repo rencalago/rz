@@ -2,6 +2,19 @@ let newPostTwo = [
   {
   category: "Travel",
   imagesrc:
+    "https://drive.google.com/thumbnail?id=1L6qhFoIOQ62dpI9mXeKU7iQic3wi0Yhw&sz=s4000",
+  postNumber: 20,
+  title: "Tisa's Siomai Festival Draws 7,000 People in Cebu City",
+  desc: "Tisa's Siomai Festival drew an estimated 7,000 people on September 26, 2026, with police reporting no major untoward incident.",
+  datePublished: "29 September 2026",
+  comments: "5",
+  link: "./tisa-siomai-festival-draws-7000-people",
+  location: "Cebu City",
+  author: "Ren Calago",
+},
+  {
+  category: "Travel",
+  imagesrc:
     "https://drive.google.com/thumbnail?id=1QCKoRYuSDUg0ubJ0uvbnUNWQMpmzCGPk&sz=s4000",
   postNumber: 19,
   title: "Robinsons Dumaguete Expansion Is Now Open: What's New in 2026",
