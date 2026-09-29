@@ -1,5 +1,18 @@
 let newPostTwo = [
   {
+  category: "News",
+  imagesrc:
+    "https://drive.google.com/thumbnail?id=1FbJ8WqpCGYynf16OrM0MQY7sB-xmV8kb&sz=s4000",
+  postNumber: 17,
+  title: "Cebu City Transport Strike: Free Bus Operations for Commuters",
+  desc: "Cebu City is deploying free buses to help commuters affected by the September 29, 2026 transport strike, with routes connecting Bulacao, Guadalupe, Talamban and Colon.",
+  datePublished: "29 September 2026",
+  comments: "0",
+  link: "./cebu-city-transport-strike-free-bus-operations.html",
+  location: "Cebu City",
+  author: "Ren Calago",
+},
+  {
   category: "Travel",
   imagesrc:
     "https://drive.google.com/thumbnail?id=1QVKkJ4Mt6cDDSEPEpl8W3Gs3mg02GUWz&sz=s4000",
