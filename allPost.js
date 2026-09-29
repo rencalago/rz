@@ -2,6 +2,19 @@ let newPostTwo = [
   {
   category: "Travel",
   imagesrc:
+    "https://drive.google.com/thumbnail?id=1QVKkJ4Mt6cDDSEPEpl8W3Gs3mg02GUWz&sz=s4000",
+  postNumber: 16,
+  title: "Dumaguete Is Getting Attention as a Pickleball Capital",
+  desc: "Dumaguete is getting attention as a pickleball capital, with more than 300 courts, a growing community, and increasing support for sports development.",
+  datePublished: "29 September 2026",
+  comments: "5",
+  link: "./dumaguete-pickleball-capital.html",
+  location: "Dumaguete City",
+  author: "Ren Calago",
+},
+  {
+  category: "Travel",
+  imagesrc:
     "https://drive.google.com/thumbnail?id=1b3L0Tqpxi2sOuY_C-RFFthNZePHshdSR&sz=s4000",
   postNumber: 15,
   title: "A First-Timer's Food Trip in Dumaguete",
