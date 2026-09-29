@@ -1,5 +1,18 @@
 let newPostTwo = [
   {
+  category: "Travel",
+  imagesrc:
+    "https://drive.google.com/thumbnail?id=17RHAmRHMl89wslhXFDpC3iPZGzHMMWmd&sz=s4000",
+  postNumber: 18,
+  title: "Cebu's Best Local Food to Try: Beyond Lechon",
+  desc: "Discover Cebu's best local food beyond lechon, from puso and ngohiong to sutukil, tuslob buwa, siomai and other local favorites.",
+  datePublished: "29 September 2026",
+  comments: "10",
+  link: "./cebus-best-local-food-to-try-beyond-lechon",
+  location: "Cebu City",
+  author: "Ren Calago",
+},
+  {
   category: "News",
   imagesrc:
     "https://drive.google.com/thumbnail?id=1FbJ8WqpCGYynf16OrM0MQY7sB-xmV8kb&sz=s4000",
