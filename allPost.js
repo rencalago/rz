@@ -2,6 +2,19 @@ let newPostTwo = [
   {
   category: "Travel",
   imagesrc:
+    "https://drive.google.com/thumbnail?id=1qJbzxu7Iy9Kf-96k2lI6FEXOqs8m5_YX&sz=s4000",
+  postNumber: 22,
+  title: "Cebu Is Becoming More Than a Beach Destination",
+  desc: "Cebu is becoming more than a beach destination, with growing interest in food, heritage, culture, adventure, diving, festivals and experiences across the province.",
+  datePublished: "30 September 2026",
+  comments: "8",
+  link: "./cebu-is-becoming-more-than-a-beach-destination",
+  location: "Cebu Province",
+  author: "Ren Calago",
+},
+  {
+  category: "Travel",
+  imagesrc:
     "https://drive.google.com/thumbnail?id=1wWvpHK2iWeTQCtWgWqfEwTfXsv3_QUyh&sz=s4000",
   postNumber: 21,
   title: "What's Happening in Dumaguete This October? Events and Things to Watch",
