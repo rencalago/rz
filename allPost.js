@@ -2,6 +2,19 @@ let newPostTwo = [
   {
   category: "Travel",
   imagesrc:
+    "https://drive.google.com/thumbnail?id=1ue3e1nW8EVPzc7gU-VZm4vm42Od4iWrR&sz=s4000",
+  postNumber: 23,
+  title: "Dumaguete Is Changing: 5 Things That Feel Different in 2026",
+  desc: "Dumaguete is changing in 2026. From pickleball and new commercial spaces to business, tourism and proposed city developments, here are five things that feel different.",
+  datePublished: "30 September 2026",
+  comments: "1",
+  link: "./dumaguete-is-changing-5-things-that-feel-different-in-2026",
+  location: "Dumaguete City",
+  author: "Ren Calago",
+},
+  {
+  category: "Travel",
+  imagesrc:
     "https://drive.google.com/thumbnail?id=1qJbzxu7Iy9Kf-96k2lI6FEXOqs8m5_YX&sz=s4000",
   postNumber: 22,
   title: "Cebu Is Becoming More Than a Beach Destination",
