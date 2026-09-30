@@ -2,6 +2,19 @@ let newPostTwo = [
   {
   category: "Travel",
   imagesrc:
+    "https://drive.google.com/thumbnail?id=1wWvpHK2iWeTQCtWgWqfEwTfXsv3_QUyh&sz=s4000",
+  postNumber: 21,
+  title: "What's Happening in Dumaguete This October? Events and Things to Watch",
+  desc: "What's happening in Dumaguete this October 2026? Here are the festivals, events, sports, food activities and things to watch around Dumaguete and Negros Oriental.",
+  datePublished: "30 September 2026",
+  comments: "1",
+  link: "./whats-happening-in-dumaguete-october-2026",
+  location: "Dumaguete City",
+  author: "Ren Calago",
+},
+  {
+  category: "Travel",
+  imagesrc:
     "https://drive.google.com/thumbnail?id=1L6qhFoIOQ62dpI9mXeKU7iQic3wi0Yhw&sz=s4000",
   postNumber: 20,
   title: "Tisa's Siomai Festival Draws 7,000 People in Cebu City",
