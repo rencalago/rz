@@ -1,5 +1,18 @@
 let newPostTwo = [
   {
+  category: "News",
+  imagesrc:
+    "https://drive.google.com/thumbnail?id=1Ejx9ppYOl0-q9q9w23raG2L_yHzKu3CN&sz=s4000",
+  postNumber: 25,
+  title: "Cebu Prepares for a Very Strong El Niño: How MCWD Is Securing Water for 2027",
+  desc: "Cebu is preparing for a potentially very strong El Niño as MCWD develops additional water sources, pumping stations and desalinated-water supply for Metro Cebu.",
+  datePublished: "1 October 2026",
+  comments: "0",
+  link: "./cebu-prepares-for-very-strong-el-nino",
+  location: "Cebu City and Metro Cebu",
+  author: "Ren Calago",
+},
+  {
   category: "Travel",
   imagesrc:
     "https://drive.google.com/thumbnail?id=1_jxC8gzizABhZ6-EkRRgxuL2KF_JiS93&sz=s4000",
