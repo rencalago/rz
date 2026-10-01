@@ -2,6 +2,19 @@ let newPostTwo = [
   {
   category: "Travel",
   imagesrc:
+    "https://drive.google.com/thumbnail?id=1_jxC8gzizABhZ6-EkRRgxuL2KF_JiS93&sz=s4000",
+  postNumber: 24,
+  title: "Cebu Is Getting Busier This October: 5 Things to Watch",
+  desc: "Cebu is getting busier this October, with major ASEAN meetings, tourism activities, sports and other events taking place across the province.",
+  datePublished: "1 October 2026",
+  comments: "0",
+  link: "./cebu-is-getting-busier-this-october-5-things-to-watch",
+  location: "Cebu Province",
+  author: "Ren Calago",
+},
+  {
+  category: "Travel",
+  imagesrc:
     "https://drive.google.com/thumbnail?id=1ue3e1nW8EVPzc7gU-VZm4vm42Od4iWrR&sz=s4000",
   postNumber: 23,
   title: "Dumaguete Is Changing: 5 Things That Feel Different in 2026",
