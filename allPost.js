@@ -7,7 +7,7 @@ let newPostTwo = [
   title: "Cebu Is Getting Busier This October: 5 Things to Watch",
   desc: "Cebu is getting busier this October, with major ASEAN meetings, tourism activities, sports and other events taking place across the province.",
   datePublished: "1 October 2026",
-  comments: "0",
+  comments: "2",
   link: "./cebu-is-getting-busier-this-october-5-things-to-watch",
   location: "Cebu Province",
   author: "Ren Calago",
