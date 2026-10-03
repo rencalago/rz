@@ -1,5 +1,18 @@
 let newPostTwo = [
   {
+  category: "Travel",
+  imagesrc:
+    "https://drive.google.com/thumbnail?id=1dBuIRE6zMQibY3-g3Kq6q2XmksD78Ftq&sz=s4000",
+  postNumber: 26,
+  title: "Dumanjug's Bisnok Festival: Why This Cebu Town Celebrates Native Chicken",
+  desc: "Discover Dumanjug's Bisnok Festival and why native chicken has become part of the town's food, culture and tourism identity in southwestern Cebu.",
+  datePublished: "3 October 2026",
+  comments: "2",
+  link: "./dumanjug-bisnok-festival-native-chicken",
+  location: "Dumanjug, Cebu",
+  author: "Ren Calago",
+},
+  {
   category: "News",
   imagesrc:
     "https://drive.google.com/thumbnail?id=1Ejx9ppYOl0-q9q9w23raG2L_yHzKu3CN&sz=s4000",
