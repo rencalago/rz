@@ -2,6 +2,19 @@ let newPostTwo = [
   {
   category: "Travel",
   imagesrc:
+    "https://drive.google.com/thumbnail?id=1X3fd4sgXm7Pjwc5fyVYpgIPpVBV1LCMg&sz=s4000",
+  postNumber: 27,
+  title: "Moalboal Oktoberfest 2026: A Beachside Festival in Cebu",
+  desc: "Moalboal's Oktoberfest brings German-inspired food, music and celebrations to the beach, adding another experience to Cebu's popular diving destination.",
+  datePublished: "5 October 2026",
+  comments: "3",
+  link: "./moalboal-oktoberfest-beachside-festival-cebu",
+  location: "Moalboal, Cebu",
+  author: "Ren Calago",
+},
+  {
+  category: "Travel",
+  imagesrc:
     "https://drive.google.com/thumbnail?id=1dBuIRE6zMQibY3-g3Kq6q2XmksD78Ftq&sz=s4000",
   postNumber: 26,
   title: "Dumanjug's Bisnok Festival: Why This Cebu Town Celebrates Native Chicken",
