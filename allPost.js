@@ -2,6 +2,19 @@ let newPostTwo = [
   {
   category: "Travel",
   imagesrc:
+    "https://drive.google.com/thumbnail?id=1LEeb0qQ-_Gjqg4eXwnZxRrVEtw1VRR6s&sz=s4000",
+  postNumber: 28,
+  title: "Dumaguete on a Budget: 3-Day Trip Cost",
+  desc: "How much does a 3-day Dumaguete trip cost? Here's a realistic 2026 budget for accommodation, food, transportation and affordable things to do.",
+  datePublished: "7 October 2026",
+  comments: "4",
+  link: "./dumaguete-on-a-budget-3-day-trip-cost",
+  location: "Dumaguete City",
+  author: "Ren Calago",
+},
+  {
+  category: "Travel",
+  imagesrc:
     "https://drive.google.com/thumbnail?id=1X3fd4sgXm7Pjwc5fyVYpgIPpVBV1LCMg&sz=s4000",
   postNumber: 27,
   title: "Moalboal Oktoberfest 2026: A Beachside Festival in Cebu",
