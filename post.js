@@ -236,13 +236,11 @@ function loadComments() {
     }, 8000);
   }
 
-  // Start once the whole page has finished loading, so the article itself
-  // is never slowed down.
-  if (document.readyState === "complete") {
-    startFacebook();
-  } else {
-    window.addEventListener("load", startFacebook);
-  }
+  // The Facebook script loads in the background (async), so it does not
+  // slow the article down. Start right away instead of waiting for every
+  // large image on the page to finish.
+  console.info("Comments: loading Facebook comment box for", postUrl);
+  startFacebook();
 }
 
 //MENULIST
