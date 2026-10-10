@@ -53,6 +53,7 @@
 //   },
 // ];
 import { newPostTwo } from "./allPost.js";
+import { DISQUS_SHORTNAME, disqusReady } from "./config.js";
 const newPost = newPostTwo;
 
 const recentPosts = newPost.slice(0, 10);
@@ -180,17 +181,37 @@ function heroPosts(heroItems) {
                 </div>
                 <div class="post-essentials">
                   <div class="date-posted">${post.datePublished}</div>
-                  <div class="comments">
+                  <a class="comments" href="${post.link}#comments" aria-label="Read and join the comments">
                     <i class="fa-solid fa-message"></i
-                    ><span class="comments-number">${post.comments}</span>
-                  </div>
+                    ><span class="comments-number disqus-comment-count" data-disqus-identifier="post-${post.postNumber}">${post.comments || 0}</span>
+                  </a>
                 </div>
               </div>
             </div>`;
     })
     .join("");
   mainPosts.innerHTML = displayPosts;
+  loadDisqusCounts();
 }
+
+//DISQUS COMMENT COUNTS
+// Disqus' count.js fills every .disqus-comment-count element with the live
+// number. It is called after each render (including label filtering) so the
+// counts on newly drawn cards are refreshed too.
+function loadDisqusCounts() {
+  if (!disqusReady) return;
+  if (window.DISQUSWIDGETS && window.DISQUSWIDGETS.getCount) {
+    window.DISQUSWIDGETS.getCount({ reset: true });
+    return;
+  }
+  if (document.getElementById("dsq-count-scr")) return;
+  const script = document.createElement("script");
+  script.id = "dsq-count-scr";
+  script.src = `https://${DISQUS_SHORTNAME}.disqus.com/count.js`;
+  script.async = true;
+  document.body.appendChild(script);
+}
+
 //LABELS
 function funLabels() {
   const categories = recentPosts.reduce(
@@ -263,8 +284,8 @@ function importantElement() {
               <div class="box box1"></div>
               <div class="box box2"></div>
               <div class="box box3"></div>
-            </div>   
-          </div>       
+            </div>
+          </div>
         </div>
       </div>
     </header>`;

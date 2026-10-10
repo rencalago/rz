@@ -71,7 +71,8 @@ header {
 }
 
 .topheader-container {
-  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px,
+  box-shadow:
+    rgba(9, 30, 66, 0.25) 0px 4px 8px -2px,
     rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
   margin-bottom: 30px;
 }
@@ -183,7 +184,8 @@ header {
   position: absolute;
   transition: all 0.5s ease-in-out;
   animation: fadding 0.25;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+  box-shadow:
+    rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
     rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 
@@ -812,4 +814,35 @@ input::placeholder {
   .readmore-btn {
     visibility: visible;
   }
+}
+
+/* ===== Comments (add to the end of style.css) ===== */
+
+/* Comment bubble on the post cards */
+a.comments {
+  color: gray;
+  transition: color 0.3s ease-in-out;
+}
+
+a.comments:hover {
+  color: var(--clr-3);
+  cursor: pointer;
+}
+
+/* Comment section under each post */
+.comments-section {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 5px dashed var(--clr-7);
+  scroll-margin-top: 20px;
+}
+
+.comments-heading {
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  color: var(--clr-8);
+}
+
+#disqus_thread {
+  min-height: 150px;
 }

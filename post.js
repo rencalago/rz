@@ -3,12 +3,14 @@ const today = new Date().getFullYear();
 const labelsContainer = document.querySelector(".labels-container");
 const postingMeta = document.querySelector(".posting-meta");
 import { newPostTwo } from "./allPost.js";
+import { DISQUS_SHORTNAME, SITE_URL, disqusReady } from "./config.js";
 //Event Listener
 window.addEventListener("DOMContentLoaded", function () {
   importantElement();
   funLabels();
   articleEssential();
   myMenu();
+  loadComments();
 });
 
 //Main Menu -- NavBar
@@ -90,8 +92,8 @@ function importantElement() {
               <div class="box box1"></div>
               <div class="box box2"></div>
               <div class="box box3"></div>
-            </div>   
-          </div>       
+            </div>
+          </div>
         </div>
       </div>
     </header>`;
@@ -164,6 +166,69 @@ function articleEssential() {
     }
   });
   postingMeta.innerHTML = `<p><span class="author"><i class="fa-solid fa-user"></i> ${myAuthor} </span><span class="postDate"></span><i class="fa-regular fa-clock"></i> ${myDate}</span></p>`;
+}
+
+//DISQUS COMMENTS
+// The post is matched by its file name (e.g. /tops-cebu-look-out or
+// /tops-cebu-look-out.html) against the "link" in allPost.js. Pages that are
+// not listed there (contact, 404, leftover copies) get no comment section.
+function loadComments() {
+  const slug = (window.location.pathname.split("/").filter(Boolean).pop() || "")
+    .replace(/\.html$/i, "");
+  const post = newPost.find(function (item) {
+    return item.link.replace("./", "") === slug;
+  });
+  const container = document.querySelector(".post-container");
+  if (!post || !container) return;
+  if (!disqusReady) {
+    console.warn("Disqus: set DISQUS_SHORTNAME in config.js to enable comments.");
+    return;
+  }
+
+  const section = document.createElement("section");
+  section.id = "comments";
+  section.className = "comments-section";
+  section.innerHTML = `<br><h2 class="comments-heading">Comments</h2><br>
+    <div id="disqus_thread"></div>
+    <noscript>Please enable JavaScript to view the comments.</noscript>`;
+  container.appendChild(section);
+
+  // If the visitor arrived through the comment bubble (…#comments), the
+  // section did not exist yet when the browser tried to jump to it.
+  if (window.location.hash === "#comments") {
+    section.scrollIntoView();
+    window.addEventListener("load", function () {
+      section.scrollIntoView();
+    });
+  }
+
+  function startDisqus() {
+    window.disqus_config = function () {
+      this.page.url = `${SITE_URL}/${slug}`;
+      this.page.identifier = `post-${post.postNumber}`;
+    };
+    const script = document.createElement("script");
+    script.src = `https://${DISQUS_SHORTNAME}.disqus.com/embed.js`;
+    script.setAttribute("data-timestamp", +new Date());
+    document.body.appendChild(script);
+  }
+
+  // Load Disqus only when the reader gets near the comments (keeps the
+  // article fast, which also helps AdSense and Core Web Vitals).
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(
+      function (entries, obs) {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          obs.disconnect();
+          startDisqus();
+        }
+      },
+      { rootMargin: "400px" }
+    );
+    observer.observe(section);
+  } else {
+    startDisqus();
+  }
 }
 
 //MENULIST
