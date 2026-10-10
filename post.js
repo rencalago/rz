@@ -136,7 +136,7 @@ function funLabels() {
       }
       return values;
     },
-    ["all"]
+    ["all"],
   );
 
   let myLabel = categories
@@ -173,15 +173,18 @@ function articleEssential() {
 // /tops-cebu-look-out.html) against the "link" in allPost.js. Pages that are
 // not listed there (contact, 404, leftover copies) get no comment section.
 function loadComments() {
-  const slug = (window.location.pathname.split("/").filter(Boolean).pop() || "")
-    .replace(/\.html$/i, "");
+  const slug = (
+    window.location.pathname.split("/").filter(Boolean).pop() || ""
+  ).replace(/\.html$/i, "");
   const post = newPost.find(function (item) {
     return item.link.replace("./", "") === slug;
   });
   const container = document.querySelector(".post-container");
   if (!post || !container) return;
   if (!disqusReady) {
-    console.warn("Disqus: set DISQUS_SHORTNAME in config.js to enable comments.");
+    console.warn(
+      "Disqus: set DISQUS_SHORTNAME in config.js to enable comments.",
+    );
     return;
   }
 
@@ -223,7 +226,7 @@ function loadComments() {
           startDisqus();
         }
       },
-      { rootMargin: "400px" }
+      { rootMargin: "400px" },
     );
     observer.observe(section);
   } else {
