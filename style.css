@@ -848,3 +848,42 @@ a.comments:hover {
   min-height: 150px;
   width: 100%;
 }
+
+/* ===== Comments (add to the end of style.css) ===== */
+
+/* Comment bubble on the post cards */
+a.comments {
+  color: gray;
+  transition: color 0.3s ease-in-out;
+}
+
+a.comments:hover {
+  color: var(--clr-3);
+  cursor: pointer;
+}
+
+/* Comment section under each post */
+.comments-section {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 5px dashed var(--clr-7);
+  scroll-margin-top: 20px;
+}
+
+.comments-heading {
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  color: var(--clr-8);
+}
+
+.fb-comments {
+  display: block;
+  min-height: 150px;
+  width: 100%;
+}
+
+.comments-notice {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: gray;
+}

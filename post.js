@@ -203,6 +203,15 @@ function loadComments() {
     });
   }
 
+  function showBlockedNotice() {
+    if (section.querySelector(".comments-notice")) return;
+    const note = document.createElement("p");
+    note.className = "comments-notice";
+    note.textContent =
+      "The comment box could not load. If you use an ad blocker or strict tracking protection, try turning it off for this site, or open this page in another browser.";
+    section.appendChild(note);
+  }
+
   function startFacebook() {
     // SDK already on the page: just draw the box.
     if (window.FB && window.FB.XFBML) {
@@ -218,24 +227,21 @@ function loadComments() {
     script.src =
       `https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=${FB_SDK_VERSION}` +
       (FB_APP_ID ? `&appId=${FB_APP_ID}` : "");
+    script.onerror = showBlockedNotice;
     document.body.appendChild(script);
+
+    // If nothing has been drawn after a few seconds, tell the reader why.
+    setTimeout(function () {
+      if (!window.FB || !section.querySelector("iframe")) showBlockedNotice();
+    }, 8000);
   }
 
-  // Load Facebook only when the reader gets near the comments (keeps the
-  // article fast, which also helps AdSense and Core Web Vitals).
-  if ("IntersectionObserver" in window) {
-    const observer = new IntersectionObserver(
-      function (entries, obs) {
-        if (entries.some((entry) => entry.isIntersecting)) {
-          obs.disconnect();
-          startFacebook();
-        }
-      },
-      { rootMargin: "400px" }
-    );
-    observer.observe(section);
-  } else {
+  // Start once the whole page has finished loading, so the article itself
+  // is never slowed down.
+  if (document.readyState === "complete") {
     startFacebook();
+  } else {
+    window.addEventListener("load", startFacebook);
   }
 }
 
