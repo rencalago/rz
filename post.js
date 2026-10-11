@@ -83,6 +83,26 @@ function insertArticleAd() {
   body.insertBefore(box, body.firstChild);
 
   loadAdSense();
+  collapseIfUnfilled(box);
+}
+
+// AdSense leaves an empty slot when it has no ad to show. Collapse the box in
+// that case, so the article text and photos close up the space. If AdSense
+// never reports back (for example, an ad blocker), collapse after 10 seconds.
+function collapseIfUnfilled(box) {
+  const ins = box.querySelector("ins.adsbygoogle");
+  if (!ins) return;
+  let tries = 0;
+  const timer = setInterval(function () {
+    tries += 1;
+    const status = ins.getAttribute("data-ad-status");
+    if (status === "filled") {
+      clearInterval(timer);
+    } else if (status === "unfilled" || tries > 40) {
+      box.classList.add("is-empty");
+      clearInterval(timer);
+    }
+  }, 250);
 }
 
 // Loads the AdSense script once and asks it to fill the ad slot(s) on this page.

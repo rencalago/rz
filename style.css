@@ -958,9 +958,10 @@ my-sidebar {
 
 .ad-square {
   float: right;
-  width: 300px;
+  width: 250px;
   max-width: 100%;
   margin: 4px 0 16px 24px;
+  line-height: 0;
 }
 
 .ad-square--placeholder {
@@ -983,4 +984,9 @@ my-sidebar {
     display: block;
     margin: 16px auto;
   }
+}
+
+/* Hidden when AdSense has no ad to show, so no empty space is left */
+.ad-square.is-empty {
+  display: none;
 }
