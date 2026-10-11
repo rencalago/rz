@@ -1,7 +1,7 @@
 let newPostTwo = [
   {
     category: "Travel",
-    imagesrc: "PENDING_FEATURE_IMAGE_DRIVE_ID",
+    imagesrc: "https://drive.google.com/thumbnail?id=1m3VrPY6F-rbynG7TyR-9ROVpExRr2R97&sz=s4000",
     postNumber: 31,
     title: "7 Cebu Places Beyond the Crowds",
     desc: "Seven places in Cebu that stay calmer than the usual day-trip stops, from a highland summit at sunrise to a quiet river cruise and a northern island escape.",
