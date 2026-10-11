@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "https://drive.google.com/thumbnail?id=12nXTKNN-MRT6_Uo9hXmPyJj8iuNsGzyl&sz=s4000",
+    postNumber: 36,
+    title: "Mabinay Travel Guide: Caves, Nature and Things to Do",
+    desc: "Mabinay travel guide: the caves of Bulwang and Cayaso, how to get there from Dumaguete, what to bring for caving and what else to see in this quiet Negros Oriental town.",
+    datePublished: "12 October 2026",
+    comments: "0",
+    link: "./mabinay-travel-guide-caves-nature-things-to-do",
+    location: "Mabinay, Negros Oriental",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "https://drive.google.com/thumbnail?id=1zIXxH8xzpdHDhYyPGyLbYaTGY1wuNY7a&sz=s4000",
     postNumber: 35,
     title: "Negros Oriental Weekend Getaways: 5 Trips for Different Budgets",
