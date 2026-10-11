@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "https://drive.google.com/thumbnail?id=1m3VrPY6F-rbynG7TyR-9ROVpExRr2R97&sz=s4000",
+    postNumber: 31,
+    title: "7 Cebu Places Beyond the Crowds",
+    desc: "Seven places in Cebu that stay calmer than the usual day-trip stops, from a highland summit at sunrise to a quiet river cruise and a northern island escape.",
+    datePublished: "11 October 2026",
+    comments: "0",
+    link: "./7-cebu-places-beyond-the-crowds",
+    location: "Cebu",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc:
       "https://drive.google.com/thumbnail?id=170POUSsDWWEvEB9F4PByV5vxO3wX4mfv&sz=s4000",
     postNumber: 30,
