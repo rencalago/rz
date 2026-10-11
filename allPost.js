@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "https://drive.google.com/thumbnail?id=10TTHB4uex39yz8hMba41V9RggXzLAa2T&sz=s4000",
+    postNumber: 37,
+    title: "Best Breakfast Spots in Dumaguete: Local Favorites and Early-Morning Stops",
+    desc: "The best breakfast spots in Dumaguete: painitan breakfasts at the public market, budbud kabog, bod-bod, puto maya and a sit-down breakfast on Rizal Boulevard, with prices and tips.",
+    datePublished: "12 October 2026",
+    comments: "0",
+    link: "./best-breakfast-spots-dumaguete",
+    location: "Dumaguete City",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "https://drive.google.com/thumbnail?id=12nXTKNN-MRT6_Uo9hXmPyJj8iuNsGzyl&sz=s4000",
     postNumber: 36,
     title: "Mabinay Travel Guide: Caves, Nature and Things to Do",
