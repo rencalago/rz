@@ -7,7 +7,7 @@ let newPostTwo = [
     desc: "Five Negros Oriental weekend getaways for different budgets, from a short waterfall walk in Valencia to a sandbar day trip in Manjuyod and an Apo Island dive day, with rough costs for each.",
     datePublished: "11 October 2026",
     comments: "0",
-    link: "./negros-oriental-weekend-getaways-5-trips-for-different-budgets",
+    link: "./negros-oriental-weekend-getaways",
     location: "Negros Oriental",
     author: "Ren Calago",
   },
