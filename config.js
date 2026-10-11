@@ -4,11 +4,9 @@
 // no matter if it is opened as /post or /post.html
 export const SITE_URL = "https://www.rencalago.com";
 
-// OPTIONAL: your Facebook App ID. Comments work without it, but you need one
-// to moderate/reply from Facebook's tools (developers.facebook.com > My Apps).
-// Leave as "" if you don't have one yet.
-export const FB_APP_ID = "";
+// Paste your Cusdis App ID between the quotes (see the steps in the chat).
+// It looks like a long string of letters, numbers and dashes.
+// Leave it empty ("") and no comment box is shown.
+export const CUSDIS_APP_ID = "";
 
-// Facebook SDK version. Facebook retires old versions every couple of years
-// and upgrades plugins automatically, so this rarely needs changing.
-export const FB_SDK_VERSION = "v21.0";
+export const cusdisReady = CUSDIS_APP_ID.trim() !== "";

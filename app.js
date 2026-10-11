@@ -1,376 +1,211 @@
-// let newPost = [
-//   {
-//     category: "Beach Resort",
-//     imagesrc:
-//       "https://drive.google.com/uc?id=10nme7clU1_5CXZ7NG6MpgM2whNunI_RX",
-//     postNumber: 3,
-//     title: "Lalimar Beach Resort - Infinite Relaxation ",
-//     desc: "How about taking a dip on its infinite pool while enjoying the sunset view of the horizon? Or just sit in the Cabana with refreshments you craved for.",
-//     datePublished: "14 Feb 2023",
-//     comments: "14",
-//     link: "./lalimar-beach-resort-la-libertad",
-//     location: "La Libertad",
-//     author: "Ren Calago",
-//   },
-//   {
-//     category: "Cafes & Restaurant",
-//     imagesrc:
-//       "https://drive.google.com/uc?id=13grQ-pFx34CXhk0NfitlPV0g7n361VyB",
-//     postNumber: 3,
-//     title: "Victorias Mountainview Resort Tanjay City",
-//     desc: "Dine in  while giving your eyes a feast of an amazing view. Victorias Mountainview is simply the best in the city. You will be treated with awesome scenery going to this place.",
-//     datePublished: "13 Feb 2023",
-//     comments: "",
-//     link: "./victorias-mountain-view-tanjay-city",
-//     location: "Tanjay City",
-//     author: "Ren Calago",
-//   },
-//   {
-//     category: "Cafes & Restaurant",
-//     imagesrc:
-//       "https://drive.google.com/uc?id=1n8e8tr-5NeiW7jx7K0YMU7SbmliN2OzI",
-//     postNumber: 2,
-//     title: "Sakada, a cafe on the Mountain",
-//     desc: "Order your coffee at this mountain-top restaurant in Pamplona, Negros Oriental. It offers vibrant and cozy atmosphere with views like you've never seen before. ",
-//     datePublished: "11 Feb 2023",
-//     comments: "2",
-//     link: "./sakada-cafe-and-farm-pamplona",
-//     location: "Pamplona",
-//     author: "Ren Calago",
-//   },
-//   {
-//     category: "Travel",
-//     imagesrc:
-//       "https://drive.google.com/uc?id=16fR0SpWq1j_5y6cK29xpxYX7Mhg7x6MQ",
-//     postNumber: 1,
-//     title: "Tops Cebu Lookout - Busay, Cebu City",
-//     desc: "See the skyline of Cebu City from up the hill of Busay Cebu City. It has the best view of metropolitan Cebu. I think a month after we visited here, this spot in busay is closed for visitors.",
-//     datePublished: "11 Feb 2023",
-//     comments: "61",
-//     link: "./tops-cebu-look-out",
-//     location: "cebu",
-//     author: "Ren Calago",
-//   },
-// ];
+// Homepage: hero, editor's picks, destination tiles, filterable story feed.
 import { newPostTwo } from "./allPost.js";
-const newPost = newPostTwo;
+import { registerLayout, thumb, escapeHtml as esc } from "./layout.js";
 
-const recentPosts = newPost.slice(0, 10);
-const sliding = [
-  recentPosts[0],
-  recentPosts[1],
-  recentPosts[2],
-  recentPosts[3],
-  recentPosts[4],
+registerLayout();
+
+// SETTINGS you may want to edit -----------------------------------------------
+const PER_PAGE = 6; // stories per page in "Latest stories"
+// (The "Start here" list and the menu are in layout.js)
+
+// Destination tiles / menu filters. A story belongs to a destination when its
+// title, location or description contains one of the keywords (lower case).
+const DESTINATIONS = [
+  { key: "cebu", name: "Cebu", tile: true, tone: "#2F6F8F", keywords: ["cebu"] },
+  { key: "dumaguete", name: "Dumaguete", tile: true, tone: "#3F7A5A", keywords: ["dumaguete"] },
+  {
+    key: "negros-oriental",
+    name: "Negros Oriental",
+    tile: true,
+    tone: "#8A5A2B",
+    keywords: ["negros oriental", "dumaguete", "bais", "tanjay", "pamplona", "san jose", "la libertad"],
+  },
+  { key: "baguio", name: "Baguio", tile: true, tone: "#5B6B3A", keywords: ["baguio"] },
+  { key: "metro-manila", name: "Metro Manila", tile: true, tone: "#6B4A7A", keywords: ["mckinley", "taguig", "manila"] },
+  { key: "luzon", name: "Luzon", tile: false, tone: "#5B6B3A", keywords: ["baguio", "mckinley", "taguig", "manila"] },
 ];
+// -------------------------------------------------------------------------------
 
-const sliderOption = document.querySelector(".slider");
-const featured = document.querySelector(".featured");
-const mainPosts = document.querySelector(".mainPost");
-const labelsContainer = document.querySelector(".labels-container");
-const viewBtn = document.querySelector(".vBtn");
-const thumbsUp = document.querySelector(".breakAlert");
-const today = new Date().getFullYear();
+const posts = newPostTwo;
+const hero = posts[0]; // the newest post
+const state = { filter: null, query: "", page: 1 };
 
-//new variables
-let counter = 0;
-let newSlide = sliding.slice(0, 5);
+const $ = (id) => document.getElementById(id);
+const heroEl = $("hero");
+const picksEl = $("picks");
+const destEl = $("dest-grid");
+const feedTitle = $("feed-title");
+const feedList = $("feed-list");
+const feedEmpty = $("feed-empty");
+const pagination = $("pagination");
+const searchInput = $("q");
+const clearBtn = $("clear-filter");
 
-//EVENT LISTENER
-window.addEventListener("DOMContentLoaded", function () {
-  importantElement();
-  goSlide();
-  heroPosts(recentPosts);
-  funLabels();
-  setInterval(goSlide, 2500);
-  viewBtn.addEventListener("click", viewAll);
-  myMenu();
+function metaLine(p) {
+  return [p.author, p.location, p.datePublished].filter(Boolean).map(esc).join(" · ");
+}
+
+function haystack(p) {
+  return [p.title, p.location, p.desc, p.category].join(" ").toLowerCase();
+}
+
+function matchesFilter(p, filter) {
+  if (filter.type === "cat") return p.category === filter.value;
+  const d = DESTINATIONS.find((x) => x.key === filter.value);
+  if (!d) return true;
+  const text = haystack(p);
+  return d.keywords.some((k) => text.includes(k));
+}
+
+// RENDERERS ---------------------------------------------------------------------
+function renderHero() {
+  if (!hero) return;
+  heroEl.innerHTML = `
+    <a class="hero__img" href="${hero.link}" tabindex="-1" aria-hidden="true">
+      <img src="${thumb(hero.imagesrc, 1400)}" alt="${esc(hero.title)}" fetchpriority="high" decoding="async">
+    </a>
+    <div class="hero__body">
+      <p class="kicker">${esc(hero.category)}</p>
+      <h2><a href="${hero.link}">${esc(hero.title)}</a></h2>
+      <p class="hero__desc">${esc(hero.desc)}</p>
+      <p class="meta">${metaLine(hero)}</p>
+    </div>`;
+}
+
+function renderPicks() {
+  const items = posts
+    .slice(1, 6)
+    .map(
+      (p) => `
+      <div class="pick">
+        <p class="kicker">${esc(p.category)}</p>
+        <a href="${p.link}">${esc(p.title)}</a>
+      </div>`
+    )
+    .join("");
+  picksEl.innerHTML = `<h2>Editor's picks</h2>${items}`;
+}
+
+function renderDestinations() {
+  destEl.innerHTML = DESTINATIONS.filter((d) => d.tile)
+    .map(
+      (d) => `
+      <a class="dest" href="./#dest=${d.key}" style="--tone:${d.tone}">
+        <strong>${esc(d.name)}</strong>
+        <span>View stories →</span>
+      </a>`
+    )
+    .join("");
+}
+
+function visiblePosts() {
+  const q = state.query.trim().toLowerCase();
+  // With no filter and no search, the hero story is not repeated in the feed.
+  let list = state.filter || q ? posts : posts.slice(1);
+  if (state.filter) list = list.filter((p) => matchesFilter(p, state.filter));
+  if (q) list = list.filter((p) => haystack(p).includes(q));
+  return list;
+}
+
+function renderFeed() {
+  const q = state.query.trim();
+  const list = visiblePosts();
+  const pages = Math.max(1, Math.ceil(list.length / PER_PAGE));
+  if (state.page > pages) state.page = pages;
+  const slice = list.slice((state.page - 1) * PER_PAGE, state.page * PER_PAGE);
+
+  feedTitle.textContent = state.filter
+    ? "Stories: " + state.filter.label
+    : q
+    ? "Search results"
+    : "Latest stories";
+  clearBtn.hidden = !(state.filter || q);
+
+  feedList.innerHTML = slice
+    .map(
+      (p) => `
+      <article class="story">
+        <a class="story__img" href="${p.link}" tabindex="-1" aria-hidden="true">
+          <img src="${thumb(p.imagesrc, 700)}" alt="${esc(p.title)}" loading="lazy" decoding="async">
+        </a>
+        <div class="story__body">
+          <p class="kicker">${esc(p.category)}</p>
+          <h3><a href="${p.link}">${esc(p.title)}</a></h3>
+          <p class="story__desc">${esc(p.desc)}</p>
+          <p class="meta">${metaLine(p)}</p>
+        </div>
+      </article>`
+    )
+    .join("");
+  feedEmpty.hidden = list.length > 0;
+
+  if (pages <= 1) {
+    pagination.innerHTML = "";
+    return;
+  }
+  let buttons = "";
+  for (let i = 1; i <= pages; i++) {
+    buttons += `<button type="button" data-page="${i}"${i === state.page ? ' aria-current="page"' : ""}>${i}</button>`;
+  }
+  if (state.page < pages) {
+    buttons += `<button type="button" data-page="${state.page + 1}">Next »</button>`;
+  }
+  pagination.innerHTML = buttons;
+}
+
+function scrollToStories() {
+  $("stories").scrollIntoView();
+}
+
+// FILTERS (read from the address: #cat=Travel, #dest=cebu, #search, #all) ------
+function readHash() {
+  const params = new URLSearchParams(location.hash.slice(1));
+  let filter = null;
+  if (params.get("cat")) {
+    filter = { type: "cat", value: params.get("cat"), label: params.get("cat") };
+  } else if (params.get("dest")) {
+    const d = DESTINATIONS.find((x) => x.key === params.get("dest"));
+    if (d) filter = { type: "dest", value: d.key, label: d.name };
+  }
+  state.filter = filter;
+  state.page = 1;
+  renderFeed();
+  if (filter || params.has("all")) scrollToStories();
+  if (params.has("search")) {
+    scrollToStories();
+    searchInput.focus({ preventScroll: true });
+  }
+}
+
+pagination.addEventListener("click", function (e) {
+  const btn = e.target.closest("button[data-page]");
+  if (!btn) return;
+  state.page = Number(btn.dataset.page);
+  renderFeed();
+  scrollToStories();
 });
 
-//FEATURED IMAGES
-const featureItem = newSlide
-  .map(function (item) {
-    return `<div class="slider-container">
-          <div class="px-left">
-            <img src="${item.imagesrc}" alt="" class="myImage" />
-          </div>
-          <div class="slider-contents">
-            <div class="slider-title"><h2><a href="${item.link}">${item.title}</a></h2></div>
-            <div class="dotted-dashed"></div>
-            <div class="description">
-              <p>
-                ${item.desc}
-              </p>
-            </div>
-            <div class="readmore-btn">
-              <button type="btn" class="btn"><a href="${item.link}">read more</a></button>
-            </div>
-          </div>
-        </div>`;
-  })
-  .join(" ");
-sliderOption.innerHTML = featureItem;
-const sliderContainer = sliderOption.querySelectorAll(".slider-container");
-sliderContainer.forEach(function (slide, index) {
-  slide.style.left = `${index * 100}%`;
+searchInput.addEventListener("input", function () {
+  state.query = searchInput.value;
+  state.page = 1;
+  renderFeed();
 });
 
-//slide nav
-const boxC = document.createElement("div");
-boxC.classList.add("box-container");
-featured.appendChild(boxC);
-const secondFeature = newSlide
-  .map(function (item) {
-    return `<div class="sliding-box" data-id="${counter++}"></div>`;
-  })
-  .join("");
-boxC.innerHTML = secondFeature;
-const slidingBox = boxC.querySelectorAll(".sliding-box");
+$("search-form").addEventListener("submit", function (e) {
+  e.preventDefault();
+});
 
-//functions
-function goSlide(e) {
-  sliderContainer.forEach(function (slide) {
-    if (counter > newSlide.length - 1) {
-      counter = 0;
-    }
-    slide.style.transform = `translateX(-${counter * 100}%)`;
-  });
+clearBtn.addEventListener("click", function () {
+  searchInput.value = "";
+  state.query = "";
+  history.replaceState(null, "", location.pathname + location.search);
+  window.dispatchEvent(new HashChangeEvent("hashchange"));
+});
 
-  slidingBox.forEach(function (box) {
-    if (box.dataset.id == counter) {
-      box.style.backgroundColor = "#1d9bf0";
-    } else {
-      box.style.backgroundColor = "#fff";
-    }
-    box.addEventListener("click", function (e) {
-      const item = e.currentTarget.dataset.id;
-      counter = item;
-      sliderContainer.forEach(function (slide) {
-        slide.style.transform = `translateX(-${item * 100}%)`;
-      });
-    });
-  });
+window.addEventListener("hashchange", readHash);
 
-  counter++;
-}
-
-//main post function
-
-function heroPosts(heroItems) {
-  let displayPosts = heroItems
-    .map(function (post) {
-      return `<div class="mainPost-container">
-              <div class="post-image">
-                <a href="${post.link}"><img
-                  src= "${post.imagesrc}"
-                  alt=""
-                  class="post-img"
-                /></a>
-              </div>
-              <div class="post-content">
-                <div class="post-titles">
-                  <h1 class="post-title">
-                    <a href="${post.link}">${post.title}</a>
-                  </h1>
-                </div>
-                <div class="post-desc">
-                  <p>
-                    ${post.desc}
-                  </p>
-                </div>
-                <div class="post-essentials">
-                  <div class="date-posted">${post.datePublished}</div>
-                  <a class="comments" href="${post.link}#comments" aria-label="Read and join the comments" title="Join the discussion">
-                    <i class="fa-solid fa-message"></i
-                    ><span class="comments-number">${post.comments}</span>
-                  </a>
-                </div>
-              </div>
-            </div>`;
-    })
-    .join("");
-  mainPosts.innerHTML = displayPosts;
-}
-
-//LABELS
-function funLabels() {
-  const categories = recentPosts.reduce(
-    function (values, item) {
-      if (!values.includes(item.category)) {
-        values.push(item.category);
-      }
-      return values;
-    },
-    ["all"]
-  );
-
-  let myLabel = categories
-    .map(function (item) {
-      return `<div class="label-select" data-id="${item}">${item}</div>`;
-    })
-    .join("");
-  labelsContainer.innerHTML = myLabel;
-  const myBtn = labelsContainer.querySelectorAll(".label-select");
-  myBtn.forEach(function (btn) {
-    btn.addEventListener("click", function (item) {
-      const category = item.currentTarget.dataset.id;
-      //   console.log(category);
-      const menuCategory = newPost.filter(function (ray) {
-        if (ray.category === category) {
-          return ray;
-        }
-      });
-      if (category === "all") {
-        heroPosts(newPost);
-      } else {
-        heroPosts(menuCategory);
-      }
-    });
-  });
-}
-
-function viewAll() {
-  heroPosts(recentPosts);
-}
-
-function myMomeBtn(e) {
-  window.location = "./";
-}
-
-//Main Menu -- NavBar
-function importantElement() {
-  class myHeader extends HTMLElement {
-    connectedCallback() {
-      this.innerHTML = `<header>
-      <div class="header-container">
-        <div class="top-head">
-          <h1>
-            <span class="fname">ren</span><span class="lname">calago</span>
-            <span class="lastOne">Blog</span>
-          </h1>
-        </div>
-        <div class="low-head">
-          <div class="menu-items">
-            <div class="menuList" id="home">Home</div>
-            <div class="menuList">Travels</div>
-            <div class="menuList">News</div>
-            <div class="menuList">Tech</div>
-            <div class="menuList">Inspiration</div>
-            <div class="menuList">About</div>
-            <div class="menuList">Contact</a></div>
-          </div>
-          <div class="hamburger-container">
-            <div class="hamburger">
-              <div class="box box1"></div>
-              <div class="box box2"></div>
-              <div class="box box3"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>`;
-    }
-  }
-  customElements.define("my-header", myHeader);
-  const myHome = document.getElementById("home");
-  myHome.addEventListener("click", function () {
-    window.location = "/";
-  });
-
-  const boxMenu = document.querySelector(".hamburger");
-  const menuItems = document.querySelector(".menu-items");
-  const menuList = document.querySelectorAll(".menuList");
-
-  //Menu on Mobile
-  boxMenu.addEventListener("click", function (e) {
-    boxMenu.classList.toggle("active");
-    menuItems.classList.toggle("active");
-    menuList.forEach(function (menu) {
-      menu.addEventListener("click", function () {
-        boxMenu.classList.remove("active");
-        menuItems.classList.remove("active");
-      });
-    });
-  });
-
-  thumbsUp.addEventListener("click", function () {
-    window.location = "https://www.rencalagopro.com";
-  });
-
-  class myFooter extends HTMLElement {
-    connectedCallback() {
-      this.innerHTML = `<footer>
-      <div class="footer-container">
-        <div class="footer-contents">
-          <div class="footer-left"><p>Copyright © ${today} • Ren Calago blog • All Rights Reserved</p></div>
-          <div class="footer-right">
-              <a href="https://www.facebook.com/rencalago"
-                ><i class="fa-brands fa-facebook" id="footer-facebook"></i
-              ></a>
-              <a href="https://www.instagram.com/rencalago"
-                ><i class="fa-brands fa-instagram" id="footer-instagram"></i
-              ></a>
-              <a href="https://www.youtube.com/rencalago"
-                ><i class="fa-brands fa-youtube" id="footer-youtube"></i
-              ></a>
-              <a href="https://www.twitter.com/rencalago"
-                ><i class="fa-brands fa-twitter" id="footer-twitter"></i></i
-              ></a></div></div>
-        </div>
-      </div>
-    </footer>`;
-    }
-  }
-  customElements.define("my-footer", myFooter);
-
-  class sideBar extends HTMLElement {
-    connectedCallback() {
-      this.innerHTML = `<div class="topheader-container">
-            <div class="topHeader"><h2>Connect with Us</h2></div>
-              <div class="socialMedia">
-              <a href="https://www.facebook.com/rencalago"
-                ><i class="fa-brands fa-facebook" id="facebook"></i
-              ></a>
-              <a href="https://www.instagram.com/rencalago"
-                ><i class="fa-brands fa-instagram" id="instagram"></i
-              ></a>
-              <a href="https://www.youtube.com/rencalago"
-                ><i class="fa-brands fa-youtube" id="youtube"></i
-              ></a>
-              <a href="https://www.twitter.com/rencalago"
-                ><i class="fa-brands fa-twitter" id="twitter"></i></i
-              ></a></div>
-          </div>
-          <div class="topheader-container">
-            <div class="topHeader"><h2>Affiliate</h2></div>
-            <div class="box-space"><div class="allAds"><span class="ad-space1">Be Our Ad<br /></span><span class="ad-space2">Partner</span></div></div>
-          </div>`;
-    }
-  }
-  customElements.define("my-sidebar", sideBar);
-}
-
-//MENULIST
-function myMenu() {
-  const menuList = document.querySelectorAll(".menuList");
-  menuList.forEach(function (menu) {
-    menu.addEventListener("click", function (e) {
-      const menuItem = e.currentTarget.textContent;
-      if (menuItem == "home") {
-        window.location = "./";
-      } else if (menuItem == "News") {
-        window.location = "./#";
-      } else if (menuItem == "Tech") {
-        window.location = "./#";
-      } else if (menuItem == "Inspiration") {
-        window.location = "./#";
-      } else if (menuItem == "About") {
-        window.location = "./#";
-      } else if (menuItem == "Contact") {
-        window.location = "./contact";
-      } else {
-        window.location = "./";
-      }
-    });
-  });
-}
+// START --------------------------------------------------------------------------
+renderHero();
+renderPicks();
+renderDestinations();
+readHash();

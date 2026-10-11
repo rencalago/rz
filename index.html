@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="google-adsense-account" content="ca-pub-4229724093840415">
     <title>Ren Calago Blog</title>
-     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4229724093840415"
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6922658368480066"
      crossorigin="anonymous"></script>
     <link rel="icon" type="image/x-icon" href="./Images/rencalago-favicon.png">
+    <link rel="canonical" href="https://www.rencalago.com/" />
     <meta
       name="description"
       content="A blog to inspire you to explore the unique places in the Philippines. Rencalago blog shares about festivals, food trips and few inspiring thoughts, some tech events."
@@ -17,6 +18,14 @@
       name="keywords"
       content="Cebu blog, rencalago BLOG, ren calago blog, Dumaguete blog, unique places in the philippines, best of cebu, cebu's best, things to do in Cebu, things to do in dumaguete, places to visit in cebu, places to visit in the philippines"
     />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Ren Calago Blog" />
+    <meta property="og:title" content="Ren Calago Blog" />
+    <meta
+      property="og:description"
+      content="A blog to inspire you to explore the unique places in the Philippines."
+    />
+    <meta property="og:url" content="https://www.rencalago.com/" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
@@ -28,51 +37,60 @@
   </head>
   <body>
     <my-header></my-header>
-    <section class="featured">
-      <div class="featured-container">
-        <div class="breakingNews">
-          <div class="newsUpdate">
-            "Visualize clearly what you want in life. Then align your action towards that vision. You'll be amaze how life steers you towards that life you desire."
-          </div>
-          <div class="breakAlert"><i class="fa-regular fa-thumbs-up"></i></div>
-        </div>
+
+    <div class="quote-strip">
+      <div class="quote-strip__inner">
+        <p>
+          "Visualize clearly what you want in life. Then align your action towards that vision. You'll be amazed how life steers you towards that life you desire."
+        </p>
+        <a href="https://www.rencalagopro.com">rencalagopro.com →</a>
       </div>
-      <section class="slider">
+    </div>
+
+    <main>
+      <h1 class="sr-only">Ren Calago Blog: places, food and trips in the Philippines</h1>
+
+      <div class="wrap">
+        <!-- AdSense banner: paste your ad unit code inside this div (it stays hidden while empty) -->
+        <div class="ad-slot" id="ad-top"></div>
+      </div>
+
+      <section class="wrap hero-wrap" aria-label="Featured">
+        <article class="hero" id="hero"></article>
+        <aside class="picks" id="picks" aria-label="Editor's picks"></aside>
       </section>
-    </section>
-    <section class="full-page">
-      <div class="fullPage-container">
-        <div class="main-content">
-          <div class="topHeader">
-            <div class="popular-btn">
-              <button type="button" class="navBtn">Recent Posts</button>
-            </div>
-            <div class="view-btn">
-              <button type="button" class="navBtn vBtn">view all</button>
-            </div>
-            <div class="search-form">
-              <form>
-                <input
-                  type="search"
-                  class="searchBox"
-                  placeholder="search..."
-                />
-              </form>
-            </div>
-          </div>
-          <div class="mainPost">
-          </div>
-          <div class="read-more"><button type="button" class="moreBtn">Browse Archives</button></div>
+
+      <section class="wrap destinations" aria-labelledby="dest-heading">
+        <div class="section-head">
+          <h2 id="dest-heading">Explore by destination</h2>
         </div>
-        <div class="sidebar">
-          <my-sidebar></my-sidebar>
-          <div class="topheader-container">
-            <div class="topHeader"><h2>Labels</h2></div>
-            <div class="labels-container">
-            </div>
+        <div class="dest-grid" id="dest-grid"></div>
+      </section>
+
+      <section class="wrap columns">
+        <div class="feed" id="stories">
+          <div class="section-head section-head--accent">
+            <h2 id="feed-title">Latest stories</h2>
+            <button type="button" class="link-more" id="clear-filter" hidden>Show all stories</button>
           </div>
-      </div>
-    </section>
+          <form class="search" id="search-form" role="search">
+            <label class="sr-only" for="q">Search stories</label>
+            <input id="q" type="search" placeholder="Search stories…" autocomplete="off" />
+          </form>
+          <div id="feed-list"></div>
+          <p class="feed-empty" id="feed-empty" hidden>No stories match that yet. Try another word or label.</p>
+          <nav class="pagination" id="pagination" aria-label="Pagination"></nav>
+        </div>
+
+        <aside class="side" aria-label="Sidebar">
+          <!-- Start here, Follow Ren, Advertise with us and Browse by label (see layout.js) -->
+          <my-sidebar></my-sidebar>
+          <!-- AdSense sidebar unit: paste your ad unit code inside this div -->
+          <div class="ad-slot" id="ad-side"></div>
+        </aside>
+      </section>
+    </main>
+
     <my-footer></my-footer>
     <script type="module" src="./app.js"></script>
     <!-- Google tag (gtag.js) -->
@@ -84,22 +102,5 @@
 
   gtag('config', 'G-1K13C294LJ');
 </script>
-<!-- Default Statcounter code for Ren Calago Blog
-https://www.rencalago.com -->
-<script type="text/javascript">
-var sc_project=13280853; 
-var sc_invisible=1; 
-var sc_security="059a1583"; 
-</script>
-<script type="text/javascript"
-src="https://www.statcounter.com/counter/counter.js"
-async></script>
-<noscript><div class="statcounter"><a title="Web Analytics
-Made Easy - Statcounter" href="https://statcounter.com/"
-target="_blank"><img class="statcounter"
-src="https://c.statcounter.com/13280853/0/059a1583/1/"
-alt="Web Analytics Made Easy - Statcounter"
-referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
-<!-- End of Statcounter Code -->
   </body>
 </html>
