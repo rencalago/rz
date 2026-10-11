@@ -2,6 +2,7 @@
 // lazy-loaded images and the Cusdis comment box.
 import { newPostTwo } from "./allPost.js";
 import * as config from "./config.js";
+import { ADSENSE_CLIENT, SQUARE_AD } from "./ad-codes.js";
 import { registerLayout, currentSlug, escapeHtml as esc } from "./layout.js";
 
 // Read the settings defensively: an old config.js (without these names) must
@@ -21,6 +22,7 @@ const post = newPost.find((item) => item.link.replace("./", "") === slug);
 articleEssential();
 buildArticleHeader();
 cleanOldSidebar();
+insertArticleAd();
 improveImages();
 loadComments();
 
@@ -61,6 +63,48 @@ function articleEssential() {
   )}</span><span class="postDate"><i class="fa-regular fa-clock" aria-hidden="true"></i> ${esc(
     post.datePublished
   )}</span></p>`;
+}
+
+// SQUARE AD: only added when SQUARE_AD in ad-codes.js has code in it.
+// If it is empty, the article is shown exactly as it was before (no box).
+// The ad sits at the top right of the article text, and the text wraps around it.
+function insertArticleAd() {
+  if (!post) return; // listed articles only (not the contact page)
+  const hasCode = (SQUARE_AD || "").trim() !== "";
+  if (!hasCode) return; // IF no ad code: regular article layout
+
+  const body = document.querySelector(".full-content");
+  if (!body) return;
+
+  const box = document.createElement("aside");
+  box.className = "ad-square";
+  box.setAttribute("aria-label", "Advertisement");
+  box.innerHTML = SQUARE_AD;
+  body.insertBefore(box, body.firstChild);
+
+  loadAdSense();
+}
+
+// Loads the AdSense script once and asks it to fill the ad slot(s) on this page.
+function loadAdSense() {
+  const client = (ADSENSE_CLIENT || "").trim();
+  if (!client) {
+    console.warn("Ads: add your publisher ID (ADSENSE_CLIENT) in ad-codes.js.");
+    return;
+  }
+  if (!document.querySelector("script[data-adsense-loader]")) {
+    const s = document.createElement("script");
+    s.async = true;
+    s.crossOrigin = "anonymous";
+    s.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${encodeURIComponent(client)}`;
+    s.dataset.adsenseLoader = "1";
+    document.head.appendChild(s);
+  }
+  try {
+    (window.adsbygoogle = window.adsbygoogle || []).push({});
+  } catch (e) {
+    console.warn("Ads: could not show the ad yet.", e);
+  }
 }
 
 // Photos in the article: load them lazily and make sure each has alt text.

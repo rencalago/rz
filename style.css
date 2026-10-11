@@ -946,3 +946,41 @@ my-sidebar {
     padding: 20px;
   }
 }
+
+
+/* ===== Square ad inside articles (inserted by post.js) ===== */
+/* Floats to the right so the article text wraps around it. */
+.full-content::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.ad-square {
+  float: right;
+  width: 300px;
+  max-width: 100%;
+  margin: 4px 0 16px 24px;
+}
+
+.ad-square--placeholder {
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px dashed #8fa5a3;
+  border-radius: 6px;
+  background: #fff;
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
+  line-height: 1.4;
+}
+
+@media (max-width: 600px) {
+  .ad-square {
+    float: none;
+    display: block;
+    margin: 16px auto;
+  }
+}
