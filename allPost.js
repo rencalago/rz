@@ -2,6 +2,19 @@ let newPostTwo = [
   {
     category: "Travel",
     imagesrc:
+      "https://drive.google.com/thumbnail?id=170POUSsDWWEvEB9F4PByV5vxO3wX4mfv&sz=s4000",
+    postNumber: 30,
+    title: "Dumaguete to Siquijor: A First-Timer's Travel Guide",
+    desc: "Planning a trip from Dumaguete to Siquijor? Learn how to plan your ferry crossing, explore the island, choose attractions and make the most of your visit.",
+    datePublished: "11 October 2026",
+    comments: "0",
+    link: "./dumaguete-to-siquijor-first-timers-travel-guide",
+    location: "Dumaguete City and Siquijor",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
+    imagesrc:
       "https://drive.google.com/thumbnail?id=15_NyOiEAaNSMTfn3Tr3YpUiQovWzlSrQ&sz=s4000",
     postNumber: 29,
     title: "5 Places Near Dumaguete Worth the Drive",
