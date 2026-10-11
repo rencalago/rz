@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "https://drive.google.com/thumbnail?id=15PKs6kPOXCHK96yBcsI-NKb8C9te1UQB&sz=s4000",
+    postNumber: 34,
+    title: "South Cebu Waterfalls Road Trip: Stops Worth Planning For",
+    desc: "Plan a South Cebu waterfalls road trip with five stops worth the journey: Kawasan Falls, Inambakan Falls, Aguinid Falls, Dao Falls and Binalayan Falls, with practical tips for each.",
+    datePublished: "11 October 2026",
+    comments: "0",
+    link: "./south-cebu-waterfalls-road-trip-stops-worth-planning-for",
+    location: "South Cebu",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "https://drive.google.com/thumbnail?id=1wljheasbki0u0giTYHJZx7G0i-OSo-dY&sz=s4000",
     postNumber: 33,
     title: "Cebu Heritage Walk: Old Houses, Historic Streets and Local Stories",
