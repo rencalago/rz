@@ -1,7 +1,7 @@
 let newPostTwo = [
   {
     category: "Travel",
-    imagesrc: "https://drive.google.com/thumbnail?id=1QCKoRYuSDUg0ubJ0uvbnUNWQMpmzCGPk&sz=s4000",
+    imagesrc: "https://drive.google.com/thumbnail?id=1zIXxH8xzpdHDhYyPGyLbYaTGY1wuNY7a&sz=s4000",
     postNumber: 35,
     title: "Negros Oriental Weekend Getaways: 5 Trips for Different Budgets",
     desc: "Five Negros Oriental weekend getaways for different budgets, from a short waterfall walk in Valencia to a sandbar day trip in Manjuyod and an Apo Island dive day, with rough costs for each.",
@@ -208,7 +208,7 @@ let newPostTwo = [
   {
     category: "Travel",
     imagesrc:
-      "https://drive.google.com/thumbnail?id=1QCKoRYuSDUg0ubJ0uvbnUNWQMpmzCGPk&&sz=s4000",
+      "https://drive.google.com/thumbnail?id=1zIXxH8xzpdHDhYyPGyLbYaTGY1wuNY7a&&sz=s4000",
     postNumber: 19,
     title: "Robinsons Dumaguete Expansion Is Now Open: What's New in 2026",
     desc: "Robinsons Dumaguete has officially opened its major 2026 expansion, bringing new stores, dining, entertainment and more space to the city.",
