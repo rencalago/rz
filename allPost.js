@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "https://drive.google.com/thumbnail?id=1yP05ZksHhabnt06GsLw6WtKmGaY8Cr8v&sz=s4000",
+    postNumber: 32,
+    title: "Buglasan Festival 2026: Events, Schedule and What to Expect",
+    desc: "Buglasan Festival 2026 runs from 15 to 25 October in Dumaguete. Here are the main events, the daily schedule and what to expect at Negros Oriental's biggest celebration.",
+    datePublished: "11 October 2026",
+    comments: "0",
+    link: "./buglasan-festival-2026-events-schedule",
+    location: "Dumaguete City",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "https://drive.google.com/thumbnail?id=1m3VrPY6F-rbynG7TyR-9ROVpExRr2R97&sz=s4000",
     postNumber: 31,
     title: "7 Cebu Places Beyond the Crowds",
