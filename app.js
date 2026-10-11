@@ -42,7 +42,7 @@ const searchInput = $("q");
 const clearBtn = $("clear-filter");
 
 function metaLine(p) {
-  return [p.author, p.location, p.datePublished].filter(Boolean).map(esc).join(" · ");
+  return [p.location, p.datePublished].filter(Boolean).map(esc).join(" · ");
 }
 
 function haystack(p) {
