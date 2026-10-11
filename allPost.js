@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "https://drive.google.com/thumbnail?id=1wljheasbki0u0giTYHJZx7G0i-OSo-dY&sz=s4000",
+    postNumber: 33,
+    title: "Cebu Heritage Walk: Old Houses, Historic Streets and Local Stories",
+    desc: "A walking route through old Cebu City: Fort San Pedro, Colon Street, the Basilica del Santo Niño, the Yap-San Diego Ancestral House and more, with practical tips for a half-day walk.",
+    datePublished: "11 October 2026",
+    comments: "0",
+    link: "./cebu-heritage-walk-old-houses-historic-streets",
+    location: "Cebu City",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "https://drive.google.com/thumbnail?id=1yP05ZksHhabnt06GsLw6WtKmGaY8Cr8v&sz=s4000",
     postNumber: 32,
     title: "Buglasan Festival 2026: Events, Schedule and What to Expect",
