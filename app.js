@@ -172,10 +172,8 @@ function readHash() {
   renderFeed();
   if (filter || params.has("all")) scrollToStories();
   if (params.has("search")) {
-    // Open the search bar at the top of the page, then bring the stories into view.
-    $("top-search").hidden = false;
-    searchInput.focus({ preventScroll: true });
     scrollToStories();
+    searchInput.focus({ preventScroll: true });
   }
 }
 
