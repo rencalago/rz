@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "https://drive.google.com/thumbnail?id=1uESwprXPLsd7uC2dPwdERY7D7Bq0latB&sz=s4000",
+    postNumber: 42,
+    title: "Cebu to Dumaguete: Ferry, Bus or Flight, and Which to Choose",
+    desc: "Getting from Cebu to Dumaguete: the overnight RORO, the Liloan to Sibulan crossing, fast craft and flights, with times, rough fares and how to choose.",
+    datePublished: "13 October 2026",
+    comments: "0",
+    link: "./cebu-to-dumaguete-by-sea-or-road",
+    location: "Cebu to Dumaguete",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "https://drive.google.com/thumbnail?id=1W1Yo3J8J6jpHUtJ1BIFosXngl2C7R80c&sz=s4000",
     postNumber: 41,
     title: "Kawasan Falls Canyoneering: Costs, Safety and How to Choose a Tour",
