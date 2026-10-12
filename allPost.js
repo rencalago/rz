@@ -8,6 +8,7 @@ let newPostTwo = [
     datePublished: "12 October 2026",
     comments: "0",
     link: "./kawasan-falls-canyoneering-guide",
+    imageFilter: "contrast(120%) saturate(80%) brightness(92%) sepia(12%)",
     location: "Badian, Cebu",
     author: "Ren Calago",
   },
