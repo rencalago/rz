@@ -62,7 +62,7 @@ function renderHero() {
   if (!hero) return;
   heroEl.innerHTML = `
     <a class="hero__img" href="${hero.link}" tabindex="-1" aria-hidden="true">
-      <img src="${thumb(hero.imagesrc, 1400)}" alt="${esc(hero.title)}" fetchpriority="high" decoding="async">
+      <img src="${thumb(hero.imagesrc, 1400)}" alt="${esc(hero.title)}" fetchpriority="high" decoding="async"${hero.imageFilter ? ` style="filter: ${hero.imageFilter}"` : ""}>
     </a>
     <div class="hero__body">
       <p class="kicker">${esc(hero.category)}</p>
@@ -126,7 +126,7 @@ function renderFeed() {
       (p) => `
       <article class="story">
         <a class="story__img" href="${p.link}" tabindex="-1" aria-hidden="true">
-          <img src="${thumb(p.imagesrc, 700)}" alt="${esc(p.title)}" loading="lazy" decoding="async">
+          <img src="${thumb(p.imagesrc, 700)}" alt="${esc(p.title)}" loading="lazy" decoding="async"${p.imageFilter ? ` style="filter: ${p.imageFilter}"` : ""}>
         </a>
         <div class="story__body">
           <p class="kicker">${esc(p.category)}</p>

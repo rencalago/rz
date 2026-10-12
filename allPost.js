@@ -8,6 +8,7 @@ let newPostTwo = [
     datePublished: "12 October 2026",
     comments: "0",
     link: "./cebu-3-day-itinerary",
+    imageFilter: "grayscale(55%) saturate(70%) brightness(90%) contrast(105%)",
     location: "Cebu City",
     author: "Ren Calago",
   },
