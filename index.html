@@ -47,6 +47,15 @@
       </div>
     </div>
 
+    <section class="top-search" id="top-search" aria-label="Search" hidden>
+      <div class="wrap">
+        <form class="search" id="search-form" role="search">
+          <label class="sr-only" for="q">Search stories</label>
+          <input id="q" type="search" placeholder="Search stories…" autocomplete="off" />
+        </form>
+      </div>
+    </section>
+
     <main>
       <h1 class="sr-only">Ren Calago Blog: places, food and trips in the Philippines</h1>
 
@@ -73,10 +82,6 @@
             <h2 id="feed-title">Latest stories</h2>
             <button type="button" class="link-more" id="clear-filter" hidden>Show all stories</button>
           </div>
-          <form class="search" id="search-form" role="search">
-            <label class="sr-only" for="q">Search stories</label>
-            <input id="q" type="search" placeholder="Search stories…" autocomplete="off" />
-          </form>
           <div id="feed-list"></div>
           <p class="feed-empty" id="feed-empty" hidden>No stories match that yet. Try another word or label.</p>
           <nav class="pagination" id="pagination" aria-label="Pagination"></nav>
