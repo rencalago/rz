@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "https://drive.google.com/thumbnail?id=18J_u-2kjeo495uYwkRVBnCvajzuCF87J&sz=s4000",
+    postNumber: 39,
+    title: "Bohol Day Trip from Cebu: Ferry Times, Chocolate Hills and What to Expect",
+    desc: "A Bohol day trip from Cebu by fast ferry: sailing times, fares, the Chocolate Hills and what fits in one day, with the figures we could verify.",
+    datePublished: "12 October 2026",
+    comments: "0",
+    link: "./bohol-day-trip-from-cebu",
+    location: "Bohol",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "https://drive.google.com/thumbnail?id=1R4UH7xgDYLSLkXbqrmjm9PHLpTPbTjTh&sz=s4000",
     postNumber: 38,
     title: "New 25,000-Seat Arena in Cebu: What It Means for Visitors",
