@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "https://drive.google.com/thumbnail?id=1W1Yo3J8J6jpHUtJ1BIFosXngl2C7R80c&sz=s4000",
+    postNumber: 41,
+    title: "Kawasan Falls Canyoneering: Costs, Safety and How to Choose a Tour",
+    desc: "Kawasan Falls canyoneering in Badian: the regulated fee, what the tour includes, how to get there, rainy-season closures and who should skip it.",
+    datePublished: "12 October 2026",
+    comments: "0",
+    link: "./kawasan-falls-canyoneering-guide",
+    location: "Badian, Cebu",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "https://drive.google.com/thumbnail?id=1NkqFYQwuKGYFLuJqh77Y0YkKreF7sRfB&sz=s4000",
     postNumber: 40,
     title: "Cebu Itinerary for 3 Days: A Practical Plan for First-Timers",
