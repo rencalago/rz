@@ -204,6 +204,18 @@ clearBtn.addEventListener("click", function () {
 
 window.addEventListener("hashchange", readHash);
 
+// Clicking the header search icon while the address already ends in #search
+// does not fire hashchange, so handle that case here.
+document.addEventListener("click", function (e) {
+  const icon = e.target.closest(".site-nav__search");
+  if (!icon || !$("stories")) return;
+  if (location.hash === "#search") {
+    e.preventDefault();
+    scrollToStories();
+    searchInput.focus({ preventScroll: true });
+  }
+});
+
 // START --------------------------------------------------------------------------
 renderHero();
 renderPicks();
