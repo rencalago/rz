@@ -187,7 +187,7 @@ export function registerLayout() {
           .map(
             (p) => `
     <a class="start-item" href="${p.link}">
-      <img src="${thumb(p.imagesrc, 300)}" alt="" loading="lazy" decoding="async" width="96" height="64">
+      <img src="${thumb(p.imagesrc, 300)}" alt="" loading="lazy" decoding="async" width="96" height="64"${p.imageFilter ? ` style="filter: ${p.imageFilter}"` : ""}>
       <span>${escapeHtml(p.title)}</span>
     </a>`
           )
