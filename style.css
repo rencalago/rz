@@ -477,30 +477,6 @@ my-sidebar {
   margin-top: 16px;
 }
 
-.top-search {
-  padding: 8px 0 4px;
-  animation: top-search-open 0.25s ease-out;
-}
-
-.top-search[hidden] {
-  display: none;
-}
-
-.top-search .search {
-  margin-top: 0;
-}
-
-@keyframes top-search-open {
-  from {
-    opacity: 0;
-    transform: translateY(-8px);
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
-}
-
 .search input {
   width: 100%;
   padding: 12px 14px;
