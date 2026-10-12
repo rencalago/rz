@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "https://drive.google.com/thumbnail?id=1NkqFYQwuKGYFLuJqh77Y0YkKreF7sRfB&sz=s4000",
+    postNumber: 40,
+    title: "Cebu Itinerary for 3 Days: A Practical Plan for First-Timers",
+    desc: "A 3-day Cebu itinerary: one day in the old city, one up the mountain and along the north, and one trip south, with transport tips and rough costs.",
+    datePublished: "12 October 2026",
+    comments: "0",
+    link: "./cebu-3-day-itinerary",
+    location: "Cebu City",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "https://drive.google.com/thumbnail?id=18J_u-2kjeo495uYwkRVBnCvajzuCF87J&sz=s4000",
     postNumber: 39,
     title: "Bohol Day Trip from Cebu: Ferry Times, Chocolate Hills and What to Expect",
