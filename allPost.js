@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "https://drive.google.com/thumbnail?id=1R4UH7xgDYLSLkXbqrmjm9PHLpTPbTjTh&sz=s4000",
+    postNumber: 38,
+    title: "New 25,000-Seat Arena in Cebu: What It Means for Visitors",
+    desc: "Cebu's new 25,000-seat SM Seaside arena: what is confirmed, where reports differ, upcoming events, and how to get there from the airport.",
+    datePublished: "12 October 2026",
+    comments: "0",
+    link: "./cebu-25000-seat-arena-tourism",
+    location: "Cebu City",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "https://drive.google.com/thumbnail?id=10TTHB4uex39yz8hMba41V9RggXzLAa2T&sz=s4000",
     postNumber: 37,
     title: "Best Breakfast Spots in Dumaguete: Local Favorites and Early-Morning Stops",
