@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "https://drive.google.com/thumbnail?id=1t3i6s8hkB695YlgwifAaZaj4WJycA4r0&sz=s4000",
+    postNumber: 44,
+    title: "Bais Dolphin Watching and the Manjuyod Sandbar: A Day Trip from Dumaguete",
+    desc: "Dolphin watching in the Tañon Strait from Bais, plus the Manjuyod sandbar: boat fares, the trip from Dumaguete, timing, and what to expect on the water.",
+    datePublished: "13 October 2026",
+    comments: "0",
+    link: "./bais-dolphin-watching-manjuyod-sandbar",
+    location: "Bais City",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "https://drive.google.com/thumbnail?id=1Yq8WxkgV6p9ilvOmsCf1cyDeTM9Px8IP&sz=s4000",
     postNumber: 43,
     title: "Oslob Whale Shark Watching in 2026: What Visitors Should Know",
