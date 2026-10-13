@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "https://drive.google.com/thumbnail?id=19WW_S9LHiPzoIOioCRb67tGSKjk6z1vn&sz=s4000",
+    postNumber: 46,
+    title: "Bantayan Island Guide: Getting There, Beaches and Planning a Slow Week",
+    desc: "Bantayan Island from northern Cebu: the Hagnaya ferry, rough fares and crossing times, the main beach areas, getting around by tricycle, and when to go.",
+    datePublished: "13 October 2026",
+    comments: "0",
+    link: "./bantayan-island-guide",
+    location: "Bantayan Island",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "https://drive.google.com/thumbnail?id=1L-ADv5QDhaCofFsS9XUwz519-1TRbDM-&sz=s4000",
     postNumber: 45,
     title: "Sinulog for First-Timers: What to Expect, Where to Stand and How to Plan",
