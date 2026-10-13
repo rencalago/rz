@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "https://drive.google.com/thumbnail?id=1L-ADv5QDhaCofFsS9XUwz519-1TRbDM-&sz=s4000",
+    postNumber: 45,
+    title: "Sinulog for First-Timers: What to Expect, Where to Stand and How to Plan",
+    desc: "Sinulog for first-timers: the third-Sunday grand parade, the crowds, where to stand, getting around Cebu City on festival weekend, and how to plan your days.",
+    datePublished: "13 October 2026",
+    comments: "0",
+    link: "./sinulog-first-timers-guide",
+    location: "Cebu City",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "https://drive.google.com/thumbnail?id=1t3i6s8hkB695YlgwifAaZaj4WJycA4r0&sz=s4000",
     postNumber: 44,
     title: "Bais Dolphin Watching and the Manjuyod Sandbar: A Day Trip from Dumaguete",
