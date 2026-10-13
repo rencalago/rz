@@ -1,179 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
   <url>
-    <loc>https://www.rencalago.com</loc>
-    <lastmod>2023-02-13T01:42:07+00:00</lastmod>
+    <loc>https://www.rencalago.com/</loc>
+    <lastmod>2026-10-13</lastmod>
   </url>
-
-  <url>
-    <loc>https://www.rencalago.com/tops-cebu-look-out</loc>
-    <lastmod>2023-02-13T01:29:50+00:00</lastmod>
-  </url>
-
-  <url>
-    <loc>https://www.rencalago.com/sakada-cafe-and-farm-pamplona</loc>
-    <lastmod>2023-02-12T15:33:21+00:00</lastmod>
-  </url>
-
-  <url>
-    <loc>https://www.rencalago.com/victorias-mountain-view-tanjay-city</loc>
-    <lastmod>2023-02-13T22:35:00+00:00</lastmod>
-  </url>
-
-  <url>
-    <loc>https://www.rencalago.com/lalimar-beach-resort-la-libertad</loc>
-    <lastmod>2023-02-15T01:14:00+00:00</lastmod>
-  </url>
-
-  <url>
-    <loc>https://www.rencalago.com/cebu-safari-adventure</loc>
-    <lastmod>2023-02-18T11:13:00+00:00</lastmod>
-  </url>
-
   <url>
     <loc>https://www.rencalago.com/contact</loc>
     <lastmod>2024-02-21T08:42:00+00:00</lastmod>
   </url>
-
   <url>
-    <loc>https://www.rencalago.com/alimyon-kapehan-san-jose</loc>
-    <lastmod>2024-02-25T06:40:00+00:00</lastmod>
-  </url>
-
-  <url>
-    <loc>https://www.rencalago.com/cebu-ocean-park</loc>
-    <lastmod>2024-03-08T12:30:00+00:00</lastmod>
-  </url>
-
-  <url>
-    <loc>https://www.rencalago.com/travel-to-dumaguete-places-to-visit</loc>
-    <lastmod>2024-03-26T12:30:21+00:00</lastmod>
-  </url>
-
-  <url>
-    <loc>https://www.rencalago.com/travel-to-baguio-city-places-to-visit</loc>
-    <lastmod>2024-09-12T16:00:00+00:00</lastmod>
-  </url>
-
-  <url>
-    <loc>https://www.rencalago.com/venice-grand-canal-mckinley-hill</loc>
-    <lastmod>2024-09-14T07:30:00+00:00</lastmod>
-  </url>
-
-  <url>
-    <loc>https://www.rencalago.com/metro-gaisano-bais-city</loc>
-    <lastmod>2025-08-25T14:00:00+00:00</lastmod>
-  </url>
-
-  <url>
-    <loc>https://www.rencalago.com/going-to-sakada-farm-to-eat</loc>
-    <lastmod>2026-06-02T14:00:00+00:00</lastmod>
-  </url>
-
-  <url>
-    <loc>https://www.rencalago.com/white-sand-beach-of-sipalay</loc>
-    <lastmod>2026-06-03T14:00:00+00:00</lastmod>
-  </url>
-
-  <!-- New articles -->
-
-  <url>
-    <loc>https://www.rencalago.com/dumaguete-vs-cebu-which-to-visit-first</loc>
-    <lastmod>2026-09-28</lastmod>
-  </url>
-
-  <url>
-    <loc>https://www.rencalago.com/a-first-timers-food-trip-in-dumaguete</loc>
-    <lastmod>2026-09-28</lastmod>
-  </url>
-
-  <url>
-    <loc>https://www.rencalago.com/dumaguete-pickleball-capital</loc>
-    <lastmod>2026-09-29</lastmod>
-  </url>
-
-  <url>
-    <loc>https://www.rencalago.com/cebu-city-transport-strike-free-bus-operations</loc>
-    <lastmod>2026-09-29</lastmod>
-  </url>
-
-  <url>
-  <loc>https://www.rencalago.com/robinsons-dumaguete-expansion-new-activity</loc>
-  <lastmod>2026-09-29</lastmod>
-</url>
-
-<url>
-  <loc>https://www.rencalago.com/tisa-siomai-festival-draws-7000-people</loc>
-  <lastmod>2026-09-29</lastmod>
-</url>
-
-<url>
-  <loc>https://www.rencalago.com/whats-happening-in-dumaguete-october-2026</loc>
-  <lastmod>2026-09-30</lastmod>
-</url>
-
-<url>
-  <loc>https://www.rencalago.com/dumaguete-on-a-budget-3-day-trip-cost</loc>
-  <lastmod>2026-10-07</lastmod>
-</url>
-
-<url>
-  <loc>https://www.rencalago.com/5-places-near-dumaguete-worth-the-drive</loc>
-  <lastmod>2026-10-10</lastmod>
-</url>
-
-  <url>
-    <loc>https://www.rencalago.com/7-cebu-places-beyond-the-crowds</loc>
-    <lastmod>2026-10-11</lastmod>
-  </url>
-
-  <url>
-    <loc>https://www.rencalago.com/buglasan-festival-2026-events-schedule</loc>
-    <lastmod>2026-10-11</lastmod>
+    <loc>https://www.rencalago.com/about</loc>
   </url>
   <url>
-    <loc>https://www.rencalago.com/cebu-heritage-walk-old-houses-historic-streets</loc>
-    <lastmod>2026-10-11</lastmod>
-  </url>
-  <url>
-    <loc>https://www.rencalago.com/south-cebu-waterfalls-road-trip-stops-worth-planning-for</loc>
-    <lastmod>2026-10-11</lastmod>
-  </url>
-  <url>
-    <loc>https://www.rencalago.com/negros-oriental-weekend-getaways</loc>
-    <lastmod>2026-10-11</lastmod>
-  </url>
-  <url>
-    <loc>https://www.rencalago.com/mabinay-travel-guide-caves-nature-things-to-do</loc>
-    <lastmod>2026-10-12</lastmod>
-  </url>
-  <url>
-    <loc>https://www.rencalago.com/best-breakfast-spots-dumaguete</loc>
-    <lastmod>2026-10-12</lastmod>
-  </url>
-  <url>
-    <loc>https://www.rencalago.com/cebu-25000-seat-arena-tourism</loc>
-    <lastmod>2026-10-12</lastmod>
-  </url>
-  <url>
-    <loc>https://www.rencalago.com/bohol-day-trip-from-cebu</loc>
-    <lastmod>2026-10-12</lastmod>
-  </url>
-  <url>
-    <loc>https://www.rencalago.com/cebu-3-day-itinerary</loc>
-    <lastmod>2026-10-12</lastmod>
-  </url>
-  <url>
-    <loc>https://www.rencalago.com/kawasan-falls-canyoneering-guide</loc>
-    <lastmod>2026-10-12</lastmod>
-  </url>
-  <url>
-    <loc>https://www.rencalago.com/cebu-to-dumaguete-by-sea-or-road</loc>
-    <lastmod>2026-10-13</lastmod>
-  </url>
-  <url>
-    <loc>https://www.rencalago.com/oslob-whale-shark-watching-2026</loc>
+    <loc>https://www.rencalago.com/sinulog-first-timers-guide</loc>
     <lastmod>2026-10-13</lastmod>
   </url>
   <url>
@@ -181,7 +20,175 @@
     <lastmod>2026-10-13</lastmod>
   </url>
   <url>
-    <loc>https://www.rencalago.com/sinulog-first-timers-guide</loc>
+    <loc>https://www.rencalago.com/oslob-whale-shark-watching-2026</loc>
     <lastmod>2026-10-13</lastmod>
+  </url>
+  <url>
+    <loc>https://www.rencalago.com/cebu-to-dumaguete-by-sea-or-road</loc>
+    <lastmod>2026-10-13</lastmod>
+  </url>
+  <url>
+    <loc>https://www.rencalago.com/kawasan-falls-canyoneering-guide</loc>
+    <lastmod>2026-10-12</lastmod>
+  </url>
+  <url>
+    <loc>https://www.rencalago.com/cebu-3-day-itinerary</loc>
+    <lastmod>2026-10-12</lastmod>
+  </url>
+  <url>
+    <loc>https://www.rencalago.com/bohol-day-trip-from-cebu</loc>
+    <lastmod>2026-10-12</lastmod>
+  </url>
+  <url>
+    <loc>https://www.rencalago.com/cebu-25000-seat-arena-tourism</loc>
+    <lastmod>2026-10-12</lastmod>
+  </url>
+  <url>
+    <loc>https://www.rencalago.com/best-breakfast-spots-dumaguete</loc>
+    <lastmod>2026-10-12</lastmod>
+  </url>
+  <url>
+    <loc>https://www.rencalago.com/mabinay-travel-guide-caves-nature-things-to-do</loc>
+    <lastmod>2026-10-12</lastmod>
+  </url>
+  <url>
+    <loc>https://www.rencalago.com/negros-oriental-weekend-getaways</loc>
+    <lastmod>2026-10-11</lastmod>
+  </url>
+  <url>
+    <loc>https://www.rencalago.com/south-cebu-waterfalls-road-trip-stops-worth-planning-for</loc>
+    <lastmod>2026-10-11</lastmod>
+  </url>
+  <url>
+    <loc>https://www.rencalago.com/cebu-heritage-walk-old-houses-historic-streets</loc>
+    <lastmod>2026-10-11</lastmod>
+  </url>
+  <url>
+    <loc>https://www.rencalago.com/buglasan-festival-2026-events-schedule</loc>
+    <lastmod>2026-10-11</lastmod>
+  </url>
+  <url>
+    <loc>https://www.rencalago.com/7-cebu-places-beyond-the-crowds</loc>
+    <lastmod>2026-10-11</lastmod>
+  </url>
+  <url>
+    <loc>https://www.rencalago.com/dumaguete-to-siquijor-first-timers-travel-guide</loc>
+    <lastmod>2026-10-11</lastmod>
+  </url>
+  <url>
+    <loc>https://www.rencalago.com/5-places-near-dumaguete-worth-the-drive</loc>
+    <lastmod>2026-10-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.rencalago.com/dumaguete-on-a-budget-3-day-trip-cost</loc>
+    <lastmod>2026-10-07</lastmod>
+  </url>
+  <url>
+    <loc>https://www.rencalago.com/moalboal-oktoberfest-beachside-festival-cebu</loc>
+    <lastmod>2026-10-05</lastmod>
+  </url>
+  <url>
+    <loc>https://www.rencalago.com/dumanjug-bisnok-festival-native-chicken</loc>
+    <lastmod>2026-10-03</lastmod>
+  </url>
+  <url>
+    <loc>https://www.rencalago.com/cebu-prepares-for-very-strong-el-nino</loc>
+    <lastmod>2026-10-01</lastmod>
+  </url>
+  <url>
+    <loc>https://www.rencalago.com/cebu-is-getting-busier-this-october-5-things-to-watch</loc>
+    <lastmod>2026-10-01</lastmod>
+  </url>
+  <url>
+    <loc>https://www.rencalago.com/dumaguete-is-changing-5-things-that-feel-different-in-2026</loc>
+    <lastmod>2026-09-30</lastmod>
+  </url>
+  <url>
+    <loc>https://www.rencalago.com/cebu-is-becoming-more-than-a-beach-destination</loc>
+    <lastmod>2026-09-30</lastmod>
+  </url>
+  <url>
+    <loc>https://www.rencalago.com/whats-happening-in-dumaguete-october-2026</loc>
+    <lastmod>2026-09-30</lastmod>
+  </url>
+  <url>
+    <loc>https://www.rencalago.com/tisa-siomai-festival-draws-7000-people</loc>
+    <lastmod>2026-09-29</lastmod>
+  </url>
+  <url>
+    <loc>https://www.rencalago.com/robinsons-dumaguete-expansion-new-activity</loc>
+    <lastmod>2026-09-29</lastmod>
+  </url>
+  <url>
+    <loc>https://www.rencalago.com/cebus-best-local-food-to-try-beyond-lechon</loc>
+    <lastmod>2026-09-29</lastmod>
+  </url>
+  <url>
+    <loc>https://www.rencalago.com/cebu-city-transport-strike-free-bus-operations</loc>
+    <lastmod>2026-09-29</lastmod>
+  </url>
+  <url>
+    <loc>https://www.rencalago.com/dumaguete-pickleball-capital</loc>
+    <lastmod>2026-09-29</lastmod>
+  </url>
+  <url>
+    <loc>https://www.rencalago.com/a-first-timers-food-trip-in-dumaguete</loc>
+    <lastmod>2026-09-28</lastmod>
+  </url>
+  <url>
+    <loc>https://www.rencalago.com/dumaguete-vs-cebu-which-to-visit-first</loc>
+    <lastmod>2026-09-28</lastmod>
+  </url>
+  <url>
+    <loc>https://www.rencalago.com/white-sand-beach-of-sipalay</loc>
+    <lastmod>2026-06-03T14:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://www.rencalago.com/going-to-sakada-farm-to-eat</loc>
+    <lastmod>2026-06-02T14:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://www.rencalago.com/metro-gaisano-bais-city</loc>
+    <lastmod>2025-08-25T14:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://www.rencalago.com/venice-grand-canal-mckinley-hill</loc>
+    <lastmod>2024-09-14T07:30:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://www.rencalago.com/travel-to-baguio-city-places-to-visit</loc>
+    <lastmod>2024-09-12T16:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://www.rencalago.com/travel-to-dumaguete-places-to-visit</loc>
+    <lastmod>2024-03-26T12:30:21+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://www.rencalago.com/cebu-ocean-park</loc>
+    <lastmod>2024-03-08T12:30:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://www.rencalago.com/alimyon-kapehan-san-jose</loc>
+    <lastmod>2024-02-25T06:40:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://www.rencalago.com/cebu-safari-adventure</loc>
+    <lastmod>2023-02-18T11:13:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://www.rencalago.com/lalimar-beach-resort-la-libertad</loc>
+    <lastmod>2023-02-15T01:14:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://www.rencalago.com/victorias-mountain-view-tanjay-city</loc>
+    <lastmod>2023-02-13T22:35:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://www.rencalago.com/sakada-cafe-and-farm-pamplona</loc>
+    <lastmod>2023-02-12T15:33:21+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://www.rencalago.com/tops-cebu-look-out</loc>
+    <lastmod>2023-02-13T01:29:50+00:00</lastmod>
   </url>
 </urlset>

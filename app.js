@@ -221,3 +221,6 @@ renderHero();
 renderPicks();
 renderDestinations();
 readHash();
+
+// Read by _tools/build-site.mjs (the destination list is defined once, here).
+export { DESTINATIONS };
