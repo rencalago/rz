@@ -10,12 +10,15 @@ export function escapeHtml(value) {
 
 // MENU -------------------------------------------------------------------
 // key  = how the link is matched to the current page (for the underline)
-// href = where it goes. "./#dest=..." and "./#cat=..." open the homepage
-//        with the stories filtered (see DESTINATIONS in app.js).
+// href = where it goes. Cebu, Dumaguete and Negros Oriental have their own
+//        pages (set "page" to that page's file name so the menu can underline
+//        it). "./#dest=..." and "./#cat=..." open the homepage with the stories
+//        filtered (see DESTINATIONS in app.js).
 const NAV = [
   { key: "home", label: "Home", href: "./" },
-  { key: "dest=cebu", label: "Cebu", href: "./#dest=cebu" },
-  { key: "dest=negros-oriental", label: "Negros Oriental", href: "./#dest=negros-oriental" },
+  { key: "dest=cebu", label: "Cebu", href: "./cebu-travel-guides", page: "cebu-travel-guides" },
+  { key: "dest=dumaguete", label: "Dumaguete", href: "./dumaguete-travel-guides", page: "dumaguete-travel-guides" },
+  { key: "dest=negros-oriental", label: "Negros Oriental", href: "./negros-oriental-travel-guides", page: "negros-oriental-travel-guides" },
   { key: "dest=luzon", label: "Luzon", href: "./#dest=luzon" },
   { key: "cat=Cafes & Restaurant", label: "Food & Cafes", href: "./#cat=Cafes%20%26%20Restaurant" },
   { key: "cat=Beach Resort", label: "Resorts", href: "./#cat=Beach%20Resort" },
@@ -42,6 +45,27 @@ export const START_HERE = [
 // Google Drive thumbnails are requested at s4000 (huge). Ask for a sensible width.
 export function thumb(url, width) {
   return String(url).replace(/sz=s\d+/, "sz=w" + width);
+}
+
+// "Cebu City · 13 October 2026"
+export function metaLine(p) {
+  return [p.location, p.datePublished].filter(Boolean).map(escapeHtml).join(" · ");
+}
+
+// One story card. Used by the homepage feed (app.js) and the destination pages.
+export function storyCard(p) {
+  return `
+      <article class="story">
+        <a class="story__img" href="${p.link}" tabindex="-1" aria-hidden="true">
+          <img src="${thumb(p.imagesrc, 700)}" alt="${escapeHtml(p.title)}" loading="lazy" decoding="async"${p.imageFilter ? ` style="filter: ${p.imageFilter}"` : ""}>
+        </a>
+        <div class="story__body">
+          <p class="kicker">${escapeHtml(p.category)}</p>
+          <h3><a href="${p.link}">${escapeHtml(p.title)}</a></h3>
+          <p class="story__desc">${escapeHtml(p.desc)}</p>
+          <p class="meta">${metaLine(p)}</p>
+        </div>
+      </article>`;
 }
 
 // The file name of the page being viewed, e.g. "tops-cebu-look-out"
@@ -73,6 +97,7 @@ function markCurrent(nav) {
     let current = false;
     if (key === "home") current = onHome && !filtered;
     else if (key === "contact") current = /\/contact(\.html)?\/?$/i.test(location.pathname);
+    else if (a.dataset.page) current = currentSlug() === a.dataset.page;
     else current = onHome && hash === key;
     if (current) a.setAttribute("aria-current", "page");
     else a.removeAttribute("aria-current");
@@ -92,7 +117,7 @@ export function registerLayout() {
           (s) => `<a href="${s.href}" aria-label="${s.label}">${s.short}</a>`
         ).join("");
         const links = NAV.map(
-          (n) => `<a href="${n.href}" data-nav="${escapeHtml(n.key)}">${escapeHtml(n.label)}</a>`
+          (n) => `<a href="${n.href}" data-nav="${escapeHtml(n.key)}"${n.page ? ` data-page="${n.page}"` : ""}>${escapeHtml(n.label)}</a>`
         ).join("");
         this.innerHTML = `
 <div class="topbar">
@@ -159,7 +184,7 @@ export function registerLayout() {
     </div>
     <nav class="site-footer__col" aria-label="Destinations"><h2>Destinations</h2>${dest}</nav>
     <nav class="site-footer__col" aria-label="Categories"><h2>Categories</h2>${cats}</nav>
-    <nav class="site-footer__col" aria-label="Blog"><h2>Blog</h2><a href="./contact">Contact</a><a href="./contact">Advertise</a></nav>
+    <nav class="site-footer__col" aria-label="Blog"><h2>Blog</h2><a href="./about">About</a><a href="./contact">Contact</a><a href="./contact">Advertise</a></nav>
   </div>
   <div class="site-footer__bar">
     <div class="site-footer__bar-inner">

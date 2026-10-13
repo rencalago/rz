@@ -1,0 +1,40 @@
+{
+  "cebu": {
+    "page": "cebu-travel-guides",
+    "title": "Cebu Travel Guides: Itineraries, Day Trips and Festivals",
+    "description": "Cebu travel guides: a 3-day itinerary, Oslob and Kawasan Falls, a Bohol day trip, Sinulog, heritage walks and local food, with notes on costs and crowds.",
+    "keywords": "Cebu travel guides, Cebu itinerary, things to do in Cebu, Cebu day trips, Sinulog Cebu, Oslob whale shark, Kawasan Falls canyoneering, Bohol day trip from Cebu",
+    "h1": "Cebu travel guides",
+    "intro": [
+      "Cebu is where this blog's travel coverage began. The stories below cover Cebu City and the rest of the island: a <a href=\"./cebu-3-day-itinerary\">three-day itinerary</a>, the <a href=\"./sinulog-first-timers-guide\">Sinulog festival</a>, a <a href=\"./cebu-heritage-walk-old-houses-historic-streets\">heritage walk</a> through old houses and historic streets, whale shark watching in Oslob, canyoneering at Kawasan Falls, a waterfall road trip in the south and a day trip to Bohol.",
+      "These guides try to say plainly what to expect: what could be confirmed about costs, how crowded a place gets, and what changes with the season or the rules. Prices, schedules and regulations shift, so confirm with the operator or the official source before you book. Crossing over to Negros Island? See the <a href=\"./dumaguete-travel-guides\">Dumaguete</a> and <a href=\"./negros-oriental-travel-guides\">Negros Oriental</a> guides."
+    ],
+    "startWith": ["cebu-3-day-itinerary", "7-cebu-places-beyond-the-crowds", "sinulog-first-timers-guide"]
+  },
+  "dumaguete": {
+    "page": "dumaguete-travel-guides",
+    "title": "Dumaguete Travel Guides: Food, Budget and Day Trips",
+    "description": "Dumaguete travel guides: getting there from Cebu, a 3-day budget, breakfast spots, a first food trip, the Buglasan Festival and day trips from the city.",
+    "keywords": "Dumaguete travel guides, things to do in Dumaguete, Dumaguete budget trip, Dumaguete food, Cebu to Dumaguete, Siquijor from Dumaguete, Buglasan Festival",
+    "h1": "Dumaguete travel guides",
+    "intro": [
+      "Dumaguete is the capital of Negros Oriental, a coastal city on the southeastern side of Negros Island. The guides below cover <a href=\"./cebu-to-dumaguete-by-sea-or-road\">getting there from Cebu</a>, what a <a href=\"./dumaguete-on-a-budget-3-day-trip-cost\">three-day trip costs</a>, where to eat breakfast and what to try on a first food trip, how the city is changing, local events such as the Buglasan Festival, and day trips to Bais, Manjuyod, Mabinay and Siquijor.",
+      "Not sure whether to start here or in Cebu? <a href=\"./dumaguete-vs-cebu-which-to-visit-first\">Dumaguete vs Cebu</a> compares the two. Costs, ferry schedules and event dates change, so check current details before you go. Looking beyond the city? See the <a href=\"./negros-oriental-travel-guides\">Negros Oriental</a> guides."
+    ],
+    "startWith": ["travel-to-dumaguete-places-to-visit", "dumaguete-on-a-budget-3-day-trip-cost", "cebu-to-dumaguete-by-sea-or-road"]
+  },
+  "negros-oriental": {
+    "page": "negros-oriental-travel-guides",
+    "title": "Negros Oriental Travel Guides: Beyond Dumaguete",
+    "description": "Negros Oriental travel guides beyond Dumaguete: weekend trips for every budget, Mabinay caves, Bais dolphin watching, mountain cafes and beach resorts.",
+    "keywords": "Negros Oriental travel guides, things to do in Negros Oriental, Negros Oriental weekend getaways, Mabinay, Bais dolphin watching, Pamplona cafe, La Libertad beach resort",
+    "h1": "Negros Oriental travel guides",
+    "intro": [
+      "Negros Oriental covers the eastern half of Negros Island, with Dumaguete as its capital. This page follows the province beyond the city: <a href=\"./negros-oriental-weekend-getaways\">weekend trips for different budgets</a>, <a href=\"./5-places-near-dumaguete-worth-the-drive\">places within driving distance of Dumaguete</a>, Mabinay's caves and nature, dolphin watching from Bais, mountain cafes in Pamplona, a beach resort in La Libertad and views in Tanjay.",
+      "For the city itself, including food, budgets and events, see the <a href=\"./dumaguete-travel-guides\">Dumaguete guides</a>. Distances, ferry schedules and opening hours change, so confirm before you travel."
+    ],
+    "startWith": ["negros-oriental-weekend-getaways", "5-places-near-dumaguete-worth-the-drive", "mabinay-travel-guide-caves-nature-things-to-do"],
+    "excludeLocation": ["dumaguete"],
+    "include": ["5-places-near-dumaguete-worth-the-drive", "buglasan-festival-2026-events-schedule"]
+  }
+}
