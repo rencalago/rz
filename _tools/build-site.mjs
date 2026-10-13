@@ -11,6 +11,8 @@
 //                stories and an "All stories" list, as plain HTML, so crawlers
 //                and visitors without JavaScript see real links. app.js still
 //                runs on top and keeps search, filters and pagination working.
+//   every page  the menu, sidebar and footer written in as plain HTML, plus the
+//                canonical link and Open Graph tags (see buildPages below).
 //   cebu-travel-guides.html, dumaguete-travel-guides.html,
 //   negros-oriental-travel-guides.html
 //                the destination pages: a short intro (from
@@ -199,6 +201,99 @@ function buildDestinationPages(site) {
   return pages;
 }
 
+// STEP: every page --------------------------------------------------------------------
+// 1) The menu, sidebar and footer, written into the page as plain HTML.
+//    layout.js still draws them in the browser; this is what a crawler (or a
+//    visitor without JavaScript) sees first, so every page links to the
+//    destinations, the contact page and the rest of the site.
+// 2) The canonical address (the clean /slug form, so /slug and /slug.html count
+//    as one page) and the Open Graph / Twitter tags that control how a link
+//    looks when it is shared on Facebook. No image yet (see the note below).
+//
+// A page that already has one of these tags keeps it; only missing tags are added.
+
+// Marks the current page in the menu, like layout.js does in the browser.
+function withCurrentMarker(headerHtml, slug, destinationSlugs) {
+  let attribute = null;
+  if (slug === "index") attribute = 'data-nav="home"';
+  else if (slug === "contact") attribute = 'data-nav="contact"';
+  else if (destinationSlugs.includes(slug)) attribute = `data-page="${slug}"`;
+  if (!attribute) return headerHtml;
+  return headerHtml.replace(new RegExp(`(<a [^>]*${attribute}[^>]*)>`), '$1 aria-current="page">');
+}
+
+// Adds the empty placeholders the first time a page is seen, so a new article
+// made from the old page template needs no manual step.
+function ensureMarkers(html) {
+  for (const [tag, name] of [["my-header", "header"], ["my-sidebar", "sidebar"], ["my-footer", "footer"]]) {
+    html = html.replace(
+      new RegExp(`<${tag}>\\s*</${tag}>`),
+      `<${tag}><!-- build:${name} --><!-- /build:${name} --></${tag}>`
+    );
+  }
+  if (!html.includes("<!-- build:seo -->")) {
+    html = html.replace(/(\s*)<\/head>/, "\n    <!-- build:seo --><!-- /build:seo -->$1</head>");
+  }
+  return html;
+}
+
+function seoTags(html, slug, isPost) {
+  // Look for existing tags everywhere except our own block.
+  const outside = html.replace(/<!-- build:seo -->[\s\S]*?<!-- \/build:seo -->/, "");
+  const has = (attribute, value) => new RegExp(`${attribute}=["']${value}["']`).test(outside);
+  const clean = (text) => String(text || "").replace(/\s+/g, " ").trim().replace(/"/g, "&quot;");
+
+  const url = slug === "index" ? `${BASE}/` : `${BASE}/${slug}`;
+  const title = clean((outside.match(/<title>([\s\S]*?)<\/title>/) || [])[1]).replace(/\s*\|\s*Ren Calago( blog| Blog)?$/, "");
+  const description = clean((outside.match(/<meta\s+name=["']description["']\s+content=["']([^"']*)["']/) || [])[1]);
+
+  const tags = [];
+  if (!has("rel", "canonical")) tags.push(`<link rel="canonical" href="${url}" />`);
+  if (!has("property", "og:type")) tags.push(`<meta property="og:type" content="${isPost ? "article" : "website"}" />`);
+  if (!has("property", "og:site_name")) tags.push(`<meta property="og:site_name" content="Ren Calago Blog" />`);
+  if (title && !has("property", "og:title")) tags.push(`<meta property="og:title" content="${title}" />`);
+  if (description && !has("property", "og:description")) tags.push(`<meta property="og:description" content="${description}" />`);
+  if (!has("property", "og:url")) tags.push(`<meta property="og:url" content="${url}" />`);
+  // "summary" because there is no og:image yet. When pages get a hosted image
+  // (Google Drive thumbnail links are not reliable for Facebook), add og:image
+  // here and switch this to "summary_large_image".
+  if (!has("name", "twitter:card")) tags.push(`<meta name="twitter:card" content="summary" />`);
+  return tags;
+}
+
+function buildPages(site, destinationPages) {
+  const postSlugs = new Set(site.posts.map(slugOf));
+  const destinationSlugs = destinationPages.map((p) => p.slug);
+  const files = new Set([
+    ...fs.readdirSync(root).filter((f) => f.endsWith(".html")),
+    ...[...pending.keys()].filter((f) => f.endsWith(".html")),
+  ]);
+  let count = 0;
+
+  for (const file of [...files].sort()) {
+    if (file === "404.html") continue; // standalone error page
+    let html = readFile(file);
+    if (/http-equiv=["']refresh["']/i.test(html)) continue; // redirect pages such as the old Negros Oriental URL
+    const slug = file.replace(/\.html$/, "");
+
+    html = ensureMarkers(html);
+
+    if (html.includes("<!-- build:header -->")) {
+      const layout = site.layoutFor(slug === "index" ? "" : slug);
+      html = fillBlock(html, "header", withCurrentMarker(layout.header, slug, destinationSlugs), file);
+      if (html.includes("<!-- build:sidebar -->")) html = fillBlock(html, "sidebar", layout.sidebar, file);
+      if (html.includes("<!-- build:footer -->")) html = fillBlock(html, "footer", layout.footer, file);
+    }
+
+    const tags = seoTags(html, slug, postSlugs.has(slug));
+    html = fillBlock(html, "seo", tags.length ? "\n    " + tags.join("\n    ") + "\n    " : "", file);
+
+    putFile(file, html);
+    count++;
+  }
+  return count;
+}
+
 // STEP: sitemap --------------------------------------------------------------------
 function buildSitemap(site, destinationPages) {
   // Keep the <lastmod> values that are already there.
@@ -240,10 +335,12 @@ function buildSitemap(site, destinationPages) {
 const site = await loadSite(root);
 let sitemapCount;
 let destinationPages = [];
+let pageCount = 0;
 try {
   if (!Array.isArray(site.posts) || site.posts.length === 0) throw new Error("allPost.js has no posts");
   buildHomepage(site);
   destinationPages = buildDestinationPages(site);
+  pageCount = buildPages(site, destinationPages);
   sitemapCount = buildSitemap(site, destinationPages);
 } finally {
   site.cleanup();
@@ -253,7 +350,10 @@ const stale = [];
 for (const [file, content] of pending) {
   const target = path.join(root, file);
   const onDisk = fs.existsSync(target) ? fs.readFileSync(target, "utf8") : null; // null = a new file
-  if (onDisk === content) continue;
+  // The footer's copyright year changes every January. The browser shows the
+  // current year anyway, so a different year alone is not a reason to rewrite a page.
+  const sameButYear = (text) => (text === null ? null : text.replace(/Copyright © \d{4}/g, "Copyright © YEAR"));
+  if (sameButYear(onDisk) === sameButYear(content)) continue;
   stale.push(file);
   if (!checkOnly) fs.writeFileSync(path.join(root, file), content);
 }
@@ -265,10 +365,10 @@ if (checkOnly) {
     console.error("Out of date: " + stale.join(", ") + "\nRun: node _tools/build-site.mjs");
     process.exit(1);
   }
-  console.log(`Up to date (${site.posts.length} posts, ${destinationPages.length} destination pages, ${sitemapCount} sitemap URLs).`);
+  console.log(`Up to date (${site.posts.length} posts, ${destinationPages.length} destination pages, ${pageCount} pages checked, ${sitemapCount} sitemap URLs).`);
 } else {
   console.log(
     (stale.length ? "Updated " + stale.join(", ") : "No changes") +
-      `. ${site.posts.length} posts, ${destinationPages.length} destination pages (${destinationPages.map((p) => p.count).join("/")} stories), ${sitemapCount} sitemap URLs.`
+      `. ${site.posts.length} posts, ${destinationPages.length} destination pages (${destinationPages.map((p) => p.count).join("/")} stories), ${pageCount} pages processed, ${sitemapCount} sitemap URLs.`
   );
 }
