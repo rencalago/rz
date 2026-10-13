@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "https://drive.google.com/thumbnail?id=1wckUHBT1dkbhCQNwk7F0r-WaTJ6j_G69&sz=s4000",
+    postNumber: 47,
+    title: "Balinsasayao Twin Lakes: A Day Hike and Boat Ride from Dumaguete",
+    desc: "Balinsasayao Twin Lakes near Dumaguete: how to reach the park in Sibulan, the entrance and rental costs, the lake trail, and when to go.",
+    datePublished: "13 October 2026",
+    comments: "0",
+    link: "./balinsasayao-twin-lakes-guide",
+    location: "Sibulan, Negros Oriental",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "https://drive.google.com/thumbnail?id=19WW_S9LHiPzoIOioCRb67tGSKjk6z1vn&sz=s4000",
     postNumber: 46,
     title: "Bantayan Island Guide: Getting There, Beaches and Planning a Slow Week",
