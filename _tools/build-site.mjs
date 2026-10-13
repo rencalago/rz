@@ -82,11 +82,80 @@ function buildHomepage(site) {
   html = fillBlock(html, "dest", site.home.dest, "index.html");
   html = fillBlock(html, "feed", site.home.feed, "index.html");
 
-  const items = site.posts
+  const total = archivePageCount(site);
+  html = fillBlock(html, "archive", archiveList(site.posts.slice(0, ARCHIVE_PAGE_SIZE)) + archivePager(1, total), "index.html");
+  putFile("index.html", html);
+}
+
+// STEP: "All stories" list, 10 per page ------------------------------------------
+// Page 1 is the list on the homepage. Pages 2, 3... are real pages
+// (/all-stories-2, /all-stories-3, ...) so every story stays reachable by link.
+const ARCHIVE_PAGE_SIZE = 10;
+const archivePageCount = (site) => Math.ceil(site.posts.length / ARCHIVE_PAGE_SIZE);
+const archiveSlug = (n) => `all-stories-${n}`;
+
+function archiveList(posts) {
+  const items = posts
     .map((p) => `\n      <li><a href="${p.link}">${escapeHtml(p.title)}</a> <span class="meta">${metaLine(p)}</span></li>`)
     .join("");
-  html = fillBlock(html, "archive", `\n    <ul class="archive-list">${items}\n    </ul>`, "index.html");
-  putFile("index.html", html);
+  return `\n    <ul class="archive-list">${items}\n    </ul>`;
+}
+
+function archivePager(page, total) {
+  if (total < 2) return "";
+  const prev = page === 1 ? "" : `<a rel="prev" href="${page === 2 ? "./#archive-heading" : "./" + archiveSlug(page - 1)}">&larr; Previous page</a>`;
+  const next = page === total ? "" : `<a rel="next" href="./${archiveSlug(page + 1)}">Next page &rarr;</a>`;
+  return `\n    <nav class="pager" aria-label="All stories pages">${prev}<span class="pager__status">Page ${page} of ${total}</span>${next}</nav>`;
+}
+
+function buildArchivePages(site) {
+  const total = archivePageCount(site);
+  const pages = [];
+  for (let n = 2; n <= total; n++) {
+    const posts = site.posts.slice((n - 1) * ARCHIVE_PAGE_SIZE, n * ARCHIVE_PAGE_SIZE);
+    const description = `All Ren Calago Blog stories, page ${n} of ${total}: travel guides, food trips and local news from Cebu, Dumaguete and Negros Oriental.`;
+    const html = `<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Stories, Page ${n} | Ren Calago blog</title>
+    <link rel="icon" type="image/x-icon" href="./Images/rencalago-favicon.png" />
+    <meta name="description" content="${escapeHtml(description)}" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <!-- build:seo --><!-- /build:seo -->
+  </head>
+  <body>
+    <!-- This page is written by _tools/build-site.mjs. Do not edit it by hand. -->
+    <my-header><!-- build:header --><!-- /build:header --></my-header>
+
+    <main>
+      <section class="wrap page-head">
+        <p class="kicker">Page ${n} of ${total}</p>
+        <h1>All stories</h1>
+      </section>
+
+      <section class="wrap archive" aria-label="All stories">${archiveList(posts)}${archivePager(n, total)}
+      </section>
+    </main>
+
+    <my-footer><!-- build:footer --><!-- /build:footer --></my-footer>
+    <script type="module" src="./destination.js"></script>
+  </body>
+</html>
+`;
+    putFile(archiveSlug(n) + ".html", html);
+    pages.push({ slug: archiveSlug(n), lastmod: posts.map((p) => isoDate(p.datePublished)).sort().pop() });
+  }
+  return pages;
 }
 
 // STEP: destination pages --------------------------------------------------------
@@ -314,7 +383,7 @@ function buildPages(site, destinationPages) {
 }
 
 // STEP: sitemap --------------------------------------------------------------------
-function buildSitemap(site, destinationPages) {
+function buildSitemap(site, destinationPages, archivePages) {
   // Keep the <lastmod> values that are already there.
   const existing = new Map();
   const oldXml = fs.readFileSync(path.join(root, "sitemap.xml"), "utf8");
@@ -326,7 +395,7 @@ function buildSitemap(site, destinationPages) {
   const newestPost = site.posts.map((p) => isoDate(p.datePublished)).sort().pop();
   entries.push({ loc: BASE + "/", lastmod: newestPost }); // the homepage changes with every post
 
-  for (const page of destinationPages) entries.push({ loc: `${BASE}/${page.slug}`, lastmod: page.lastmod });
+  for (const page of [...destinationPages, ...archivePages]) entries.push({ loc: `${BASE}/${page.slug}`, lastmod: page.lastmod });
 
   for (const page of STATIC_PAGES) {
     if (!fs.existsSync(path.join(root, page + ".html"))) throw new Error(`STATIC_PAGES lists "${page}" but ${page}.html does not exist`);
@@ -354,13 +423,15 @@ function buildSitemap(site, destinationPages) {
 const site = await loadSite(root);
 let sitemapCount;
 let destinationPages = [];
+let archivePages = [];
 let pageCount = 0;
 try {
   if (!Array.isArray(site.posts) || site.posts.length === 0) throw new Error("allPost.js has no posts");
   buildHomepage(site);
   destinationPages = buildDestinationPages(site);
+  archivePages = buildArchivePages(site);
   pageCount = buildPages(site, destinationPages);
-  sitemapCount = buildSitemap(site, destinationPages);
+  sitemapCount = buildSitemap(site, destinationPages, archivePages);
 } finally {
   site.cleanup();
 }

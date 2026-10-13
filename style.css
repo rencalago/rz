@@ -1021,6 +1021,30 @@ my-sidebar {
   margin-top: 2px;
 }
 
+/* Page links under the All stories list */
+.pager {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 24px;
+  font-weight: 600;
+}
+
+.pager a {
+  color: var(--ink);
+}
+
+.pager__status {
+  color: var(--muted, #5b6b6b);
+  font-weight: 400;
+  margin: 0 auto;
+}
+
+.pager a + .pager__status {
+  margin-left: auto;
+}
+
 /* ===== Destination pages (/cebu-travel-guides and friends) ===== */
 .page-head {
   padding-top: 32px;
