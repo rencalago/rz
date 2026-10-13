@@ -231,11 +231,28 @@ function ensureMarkers(html) {
       `<${tag}><!-- build:${name} --><!-- /build:${name} --></${tag}>`
     );
   }
+  if (!html.includes("<!-- build:analytics -->")) {
+    // Take over the hand-pasted Google tag (the homepage had one) so there is only ever one.
+    html = html.replace(/\s*<!-- Google tag \(gtag\.js\) -->\s*<script async src="https:\/\/www\.googletagmanager\.com\/gtag\/js\?id=[^"]+"><\/script>\s*<script>[\s\S]*?<\/script>/, "");
+    html = html.replace(/(\s*)<\/body>/, "\n    <!-- build:analytics --><!-- /build:analytics -->$1</body>");
+  }
   if (!html.includes("<!-- build:seo -->")) {
     html = html.replace(/(\s*)<\/head>/, "\n    <!-- build:seo --><!-- /build:seo -->$1</head>");
   }
   return html;
 }
+
+// Google Analytics 4. Change the ID here and rebuild to update every page.
+const GA_ID = "G-1K13C294LJ";
+const analyticsSnippet = `
+    <script async src="https://www.googletagmanager.com/gtag/js?id=${GA_ID}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '${GA_ID}');
+    </script>
+    `;
 
 function seoTags(html, slug, isPost) {
   // Look for existing tags everywhere except our own block.
@@ -287,6 +304,8 @@ function buildPages(site, destinationPages) {
 
     const tags = seoTags(html, slug, postSlugs.has(slug));
     html = fillBlock(html, "seo", tags.length ? "\n    " + tags.join("\n    ") + "\n    " : "", file);
+
+    html = fillBlock(html, "analytics", analyticsSnippet, file);
 
     putFile(file, html);
     count++;
