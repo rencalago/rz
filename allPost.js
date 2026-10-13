@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "https://drive.google.com/thumbnail?id=1HpnIM09sCHa2jFxq96dsEd8e60XNAc6P&sz=s4000",
+    postNumber: 48,
+    title: "Sumilon Island Day Trip from Oslob: Boats, Fees and What to Expect",
+    desc: "Sumilon Island day trip from Oslob: the short boat crossing, the reported boat and entrance fees, the sandbar and reefs, and what to check before you go.",
+    datePublished: "14 October 2026",
+    comments: "0",
+    link: "./sumilon-island-day-trip-from-oslob",
+    location: "Oslob, Cebu",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "https://drive.google.com/thumbnail?id=1wckUHBT1dkbhCQNwk7F0r-WaTJ6j_G69&sz=s4000",
     postNumber: 47,
     title: "Balinsasayao Twin Lakes: A Day Hike and Boat Ride from Dumaguete",
