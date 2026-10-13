@@ -1020,3 +1020,65 @@ my-sidebar {
   display: block;
   margin-top: 2px;
 }
+
+/* ===== Destination pages (/cebu-travel-guides and friends) ===== */
+.page-head {
+  padding-top: 32px;
+  padding-bottom: 4px;
+}
+
+.page-head .kicker {
+  margin: 0 0 6px;
+}
+
+.page-head h1 {
+  font-family: var(--font-display);
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--ink);
+  margin: 0 0 14px;
+}
+
+.page-head__intro {
+  max-width: 760px;
+}
+
+.page-head__intro p {
+  margin: 0 0 12px;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+/* The page heading sits above the story list, so the list needs no extra top space. */
+.page-head + .columns {
+  padding-top: 16px;
+}
+
+@media (max-width: 600px) {
+  .page-head h1 {
+    font-size: 30px;
+  }
+
+  .page-head__intro p {
+    font-size: 16px;
+  }
+}
+
+/* The menu has eight items now. On narrow laptops and tablets, tighten the
+   spacing so it stays on one row instead of dropping under the logo. */
+@media (min-width: 861px) and (max-width: 1140px) {
+  .site-header__inner {
+    gap: 12px 16px;
+  }
+
+  .site-nav {
+    gap: 0 2px;
+    font-size: 14px;
+  }
+
+  .site-nav a {
+    padding: 12px 8px;
+  }
+}

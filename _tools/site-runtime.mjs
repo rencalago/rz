@@ -131,6 +131,8 @@ export async function loadSite(root) {
   return {
     posts: allPost.newPostTwo,
     destinations: app.DESTINATIONS,
+    // The same rule the homepage filter uses to decide which stories belong to a destination.
+    matchesFilter: app.matchesFilter,
     home,
     layoutFor,
     // The story card used on the homepage feed (exported by layout.js).

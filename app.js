@@ -1,6 +1,6 @@
 // Homepage: hero, editor's picks, destination tiles, filterable story feed.
 import { newPostTwo } from "./allPost.js";
-import { registerLayout, thumb, escapeHtml as esc } from "./layout.js";
+import { registerLayout, thumb, escapeHtml as esc, metaLine, storyCard } from "./layout.js";
 
 registerLayout();
 
@@ -10,18 +10,21 @@ const PER_PAGE = 6; // stories per page in "Latest stories"
 
 // Destination tiles / menu filters. A story belongs to a destination when its
 // title, location or description contains one of the keywords (lower case).
+// "href" is where a tile goes. Without it the tile opens the homepage filtered
+// to that destination. "cta" is the small line under the name.
 const DESTINATIONS = [
-  { key: "cebu", name: "Cebu", tile: true, tone: "#2F6F8F", keywords: ["cebu"] },
-  { key: "dumaguete", name: "Dumaguete", tile: true, tone: "#3F7A5A", keywords: ["dumaguete"] },
+  { key: "cebu", name: "Cebu", tile: true, tone: "#2F6F8F", keywords: ["cebu"], href: "./cebu-travel-guides" },
+  { key: "dumaguete", name: "Dumaguete", tile: true, tone: "#3F7A5A", keywords: ["dumaguete"], href: "./dumaguete-travel-guides" },
   {
     key: "negros-oriental",
     name: "Negros Oriental",
     tile: true,
     tone: "#8A5A2B",
     keywords: ["negros oriental", "dumaguete", "bais", "tanjay", "pamplona", "san jose", "la libertad"],
+    href: "./negros-oriental-travel-guides",
   },
-  { key: "baguio", name: "Baguio", tile: true, tone: "#5B6B3A", keywords: ["baguio"] },
-  { key: "metro-manila", name: "Metro Manila", tile: true, tone: "#6B4A7A", keywords: ["mckinley", "taguig", "manila"] },
+  { key: "baguio", name: "Baguio", tile: true, tone: "#5B6B3A", keywords: ["baguio"], href: "./travel-to-baguio-city-places-to-visit", cta: "Read the guide →" },
+  { key: "metro-manila", name: "Metro Manila", tile: true, tone: "#6B4A7A", keywords: ["mckinley", "taguig", "manila"], href: "./venice-grand-canal-mckinley-hill", cta: "Read the story →" },
   { key: "luzon", name: "Luzon", tile: false, tone: "#5B6B3A", keywords: ["baguio", "mckinley", "taguig", "manila"] },
 ];
 // -------------------------------------------------------------------------------
@@ -40,10 +43,6 @@ const feedEmpty = $("feed-empty");
 const pagination = $("pagination");
 const searchInput = $("q");
 const clearBtn = $("clear-filter");
-
-function metaLine(p) {
-  return [p.location, p.datePublished].filter(Boolean).map(esc).join(" · ");
-}
 
 function haystack(p) {
   return [p.title, p.location, p.desc, p.category].join(" ").toLowerCase();
@@ -90,9 +89,9 @@ function renderDestinations() {
   destEl.innerHTML = DESTINATIONS.filter((d) => d.tile)
     .map(
       (d) => `
-      <a class="dest" href="./#dest=${d.key}" style="--tone:${d.tone}">
+      <a class="dest" href="${d.href || "./#dest=" + d.key}" style="--tone:${d.tone}">
         <strong>${esc(d.name)}</strong>
-        <span>View stories →</span>
+        <span>${esc(d.cta || "View stories →")}</span>
       </a>`
     )
     .join("");
@@ -121,22 +120,7 @@ function renderFeed() {
     : "Latest stories";
   clearBtn.hidden = !(state.filter || q);
 
-  feedList.innerHTML = slice
-    .map(
-      (p) => `
-      <article class="story">
-        <a class="story__img" href="${p.link}" tabindex="-1" aria-hidden="true">
-          <img src="${thumb(p.imagesrc, 700)}" alt="${esc(p.title)}" loading="lazy" decoding="async"${p.imageFilter ? ` style="filter: ${p.imageFilter}"` : ""}>
-        </a>
-        <div class="story__body">
-          <p class="kicker">${esc(p.category)}</p>
-          <h3><a href="${p.link}">${esc(p.title)}</a></h3>
-          <p class="story__desc">${esc(p.desc)}</p>
-          <p class="meta">${metaLine(p)}</p>
-        </div>
-      </article>`
-    )
-    .join("");
+  feedList.innerHTML = slice.map(storyCard).join("");
   feedEmpty.hidden = list.length > 0;
 
   if (pages <= 1) {
@@ -223,4 +207,4 @@ renderDestinations();
 readHash();
 
 // Read by _tools/build-site.mjs (the destination list is defined once, here).
-export { DESTINATIONS };
+export { DESTINATIONS, matchesFilter };
