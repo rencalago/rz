@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "https://drive.google.com/thumbnail?id=1Yq8WxkgV6p9ilvOmsCf1cyDeTM9Px8IP&sz=s4000",
+    postNumber: 43,
+    title: "Oslob Whale Shark Watching in 2026: What Visitors Should Know",
+    desc: "Oslob whale shark watching in 2026: the visitor cap that is on hold, what we could confirm about fees, getting to Tan-awan, and how to visit with care.",
+    datePublished: "13 October 2026",
+    comments: "0",
+    link: "./oslob-whale-shark-watching-2026",
+    location: "Oslob, Cebu",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "https://drive.google.com/thumbnail?id=1uESwprXPLsd7uC2dPwdERY7D7Bq0latB&sz=s4000",
     postNumber: 42,
     title: "Cebu to Dumaguete: Ferry, Bus or Flight, and Which to Choose",
