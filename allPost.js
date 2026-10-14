@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "https://drive.google.com/thumbnail?id=1yLtivww2SVwiDF7b8cZUU35RCZnCP3SA&sz=s4000",
+    postNumber: 51,
+    title: "Tumalog Falls in Oslob: The Steep Walk, Fees and Whether to Swim",
+    desc: "Tumalog Falls in Oslob: how to reach the steep access road, the entrance fee and daily hours, the walk down, swimming safely and when the falls run strongest.",
+    datePublished: "14 October 2026",
+    comments: "0",
+    link: "./tumalog-falls-oslob-guide",
+    location: "Oslob, Cebu",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "https://drive.google.com/thumbnail?id=1WKxLSr_KU92LoGTzGnIwdZSdE4_S1Pzh&sz=s4000",
     postNumber: 50,
     title: "Silliman University Heritage Walk in Dumaguete: Hall, Museum and How to Book",
