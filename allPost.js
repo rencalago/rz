@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "https://drive.google.com/thumbnail?id=1WKxLSr_KU92LoGTzGnIwdZSdE4_S1Pzh&sz=s4000",
+    postNumber: 50,
+    title: "Silliman University Heritage Walk in Dumaguete: Hall, Museum and How to Book",
+    desc: "A heritage walk around Silliman University in Dumaguete: the historic Silliman Hall, its anthropology museum, the campus tour booking process, and the fees to confirm.",
+    datePublished: "14 October 2026",
+    comments: "0",
+    link: "./silliman-university-heritage-walk-dumaguete",
+    location: "Dumaguete, Negros Oriental",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "https://drive.google.com/thumbnail?id=1FOMn7bC7_Zd5j1mjZ1v6Q6bjBOgRQACr&sz=s4000",
     postNumber: 49,
     title: "Philippine Tarsier Sanctuary in Bohol: Visiting Responsibly, Fees and Hours",
