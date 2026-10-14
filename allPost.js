@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "https://drive.google.com/thumbnail?id=1BOQ1LSkINLAAtyW9DFlJ_7edjWsPFQ4e&sz=s4000",
+    postNumber: 52,
+    title: "Salagdoong Beach in Siquijor: Cliff Jumps, Fees and When to Go",
+    desc: "Salagdoong Beach in Siquijor: the cliff jumps, the entrance and parking fees, the drive from San Juan, lifeguard advice, and why high tide is the better time.",
+    datePublished: "14 October 2026",
+    comments: "0",
+    link: "./salagdoong-beach-siquijor-cliff-jump-guide",
+    location: "Siquijor",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "https://drive.google.com/thumbnail?id=1yLtivww2SVwiDF7b8cZUU35RCZnCP3SA&sz=s4000",
     postNumber: 51,
     title: "Tumalog Falls in Oslob: The Steep Walk, Fees and Whether to Swim",
