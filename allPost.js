@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "https://drive.google.com/thumbnail?id=1d35BP-kqbTunyHUbdCri-Vqk8vx1G_i2&sz=s4000",
+    postNumber: 55,
+    title: "Beyond Dumaguete: 5 Negros Oriental Towns Worth the Detour",
+    desc: "Five Negros Oriental towns beyond Dumaguete: Niludhan Falls, Lake Balanan, the Kansalakan River, Pamplona's ridge and Canlaon's volcano, with access tips.",
+    datePublished: "14 October 2026",
+    comments: 0,
+    link: "./negros-oriental-towns-beyond-dumaguete",
+    location: "Negros Oriental",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "https://drive.google.com/thumbnail?id=1Y3Yx83ac4ax3Arub52gEAtxtSn9wNf2U&sz=s4000",
     postNumber: 54,
     title: "What to Buy in Cebu: Local Products Worth Bringing Home",
