@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "https://drive.google.com/thumbnail?id=1FOMn7bC7_Zd5j1mjZ1v6Q6bjBOgRQACr&sz=s4000",
+    postNumber: 49,
+    title: "Philippine Tarsier Sanctuary in Bohol: Visiting Responsibly, Fees and Hours",
+    desc: "Visiting the Philippine tarsier sanctuary in Bohol: how to get there from Tagbilaran, the entrance fee and hours, the rules for visitors, and what to expect.",
+    datePublished: "14 October 2026",
+    comments: "0",
+    link: "./philippine-tarsier-sanctuary-corella-bohol",
+    location: "Corella, Bohol",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "https://drive.google.com/thumbnail?id=1HpnIM09sCHa2jFxq96dsEd8e60XNAc6P&sz=s4000",
     postNumber: 48,
     title: "Sumilon Island Day Trip from Oslob: Boats, Fees and What to Expect",
