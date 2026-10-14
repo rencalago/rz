@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "https://drive.google.com/thumbnail?id=1pNpus58yZOwePQkmw2jrrO8fNtaANmhd&sz=s4000",
+    postNumber: 53,
+    title: "Tops Cebu Lookout in 2026: The Shuttle, Fees and Going at Dusk",
+    desc: "Tops Cebu lookout in 2026: the reopened viewing deck in Busay, the ₱200 shuttle with entrance, gate fees, how to get there by jeepney or taxi, and when to go.",
+    datePublished: "14 October 2026",
+    comments: "0",
+    link: "./tops-cebu-lookout-2026-shuttle-fees-visit-guide",
+    location: "Busay, Cebu City",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "https://drive.google.com/thumbnail?id=1BOQ1LSkINLAAtyW9DFlJ_7edjWsPFQ4e&sz=s4000",
     postNumber: 52,
     title: "Salagdoong Beach in Siquijor: Cliff Jumps, Fees and When to Go",
