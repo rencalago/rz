@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "https://drive.google.com/thumbnail?id=1Y3Yx83ac4ax3Arub52gEAtxtSn9wNf2U&sz=s4000",
+    postNumber: 54,
+    title: "What to Buy in Cebu: Local Products Worth Bringing Home",
+    desc: "What to buy in Cebu: local pasalubong worth bringing home, from rosquillos and tablea to ukuleles and crafts, where to find them, and what to pack for a flight.",
+    datePublished: "15 October 2026",
+    comments: "0",
+    link: "./what-to-buy-in-cebu-local-pasalubong-guide",
+    location: "Cebu City and Metro Cebu",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "https://drive.google.com/thumbnail?id=1pNpus58yZOwePQkmw2jrrO8fNtaANmhd&sz=s4000",
     postNumber: 53,
     title: "Tops Cebu Lookout in 2026: The Shuttle, Fees and Going at Dusk",
