@@ -392,7 +392,9 @@ function seoTags(html, slug, isPost) {
 
   const url = slug === "index" ? `${BASE}/` : `${BASE}/${slug}`;
   const title = clean((outside.match(/<title>([\s\S]*?)<\/title>/) || [])[1]).replace(/\s*\|\s*Ren Calago( blog| Blog)?$/, "");
-  const description = clean((outside.match(/<meta\s+name=["']description["']\s+content=["']([^"']*)["']/) || [])[1]);
+  // The quote that opens the content must also close it, so an apostrophe inside
+  // a double-quoted description does not cut it short.
+  const description = clean((outside.match(/<meta\s+name=["']description["']\s+content=(["'])([\s\S]*?)\1/) || [])[2]);
 
   const tags = [];
   if (!has("rel", "canonical")) tags.push(`<link rel="canonical" href="${url}" />`);
@@ -406,6 +408,18 @@ function seoTags(html, slug, isPost) {
   // here and switch this to "summary_large_image".
   if (!has("name", "twitter:card")) tags.push(`<meta name="twitter:card" content="summary" />`);
   return tags;
+}
+
+// Search-result snippet guideline for articles: title up to 60 characters,
+// meta description 140-160. Only a warning; the page is still built.
+function checkSearchSnippet(html, file) {
+  const decode = (text) => String(text || "").replace(/\s+/g, " ").trim().replace(/&amp;/g, "&").replace(/&#39;/g, "'").replace(/&quot;/g, '"');
+  const title = decode((html.match(/<title>([\s\S]*?)<\/title>/) || [])[1]);
+  const description = decode((html.match(/<meta\s+name=["']description["']\s+content=(["'])([\s\S]*?)\1/) || [])[2]);
+  if (title.length > 60) warnings.push(`${file}: title is ${title.length} characters (aim for 60 or fewer)`);
+  if (description.length < 140 || description.length > 160) {
+    warnings.push(`${file}: meta description is ${description.length} characters (aim for 140-160)`);
+  }
 }
 
 function buildPages(site, destinationPages) {
@@ -432,6 +446,7 @@ function buildPages(site, destinationPages) {
       if (html.includes("<!-- build:footer -->")) html = fillBlock(html, "footer", layout.footer, file);
     }
 
+    if (postSlugs.has(slug)) checkSearchSnippet(html, file);
     const tags = seoTags(html, slug, postSlugs.has(slug));
     tags.push(structuredData(html, slug, site, destinationPages));
     html = fillBlock(html, "seo", tags.length ? "\n    " + tags.join("\n    ") + "\n    " : "", file);
