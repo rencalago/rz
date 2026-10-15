@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/mount-canlaon-in-canlaon-city.jpg",
+    postNumber: 60,
+    title: "Is It Safe to Visit Canlaon Right Now?",
+    desc: "Is it safe to visit Canlaon in 2026? What Kanlaon's Alert Level 2 means, the July and October eruptions, which sites sit outside the danger zone and how to check.",
+    datePublished: "15 October 2026",
+    comments: 0,
+    link: "./is-it-safe-to-visit-canlaon-kanlaon-alert-level",
+    location: "Canlaon City, Negros Oriental",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/christmas-holiday.jpg",
     postNumber: 59,
     title: "Why October to December Is Peak Season in Cebu and Bohol",
