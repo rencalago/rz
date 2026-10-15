@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/christmas-holiday.jpg",
+    postNumber: 59,
+    title: "Why October to December Is Peak Season in Cebu and Bohol",
+    desc: "Why October to December is the busiest travel stretch in Cebu and Bohol: key 2026 holidays, ferry and airport rushes, typhoon risks and smart booking tips.",
+    datePublished: "15 October 2026",
+    comments: 0,
+    link: "./october-to-december-peak-season-cebu-bohol",
+    location: "Cebu and Bohol",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/balicasag-virgin-island-bohol-philippines.jpg",
     postNumber: 58,
     title: "Balicasag and Virgin Island Bohol: 2026 Island-Hopping Guide",
