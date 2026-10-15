@@ -4,7 +4,7 @@ let newPostTwo = [
     imagesrc: "./Images/featured-images/mount-canlaon-in-canlaon-city.jpg",
     postNumber: 60,
     title: "Is It Safe to Visit Canlaon Right Now?",
-    desc: "Is it safe to visit Canlaon in 2026? What Kanlaon's Alert Level 2 means, the July and October eruptions, which sites sit outside the danger zone and how to check.",
+    desc: "Is it safe to visit Canlaon in 2026? What Kanlaon's Alert Level 2 means, this year's eruptions, which sites sit outside the danger zone and how to check.",
     datePublished: "15 October 2026",
     comments: 0,
     link: "./is-it-safe-to-visit-canlaon-kanlaon-alert-level",
