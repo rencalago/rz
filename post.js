@@ -62,7 +62,11 @@ function articleEssential() {
     post.author
   )}</span><span class="postDate"><i class="fa-regular fa-clock" aria-hidden="true"></i> ${esc(
     post.datePublished
-  )}</span></p>`;
+  )}</span>${
+    post.dateModified
+      ? `<span class="postDate"><i class="fa-solid fa-rotate" aria-hidden="true"></i> Updated ${esc(post.dateModified)}</span>`
+      : ""
+  }</p>`;
 }
 
 // SQUARE AD: only added when SQUARE_AD in ad-codes.js has code in it.
