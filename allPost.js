@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "https://drive.google.com/thumbnail?id=1Xwy98H02dDfx1f-kTyL5XctFb4qatIOr&sz=s4000",
+    postNumber: 56,
+    title: "Sinulog 2027: What's Confirmed So Far and What's Still Open",
+    desc: "Sinulog 2027 is set for 17 January at the Cebu City Sports Center. See what is confirmed, what is new, what is still undecided and how to plan your trip.",
+    datePublished: "15 October 2026",
+    comments: 0,
+    link: "./sinulog-2027-whats-confirmed",
+    location: "Cebu City",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "https://drive.google.com/thumbnail?id=1d35BP-kqbTunyHUbdCri-Vqk8vx1G_i2&sz=s4000",
     postNumber: 55,
     title: "Beyond Dumaguete: 5 Negros Oriental Towns Worth the Detour",
