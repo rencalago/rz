@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/cordova-most-visited-town-in-2026.jpg",
+    postNumber: 61,
+    title: "Cordova, Cebu: Why It's the Most-Visited Town in 2026",
+    desc: "Cordova topped Cebu Province arrivals in 2026. How to get there via CCLEX, island hopping, Day-as mangroves, Bantayan Bay sandbar, bakasi and costs to expect.",
+    datePublished: "16 October 2026",
+    comments: 0,
+    link: "./cordova-cebu-most-visited-town-2026",
+    location: "Cordova, Cebu",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/mount-canlaon-in-canlaon-city.jpg",
     postNumber: 60,
     title: "Is It Safe to Visit Canlaon Right Now?",
