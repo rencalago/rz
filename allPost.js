@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/balicasag-virgin-island-bohol-philippines.jpg",
+    postNumber: 58,
+    title: "Balicasag and Virgin Island Bohol: 2026 Island-Hopping Guide",
+    desc: "Plan a Balicasag and Virgin Island trip from Panglao: 2026 fees, visitor limits and rules, turtle and reef etiquette, what to pack and how to book.",
+    datePublished: "15 October 2026",
+    comments: 0,
+    link: "./balicasag-virgin-island-bohol-guide",
+    location: "Panglao, Bohol",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "https://drive.google.com/thumbnail?id=18vO9wz1uI4Mpr1DRAyEfRUtzAgwaZW5r&sz=s4000",
     postNumber: 57,
     title: "Undas 2026 in Cebu and Negros: Dates, Rules and Travel Tips",
