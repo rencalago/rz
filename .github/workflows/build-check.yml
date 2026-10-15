@@ -1,0 +1,24 @@
+# Fails a pull request when the generated parts of the site are out of date,
+# i.e. someone added or changed a post but did not run the build script.
+#
+# Fix: run `node _tools/build-site.mjs` on the branch, commit, and push.
+name: Site build check
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Check generated pages, SEO tags and sitemap are up to date
+        run: node _tools/build-site.mjs --check

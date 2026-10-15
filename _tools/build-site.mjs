@@ -263,6 +263,8 @@ function buildDestinationPages(site) {
     putFile(cfg.page + ".html", html);
     pages.push({
       slug: cfg.page,
+      name: cfg.h1,
+      members: new Set(stories.map(slugOf)),
       count: stories.length,
       lastmod: stories.map((p) => isoDate(p.datePublished)).sort().pop(),
     });
@@ -323,6 +325,65 @@ const analyticsSnippet = `
     </script>
     `;
 
+// Structured data (JSON-LD) -------------------------------------------------------
+// Tells Google what each page is: an article with its dates and author, where it
+// sits on the site (breadcrumbs), and what the site itself is called.
+// Optional in allPost.js: dateModified: "20 October 2026" when you update a post.
+const SITE_NAME = "Ren Calago Blog";
+const AUTHOR = { "@type": "Person", name: "Ren Calago", url: `${BASE}/about` };
+
+function jsonLdScript(data) {
+  const json = JSON.stringify(data, null, 2).replace(/</g, "\\u003c");
+  return `<script type="application/ld+json">\n${json}\n    </script>`;
+}
+
+function pageUrl(slug) {
+  return slug === "index" ? `${BASE}/` : `${BASE}/${slug}`;
+}
+
+function breadcrumbs(trail) {
+  return {
+    "@type": "BreadcrumbList",
+    itemListElement: trail.map((item, i) => ({ "@type": "ListItem", position: i + 1, name: item.name, item: item.url })),
+  };
+}
+
+function structuredData(html, slug, site, destinationPages) {
+  const home = { name: "Home", url: `${BASE}/` };
+  const post = site.posts.find((p) => slugOf(p) === slug);
+  const graph = [];
+
+  if (slug === "index") {
+    graph.push({ "@type": "WebSite", name: SITE_NAME, url: `${BASE}/` });
+  } else if (post) {
+    const published = isoDate(post.datePublished);
+    const modified = post.dateModified ? isoDate(post.dateModified) : published;
+    const article = {
+      "@type": "BlogPosting",
+      headline: post.title,
+      description: post.desc,
+      datePublished: published,
+      dateModified: modified,
+      author: post.author ? { ...AUTHOR, name: post.author } : AUTHOR,
+      publisher: { "@type": "Organization", name: SITE_NAME, url: `${BASE}/` },
+      mainEntityOfPage: pageUrl(slug),
+    };
+    if (post.imagesrc) article.image = post.imagesrc;
+    graph.push(article);
+    const hub = destinationPages.find((d) => d.members.has(slug));
+    graph.push(breadcrumbs([home, ...(hub ? [{ name: hub.name, url: pageUrl(hub.slug) }] : []), { name: post.title, url: pageUrl(slug) }]));
+  } else {
+    const title = String((html.match(/<title>([\s\S]*?)<\/title>/) || [])[1] || slug)
+      .replace(/\s+/g, " ")
+      .trim()
+      .replace(/\s*\|\s*Ren Calago( blog| Blog)?$/, "")
+      .replace(/&amp;/g, "&")
+      .replace(/&#39;/g, "'");
+    graph.push(breadcrumbs([home, { name: title, url: pageUrl(slug) }]));
+  }
+  return jsonLdScript({ "@context": "https://schema.org", "@graph": graph });
+}
+
 function seoTags(html, slug, isPost) {
   // Look for existing tags everywhere except our own block.
   const outside = html.replace(/<!-- build:seo -->[\s\S]*?<!-- \/build:seo -->/, "");
@@ -372,6 +433,7 @@ function buildPages(site, destinationPages) {
     }
 
     const tags = seoTags(html, slug, postSlugs.has(slug));
+    tags.push(structuredData(html, slug, site, destinationPages));
     html = fillBlock(html, "seo", tags.length ? "\n    " + tags.join("\n    ") + "\n    " : "", file);
 
     html = fillBlock(html, "analytics", analyticsSnippet, file);
@@ -406,7 +468,7 @@ function buildSitemap(site, destinationPages, archivePages) {
     const slug = slugOf(post);
     if (!fs.existsSync(path.join(root, slug + ".html"))) throw new Error(`allPost.js links to "${slug}" but ${slug}.html does not exist`);
     const loc = `${BASE}/${slug}`;
-    entries.push({ loc, lastmod: existing.get(loc) || isoDate(post.datePublished) });
+    entries.push({ loc, lastmod: [existing.get(loc) || isoDate(post.datePublished), post.dateModified ? isoDate(post.dateModified) : ""].sort().pop() });
   }
 
   const urls = entries
