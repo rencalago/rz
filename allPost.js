@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "https://drive.google.com/thumbnail?id=18vO9wz1uI4Mpr1DRAyEfRUtzAgwaZW5r&sz=s4000",
+    postNumber: 57,
+    title: "Undas 2026 in Cebu and Negros: Dates, Rules and Travel Tips",
+    desc: "Undas 2026 falls on a long weekend. Here are the dates, Cebu City cemetery rules, port and bus tips, and how to travel around the rush in Cebu and Negros.",
+    datePublished: "15 October 2026",
+    comments: 0,
+    link: "./undas-2026-travel-cebu-negros",
+    location: "Cebu and Negros Oriental",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "https://drive.google.com/thumbnail?id=1Xwy98H02dDfx1f-kTyL5XctFb4qatIOr&sz=s4000",
     postNumber: 56,
     title: "Sinulog 2027: What's Confirmed So Far and What's Still Open",
