@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/camiguin-travel-guide.jpg",
+    postNumber: 69,
+    title: "Camiguin Weekend From Cebu or Bohol: Routes and Costs",
+    desc: "Plan a Camiguin weekend from Cebu or Bohol: flying vs the Jagna ferry days, costs, a two-day island itinerary and what to sort out before you arrive.",
+    datePublished: "16 October 2026",
+    comments: 0,
+    link: "./camiguin-weekend-from-cebu-or-bohol-guide",
+    location: "Camiguin",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/higantes-festival-angono-rizal.jpg",
     postNumber: 68,
     title: "Higantes Festival Angono 2026: Dates and Visitor Guide",
