@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/masskara-festiva-bacolod.jpg",
+    postNumber: 62,
+    title: "MassKara 2026: A Guide to Bacolod's Final Festival Weekend",
+    desc: "MassKara 2026 ends 18 October. Electric MassKara, street dance and arena dates, new venues, Bacolod road closures, the festival's history and viewing tips.",
+    datePublished: "16 October 2026",
+    comments: 0,
+    link: "./masskara-festival-2026-bacolod-final-weekend",
+    location: "Bacolod City, Negros Occidental",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/cordova-most-visited-town-in-2026.jpg",
     postNumber: 61,
     title: "Cordova, Cebu: Why It's the Most-Visited Town in 2026",
