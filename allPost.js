@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/best-time-to-visit-cebu-month-by-month.jpg",
+    postNumber: 65,
+    title: "Best Time to Visit Cebu: A Month-by-Month Guide",
+    desc: "The best time to visit Cebu, month by month: PAGASA rainfall and rainy days, festivals, typhoon months, crowds and the best months for beaches and hiking.",
+    datePublished: "16 October 2026",
+    comments: 0,
+    link: "./best-time-to-visit-cebu-month-by-month",
+    location: "Cebu",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/osmena-peak-traverse-to-kawasan.jpg",
     postNumber: 64,
     title: "Osmeña Peak to Kawasan Falls: Cebu's Classic Traverse",
