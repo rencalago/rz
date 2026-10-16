@@ -279,7 +279,8 @@ function buildDestinationPages(site) {
 //    destinations, the contact page and the rest of the site.
 // 2) The canonical address (the clean /slug form, so /slug and /slug.html count
 //    as one page) and the Open Graph / Twitter tags that control how a link
-//    looks when it is shared on Facebook. No image yet (see the note below).
+//    looks when it is shared on Facebook or X. Posts whose featured image lives
+//    in the repo (./Images/...) get og:image and a large-image X card.
 //
 // A page that already has one of these tags keeps it; only missing tags are added.
 
@@ -368,7 +369,7 @@ function structuredData(html, slug, site, destinationPages) {
       publisher: { "@type": "Organization", name: SITE_NAME, url: `${BASE}/` },
       mainEntityOfPage: pageUrl(slug),
     };
-    if (post.imagesrc) article.image = post.imagesrc;
+    if (post.imagesrc) article.image = absoluteImage(post.imagesrc);
     graph.push(article);
     const hub = destinationPages.find((d) => d.members.has(slug));
     graph.push(breadcrumbs([home, ...(hub ? [{ name: hub.name, url: pageUrl(hub.slug) }] : []), { name: post.title, url: pageUrl(slug) }]));
@@ -384,7 +385,21 @@ function structuredData(html, slug, site, destinationPages) {
   return jsonLdScript({ "@context": "https://schema.org", "@graph": graph });
 }
 
-function seoTags(html, slug, isPost) {
+// A featured image as a full https address. Social sites need an absolute URL.
+function absoluteImage(src) {
+  if (!src) return "";
+  if (/^https?:\/\//.test(src)) return src;
+  return `${BASE}/${src.replace(/^\.?\//, "")}`;
+}
+
+// Only images hosted on the site itself are used for share cards. Google Drive
+// thumbnail links redirect and often fail for Facebook and X, so those posts
+// keep the small "summary" card until the image is moved into Images/.
+function shareImage(post) {
+  return post && post.imagesrc && /^\.?\/?Images\//.test(post.imagesrc) ? absoluteImage(post.imagesrc) : "";
+}
+
+function seoTags(html, slug, isPost, post) {
   // Look for existing tags everywhere except our own block.
   const outside = html.replace(/<!-- build:seo -->[\s\S]*?<!-- \/build:seo -->/, "");
   const has = (attribute, value) => new RegExp(`${attribute}=["']${value}["']`).test(outside);
@@ -403,10 +418,16 @@ function seoTags(html, slug, isPost) {
   if (title && !has("property", "og:title")) tags.push(`<meta property="og:title" content="${title}" />`);
   if (description && !has("property", "og:description")) tags.push(`<meta property="og:description" content="${description}" />`);
   if (!has("property", "og:url")) tags.push(`<meta property="og:url" content="${url}" />`);
-  // "summary" because there is no og:image yet. When pages get a hosted image
-  // (Google Drive thumbnail links are not reliable for Facebook), add og:image
-  // here and switch this to "summary_large_image".
-  if (!has("name", "twitter:card")) tags.push(`<meta name="twitter:card" content="summary" />`);
+  const image = shareImage(post);
+  if (image && !has("property", "og:image")) {
+    tags.push(`<meta property="og:image" content="${image}" />`);
+    const alt = clean((html.match(/<div class="inside-image">\s*<img[^>]*\balt=(["'])([\s\S]*?)\1/) || [])[2]);
+    if (alt) tags.push(`<meta property="og:image:alt" content="${alt}" />`);
+  }
+  if (!has("name", "twitter:card")) tags.push(`<meta name="twitter:card" content="${image ? "summary_large_image" : "summary"}" />`);
+  if (title && !has("name", "twitter:title")) tags.push(`<meta name="twitter:title" content="${title}" />`);
+  if (description && !has("name", "twitter:description")) tags.push(`<meta name="twitter:description" content="${description}" />`);
+  if (image && !has("name", "twitter:image")) tags.push(`<meta name="twitter:image" content="${image}" />`);
   return tags;
 }
 
@@ -447,7 +468,7 @@ function buildPages(site, destinationPages) {
     }
 
     if (postSlugs.has(slug)) checkSearchSnippet(html, file);
-    const tags = seoTags(html, slug, postSlugs.has(slug));
+    const tags = seoTags(html, slug, postSlugs.has(slug), site.posts.find((p) => slugOf(p) === slug));
     tags.push(structuredData(html, slug, site, destinationPages));
     html = fillBlock(html, "seo", tags.length ? "\n    " + tags.join("\n    ") + "\n    " : "", file);
 
