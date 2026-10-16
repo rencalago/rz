@@ -45,7 +45,7 @@ const DESTINATIONS = [
       "Opening hours and prices change, so confirm current details before you visit.",
     ],
   },
-  { key: "luzon", name: "Luzon", tile: false, tone: "#5B6B3A", keywords: ["baguio", "mckinley", "taguig", "manila"] },
+  { key: "luzon", name: "Luzon", tile: false, tone: "#5B6B3A", keywords: ["baguio", "mckinley", "taguig", "manila", "angono", "rizal"] },
 ];
 // -------------------------------------------------------------------------------
 
