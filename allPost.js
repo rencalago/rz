@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/lanzones-festival-in-camiguin.jpg",
+    postNumber: 70,
+    title: "Camiguin Lanzones Festival 2026: What to See and Do",
+    desc: "Camiguin's 47th Lanzones Festival runs 18 to 25 October 2026. See what's on, how to still make it by flight or ferry, and what to book before you go.",
+    datePublished: "16 October 2026",
+    comments: 0,
+    link: "./camiguin-lanzones-festival-2026-guide",
+    location: "Camiguin",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/camiguin-travel-guide.jpg",
     postNumber: 69,
     title: "Camiguin Weekend From Cebu or Bohol: Routes and Costs",
