@@ -431,6 +431,17 @@ function seoTags(html, slug, isPost, post) {
   return tags;
 }
 
+// Author and dates written into the page as plain HTML, so search engines see
+// them without running JavaScript. post.js draws the same markup in the browser.
+function withPostingMeta(html, post) {
+  if (!post) return html;
+  const updated = post.dateModified
+    ? `<span class="postDate"><i class="fa-solid fa-rotate" aria-hidden="true"></i> Updated ${escapeHtml(post.dateModified)}</span>`
+    : "";
+  const meta = `<p><span class="author"><i class="fa-solid fa-user" aria-hidden="true"></i> ${escapeHtml(post.author)}</span><span class="postDate"><i class="fa-regular fa-clock" aria-hidden="true"></i> ${escapeHtml(post.datePublished)}</span>${updated}</p>`;
+  return html.replace(/<div class="posting-meta">[\s\S]*?<\/div>/, `<div class="posting-meta">${meta}</div>`);
+}
+
 // Search-result snippet guideline for articles: title up to 60 characters,
 // meta description 140-160. Only a warning; the page is still built.
 function checkSearchSnippet(html, file) {
@@ -468,6 +479,7 @@ function buildPages(site, destinationPages) {
     }
 
     if (postSlugs.has(slug)) checkSearchSnippet(html, file);
+    if (postSlugs.has(slug)) html = withPostingMeta(html, site.posts.find((p) => slugOf(p) === slug));
     const tags = seoTags(html, slug, postSlugs.has(slug), site.posts.find((p) => slugOf(p) === slug));
     tags.push(structuredData(html, slug, site, destinationPages));
     html = fillBlock(html, "seo", tags.length ? "\n    " + tags.join("\n    ") + "\n    " : "", file);
