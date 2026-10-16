@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/baguio-bell-amphitheater-travel.jpg",
+    postNumber: 66,
+    title: "Is Baguio Quieter and Cheaper Right Now?",
+    desc: "Baguio drew far fewer visitors in 2026. See what quieter and cheaper means now: weekday crowds, hotel deals, Burnham Lake's reopening and when the rush returns.",
+    datePublished: "16 October 2026",
+    comments: 0,
+    link: "./baguio-quieter-cheaper-right-now",
+    location: "Baguio",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/best-time-to-visit-cebu-month-by-month.jpg",
     postNumber: 65,
     title: "Best Time to Visit Cebu: A Month-by-Month Guide",
