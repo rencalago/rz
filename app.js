@@ -23,8 +23,8 @@ const DESTINATIONS = [
     keywords: ["negros oriental", "dumaguete", "bais", "tanjay", "pamplona", "san jose", "la libertad"],
     href: "./negros-oriental-travel-guides",
   },
-  { key: "baguio", name: "Baguio", tile: true, tone: "#5B6B3A", keywords: ["baguio"], href: "./travel-to-baguio-city-places-to-visit", cta: "Read the guide →" },
-  { key: "metro-manila", name: "Metro Manila", tile: true, tone: "#6B4A7A", keywords: ["mckinley", "taguig", "manila"], href: "./venice-grand-canal-mckinley-hill", cta: "Read the story →" },
+  { key: "baguio", name: "Baguio", tile: true, tone: "#5B6B3A", keywords: ["baguio"] },
+  { key: "metro-manila", name: "Metro Manila", tile: true, tone: "#6B4A7A", keywords: ["mckinley", "taguig", "manila"] },
   { key: "luzon", name: "Luzon", tile: false, tone: "#5B6B3A", keywords: ["baguio", "mckinley", "taguig", "manila"] },
 ];
 // -------------------------------------------------------------------------------
