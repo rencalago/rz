@@ -23,8 +23,28 @@ const DESTINATIONS = [
     keywords: ["negros oriental", "dumaguete", "bais", "tanjay", "pamplona", "san jose", "la libertad"],
     href: "./negros-oriental-travel-guides",
   },
-  { key: "baguio", name: "Baguio", tile: true, tone: "#5B6B3A", keywords: ["baguio"] },
-  { key: "metro-manila", name: "Metro Manila", tile: true, tone: "#6B4A7A", keywords: ["mckinley", "taguig", "manila"] },
+  {
+    key: "baguio",
+    name: "Baguio",
+    tile: true,
+    tone: "#5B6B3A",
+    keywords: ["baguio"],
+    intro: [
+      'Baguio is the highland city of northern Luzon, known for its cool weather and for being a popular escape from the lowland heat. The stories below look at <a href="./baguio-quieter-cheaper-right-now">how crowds, hotel prices and attractions such as Burnham Lake stand in 2026</a> and at <a href="./travel-to-baguio-city-places-to-visit">places to visit on a family trip</a>.',
+      "Prices, opening hours and weather change through the year, so check current details before you go.",
+    ],
+  },
+  {
+    key: "metro-manila",
+    name: "Metro Manila",
+    tile: true,
+    tone: "#6B4A7A",
+    keywords: ["mckinley", "taguig", "manila"],
+    intro: [
+      'Metro Manila coverage here is just getting started. For now there is <a href="./venice-grand-canal-mckinley-hill">the Venice Grand Canal in McKinley Hill, Taguig</a>, a canal-side spot for dining, a boat ride or an easy stroll.',
+      "Opening hours and prices change, so confirm current details before you visit.",
+    ],
+  },
   { key: "luzon", name: "Luzon", tile: false, tone: "#5B6B3A", keywords: ["baguio", "mckinley", "taguig", "manila"] },
 ];
 // -------------------------------------------------------------------------------
@@ -38,6 +58,7 @@ const heroEl = $("hero");
 const picksEl = $("picks");
 const destEl = $("dest-grid");
 const feedTitle = $("feed-title");
+const feedIntro = $("feed-intro");
 const feedList = $("feed-list");
 const feedEmpty = $("feed-empty");
 const pagination = $("pagination");
@@ -119,6 +140,11 @@ function renderFeed() {
     ? "Search results"
     : "Latest stories";
   clearBtn.hidden = !(state.filter || q);
+
+  // A destination's short introduction shows above its stories (not while searching).
+  const introDest = state.filter && state.filter.type === "dest" && !q ? DESTINATIONS.find((d) => d.key === state.filter.value) : null;
+  feedIntro.innerHTML = introDest && introDest.intro ? introDest.intro.map((t) => `<p>${t}</p>`).join("") : "";
+  feedIntro.hidden = !feedIntro.innerHTML;
 
   feedList.innerHTML = slice.map(storyCard).join("");
   feedEmpty.hidden = list.length > 0;
