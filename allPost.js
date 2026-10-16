@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/moalboal-tourism-in-cebu.jpg",
+    postNumber: 63,
+    title: "Cebu Tourism Moves Off the Beaten Path in 2026",
+    desc: "Cebu's 2026 arrivals and new hotel plans point beyond the city: Cordova, Bantayan, Malapascua, Moalboal and Oslob. What the shift means for your next trip.",
+    datePublished: "16 October 2026",
+    comments: 0,
+    link: "./cebu-tourism-off-the-beaten-path-2026",
+    location: "Cebu",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/masskara-festiva-bacolod.jpg",
     postNumber: 62,
     title: "MassKara 2026: A Guide to Bacolod's Final Festival Weekend",
