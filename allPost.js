@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/higantes-festival-angono-rizal.jpg",
+    postNumber: 68,
+    title: "Higantes Festival Angono 2026: Dates and Visitor Guide",
+    desc: "Higantes Festival in Angono, Rizal: how the giants began, the 2026 dates known so far, the fluvial parade, getting there from Manila and tips for the day.",
+    datePublished: "16 October 2026",
+    comments: 0,
+    link: "./higantes-festival-angono-rizal-2026-visitor-guide",
+    location: "Angono, Rizal",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/moalboal-sardine-run-and-pescador-island.jpg",
     postNumber: 67,
     title: "Moalboal Sardine Run and Pescador Island Guide",
