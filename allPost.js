@@ -1,6 +1,6 @@
 let newPostTwo = [
   {
-    category: "News",
+    category: "Travel",
     imagesrc: "./Images/featured-images/moalboal-tourism-in-cebu.jpg",
     postNumber: 63,
     title: "Cebu Tourism Moves Off the Beaten Path in 2026",
