@@ -1106,3 +1106,11 @@ my-sidebar {
     padding: 12px 8px;
   }
 }
+
+/* "Updated" note at the end of an article */
+.update-note {
+  font-size: 0.95rem;
+  color: var(--muted);
+  border-left: 3px solid var(--line);
+  padding: 8px 0 8px 14px;
+}
