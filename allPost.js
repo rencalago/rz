@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/moalboal-sardine-run-and-pescador-island.jpg",
+    postNumber: 67,
+    title: "Moalboal Sardine Run and Pescador Island Guide",
+    desc: "Swim with Moalboal's sardines from the shore, then plan Pescador Island: fees, rules, bus fares from Cebu City, best months and what to expect.",
+    datePublished: "16 October 2026",
+    comments: 0,
+    link: "./moalboal-sardine-run-pescador-island-guide",
+    location: "Moalboal, Cebu",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/baguio-bell-amphitheater-travel.jpg",
     postNumber: 66,
     title: "Is Baguio Quieter and Cheaper Right Now?",
