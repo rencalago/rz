@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/osmena-peak-traverse-to-kawasan.jpg",
+    postNumber: 64,
+    title: "Osmeña Peak to Kawasan Falls: Cebu's Classic Traverse",
+    desc: "Hike from Osmeña Peak to Kawasan Falls in one day: getting to Mantalongon, summit fees, the traverse route, shorter options, best season and what to pack.",
+    datePublished: "16 October 2026",
+    comments: 0,
+    link: "./osmena-peak-to-kawasan-falls-traverse",
+    location: "Dalaguete and Badian, Cebu",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/moalboal-tourism-in-cebu.jpg",
     postNumber: 63,
     title: "Cebu Tourism Moves Off the Beaten Path in 2026",
