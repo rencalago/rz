@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/boracay-beach-island-philippines.jpg",
+    postNumber: 78,
+    title: "Boracay From Cebu: Flights, Caticlan Route and Costs",
+    desc: "Going to Boracay from Cebu? Compare flights to Caticlan and Kalibo, see jetty fees and real transfer costs, and find the best months for calm White Beach.",
+    datePublished: "17 October 2026",
+    comments: 0,
+    link: "./boracay-from-cebu",
+    location: "Boracay, Aklan",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/el-nido-palawan.jpg",
     postNumber: 77,
     title: "Palawan: El Nido vs Coron vs Puerto Princesa From Cebu",
