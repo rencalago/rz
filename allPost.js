@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/siargao-island-resort-surfing.jpg",
+    postNumber: 79,
+    title: "Siargao From Cebu: Flights, Ferry and Where to Stay",
+    desc: "Siargao from Cebu: compare the one-hour flight with the overnight ferry via Surigao, see airport transfer costs, and choose where to stay in General Luna.",
+    datePublished: "17 October 2026",
+    comments: 0,
+    link: "./siargao-from-cebu",
+    location: "Siargao, Surigao del Norte",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/boracay-beach-island-philippines.jpg",
     postNumber: 78,
     title: "Boracay From Cebu: Flights, Caticlan Route and Costs",
