@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/siquijor-island-beach-best.jpg",
+    postNumber: 71,
+    title: "Siquijor 3-Day Itinerary: A Ring Road Plan With Costs",
+    desc: "A 3-day Siquijor itinerary built around the ring road: where to base, a Lazi and waterfalls day, snorkelling and cliff jumps, plus scooter and fee costs.",
+    datePublished: "17 October 2026",
+    comments: 0,
+    link: "./siquijor-3-day-itinerary-ring-road-guide",
+    location: "Siquijor",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/lanzones-festival-in-camiguin.jpg",
     postNumber: 70,
     title: "Camiguin Lanzones Festival 2026: What to See and Do",
