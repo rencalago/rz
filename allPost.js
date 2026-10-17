@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/temple-of-leah-busay-cebu-city.jpg",
+    postNumber: 72,
+    title: "Busay Hills Day Trip: Temple of Leah, Sirao and Tops",
+    desc: "Plan one half-day in Cebu's Busay hills: the best order for Temple of Leah, Sirao Garden and Tops, what each stop costs, and how to get between them.",
+    datePublished: "17 October 2026",
+    comments: 0,
+    link: "./busay-hills-temple-of-leah-sirao-garden-tops-one-day-trip",
+    location: "Cebu City",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/siquijor-island-beach-best.jpg",
     postNumber: 71,
     title: "Siquijor 3-Day Itinerary: A Ring Road Plan With Costs",
