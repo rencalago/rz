@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/intramuros-manila.jpg",
+    postNumber: 82,
+    title: "Manila in 24 Hours: Intramuros Stopover Guide",
+    desc: "Spending 24 hours in Manila? Follow an easy Intramuros walking plan with Fort Santiago, San Agustin, Filipino food, transport tips and airport timing advice.",
+    datePublished: "18 October 2026",
+    comments: 0,
+    link: "./manila-24-hour-stopover-intramuros",
+    location: "Intramuros, Manila",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/davao-samal-island.jpg",
     postNumber: 81,
     title: "Davao Travel Guide: Samal Island, Mount Apo and Food",
