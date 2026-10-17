@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/davao-samal-island.jpg",
+    postNumber: 81,
+    title: "Davao Travel Guide: Samal Island, Mount Apo and Food",
+    desc: "Plan a Davao trip: Samal Island beaches and the boat crossing, what to know before Mount Apo, where to eat, durian, and a flexible three-day itinerary.",
+    datePublished: "18 October 2026",
+    comments: 0,
+    link: "./davao-samal-island-mount-apo-food",
+    location: "Davao, Mindanao",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/guimaras-tourist-spots-and-things-to-do.jpg",
     postNumber: 80,
     title: "Iloilo and Guimaras Food Trip: What to Eat and How to Go",
