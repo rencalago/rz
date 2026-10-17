@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/malapascua-diving-thresher-shark.jpg",
+    postNumber: 76,
+    title: "Malapascua Thresher Sharks: Dive Guide From Cebu",
+    desc: "Malapascua thresher sharks explained: Kimud vs Monad Shoal, who can dive, how to get from Cebu City, typical costs and how many nights to book.",
+    datePublished: "17 October 2026",
+    comments: 0,
+    link: "./malapascua-thresher-sharks",
+    location: "Malapascua, Cebu",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/panglao-island-bohol.jpg",
     postNumber: 75,
     title: "Panglao and Alona Beach, Bohol: Where to Base Yourself",
