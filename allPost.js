@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/apo-island-snorkeling.jpg",
+    postNumber: 74,
+    title: "Apo Island Snorkelling Guide: Turtles, Costs and Rules",
+    desc: "Apo Island snorkelling made simple: where to see turtles, how to get there from Dumaguete, typical fees, a one-day plan and the reef rules to follow.",
+    datePublished: "17 October 2026",
+    comments: 0,
+    link: "./apo-island-snorkelling",
+    location: "Apo Island, Negros Oriental",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/where-to-eat-lechon-in-cebu.jpg",
     postNumber: 73,
     title: "Where to Eat Lechon in Cebu: 6 Places by Type of Meal",
