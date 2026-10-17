@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/panglao-island-bohol.jpg",
+    postNumber: 75,
+    title: "Panglao and Alona Beach, Bohol: Where to Base Yourself",
+    desc: "Planning Panglao and Alona Beach? How to get there from Cebu, what Alona is really like, quieter beaches nearby, costs, best months and a two-day plan.",
+    datePublished: "17 October 2026",
+    comments: 0,
+    link: "./panglao-alona-beach-bohol",
+    location: "Panglao, Bohol",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/apo-island-snorkeling.jpg",
     postNumber: 74,
     title: "Apo Island Snorkelling Guide: Turtles, Costs and Rules",
