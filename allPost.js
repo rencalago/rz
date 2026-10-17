@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/el-nido-palawan.jpg",
+    postNumber: 77,
+    title: "Palawan: El Nido vs Coron vs Puerto Princesa From Cebu",
+    desc: "El Nido, Coron or Puerto Princesa? Compare lagoons, wrecks and the Underground River, plus how to reach Palawan from Cebu and how many days each needs.",
+    datePublished: "17 October 2026",
+    comments: 0,
+    link: "./palawan-el-nido-coron-puerto-princesa-from-cebu",
+    location: "Palawan",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/malapascua-diving-thresher-shark.jpg",
     postNumber: 76,
     title: "Malapascua Thresher Sharks: Dive Guide From Cebu",
