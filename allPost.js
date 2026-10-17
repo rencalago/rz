@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/guimaras-tourist-spots-and-things-to-do.jpg",
+    postNumber: 80,
+    title: "Iloilo and Guimaras Food Trip: What to Eat and How to Go",
+    desc: "Plan an Iloilo and Guimaras food trip: La Paz batchoy, pancit molo, KBL, mango pizza, the pumpboat crossing, and how to reach Iloilo from Cebu.",
+    datePublished: "18 October 2026",
+    comments: 0,
+    link: "./iloilo-guimaras-food-trip",
+    location: "Iloilo and Guimaras",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/siargao-island-resort-surfing.jpg",
     postNumber: 79,
     title: "Siargao From Cebu: Flights, Ferry and Where to Stay",
