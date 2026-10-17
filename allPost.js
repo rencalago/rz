@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/where-to-eat-lechon-in-cebu.jpg",
+    postNumber: 73,
+    title: "Where to Eat Lechon in Cebu: 6 Places by Type of Meal",
+    desc: "Where to eat lechon in Cebu: six places matched to your day, from a sit-down meal on Acacia Street to boneless belly in Apas, plus simple ordering tips.",
+    datePublished: "17 October 2026",
+    comments: 0,
+    link: "./where-to-eat-lechon-in-cebu",
+    location: "Cebu City",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/temple-of-leah-busay-cebu-city.jpg",
     postNumber: 72,
     title: "Busay Hills Day Trip: Temple of Leah, Sirao and Tops",
