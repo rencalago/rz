@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/inside-manila-airport-naia.jpg",
+    postNumber: 84,
+    title: "Philippines Arrival Basics: eTravel, SIM, Cash vs Cards",
+    desc: "New to the Philippines? Learn eTravel registration, SIM card rules and the 30-day tourist limit, plus cash vs card tips and ATM fees before you fly.",
+    datePublished: "18 October 2026",
+    comments: 0,
+    link: "./philippines-arrival-etravel-sim-cash",
+    location: "Philippines",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/manila-airport-airlines.jpg",
     postNumber: 83,
     title: "Philippines Travel Budget: Daily Costs and Ferry vs Flight",
