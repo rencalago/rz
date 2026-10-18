@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/ilocos-norte-road-trip.jpg",
+    postNumber: 91,
+    title: "Laoag and Pagudpud Road Trip: Ilocos Norte Guide",
+    desc: "Plan a Laoag and Pagudpud road trip from Cebu: Sinking Bell Tower, Paoay Church, Bangui windmills, Kapurpurawan, Patapat Viaduct and Saud Beach.",
+    datePublished: "18 October 2026",
+    comments: 0,
+    link: "./ilocos-norte-road-trip",
+    location: "Ilocos Norte",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/vigan-calle-crisologo.jpg",
     postNumber: 90,
     title: "Vigan Heritage Weekend: Calle Crisologo & Food Guide",
