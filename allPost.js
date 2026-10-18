@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/panagbenga-festival-in-baguio-city.jpg",
+    postNumber: 87,
+    title: "Panagbenga Festival Baguio 2027: Flower Festival Guide",
+    desc: "Panagbenga Baguio February 2027? Get month-long schedule, grand street dance and floral float parade dates, how to get there from Cebu, costs, and tips.",
+    datePublished: "18 October 2026",
+    comments: 0,
+    link: "./panagbenga-baguio-february",
+    location: "Baguio",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/ati-atihan-festival.jpg",
     postNumber: 86,
     title: "Ati-Atihan and Dinagyang 2027: January Festival Guide",
