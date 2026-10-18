@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/travel-to-sagada.jpg",
+    postNumber: 92,
+    title: "Sagada Caves and Hanging Coffins: Visitor Guide from Cebu",
+    desc: "Planning Sagada from Cebu? Guide to Sumaguing Cave, Lumiang Cave and Echo Valley's hanging coffins, with fees, etiquette, getting there and the best months.",
+    datePublished: "19 October 2026",
+    comments: 0,
+    link: "./sagada-caves-hanging-coffins-etiquette",
+    location: "Mountain Province",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/ilocos-norte-road-trip.jpg",
     postNumber: 91,
     title: "Laoag and Pagudpud Road Trip: Ilocos Norte Guide",
