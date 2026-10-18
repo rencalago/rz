@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/batanes.jpg",
+    postNumber: 89,
+    title: "Batanes Guide: How to Get There, Costs & Best Months",
+    desc: "Planning Batanes from Cebu? See flight routes via Manila or Clark, realistic costs, what to see on Batan and Sabtang, and the best months to go.",
+    datePublished: "18 October 2026",
+    comments: 0,
+    link: "./batanes-getting-there-costs-best-months",
+    location: "Batanes",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/masskara-festival-in-bacolod-2026.jpg",
     postNumber: 88,
     title: "Eat Like a Local at MassKara: A Bacolod Food Trail",
