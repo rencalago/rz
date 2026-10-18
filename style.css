@@ -708,6 +708,46 @@ my-sidebar {
   background: #d7ebe9;
 }
 
+/* Festival results tabs (MassKara and Buglasan) */
+.bw__tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 1px solid var(--line-strong);
+  background: #fff;
+}
+
+.bw__tab {
+  appearance: none;
+  margin: 0;
+  padding: 12px 10px 10px;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  background: none;
+  color: var(--text);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.bw__tab:hover {
+  color: var(--accent-dark);
+}
+
+.bw__tab.is-active {
+  color: var(--accent-dark);
+  border-bottom-color: #e0a526;
+}
+
+.bw__tab:focus-visible {
+  outline: 2px solid var(--accent-dark);
+  outline-offset: -2px;
+}
+
+.bw__panel[hidden] {
+  display: none;
+}
+
 .labels-container {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
