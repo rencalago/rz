@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/ati-atihan-festival.jpg",
+    postNumber: 86,
+    title: "Ati-Atihan and Dinagyang 2027: January Festival Guide",
+    desc: "Ati-Atihan and Dinagyang 2027 compared: which January festival suits you, the Sinulog clash on 17 January, and how to get to Kalibo and Iloilo from Cebu.",
+    datePublished: "18 October 2026",
+    comments: 0,
+    link: "./ati-atihan-dinagyang-2027",
+    location: "Philippines",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/island-hopping-best-thing-to-do-in-philippines.jpg",
     postNumber: 85,
     title: "Island-Hopping Safety in the Philippines: What to Bring",
