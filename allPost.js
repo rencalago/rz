@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/masskara-festival-in-bacolod-2026.jpg",
+    postNumber: 88,
+    title: "Eat Like a Local at MassKara: A Bacolod Food Trail",
+    desc: "Eat like a local at MassKara in Bacolod: chicken inasal at Manokan Country, piaya, the Lacson kiosk strip, and how to pace your food stops between parades.",
+    datePublished: "18 October 2026",
+    comments: 0,
+    link: "./eat-like-a-local-masskara-bacolod-food-trail",
+    location: "Bacolod City, Negros Occidental",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/panagbenga-festival-in-baguio-city.jpg",
     postNumber: 87,
     title: "Panagbenga Festival Baguio 2027: Flower Festival Guide",
