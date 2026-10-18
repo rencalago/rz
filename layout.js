@@ -42,6 +42,27 @@ export const START_HERE = [
   "./travel-to-dumaguete-places-to-visit",
 ];
 
+// Agoda hotel ad (sidebar, below "Browse by label"). Scripts written through
+// innerHTML never run, so the Agoda loader is added as real script elements once
+// the sidebar is on the page. The library must load before its config runs.
+const AGODA_LIBRARY_SRC = "https://cdn0.agoda.net/images/sherpa/js/init-dynamic_v8.min.js";
+const AGODA_CONFIG = `var stg = new Object(); stg.crt="10006486859977";stg.version="1.05"; stg.id=stg.name="adgshp545693965"; stg.Width="160px"; stg.Height="600px";stg.RefKey="ynSCj/jmH6Y9AQrODGh5Rg==";stg.AutoScrollSpeed=3000;stg.AutoScrollToggle=true;stg.SearchboxShow=true;stg.DiscountedOnly=true;stg.Layout="thindynamic"; stg.Language="en-us";stg.ApiKey="636f6ea1-d6d4-4031-ac81-841baef60b1a";stg.Cid="1941279";  stg.City="18871";stg.Currency="USD";stg.OverideConf=false; new AgdDynamic('adgshp545693965').initialize(stg);`;
+
+function loadAgodaAd(host) {
+  // The build renders this layout without a real DOM; only load the ad in a browser.
+  if (typeof document === "undefined" || !host || !host.parentNode || host.dataset.loaded) return;
+  host.dataset.loaded = "1";
+  const lib = document.createElement("script");
+  lib.src = AGODA_LIBRARY_SRC;
+  lib.async = false;
+  lib.onload = () => {
+    const cfg = document.createElement("script");
+    cfg.textContent = AGODA_CONFIG;
+    host.parentNode.appendChild(cfg);
+  };
+  host.parentNode.appendChild(lib);
+}
+
 // Buglasan Festival card at the top of the sidebar. Add each confirmed result to
 // "winners" (contest, winner, place) and the card fills in by itself on the next
 // build. Leave the list empty until a result is confirmed from an official or
@@ -280,8 +301,12 @@ ${buglasanCard}
 <section class="card">
   <h2>Browse by label</h2>
   <div class="labels-container"></div>
+</section>
+<section class="card agoda-card">
+  <div id="adgshp545693965"></div>
 </section>`;
         renderLabels(this.querySelector(".labels-container"));
+        loadAgodaAd(this.querySelector("#adgshp545693965"));
       }
     }
   );
