@@ -1225,3 +1225,189 @@ my-sidebar {
   border-left: 3px solid var(--line);
   padding: 8px 0 8px 14px;
 }
+
+/* Update note (dated memo at the top of an article) */
+.update-note {
+  margin: 0 0 22px;
+  padding: 14px 18px;
+  border-radius: var(--radius);
+  background: #fff8e6;
+  border-left: 4px solid #e0a526;
+  color: var(--text);
+}
+
+.update-note p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.update-note__label {
+  margin-bottom: 4px !important;
+  font-weight: 700;
+  color: #7a5200;
+}
+
+/* Festival winners block (inside the article) */
+.results {
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--card);
+  border: 1px solid var(--line);
+}
+
+.results__head {
+  padding: 22px 24px 18px;
+  background: linear-gradient(160deg, var(--deep) 0%, var(--accent-dark) 100%);
+  color: #fff;
+}
+
+.results__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #ffd98a;
+}
+
+.results__head p {
+  margin: 8px 0 0;
+  font-size: 15px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.results__champ {
+  padding: 24px;
+  text-align: center;
+  border-bottom: 1px solid var(--line);
+}
+
+.results__label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.results__champ-name {
+  display: block;
+  margin-top: 4px;
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--accent-dark);
+}
+
+.results__placings {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-bottom: 1px solid var(--line);
+}
+
+.results__placings li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--line);
+}
+
+.results__placings li:nth-child(odd) {
+  border-right: 1px solid var(--line);
+}
+
+.results__placings li:nth-last-child(-n+2) {
+  border-bottom: none;
+}
+
+.results__rank {
+  min-width: 40px;
+  padding: 4px 0;
+  border-radius: 6px;
+  background: var(--soft);
+  color: var(--accent-dark);
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.results__name {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.results__sub {
+  margin: 0;
+  padding: 18px 24px 8px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.results__awards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  padding: 0 24px 24px;
+}
+
+.results__award {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 14px 16px;
+  border-radius: 8px;
+  background: #fbfcfc;
+  border: 1px solid var(--line);
+}
+
+.results__award-title {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent-dark);
+}
+
+.results__award-winner {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+@media (max-width: 600px) {
+  .results__placings,
+  .results__awards {
+    grid-template-columns: 1fr;
+  }
+
+  .results__placings li:nth-child(odd) {
+    border-right: none;
+  }
+
+  .results__placings li:nth-last-child(-n+2) {
+    border-bottom: 1px solid var(--line);
+  }
+
+  .results__placings li:last-child {
+    border-bottom: none;
+  }
+
+  .results__champ-name {
+    font-size: 26px;
+  }
+}
