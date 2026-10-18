@@ -42,6 +42,29 @@ export const START_HERE = [
   "./travel-to-dumaguete-places-to-visit",
 ];
 
+// Buglasan Festival card at the top of the sidebar. Add each confirmed result to
+// "winners" (contest, winner, place) and the card fills in by itself on the next
+// build. Leave the list empty until a result is confirmed from an official or
+// news source.
+export const BUGLASAN = {
+  year: 2026,
+  dates: "15 to 25 October 2026",
+  guide: "./buglasan-festival-2026-events-schedule",
+  note: "Results will appear here once they are confirmed.",
+  winners: [
+    { contest: "Major winners", winner: "Bais City", place: "Champion" },
+    { contest: "Major winners", winner: "Dumaguete City", place: "2nd place" },
+    { contest: "Major winners", winner: "Tanjay City", place: "3rd place" },
+    { contest: "Major winners", winner: "Bayawan City", place: "4th place" },
+    { contest: "Major winners", winner: "Mabinay", place: "5th place" },
+    { contest: "Buglasan Festival King", winner: "San Jose" },
+    { contest: "Buglasan Festival Queen", winner: "Bayawan City" },
+    { contest: "Best in streetdancing", winner: "Bais City" },
+    { contest: "Best identification arch", winner: "Bayawan City" },
+    { contest: "Best in costume", winner: "Dumaguete City" },
+  ],
+};
+
 // Google Drive thumbnails are requested at s4000 (huge). Ask for a sensible width.
 export function thumb(url, width) {
   return String(url).replace(/sz=s\d+/, "sz=w" + width);
@@ -217,7 +240,30 @@ export function registerLayout() {
     </a>`
           )
           .join("");
+        const bw = BUGLASAN.winners.length
+          ? `<ul class="bw__list">${BUGLASAN.winners
+              .map(
+                (w) => `
+      <li class="bw__row">
+        <span class="bw__contest">${escapeHtml(w.contest)}</span>
+        <span class="bw__winner">${escapeHtml(w.winner)}</span>
+        ${w.place ? `<span class="bw__place">${escapeHtml(w.place)}</span>` : ""}
+      </li>`
+              )
+              .join("")}</ul>`
+          : `<p class="bw__note">${escapeHtml(BUGLASAN.note)}</p>`;
+        const buglasanCard = `
+<section class="card bw">
+  <div class="bw__head">
+    <span class="bw__eyebrow"><i class="fa-solid fa-star" aria-hidden="true"></i> Buglasan Festival ${BUGLASAN.year}</span>
+    <h2>Festival winners</h2>
+    <p class="bw__dates"><i class="fa-regular fa-calendar" aria-hidden="true"></i> ${escapeHtml(BUGLASAN.dates)}, Dumaguete</p>
+  </div>
+  ${bw}
+  <a class="bw__link" href="${BUGLASAN.guide}">Read the festival guide <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+</section>`;
         this.innerHTML = `
+${buglasanCard}
 <section class="card">
   <h2>Start here</h2>${startItems}
 </section>
