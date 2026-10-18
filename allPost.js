@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/manila-airport-airlines.jpg",
+    postNumber: 83,
+    title: "Philippines Travel Budget: Daily Costs and Ferry vs Flight",
+    desc: "Philippines travel budget by style: daily costs for backpackers, mid-range and families, plus when a ferry beats a flight between Manila, Cebu and the islands.",
+    datePublished: "18 October 2026",
+    comments: 0,
+    link: "./philippines-travel-budget-ferry-vs-flight",
+    location: "Philippines",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/intramuros-manila.jpg",
     postNumber: 82,
     title: "Manila in 24 Hours: Intramuros Stopover Guide",
