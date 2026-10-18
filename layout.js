@@ -50,8 +50,19 @@ export const BUGLASAN = {
   year: 2026,
   dates: "15 to 25 October 2026",
   guide: "./buglasan-festival-2026-events-schedule",
-  note: "The showdown and street dancing were scheduled for 16 October. The 2026 results have not been confirmed yet, so they will appear here once they are. Pageant winners and the fireworks follow later this month.",
-  winners: [],
+  note: "Results will appear here once they are confirmed.",
+  winners: [
+    { contest: "Major winners", winner: "Bais City", place: "Champion" },
+    { contest: "Major winners", winner: "Dumaguete City", place: "2nd place" },
+    { contest: "Major winners", winner: "Tanjay City", place: "3rd place" },
+    { contest: "Major winners", winner: "Bayawan City", place: "4th place" },
+    { contest: "Major winners", winner: "Mabinay", place: "5th place" },
+    { contest: "Buglasan Festival King", winner: "San Jose" },
+    { contest: "Buglasan Festival Queen", winner: "Bayawan City" },
+    { contest: "Best in streetdancing", winner: "Bais City" },
+    { contest: "Best identification arch", winner: "Bayawan City" },
+    { contest: "Best in costume", winner: "Dumaguete City" },
+  ],
 };
 
 // Google Drive thumbnails are requested at s4000 (huge). Ask for a sensible width.
