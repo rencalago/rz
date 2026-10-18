@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/island-hopping-best-thing-to-do-in-philippines.jpg",
+    postNumber: 85,
+    title: "Island-Hopping Safety in the Philippines: What to Bring",
+    desc: "Planning island-hopping? Learn how Coast Guard weather halts work, what to check on a bangka, and what to pack in a dry bag for a safer day on the water.",
+    datePublished: "18 October 2026",
+    comments: 0,
+    link: "./island-hopping-safety-what-to-bring",
+    location: "Philippines",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/inside-manila-airport-naia.jpg",
     postNumber: 84,
     title: "Philippines Arrival Basics: eTravel, SIM, Cash vs Cards",
