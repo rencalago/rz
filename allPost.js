@@ -668,6 +668,7 @@ let newPostTwo = [
     title: "Buglasan Festival 2026: Events, Schedule and What to Expect",
     desc: "Buglasan Festival 2026 runs from 15 to 25 October in Dumaguete: the main events, the daily schedule and what to expect at Negros Oriental's biggest festival.",
     datePublished: "11 October 2026",
+    dateModified: "18 October 2026",
     comments: "0",
     link: "./buglasan-festival-2026-events-schedule",
     location: "Dumaguete City",
