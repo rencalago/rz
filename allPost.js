@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/vigan-calle-crisologo.jpg",
+    postNumber: 90,
+    title: "Vigan Heritage Weekend: Calle Crisologo & Food Guide",
+    desc: "Plan a Vigan heritage weekend from Cebu: walk Calle Crisologo, eat empanada, longganisa and bagnet, get there by Laoag or Manila, with costs and tips.",
+    datePublished: "18 October 2026",
+    comments: 0,
+    link: "./vigan-heritage-weekend-calle-crisologo-food",
+    location: "Ilocos Sur",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/batanes.jpg",
     postNumber: 89,
     title: "Batanes Guide: How to Get There, Costs & Best Months",
