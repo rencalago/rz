@@ -771,6 +771,18 @@ my-sidebar {
   gap: 10px;
 }
 
+/* Agoda hotel ad: its widget is a fixed 300px wide, so the card drops its side
+   padding (the sidebar column is narrower than 300px plus padding) and clips any overflow. */
+.agoda-card {
+  padding: 0;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.agoda-card > div {
+  max-width: 100%;
+}
+
 .advertise h2 {
   margin-bottom: 0;
 }
