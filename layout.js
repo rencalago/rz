@@ -16,7 +16,6 @@ export function escapeHtml(value) {
 //        filtered (see DESTINATIONS in app.js).
 const NAV = [
   { key: "home", label: "Home", href: "./" },
-  { key: "dest=cebu", label: "Cebu", href: "./cebu-travel-guides", page: "cebu-travel-guides" },
   { key: "dest=dumaguete", label: "Dumaguete", href: "./dumaguete-travel-guides", page: "dumaguete-travel-guides" },
   { key: "dest=negros-oriental", label: "Negros Oriental", href: "./negros-oriental-travel-guides", page: "negros-oriental-travel-guides" },
   { key: "dest=luzon", label: "Luzon", href: "./#dest=luzon" },
@@ -37,7 +36,6 @@ export const CATEGORIES = Array.from(new Set(newPostTwo.map((p) => p.category)))
 
 // "Start here" box in the sidebar: the "link" of each post you want to feature
 export const START_HERE = [
-  "./tops-cebu-look-out",
   "./travel-to-baguio-city-places-to-visit",
   "./travel-to-dumaguete-places-to-visit",
 ];
