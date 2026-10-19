@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/mount-pinatubo-crater-lake.jpg",
+    postNumber: 100,
+    title: "Mount Pinatubo Crater Lake Trek: Capas vs Botolan Guide",
+    desc: "Planning the Mount Pinatubo crater lake trek? Compare Capas vs Botolan trails, jeep rides, trek times, fees, swimming rules and the route from Cebu via Clark.",
+    datePublished: "19 October 2026",
+    comments: 0,
+    link: "./mount-pinatubo-crater-lake-trek",
+    location: "Zambales",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/anawangin-cove-zambales.jpg",
     postNumber: 99,
     title: "Anawangin and Nagsasa Coves: Zambales Camping Guide",
