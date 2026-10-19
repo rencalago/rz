@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/banaue-rice-terraces.jpg",
+    postNumber: 93,
+    title: "Banaue and Batad Rice Terraces: How to Visit",
+    desc: "Plan Banaue and Batad rice terraces: overnight buses via Manila, the Banaue viewpoint, Batad guide rates, Tappiya Falls, where to stay and when to go.",
+    datePublished: "19 October 2026",
+    comments: 0,
+    link: "./banaue-batad-rice-terraces-how-to-visit",
+    location: "Ifugao",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/travel-to-sagada.jpg",
     postNumber: 92,
     title: "Sagada Caves and Hanging Coffins: Visitor Guide",
