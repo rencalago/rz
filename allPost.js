@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/binondo-food-crawl.jpg",
+    postNumber: 104,
+    title: "Binondo Food Crawl: Manila Chinatown Eats and Route",
+    desc: "Binondo food crawl guide: where to eat in Manila Chinatown, from siopao and xiao long bao to hopia, with a walking route, costs and getting there from Cebu.",
+    datePublished: "19 October 2026",
+    comments: 0,
+    link: "./binondo-food-crawl-manila",
+    location: "Manila",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/pampanga-food-trip.jpg",
     postNumber: 103,
     title: "Pampanga Food Trip: Sisig and the Kapampangan Kitchen",
