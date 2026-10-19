@@ -4,7 +4,7 @@ let newPostTwo = [
     imagesrc: "./Images/featured-images/mount-pulag-sea-of-clouds.jpg",
     postNumber: 94,
     title: "Mount Pulag Sea of Clouds: Permits, Trails and the Cold",
-    desc: "Planning Mount Pulag's sea of clouds from Cebu? Compare the Ambangeg and Akiki trails, DENR permits, cold-weather gear, the Baguio route and costs.",
+    desc: "Planning a trip to Mount Pulag's sea of clouds? Compare the Ambangeg and Akiki trails, DENR permits, cold-weather gear, the Baguio route and costs.",
     datePublished: "19 October 2026",
     comments: 0,
     link: "./mount-pulag-sea-of-clouds-permits-trails",
