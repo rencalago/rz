@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/buglasan-trade-fair-2026-woven-textiles.jpg",
+    postNumber: 101,
+    title: "Buglasan Trade Fair 2026: Local Makers and Natural Fibers",
+    desc: "Buglasan Trade Fair 2026 runs at Robinsons Dumaguete until 22 October with 25 local producers, natural-fiber crafts, woven bags and home goods to browse.",
+    datePublished: "19 October 2026",
+    comments: 0,
+    link: "./buglasan-trade-fair-2026-local-makers-natural-fibers",
+    location: "Dumaguete",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/mount-pinatubo-crater-lake.jpg",
     postNumber: 100,
     title: "Mount Pinatubo Crater Lake Trek: Capas vs Botolan Guide",
