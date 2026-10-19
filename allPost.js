@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/baler-ditumabo-falls.jpg",
+    postNumber: 96,
+    title: "Baler, Aurora: Surfing, Ditumabo Falls and Getting There",
+    desc: "Planning Baler from Cebu? Learn where to surf at Sabang, what the Ditumabo Falls trek involves, bus options via Manila, rough costs, and the best months.",
+    datePublished: "19 October 2026",
+    comments: 0,
+    link: "./baler-aurora-surfing-ditumabo-falls",
+    location: "Aurora",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/la-union-surfing.jpg",
     postNumber: 95,
     title: "La Union Surf Season: San Juan Breaks, Costs, Getting There",
