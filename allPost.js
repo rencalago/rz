@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/highlands-de-busay-cebu.jpg",
+    postNumber: 104,
+    title: "Highlands de Busay: Hours, Reservations and the View",
+    desc: "Plan dinner at Highlands de Busay in the Busay hills: hours (closed Mondays), Facebook booking, getting there from Cebu City, and pairing it with Tops.",
+    datePublished: "19 October 2026",
+    comments: 0,
+    link: "./highlands-de-busay-dinner-view-guide",
+    location: "Busay, Cebu City",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/pampanga-food-trip.jpg",
     postNumber: 103,
     title: "Pampanga Food Trip: Sisig and the Kapampangan Kitchen",
