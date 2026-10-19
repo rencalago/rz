@@ -1,6 +1,19 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/pampanga-food-trip.jpg",
+    postNumber: 103,
+    title: "Pampanga Food Trip: Sisig and the Kapampangan Kitchen",
+    desc: "Plan a Pampanga food trip from Cebu: Aling Lucing's sisig origin, Everybody's Café, Bale Dutung, a one-day food route and tips for flying into Clark.",
+    datePublished: "19 October 2026",
+    comments: 0,
+    link: "./pampanga-food-trip-sisig-kapampangan",
+    location: "Pampanga",
+    author: "Ren Calago",
+  },
+
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/dumanjug-cebu-travel-guide.jpg",
     postNumber: 102,
     title: "Dumanjug, Cebu Travel Guide: Places, Food and Getting There",
