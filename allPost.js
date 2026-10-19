@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/anawangin-cove-zambales.jpg",
+    postNumber: 99,
+    title: "Anawangin and Nagsasa Coves: Zambales Camping Guide",
+    desc: "Anawangin and Nagsasa coves in Zambales: the bus and boat route from Manila, camp and boat costs, Capones lighthouse, and the best months to go.",
+    datePublished: "19 October 2026",
+    comments: 0,
+    link: "./zambales-coves-anawangin-nagsasa",
+    location: "Zambales",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/halad-inasal-festival-talisay-cebu.jpg",
     postNumber: 98,
     title: "Halad Inasal Festival Talisay: Street Dancing and Lechon",
