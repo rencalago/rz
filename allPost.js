@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/halad-inasal-festival-talisay-cebu.jpg",
+    postNumber: 98,
+    title: "Halad Inasal Festival Talisay: Street Dancing and Lechon",
+    desc: "Halad Inasal in Talisay, Cebu, each October 15: street dancing, the lechon showdown, free lechon for spectators, the trip from Cebu City and where to eat.",
+    datePublished: "19 October 2026",
+    comments: 0,
+    link: "./halad-inasal-festival-talisay-cebu",
+    location: "Talisay, Cebu",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/hundred-islands-pangasinan-2.jpg",
     postNumber: 97,
     title: "Hundred Islands Pangasinan: Getting There, Fees and Islands",
