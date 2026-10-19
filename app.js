@@ -127,6 +127,22 @@ function visiblePosts() {
   return list;
 }
 
+// Page numbers to show: the first four, the last two, and the current page
+// with its neighbours. Gaps become a "…" marker, e.g. 1 2 3 4 … 16 17.
+function pageList(current, pages) {
+  const wanted = new Set([1, 2, 3, 4, pages - 1, pages, current - 1, current, current + 1]);
+  const nums = [...wanted].filter((n) => n >= 1 && n <= pages).sort((a, b) => a - b);
+  const out = [];
+  let prev = 0;
+  for (const n of nums) {
+    if (n - prev === 2) out.push(prev + 1); // one hidden page: show it rather than a gap
+    else if (n - prev > 2) out.push("…");
+    out.push(n);
+    prev = n;
+  }
+  return out;
+}
+
 function renderFeed() {
   const q = state.query.trim();
   const list = visiblePosts();
@@ -154,8 +170,11 @@ function renderFeed() {
     return;
   }
   let buttons = "";
-  for (let i = 1; i <= pages; i++) {
-    buttons += `<button type="button" data-page="${i}"${i === state.page ? ' aria-current="page"' : ""}>${i}</button>`;
+  for (const item of pageList(state.page, pages)) {
+    buttons +=
+      item === "…"
+        ? `<span class="pagination__gap" aria-hidden="true">…</span>`
+        : `<button type="button" data-page="${item}"${item === state.page ? ' aria-current="page"' : ""}>${item}</button>`;
   }
   if (state.page < pages) {
     buttons += `<button type="button" data-page="${state.page + 1}">Next »</button>`;
