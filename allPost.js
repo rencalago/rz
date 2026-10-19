@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/la-union-surfing.jpg",
+    postNumber: 95,
+    title: "La Union Surf Season: San Juan Breaks, Costs, Getting There",
+    desc: "Plan a La Union surf trip from Cebu: when the north swell runs, which San Juan breaks suit beginners, lesson prices, and bus routes from Manila.",
+    datePublished: "19 October 2026",
+    comments: 0,
+    link: "./la-union-surf-season-guide-san-juan",
+    location: "La Union",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/mount-pulag-sea-of-clouds.jpg",
     postNumber: 94,
     title: "Mount Pulag Sea of Clouds: Permits, Trails and the Cold",
