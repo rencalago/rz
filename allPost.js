@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/dumanjug-cebu-travel-guide.jpg",
+    postNumber: 102,
+    title: "Dumanjug, Cebu Travel Guide: Places, Food and Getting There",
+    desc: "Plan a day in Dumanjug, Cebu: how to get there, the historic parish, native chicken, Mt. Sinai, Pityak Falls and a realistic one-day itinerary.",
+    datePublished: "19 October 2026",
+    comments: 0,
+    link: "./dumanjug-cebu-travel-guide",
+    location: "Dumanjug, Cebu",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/buglasan-trade-fair-2026-woven-textiles.jpg",
     postNumber: 101,
     title: "Buglasan Trade Fair 2026: Local Makers and Natural Fibers",
