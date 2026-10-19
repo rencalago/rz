@@ -556,6 +556,14 @@ my-sidebar {
   cursor: pointer;
 }
 
+.pagination__gap {
+  align-self: center;
+  min-width: 24px;
+  text-align: center;
+  color: var(--muted);
+  font: 600 15px var(--font-body);
+}
+
 .pagination button[aria-current="page"] {
   background: var(--accent);
   border-color: var(--accent);
