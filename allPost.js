@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/hundred-islands-pangasinan-2.jpg",
+    postNumber: 97,
+    title: "Hundred Islands Pangasinan: Getting There, Fees and Islands",
+    desc: "Planning Hundred Islands from Cebu? See the Manila-to-Alaminos bus route, boat and registration fees, the islands to visit, snorkeling tips and the best months.",
+    datePublished: "19 October 2026",
+    comments: 0,
+    link: "./hundred-islands-pangasinan-guide",
+    location: "Pangasinan",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/baler-ditumabo-falls.jpg",
     postNumber: 96,
     title: "Baler, Aurora: Surfing, Ditumabo Falls and Getting There",
