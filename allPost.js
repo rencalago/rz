@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/mount-pulag-sea-of-clouds.jpg",
+    postNumber: 94,
+    title: "Mount Pulag Sea of Clouds: Permits, Trails and the Cold",
+    desc: "Planning Mount Pulag's sea of clouds from Cebu? Compare the Ambangeg and Akiki trails, DENR permits, cold-weather gear, the Baguio route and costs.",
+    datePublished: "19 October 2026",
+    comments: 0,
+    link: "./mount-pulag-sea-of-clouds-permits-trails",
+    location: "Benguet",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/banaue-rice-terraces.jpg",
     postNumber: 93,
     title: "Banaue and Batad Rice Terraces: How to Visit",
