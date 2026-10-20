@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/taal-volcano-view-from-tagaytay.jpg",
+    postNumber: 107,
+    title: "Tagaytay and Taal Day Trip from Manila: Costs and Safety",
+    desc: "Plan a Tagaytay and Taal day trip from Manila: ridge viewpoints, lake boat rules, bus and car options, costs in pesos, best months and volcano safety.",
+    datePublished: "20 October 2026",
+    comments: 0,
+    link: "./tagaytay-taal-day-trip-manila",
+    location: "Tagaytay, Batangas",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/motorcycling-in-siargao.jpg",
     postNumber: 106,
     title: "Philippines Itinerary: 7, 10 or 14 Days Across the Islands",
