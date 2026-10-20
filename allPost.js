@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/donsol-whale-sharks_cleaned.jpg",
+    postNumber: 111,
+    title: "Donsol or Oslob Whale Sharks: Which Should You Pick?",
+    desc: "Donsol or Oslob whale sharks? Compare the season, fees in pesos, rules, your odds of a sighting and how to get there from Cebu to pick the right swim.",
+    datePublished: "20 October 2026",
+    comments: 0,
+    link: "./donsol-whale-sharks-vs-oslob",
+    location: "Donsol, Sorsogon and Oslob, Cebu",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/caramoan-beach-island-paradise.jpg",
     postNumber: 110,
     title: "Caramoan Islands from Cebu: Route, Costs and Best Months",
