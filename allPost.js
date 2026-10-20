@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/caramoan-beach-island-paradise.jpg",
+    postNumber: 110,
+    title: "Caramoan Islands from Cebu: Route, Costs and Best Months",
+    desc: "Plan Caramoan from Cebu: flight and bus routes via Bicol, island hopping boat rates and fees in pesos, Survivor-famous islands and the best months to go.",
+    datePublished: "20 October 2026",
+    comments: 0,
+    link: "./caramoan-islands-camarines-sur",
+    location: "Caramoan, Camarines Sur",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/mayon-volcano-from-cagsawa-ruins-albay_cleaned.jpg",
     postNumber: 109,
     title: "Mayon Volcano and Cagsawa Ruins: Fees, ATV, Best Months",
