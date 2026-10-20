@@ -1,0 +1,29 @@
+/* Trip budget calculator (trip-budget-calculator.html) */
+.tbc { display: grid; gap: 14px; }
+.tbc__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.tbc label { display: block; font-weight: 600; color: var(--ink); font-size: 15px; }
+.tbc select, .tbc input[type="number"] {
+  display: block; width: 100%; margin-top: 6px; padding: 10px 12px;
+  border: 1px solid var(--line-strong); border-radius: 8px; background: var(--card);
+  font: inherit; font-weight: 400; color: var(--text);
+}
+.tbc select:focus, .tbc input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+.tbc__check { display: flex !important; gap: 8px; align-items: flex-start; font-weight: 400 !important; line-height: 1.4; margin: 6px 0; }
+.tbc__check[hidden] { display: none !important; }
+.tbc__check input { margin-top: 3px; accent-color: var(--accent); flex: none; }
+.tbc__check small { color: var(--muted); }
+.tbc__acts { border: 1px solid var(--line); border-radius: var(--radius); padding: 10px 14px 6px; margin: 0; }
+.tbc__acts legend { font-weight: 700; color: var(--ink); padding: 0 6px; }
+.tbc__result { background: var(--soft); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; }
+.tbc__total-label { margin: 0; color: var(--muted); font-size: 14px; }
+.tbc__total { margin: 4px 0; font-family: var(--font-display); font-size: 30px; font-weight: 700; color: var(--deep); line-height: 1.2; }
+.tbc__pp { margin: 0 0 12px; color: var(--text); }
+.tbc__table { width: 100%; border-collapse: collapse; font-size: 15px; }
+.tbc__table th, .tbc__table td { padding: 8px 0; border-top: 1px solid var(--line-strong); vertical-align: top; }
+.tbc__table th { text-align: left; font-weight: 400; padding-right: 12px; }
+.tbc__table td { text-align: right; white-space: nowrap; font-weight: 600; }
+.tbc__guide { margin: 12px 0 0; font-size: 15px; }
+@media (max-width: 520px) {
+  .tbc__grid { grid-template-columns: 1fr; }
+  .tbc__total { font-size: 26px; }
+}
