@@ -1,7 +1,7 @@
 let newPostTwo = [
   {
     category: "Travel",
-    imagesrc: "./Images/featured-images/puerto-princessa-palawan-best-tourist-spot.jpg",
+    imagesrc: "./Images/featured-images/puerto-princesa-palawan-best-tourist-spot.jpg",
     postNumber: 116,
     title: "Puerto Princesa Underground River: Permits and Booking",
     desc: "How to get a Puerto Princesa Underground River permit: tour or City Coliseum booking, fees in pesos, Sabang boats, getting there and the best months.",
