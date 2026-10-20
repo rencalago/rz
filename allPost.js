@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/mayon-volcano-from-cagsawa-ruins-albay_cleaned.jpg",
+    postNumber: 109,
+    title: "Mayon Volcano and Cagsawa Ruins: Fees, ATV, Best Months",
+    desc: "Plan a Mayon Volcano and Cagsawa Ruins trip in Albay: park fees, ATV trail prices, how to reach Legazpi, a weekend budget and the best months for a clear cone.",
+    datePublished: "20 October 2026",
+    comments: 0,
+    link: "./mayon-volcano-cagsawa-ruins-albay",
+    location: "Albay, Bicol",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/anilao-diving-batangas_cleaned.jpg",
     postNumber: 108,
     title: "Anilao Diving, Batangas: Costs, Seasons and Getting There",
