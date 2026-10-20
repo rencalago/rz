@@ -1,0 +1,25 @@
+/* Packing checklist (packing-checklist.html) */
+.pck__types { border: 1px solid var(--line); border-radius: var(--radius); padding: 10px 14px 12px; margin: 0; }
+.pck__types legend { font-weight: 700; color: var(--ink); padding: 0 6px; }
+#pck-types { display: flex; flex-wrap: wrap; gap: 8px; }
+.pck__chip { display: inline-flex; align-items: center; gap: 6px; padding: 8px 12px; border: 1px solid var(--line-strong); border-radius: 999px; background: var(--card); cursor: pointer; font-size: 15px; }
+.pck__chip input { accent-color: var(--accent); margin: 0; }
+.pck__chip:has(input:checked) { background: var(--soft); border-color: var(--accent); color: var(--deep); font-weight: 600; }
+.pck__bar { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 12px; }
+.pck__count { margin: 0; font-weight: 700; color: var(--deep); }
+.pck__actions { display: flex; gap: 8px; }
+.pck__btn { padding: 8px 14px; border-radius: 8px; border: 1px solid var(--accent); background: var(--accent); color: #fff; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer; }
+.pck__btn--ghost { background: transparent; color: var(--accent); }
+.pck__list { display: grid; gap: 14px; }
+.pck__group { border: 1px solid var(--line); border-radius: var(--radius); background: var(--card); padding: 12px 16px; }
+.pck__list .pck__group h3 { margin: 0 0 6px; font-size: 18px; color: var(--deep); }
+.pck__group ul { list-style: none; margin: 0; padding: 0; }
+.pck__group li { border-top: 1px solid var(--line); }
+.pck__group li:first-child { border-top: 0; }
+.pck__item { display: flex; gap: 10px; align-items: flex-start; padding: 8px 0; cursor: pointer; line-height: 1.4; }
+.pck__item input { margin-top: 3px; accent-color: var(--accent); flex: none; width: 18px; height: 18px; }
+.pck__item input:checked + span { color: var(--muted); text-decoration: line-through; }
+@media print {
+  my-header, my-footer, .sidebar, .pck__types, .pck__actions, .article-header, .full-content > p, .full-content > h2, .full-content > br { display: none !important; }
+  .pck__group { break-inside: avoid; border: 1px solid #999; }
+}
