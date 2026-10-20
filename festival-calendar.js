@@ -1,22 +1,18 @@
-// Festival calendar. Dates for festivals with a guide on this blog come from
-// that guide. "start"/"end" are set only when the dates have been announced;
+// Festival calendar. Any post in allPost.js with a "festival" list shows up
+// here automatically:
+//   festival: [{ name: "Sinulog", month: 1, start: "2027-01-07", end: "2027-01-17",
+//               region: "cebu", when: "optional text", about: "optional one-liner", place: "optional" }],
+// region is one of cebu, negros, visayas, mindanao, luzon (or "" for nationwide).
+// place defaults to the post's location, about to its desc, when to the dates. "start"/"end" are set only when the dates have been announced;
 // otherwise "when" describes the usual timing. month is 1-12.
+import { newPostTwo as posts } from "./allPost.js";
+
 (function () {
   "use strict";
 
-  var FESTIVALS = [
-    { name: "Sinulog", place: "Cebu City", region: "cebu", month: 1, start: "2027-01-07", end: "2027-01-17",
-      when: "7 to 17 January 2027. Grand Parade on Sunday, 17 January",
-      about: "Cebu's feast of the Santo Niño, with a street dance and parade that fill the city.", guide: "sinulog-2027-whats-confirmed" },
-    { name: "Ati-Atihan", place: "Kalibo, Aklan", region: "visayas", month: 1, start: "2027-01-17", end: "2027-01-17",
-      when: "Main Sunday on 17 January 2027",
-      about: "Painted faces, drums and crowds that dance through Kalibo's streets for the Santo Niño.", guide: "ati-atihan-dinagyang-2027" },
-    { name: "Dinagyang", place: "Iloilo City", region: "visayas", month: 1, start: "2027-01-22", end: "2027-01-24",
-      when: "Main weekend expected 22 to 24 January 2027",
-      about: "Iloilo's choreographed warrior-tribe performances on the fourth weekend of January.", guide: "ati-atihan-dinagyang-2027" },
-    { name: "Panagbenga", place: "Baguio City", region: "luzon", month: 2,
-      when: "Usually all of February, with the main parades in late February or early March",
-      about: "Baguio's flower festival, with a street dance and a float parade covered in blooms.", guide: "panagbenga-baguio-february" },
+  // Festivals that have no article on the blog yet. Festivals that do have an
+  // article are read from allPost.js: add a "festival" list to the post.
+  var EXTRA = [
     { name: "Moriones", place: "Marinduque", region: "luzon", month: 3, start: "2027-03-22", end: "2027-03-28",
       when: "Holy Week, 22 to 28 March 2027",
       about: "Townspeople in carved Roman soldier masks re-enact the story of Longinus during Holy Week." },
@@ -26,37 +22,33 @@
     { name: "Kadayawan", place: "Davao City", region: "mindanao", month: 8,
       when: "Usually the third week of August",
       about: "Davao's harvest thanksgiving, with street dancing, floral floats and plenty of durian.", guide: "davao-samal-island-mount-apo-food" },
-    { name: "Tisa Siomai Festival", place: "Tisa, Cebu City", region: "cebu", month: 9, start: "2026-09-26", end: "2026-09-26",
-      when: "Held on 26 September in 2026",
-      about: "A neighbourhood food festival for the steamed siomai Tisa is known for.", guide: "tisa-siomai-festival-draws-7000-people" },
-    { name: "MassKara", place: "Bacolod City", region: "negros", month: 10, start: "2026-10-01", end: "2026-10-18",
-      when: "1 to 18 October in 2026, peaking in the third week of October",
-      about: "Smiling masks, Electric MassKara at night and street dance competitions.", guide: "masskara-festival-2026-bacolod-final-weekend" },
-    { name: "Moalboal Oktoberfest", place: "Moalboal, Cebu", region: "cebu", month: 10, start: "2026-10-02", end: "2026-10-04",
-      when: "Held 2 to 4 October in 2026",
-      about: "A beachside music and food festival in the dive town.", guide: "moalboal-oktoberfest-beachside-festival-cebu" },
-    { name: "Bisnok Festival", place: "Dumanjug, Cebu", region: "cebu", month: 10, start: "2026-10-03", end: "2026-10-04",
-      when: "Held 3 and 4 October in 2026",
-      about: "Dumanjug's celebration of native chicken, its food and its place in town life.", guide: "dumanjug-bisnok-festival-native-chicken" },
-    { name: "Halad Inasal", place: "Talisay City, Cebu", region: "cebu", month: 10, start: "2026-10-15", end: "2026-10-15",
-      when: "Every 15 October",
-      about: "Talisay's fiesta for Santa Teresa de Avila, built around the grilled food the city is known for.", guide: "halad-inasal-festival-talisay-cebu" },
-    { name: "Buglasan", place: "Dumaguete, Negros Oriental", region: "negros", month: 10, start: "2026-10-15", end: "2026-10-25",
-      when: "15 to 25 October in 2026",
-      about: "Negros Oriental's festival of festivals, with town booths, parades and a trade fair.", guide: "buglasan-festival-2026-events-schedule" },
-    { name: "Lanzones Festival", place: "Mambajao, Camiguin", region: "mindanao", month: 10, start: "2026-10-18", end: "2026-10-25",
-      when: "18 to 25 October in 2026, with pre-festival events from 15 October",
-      about: "Camiguin's harvest festival for its sweet lanzones, with a parade and street dancing.", guide: "camiguin-lanzones-festival-2026-guide" },
-    { name: "Higantes Festival", place: "Angono, Rizal", region: "luzon", month: 11, start: "2026-10-31", end: "2026-11-30",
-      when: "All of November 2026. Fluvial parade on 23 November",
-      about: "Giant papier-mache figures parade through the art town of Angono.", guide: "higantes-festival-angono-rizal-2026-visitor-guide" },
-    { name: "Undas", place: "Nationwide", region: "", month: 11, start: "2026-11-01", end: "2026-11-02",
-      when: "1 and 2 November 2026",
-      about: "Not a festival but a major travel peak, as families head home to visit cemeteries.", guide: "undas-2026-travel-cebu-negros" },
     { name: "Giant Lantern Festival", place: "San Fernando, Pampanga", region: "luzon", month: 12,
       when: "Usually a Saturday in mid-December",
       about: "Huge, intricately lit parol lanterns compete in the Christmas capital of the Philippines.", guide: "pampanga-food-trip-sisig-kapampangan" }
   ];
+
+  var MONTH_NAMES = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  function fmtWhen(f) {
+    if (!f.start) return "";
+    var a = new Date(f.start + "T00:00:00"), b = new Date((f.end || f.start) + "T00:00:00");
+    var ma = MONTH_NAMES[a.getMonth()], mb = MONTH_NAMES[b.getMonth()];
+    if (+a === +b) return a.getDate() + " " + ma + " " + a.getFullYear();
+    if (ma === mb) return a.getDate() + " to " + b.getDate() + " " + mb + " " + b.getFullYear();
+    return a.getDate() + " " + ma + " to " + b.getDate() + " " + mb + " " + b.getFullYear();
+  }
+
+  var FESTIVALS = EXTRA.slice();
+  (posts || []).forEach(function (post) {
+    (post.festival || []).forEach(function (f) {
+      var month = f.month || (f.start ? +f.start.slice(5, 7) : 0);
+      if (!f.name || !month) return;
+      FESTIVALS.push({
+        name: f.name, place: f.place || post.location || "", region: f.region || "", month: month,
+        start: f.start, end: f.end || f.start, when: f.when || fmtWhen(f),
+        about: f.about || post.desc || "", guide: (post.link || "").replace("./", "")
+      });
+    });
+  });
 
   var MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   var $ = function (id) { return document.getElementById(id); };
