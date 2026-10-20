@@ -1,52 +1,26 @@
-// "Where should you go?" quiz. Each destination has the trip styles it does best,
-// a cost level (1 budget to 3 pricey), how hard it is to reach (1 easy to 3 long),
-// the shortest trip that makes sense, whether it suits families, and how boat- or
-// weather-dependent it is. Answers add points; the top three are shown.
+// "Where should you go?" quiz. Any post in allPost.js with a "quiz" field joins
+// the quiz automatically:
+//   quiz: { name: "Siquijor", vibes: ["beach", "nature", "slow"], cost: 1, reach: 2, minDays: 3,
+//           family: true, boats: 1, goodMonths: [3, 4], why: "one-line reason shown in the result" },
+// vibes: beach, dive, nature, adventure, food, culture, cool, surf, party, slow (first = what it does best).
+// cost 1 budget to 3 pricey; reach 1 easy to 3 long trip; boats 0 none, 1 some, 2 boat-heavy.
+// name defaults to the post's location; goodMonths (1-12) is optional.
+import { newPostTwo as posts } from "./allPost.js";
+
 (function () {
   "use strict";
 
-  var DESTS = [
-    { name: "Siquijor", guide: "siquijor-3-day-itinerary-ring-road-guide", vibes: ["beach", "nature", "slow"], cost: 1, reach: 2, minDays: 3, family: true, boats: 1,
-      why: "quiet beaches, waterfalls and an easy scooter loop around the island" },
-    { name: "Dumaguete and Apo Island", guide: "dumaguete-on-a-budget-3-day-trip-cost", vibes: ["food", "dive", "slow", "nature"], cost: 1, reach: 1, minDays: 2, family: true, boats: 1,
-      why: "a laid-back university city with cheap eats and some of the country's best snorkelling nearby" },
-    { name: "Bohol and Panglao", guide: "panglao-alona-beach-bohol", vibes: ["beach", "nature", "culture"], cost: 2, reach: 1, minDays: 2, family: true, boats: 1,
-      why: "tarsiers, the Chocolate Hills and white-sand beaches, all within a short ride" },
-    { name: "Moalboal", guide: "moalboal-sardine-run-pescador-island-guide", vibes: ["dive", "beach", "slow"], cost: 1, reach: 1, minDays: 2, family: true, boats: 0,
-      why: "a sardine run and sea turtles right off the beach, no boat needed" },
-    { name: "Badian and Kawasan Falls", guide: "kawasan-falls-canyoneering-guide", vibes: ["adventure", "nature"], cost: 1, reach: 1, minDays: 1, family: false, boats: 0,
-      why: "canyoneering through turquoise pools, one of the best adrenaline days in Cebu" },
-    { name: "Bantayan Island", guide: "bantayan-island-guide", vibes: ["beach", "slow"], cost: 1, reach: 2, minDays: 3, family: true, boats: 1,
-      why: "flat roads, calm water and long white beaches with little to do but relax" },
-    { name: "Malapascua", guide: "malapascua-thresher-sharks", vibes: ["dive", "beach"], cost: 2, reach: 2, minDays: 3, family: false, boats: 1,
-      why: "early-morning dives with thresher sharks, which are rarely seen this reliably anywhere else" },
-    { name: "Camiguin", guide: "camiguin-weekend-from-cebu-or-bohol-guide", vibes: ["nature", "slow", "adventure"], cost: 2, reach: 2, minDays: 2, family: true, boats: 1,
-      why: "volcanoes, hot and cold springs and a white sandbar on a small, friendly island" },
-    { name: "Coron", guide: "coron-wreck-diving-kayangan-lake", vibes: ["dive", "beach", "nature"], cost: 3, reach: 3, minDays: 4, family: true, boats: 2,
-      why: "WWII shipwrecks and clear lakes surrounded by limestone cliffs" },
-    { name: "Palawan, beyond the crowds", guide: "palawan-asias-best-island-2026-quieter-spots", vibes: ["beach", "slow", "nature"], cost: 2, reach: 3, minDays: 5, family: true, boats: 2,
-      why: "Asia's best island for 2026, with quiet corners like Port Barton and Long Beach" },
-    { name: "Boracay", guide: "boracay-from-cebu", vibes: ["beach", "party"], cost: 3, reach: 2, minDays: 3, family: true, boats: 1,
-      why: "powdery White Beach, sunsets and the liveliest nights of any island" },
-    { name: "Siargao", guide: "siargao-from-cebu", vibes: ["surf", "beach", "party", "adventure"], cost: 2, reach: 2, minDays: 4, family: false, boats: 1, goodMonths: [9, 10, 11],
-      why: "surf, island hopping and a young, social crowd in General Luna" },
-    { name: "Baguio", guide: "travel-to-baguio-city-places-to-visit", vibes: ["cool", "food", "culture"], cost: 1, reach: 2, minDays: 2, family: true, boats: 0, goodMonths: [2, 3],
-      why: "cool mountain air, strawberry farms and a lively food and market scene" },
-    { name: "Sagada", guide: "sagada-caves-hanging-coffins-etiquette", vibes: ["cool", "adventure", "culture"], cost: 1, reach: 3, minDays: 3, family: false, boats: 0,
-      why: "caves, hanging coffins and misty mornings in the Mountain Province" },
-    { name: "Batanes", guide: "batanes-getting-there-costs-best-months", vibes: ["nature", "slow", "culture"], cost: 3, reach: 3, minDays: 4, family: true, boats: 1, goodMonths: [3, 4, 5],
-      why: "rolling hills, stone houses and cliffs above the sea at the country's northern tip" },
-    { name: "La Union", guide: "la-union-surf-season-guide-san-juan", vibes: ["surf", "beach", "party"], cost: 1, reach: 2, minDays: 2, family: false, boats: 0, goodMonths: [12, 1, 2],
-      why: "beginner-friendly surf in San Juan and a fun weekend crowd" },
-    { name: "Vigan", guide: "vigan-heritage-weekend-calle-crisologo-food", vibes: ["culture", "food"], cost: 1, reach: 2, minDays: 2, family: true, boats: 0,
-      why: "Spanish-era streets on Calle Crisologo and Ilocano food like empanada and bagnet" },
-    { name: "Iloilo and Guimaras", guide: "iloilo-guimaras-food-trip", vibes: ["food", "culture"], cost: 1, reach: 1, minDays: 2, family: true, boats: 1,
-      why: "batchoy, pancit molo and Guimaras mangoes on an easy food trip" },
-    { name: "Davao and Samal", guide: "davao-samal-island-mount-apo-food", vibes: ["food", "beach", "nature"], cost: 2, reach: 2, minDays: 3, family: true, boats: 1,
-      why: "durian, Samal Island beaches and the country's highest peak on the horizon" },
-    { name: "Cebu City and the north", guide: "cebu-3-day-itinerary", vibes: ["culture", "food"], cost: 1, reach: 1, minDays: 2, family: true, boats: 0,
-      why: "heritage churches, lechon and mountain views, with an international airport on the doorstep" }
-  ];
+  // Destinations come from allPost.js: any post with a "quiz" field joins.
+  var DESTS = [];
+  (posts || []).forEach(function (post) {
+    var q = post.quiz;
+    if (!q || !q.vibes || !q.vibes.length) return;
+    DESTS.push({
+      name: q.name || post.location || post.title, guide: (post.link || "").replace("./", ""),
+      vibes: q.vibes, cost: q.cost || 2, reach: q.reach || 2, minDays: q.minDays || 2,
+      family: q.family !== false, boats: q.boats || 0, goodMonths: q.goodMonths, why: q.why || post.desc || ""
+    });
+  });
 
   var QUESTIONS = [
     { id: "vibe", q: "What do you most want from this trip?", opts: [
