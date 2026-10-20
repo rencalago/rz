@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/motorcycling-in-siargao.jpg",
+    postNumber: 106,
+    title: "Philippines Itinerary: 7, 10 or 14 Days Across the Islands",
+    desc: "Philippines itinerary for 7, 10 or 14 days: three island routes through Cebu, Bohol, Boracay, Palawan and Siargao, with transfer tips, costs and best months.",
+    datePublished: "20 October 2026",
+    comments: 0,
+    link: "./philippines-itinerary-7-10-14-days",
+    location: "Philippines",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/bgc-taguig.jpg",
     postNumber: 105,
     title: "BGC and Makati for First-Timers: Stay, Eat, Get Around",
