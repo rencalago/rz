@@ -1,5 +1,17 @@
 let newPostTwo = [
   {
+    category: "News",
+    imagesrc: "./Images/featured-images/gcash-booth-trade-fair.jpeg",
+    postNumber: 114,
+    title: "GCash IPO: What the Record PSE Debut Means for You",
+    desc: "GCash went public on 20 October 2026 at P6.60 a share. Here is what the record P60.9-billion IPO means, how to buy GCASH shares and the risks to weigh first.",
+    datePublished: "20 October 2026",
+    comments: 0,
+    link: "./gcash-ipo-pse-debut-what-it-means",
+    location: "Philippines",
+    author: "Ren Calago",
+  },
+  {
     category: "Travel",
     imagesrc: "./Images/featured-images/coron-palawan-paradise_cleaned.jpg",
     postNumber: 113,
