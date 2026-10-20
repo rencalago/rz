@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/anilao-diving-batangas_cleaned.jpg",
+    postNumber: 108,
+    title: "Anilao Diving, Batangas: Costs, Seasons and Getting There",
+    desc: "Planning Anilao diving in Batangas? See what a dive weekend costs in pesos, the best months, blackwater dives and how to get there from Manila by bus or van.",
+    datePublished: "20 October 2026",
+    comments: 0,
+    link: "./anilao-diving-batangas-guide",
+    location: "Anilao, Batangas",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/taal-volcano-view-from-tagaytay.jpg",
     postNumber: 107,
     title: "Tagaytay and Taal Day Trip from Manila: Costs and Safety",
