@@ -1,5 +1,17 @@
 let newPostTwo = [
   {
+    category: "Travel",
+    imagesrc: "./Images/featured-images/palawan-quiet-beach-bangka-kayak.jpg",
+    postNumber: 115,
+    title: "Palawan, Asia's Best Island 2026: Quieter Spots to Visit",
+    desc: "Palawan was voted Asia's best island for 2026. Skip the busiest lagoons and plan a slower trip to Port Barton and San Vicente's Long Beach with this guide.",
+    datePublished: "20 October 2026",
+    comments: 0,
+    link: "./palawan-asias-best-island-2026-quieter-spots",
+    location: "Palawan",
+    author: "Ren Calago",
+  },
+  {
     category: "News",
     imagesrc: "./Images/featured-images/gcash-booth-trade-fair.jpeg",
     postNumber: 114,
