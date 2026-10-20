@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/coron-palawan-paradise_cleaned.jpg",
+    postNumber: 113,
+    title: "Coron Wreck Diving and Kayangan Lake: Costs and Fees",
+    desc: "Plan Coron wreck diving and Kayangan Lake: WWII wrecks by depth, dive and island fees in pesos, how to reach Busuanga and the best months to go.",
+    datePublished: "20 October 2026",
+    comments: 0,
+    link: "./coron-wreck-diving-kayangan-lake",
+    location: "Coron, Palawan",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/puerto-galera-oriental-mindoro_cleaned.jpg",
     postNumber: 112,
     title: "Puerto Galera Beaches and Diving: White Beach vs Sabang",
