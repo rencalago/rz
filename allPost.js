@@ -1,7 +1,7 @@
 let newPostTwo = [
   {
     category: "Travel",
-    imagesrc: "./Images/featured-images/puerto-princessa-palawan-best-tourist-spot_cleaned.jpg",
+    imagesrc: "./Images/featured-images/puerto-princesa-palawan-best-tourist-spot.jpg",
     postNumber: 116,
     title: "Puerto Princesa Underground River: Permits and Booking",
     desc: "How to get a Puerto Princesa Underground River permit: tour or City Coliseum booking, fees in pesos, Sabang boats, getting there and the best months.",
@@ -39,7 +39,7 @@ let newPostTwo = [
   },
   {
     category: "Travel",
-    imagesrc: "./Images/featured-images/coron-palawan-paradise_cleaned.jpg",
+    imagesrc: "./Images/featured-images/coron-palawan-paradise.jpg",
     postNumber: 113,
     title: "Coron Wreck Diving and Kayangan Lake: Costs and Fees",
     desc: "Plan Coron wreck diving and Kayangan Lake: WWII wrecks by depth, dive and island fees in pesos, how to reach Busuanga and the best months to go.",
@@ -52,7 +52,7 @@ let newPostTwo = [
   },
   {
     category: "Travel",
-    imagesrc: "./Images/featured-images/puerto-galera-oriental-mindoro_cleaned.jpg",
+    imagesrc: "./Images/featured-images/puerto-galera-oriental-mindoro.jpg",
     postNumber: 112,
     title: "Puerto Galera Beaches and Diving: White Beach vs Sabang",
     desc: "Puerto Galera beaches and diving guide: White Beach vs Sabang, the best dive sites, Batangas ferry route, costs in pesos and the best months to go.",
@@ -64,7 +64,7 @@ let newPostTwo = [
   },
   {
     category: "Travel",
-    imagesrc: "./Images/featured-images/donsol-whale-sharks_cleaned.jpg",
+    imagesrc: "./Images/featured-images/donsol-whale-sharks.jpg",
     postNumber: 111,
     title: "Donsol or Oslob Whale Sharks: Which Should You Pick?",
     desc: "Donsol or Oslob whale sharks? Compare the season, fees in pesos, rules, your odds of a sighting and how to get there from Cebu to pick the right swim.",
@@ -88,7 +88,7 @@ let newPostTwo = [
   },
   {
     category: "Travel",
-    imagesrc: "./Images/featured-images/mayon-volcano-from-cagsawa-ruins-albay_cleaned.jpg",
+    imagesrc: "./Images/featured-images/mayon-volcano-from-cagsawa-ruins-albay.jpg",
     postNumber: 109,
     title: "Mayon Volcano and Cagsawa Ruins: Fees, ATV, Best Months",
     desc: "Plan a Mayon Volcano and Cagsawa Ruins trip in Albay: park fees, ATV trail prices, how to reach Legazpi, a weekend budget and the best months for a clear cone.",
@@ -100,7 +100,7 @@ let newPostTwo = [
   },
   {
     category: "Travel",
-    imagesrc: "./Images/featured-images/anilao-diving-batangas_cleaned.jpg",
+    imagesrc: "./Images/featured-images/anilao-diving-batangas.jpg",
     postNumber: 108,
     title: "Anilao Diving, Batangas: Costs, Seasons and Getting There",
     desc: "Planning Anilao diving in Batangas? See what a dive weekend costs in pesos, the best months, blackwater dives and how to get there from Manila by bus or van.",
