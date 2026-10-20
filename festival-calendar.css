@@ -1,0 +1,24 @@
+/* Festival calendar (festival-calendar.html) */
+.fcal__filters { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.fcal__filters label { display: block; font-weight: 600; color: var(--ink); font-size: 15px; }
+.fcal__filters select {
+  display: block; width: 100%; margin-top: 6px; padding: 10px 12px;
+  border: 1px solid var(--line-strong); border-radius: 8px; background: var(--card);
+  font: inherit; font-weight: 400; color: var(--text);
+}
+.fcal__filters select:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+.fcal__list { display: grid; gap: 12px; }
+.fcal__list .fcal__month { margin: 14px 0 0; font-size: 20px; color: var(--deep); }
+.fcal__list .fcal__month:first-child { margin-top: 0; }
+.fcal__item { border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: var(--radius); background: var(--card); padding: 14px 16px; }
+.fcal__item.is-past { border-left-color: var(--line-strong); opacity: 0.75; }
+.fcal__item p { margin: 0; }
+.fcal__name { font-weight: 700; font-size: 17px; color: var(--ink); display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.fcal__badge { font-size: 12px; font-weight: 600; padding: 2px 8px; border-radius: 999px; background: var(--bg); color: var(--muted); }
+.fcal__badge--now { background: var(--accent); color: #fff; }
+.fcal__meta { margin-top: 4px !important; font-size: 14px; color: var(--muted); }
+.fcal__sep { margin: 0 4px; }
+.fcal__about { margin-top: 8px !important; font-size: 15px; }
+.fcal__link { display: inline-block; margin-top: 8px; font-weight: 600; font-size: 15px; }
+.fcal__empty { color: var(--muted); }
+@media (max-width: 520px) { .fcal__filters { grid-template-columns: 1fr; } }
