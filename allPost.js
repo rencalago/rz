@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/bgc-taguig.jpg",
+    postNumber: 105,
+    title: "BGC and Makati for First-Timers: Stay, Eat, Get Around",
+    desc: "First time in BGC or Makati? Where to base yourself, NAIA transfers, the BGC Bus, weekend markets, food at every budget and a realistic daily cost.",
+    datePublished: "20 October 2026",
+    comments: 0,
+    link: "./bgc-makati-first-time-visitors",
+    location: "Manila",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/binondo-food-crawl.jpg",
     postNumber: 104,
     title: "Binondo Food Crawl: Manila Chinatown Eats and Route",
