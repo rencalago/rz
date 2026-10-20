@@ -1,6 +1,19 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/puerto-princessa-palawan-best-tourist-spot_cleaned.jpg",
+    postNumber: 116,
+    title: "Puerto Princesa Underground River: Permits and Booking",
+    desc: "How to get a Puerto Princesa Underground River permit: tour or City Coliseum booking, fees in pesos, Sabang boats, getting there and the best months.",
+    datePublished: "21 October 2026",
+    comments: 0,
+    link: "./puerto-princesa-underground-river-permits",
+    quiz: {name: "Puerto Princesa Underground River", vibes: ["nature","adventure"], cost: 2, reach: 2, minDays: 3, family: true, boats: 1, why: "A UNESCO cave river reached by boat, with a permit and a day cap to plan around"},
+    location: "Palawan",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/palawan-quiet-beach-bangka-kayak.jpg",
     postNumber: 115,
     title: "Palawan, Asia's Best Island 2026: Quieter Spots to Visit",
