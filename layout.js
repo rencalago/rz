@@ -259,7 +259,7 @@ export function registerLayout() {
     </div>
     <nav class="site-footer__col" aria-label="Destinations"><h2>Destinations</h2>${dest}</nav>
     <nav class="site-footer__col" aria-label="Categories"><h2>Categories</h2>${cats}</nav>
-    <nav class="site-footer__col" aria-label="Blog"><h2>Blog</h2><a href="./about">About</a><a href="./contact">Contact</a><a href="./contact">Advertise</a></nav>
+    <nav class="site-footer__col" aria-label="Blog"><h2>Blog</h2><a href="./about">About</a><a href="./trip-budget-calculator">Trip budget calculator</a><a href="./contact">Contact</a><a href="./contact">Advertise</a></nav>
   </div>
   <div class="site-footer__bar">
     <div class="site-footer__bar-inner">
