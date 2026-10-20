@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/puerto-galera-oriental-mindoro_cleaned.jpg",
+    postNumber: 112,
+    title: "Puerto Galera Beaches and Diving: White Beach vs Sabang",
+    desc: "Puerto Galera beaches and diving guide: White Beach vs Sabang, the best dive sites, Batangas ferry route, costs in pesos and the best months to go.",
+    datePublished: "20 October 2026",
+    comments: 0,
+    link: "./puerto-galera-beaches-diving",
+    location: "Puerto Galera, Oriental Mindoro",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/donsol-whale-sharks_cleaned.jpg",
     postNumber: 111,
     title: "Donsol or Oslob Whale Sharks: Which Should You Pick?",
