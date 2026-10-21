@@ -1,6 +1,19 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/mambulod-marble-cave-la-libertad-negros-oriental.jpeg",
+    postNumber: 118,
+    title: "La Libertad, Negros Oriental: Getting There and What to See",
+    desc: "La Libertad, Negros Oriental: how to get there via the Tangil ferry from Cebu, Lalimar Beach Resort, caves, hiking, best months and a two-day plan.",
+    datePublished: "21 October 2026",
+    comments: 0,
+    link: "./la-libertad-negros-oriental-guide",
+    quiz: {name: "La Libertad, Negros Oriental", vibes: ["nature","slow","adventure"], cost: 1, reach: 2, minDays: 2, family: true, boats: 1, why: "A quiet northern Negros Oriental town with caves, a strait-facing resort pool and a direct ferry from Cebu's west coast"},
+    location: "La Libertad, Negros Oriental",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/san-vicente-long-beach-palawan.jpg",
     postNumber: 117,
     title: "San Vicente Long Beach, Palawan: Travel Guide",
