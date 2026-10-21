@@ -1,6 +1,19 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/san-vicente-long-beach-palawan.jpg",
+    postNumber: 117,
+    title: "San Vicente Long Beach, Palawan: Travel Guide",
+    desc: "Plan San Vicente Long Beach in Palawan: how to get there, where to base yourself, what to do, the visitor fee and the best months for a slow beach stay.",
+    datePublished: "21 October 2026",
+    comments: 0,
+    link: "./san-vicente-long-beach-palawan",
+    quiz: {name: "San Vicente Long Beach", vibes: ["beach","slow"], cost: 2, reach: 3, minDays: 3, family: true, boats: 1, why: "A 14.7 km west-coast beach for slow days, with Port Barton boats a short ride away"},
+    location: "Palawan",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/puerto-princesa-palawan-best-tourist-spot.jpg",
     postNumber: 116,
     title: "Puerto Princesa Underground River: Permits and Booking",
