@@ -1,0 +1,56 @@
+/* Free travel guides page (free-travel-guides.html). Shared form bits
+   (.gs-error, .gs-trap) live in style.css with the homepage card. */
+.ftg-lead { font-size: 18px; line-height: 1.6; color: var(--text); }
+
+.ftg-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.ftg-card { display: flex; flex-direction: column; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+.ftg-cover { display: block; width: 100%; height: auto; aspect-ratio: 420 / 594; object-fit: cover; background: var(--deep); }
+.ftg-card__body { padding: 16px 18px 18px; }
+.ftg-tag { margin: 0; font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); }
+.full-content .ftg-name { margin: 4px 0 10px; font-family: var(--font-display); font-size: 21px; line-height: 1.15; color: var(--ink); }
+.full-content .ftg-list { list-style: none; margin: 0; padding: 0; }
+.ftg-list li { position: relative; padding: 5px 0 5px 20px; font-size: 15px; line-height: 1.4; border-top: 1px solid var(--line); }
+.ftg-list li:first-child { border-top: 0; }
+.ftg-list li::before { content: ""; position: absolute; left: 2px; top: 12px; width: 8px; height: 8px; border-radius: 50%; background: #e0a526; }
+
+.ftg-signup { position: relative; overflow: hidden; border-radius: var(--radius); padding: 28px 30px 30px; color: #fff;
+  background: radial-gradient(120% 120% at 100% 0%, #1b5354 0%, var(--deep) 55%, #0b2627 100%); }
+.ftg-signup::before { content: ""; position: absolute; right: -120px; top: -140px; width: 320px; height: 320px; border-radius: 50%;
+  border: 1px solid rgba(224, 165, 38, 0.28); box-shadow: 0 0 0 28px rgba(224, 165, 38, 0.05), 0 0 0 29px rgba(224, 165, 38, 0.16); pointer-events: none; }
+.ftg-form, .ftg-done { position: relative; }
+.full-content .ftg-form__title { margin: 0 0 16px; font-family: var(--font-display); font-size: 28px; color: #fff; outline: none; }
+.ftg-pick { border: 0; margin: 0 0 16px; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.ftg-pick legend { width: 100%; margin-bottom: 8px; padding: 0; font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #f0c060; }
+.ftg-pick label { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px; border: 1px solid rgba(255, 255, 255, 0.25);
+  font-size: 15px; cursor: pointer; }
+.ftg-pick label:has(input:checked) { background: rgba(224, 165, 38, 0.16); border-color: #e0a526; }
+.ftg-pick input, .ftg-consent input { accent-color: #e0a526; width: 17px; height: 17px; margin: 0; flex: none; }
+.ftg-fields { display: grid; grid-template-columns: 1fr 1.4fr; gap: 12px; }
+.ftg-field span { display: block; margin-bottom: 6px; font-size: 14px; font-weight: 600; color: rgba(255, 255, 255, 0.9); }
+.ftg-field em { font-style: normal; font-weight: 400; color: rgba(255, 255, 255, 0.6); }
+.ftg-field input { width: 100%; padding: 12px 14px; border-radius: 10px; border: 1px solid rgba(255, 255, 255, 0.25); background: rgba(255, 255, 255, 0.08);
+  color: #fff; font: inherit; font-size: 16px; }
+.ftg-field input:focus { outline: none; border-color: #f0c060; background: rgba(255, 255, 255, 0.12); }
+.ftg-consent { display: flex; gap: 10px; align-items: flex-start; margin-top: 16px; font-size: 14px; line-height: 1.5; color: rgba(255, 255, 255, 0.82); cursor: pointer; }
+.ftg-consent input { margin-top: 3px; }
+.ftg-consent a, .ftg-done a.inline { color: #f0c060; text-decoration: underline; }
+.ftg-signup .gs-error { font-size: 14px; }
+.ftg-submit { margin-top: 18px; padding: 13px 26px; border: 0; border-radius: 999px; background: #e0a526; color: #1b2626; font: inherit; font-size: 16px; font-weight: 700; cursor: pointer; }
+.ftg-submit:hover { background: #f0c060; }
+.ftg-submit:disabled { opacity: 0.7; cursor: wait; }
+.ftg-done p { color: rgba(255, 255, 255, 0.85); line-height: 1.6; }
+.ftg-downloads { display: grid; gap: 10px; margin-top: 16px; }
+.ftg-downloads a { display: flex; align-items: center; gap: 12px; padding: 14px 18px; border-radius: 12px; background: #e0a526; color: #1b2626; font-weight: 700; font-size: 16px; text-decoration: none; }
+.ftg-downloads a:hover { background: #f0c060; }
+.ftg-downloads a span { margin-left: auto; font-weight: 600; font-size: 13px; opacity: 0.75; }
+.ftg-downloads a[hidden] { display: none; }
+
+@media (max-width: 760px) {
+  .ftg-grid { grid-template-columns: 1fr; }
+  .ftg-card { flex-direction: row; }
+  .ftg-card { align-items: flex-start; }
+  .ftg-cover { width: 104px; flex: none; aspect-ratio: 420 / 594; height: auto; margin: 14px 0 14px 14px; border-radius: 4px; }
+  .ftg-card__body { padding: 14px 16px 14px 14px; }
+  .ftg-fields { grid-template-columns: 1fr; }
+  .ftg-signup { padding: 24px 20px; }
+}
