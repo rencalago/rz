@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/tops-artfest-2026-cebu-busay.jpg",
+    postNumber: 126,
+    title: "TOPS ArtFest 2026: Schedule, Prizes and How to Get There",
+    desc: "TOPS ArtFest 2026 runs 22–25 October in Busay, Cebu City: opening night, the ₱50,000 Perspective Play contest, entry costs and how to reach the hill.",
+    datePublished: "21 October 2026",
+    comments: 0,
+    link: "./tops-artfest-2026-schedule-how-to-visit",
+    location: "Busay, Cebu City",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/sohoton-cave.jpg",
     postNumber: 125,
     title: "Samar Caves: Sohoton and Calbiga Costs, Routes and Seasons",
