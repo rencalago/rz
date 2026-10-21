@@ -94,7 +94,7 @@ function renderHero() {
 
 function renderPicks() {
   const items = posts
-    .slice(1, 6)
+    .slice(1, 5) // four picks, leaving room for the free-guides card below them
     .map(
       (p) => `
       <div class="pick">

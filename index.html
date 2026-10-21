@@ -104,6 +104,7 @@
       <p class="hero__desc">TOPS ArtFest 2026 runs 22–25 October in Busay, Cebu City: opening night, the ₱50,000 Perspective Play contest, entry costs and how to reach the hill.</p>
       <p class="meta">Busay, Cebu City · 21 October 2026</p>
     </div><!-- /build:hero --></article>
+        <div class="picks-col">
         <aside class="picks" id="picks" aria-label="Editor's picks"><!-- build:picks --><h2>Editor's picks</h2>
       <div class="pick">
         <p class="kicker">Travel</p>
@@ -120,11 +121,40 @@
       <div class="pick">
         <p class="kicker">Travel</p>
         <a href="./sipalay-danjugan-island-guide">Sipalay and Danjugan Island Guide: Routes and 2026 Costs</a>
-      </div>
-      <div class="pick">
-        <p class="kicker">Travel</p>
-        <a href="./antique-kawa-hot-bath-mararison-island">Antique From Cebu: Kawa Hot Bath and Mararison Island</a>
       </div><!-- /build:picks --></aside>
+        <section class="guides-promo" aria-labelledby="gp-title">
+          <div class="gp-head">
+            <div>
+              <p class="gp-eyebrow">3 free PDF guides</p>
+              <h2 class="gp-title" id="gp-title">Plan your next <em>escape</em></h2>
+            </div>
+            <a class="gp-covers" href="./free-travel-guides" tabindex="-1" aria-hidden="true">
+              <img src="./Images/free-guides/visayas-food-passport-cover.jpg" alt="" width="38" height="54" loading="lazy" decoding="async">
+              <img src="./Images/free-guides/bisaya-phrasebook-cover.jpg" alt="" width="38" height="54" loading="lazy" decoding="async">
+              <img src="./Images/free-guides/weekend-escapes-from-cebu-cover.jpg" alt="" width="38" height="54" loading="lazy" decoding="async">
+            </a>
+          </div>
+          <form class="gp-form js-guides-form" data-source="home-picks" data-success="gp-done" novalidate>
+            <label class="sr-only" for="gp-email">Email address</label>
+            <div class="gp-row">
+              <input id="gp-email" type="email" name="email" placeholder="Your email" autocomplete="email" required>
+              <button type="submit">Get them free</button>
+            </div>
+            <input type="text" name="website" class="gs-trap" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <p class="gs-error" role="alert" hidden></p>
+            <p class="gp-fine">By signing up you agree to get the guides and occasional travel tips. <a href="./free-travel-guides#privacy">Privacy</a></p>
+          </form>
+          <div class="gp-done" id="gp-done" hidden>
+            <h3 class="gp-done__title">Your guides are ready</h3>
+            <div class="gp-done__links">
+              <a data-guide="weekend-escapes" href="./downloads/weekend-escapes-from-cebu.pdf" download>Weekend Escapes</a>
+              <a data-guide="bisaya-phrasebook" href="./downloads/bisaya-phrasebook.pdf" download>Phrasebook</a>
+              <a data-guide="food-passport" href="./downloads/visayas-food-passport.pdf" download>Food Passport</a>
+            </div>
+            <p class="gp-fine">A copy of the links is on its way to your inbox.</p>
+          </div>
+        </section>
+        </div>
       </section>
 
       <section class="wrap destinations" aria-labelledby="dest-heading">
@@ -447,7 +477,7 @@
     </div>
     <nav class="site-footer__col" aria-label="Destinations"><h2>Destinations</h2><a href="./cebu-travel-guides">Cebu</a><a href="./dumaguete-travel-guides">Dumaguete</a><a href="./negros-oriental-travel-guides">Negros Oriental</a><a href="./#dest=luzon">Luzon</a></nav>
     <nav class="site-footer__col" aria-label="Categories"><h2>Categories</h2><a href="./#cat=Travel">Travel</a><a href="./#cat=News">News</a><a href="./#cat=Dining">Dining</a><a href="./#cat=Shopping">Shopping</a><a href="./#cat=Cafes%20%26%20Restaurant">Cafes &amp; Restaurant</a><a href="./#cat=Nature">Nature</a><a href="./#cat=Beach%20Resort">Beach Resort</a></nav>
-    <nav class="site-footer__col" aria-label="Blog"><h2>Blog</h2><a href="./about">About</a><a href="./trip-budget-calculator">Trip budget calculator</a><a href="./festival-calendar">Festival calendar</a><a href="./packing-checklist">Packing checklist</a><a href="./where-to-go-philippines-quiz">Where to go quiz</a><a href="./philippines-travel-map">Travel map</a><a href="./contact">Contact</a><a href="./contact">Advertise</a></nav>
+    <nav class="site-footer__col" aria-label="Blog"><h2>Blog</h2><a href="./about">About</a><a href="./trip-budget-calculator">Trip budget calculator</a><a href="./festival-calendar">Festival calendar</a><a href="./packing-checklist">Packing checklist</a><a href="./free-travel-guides">Free travel guides</a><a href="./where-to-go-philippines-quiz">Where to go quiz</a><a href="./philippines-travel-map">Travel map</a><a href="./contact">Contact</a><a href="./contact">Advertise</a></nav>
   </div>
   <div class="site-footer__bar">
     <div class="site-footer__bar-inner">
@@ -457,6 +487,7 @@
   </div>
 </footer><!-- /build:footer --></my-footer>
     <script type="module" src="./app.js"></script>
+    <script src="./guides-signup.js" defer></script>
     <!-- build:analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-1K13C294LJ"></script>
     <script>
