@@ -1,6 +1,19 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/rombon-beach.jpg",
+    postNumber: 119,
+    title: "Romblon and Sibuyan Guide: Marble, G2 and Cresta de Gallo",
+    desc: "Plan Romblon and Sibuyan: ferry and flight routes via Manila, Guiting-Guiting permits, Cresta de Gallo boat fees, costs in pesos and the best months to go.",
+    datePublished: "21 October 2026",
+    comments: 0,
+    link: "./romblon-sibuyan-island-guide",
+    quiz: {name: "Romblon and Sibuyan", vibes: ["nature","adventure","slow"], cost: 2, reach: 3, minDays: 4, family: false, boats: 1, goodMonths: [3,4,5], why: "marble workshops, a forest island with a hard summit and a white sandbar, all reached by overnight ferry"},
+    location: "Romblon",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/mambulod-marble-cave-la-libertad-negros-oriental.jpeg",
     postNumber: 118,
     title: "La Libertad, Negros Oriental: Getting There and What to See",
