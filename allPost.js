@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/pondo-falls-biliran.jpg",
+    postNumber: 128,
+    title: "Biliran Waterfalls Guide: Tinago, Ulan-Ulan and Pondol Falls",
+    desc: "Tinago, Ulan-Ulan, Recoletos and Pondol Falls on Biliran ranked by effort, with fees, habal-habal costs, the best months and how to reach Naval from Cebu.",
+    datePublished: "21 October 2026",
+    comments: 0,
+    link: "./biliran-waterfalls-guide",
+    location: "Biliran",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/san-juanico-bridge.jpg",
     postNumber: 127,
     title: "San Juanico Bridge and Tacloban: A 2-Day Plan from Cebu",
