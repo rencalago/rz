@@ -22,6 +22,7 @@ const NAV = [
   { key: "dest=luzon", label: "Luzon", href: "./#dest=luzon" },
   { key: "cat=Cafes & Restaurant", label: "Food & Cafes", href: "./#cat=Cafes%20%26%20Restaurant" },
   { key: "cat=Beach Resort", label: "Resorts", href: "./#cat=Beach%20Resort" },
+  { key: "map", label: "Map", href: "./philippines-travel-map", page: "philippines-travel-map" },
   { key: "contact", label: "Contact", href: "./contact" },
 ];
 
@@ -259,7 +260,7 @@ export function registerLayout() {
     </div>
     <nav class="site-footer__col" aria-label="Destinations"><h2>Destinations</h2>${dest}</nav>
     <nav class="site-footer__col" aria-label="Categories"><h2>Categories</h2>${cats}</nav>
-    <nav class="site-footer__col" aria-label="Blog"><h2>Blog</h2><a href="./about">About</a><a href="./trip-budget-calculator">Trip budget calculator</a><a href="./festival-calendar">Festival calendar</a><a href="./packing-checklist">Packing checklist</a><a href="./where-to-go-philippines-quiz">Where to go quiz</a><a href="./contact">Contact</a><a href="./contact">Advertise</a></nav>
+    <nav class="site-footer__col" aria-label="Blog"><h2>Blog</h2><a href="./about">About</a><a href="./trip-budget-calculator">Trip budget calculator</a><a href="./festival-calendar">Festival calendar</a><a href="./packing-checklist">Packing checklist</a><a href="./where-to-go-philippines-quiz">Where to go quiz</a><a href="./philippines-travel-map">Travel map</a><a href="./contact">Contact</a><a href="./contact">Advertise</a></nav>
   </div>
   <div class="site-footer__bar">
     <div class="site-footer__bar-inner">
