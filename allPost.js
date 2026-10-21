@@ -1,6 +1,19 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/kalanggaman-island.jpg",
+    postNumber: 124,
+    title: "Kalanggaman Island From Cebu: Routes, Fees and Camping",
+    desc: "Plan Kalanggaman Island from Cebu: routes via Ormoc or Palompon, 2026 entrance and boat fees, camping rules, a sample budget and the best months to go.",
+    datePublished: "21 October 2026",
+    comments: 0,
+    link: "./kalanggaman-island-sandbar-leyte",
+    quiz: {name: "Kalanggaman Island, Leyte", vibes: ["beach","nature","slow","adventure"], cost: 2, reach: 3, minDays: 3, family: false, boats: 1, goodMonths: [11,12,1,2,3,4,5], why: "a 750-metre white sandbar with camping and no resorts, reached by fast craft or ship from Cebu and a boat from Palompon"},
+    location: "Palompon, Leyte",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/tne-ruins-in-talisay.jpg",
     postNumber: 123,
     title: "The Ruins and Silay Heritage Houses: A Negros Day Plan",
