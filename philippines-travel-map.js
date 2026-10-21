@@ -1,8 +1,9 @@
 // Philippines travel map (philippines-travel-map.html).
 //
 // Click a province to list every story about it. Stories come from allPost.js, so a
-// new post shows up on the map by itself, as long as its "location" names a place
-// listed in PLACES below (for example "Moalboal, Cebu" or "Siquijor").
+// new post shows up on the map by itself, as long as its "location" names a
+// province (for example "Antique" or "Leyte") or a town listed in PLACES below
+// (for example "Moalboal, Cebu" or "Puerto Galera").
 //
 // To put a post on the map somewhere its location does not say, add
 //   mapAreas: ["cavite", "batangas"]
@@ -76,6 +77,9 @@ import { AREAS, VIEWBOX } from "./philippines-travel-map-data.js";
   Object.keys(PLACES).forEach(function (id) {
     PLACES[id].forEach(function (w) { RULES.push({ id: id, w: w }); });
   });
+  // Every province name on the map counts too, so a post about a province not
+  // listed above (Antique, Leyte, Bukidnon...) still lands on the map.
+  AREAS.forEach(function (a) { RULES.push({ id: a.id, w: a.name.toLowerCase() }); });
   RULES.sort(function (a, b) { return b.w.length - a.w.length; });
 
   function areasFor(post) {
@@ -84,8 +88,13 @@ import { AREAS, VIEWBOX } from "./philippines-travel-map-data.js";
     if (o) return o.slice();
     var loc = " " + String(post.location || "").toLowerCase() + " ";
     var found = [];
+    // Longest words first, and each match is blanked out, so "Quezon City" is
+    // Metro Manila and does not also count as Quezon province.
     RULES.forEach(function (r) {
-      if (loc.indexOf(r.w) > -1 && found.indexOf(r.id) < 0) found.push(r.id);
+      var at = loc.indexOf(r.w);
+      if (at < 0) return;
+      loc = loc.slice(0, at) + " ".repeat(r.w.length) + loc.slice(at + r.w.length);
+      if (found.indexOf(r.id) < 0) found.push(r.id);
     });
     return found;
   }
