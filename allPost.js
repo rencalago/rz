@@ -1,6 +1,19 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/kawa-bath-in-antique.jpg",
+    postNumber: 121,
+    title: "Antique From Cebu: Kawa Hot Bath and Mararison Island",
+    desc: "Plan Antique from Cebu: reaching Tibiao and Culasi via Caticlan or Iloilo, Kawa hot bath and Bugtong Bato fees, Mararison Island boats and the best months.",
+    datePublished: "21 October 2026",
+    comments: 0,
+    link: "./antique-kawa-hot-bath-mararison-island",
+    quiz: {name: "Antique: Tibiao and Mararison", vibes: ["nature","beach","adventure","slow"], cost: 2, reach: 3, minDays: 3, family: false, boats: 1, goodMonths: [2,3,4,5], why: "a river-side Kawa hot bath, a seven-tier waterfall and an island of grass hills, reached by flight and bus"},
+    location: "Antique",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/isla-de-gigantes.jpg",
     postNumber: 120,
     title: "Gigantes Islands From Cebu: Route, Costs and What to See",
