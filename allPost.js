@@ -1,6 +1,19 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/isla-de-gigantes.jpg",
+    postNumber: 120,
+    title: "Gigantes Islands From Cebu: Route, Costs and What to See",
+    desc: "Plan the Gigantes Islands in Iloilo from Cebu: the flight, van and boat route to Carles, island hopping fees, Cabugao Gamay, Tangke Lagoon and best months.",
+    datePublished: "21 October 2026",
+    comments: 0,
+    link: "./gigantes-islands-iloilo-guide",
+    quiz: {name: "Gigantes Islands, Iloilo", vibes: ["beach","nature","slow","adventure"], cost: 2, reach: 3, minDays: 3, family: false, boats: 1, goodMonths: [3,4,5], why: "limestone islets, a boulder viewpoint and a sandbar, reached by flight, van and boat from Iloilo City"},
+    location: "Iloilo",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/rombon-beach.jpg",
     postNumber: 119,
     title: "Romblon and Sibuyan Guide: Marble, G2 and Cresta de Gallo",
