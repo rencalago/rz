@@ -1,6 +1,19 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/sohoton-cave.jpg",
+    postNumber: 125,
+    title: "Samar Caves Guide: Sohoton, Calbiga and Langun-Gobingob",
+    desc: "Plan the Samar caves: Sohoton Natural Bridge fees, Calbiga's Langun-Gobingob tour costs, permits, routes via Tacloban or Calbayog and the best months to go.",
+    datePublished: "21 October 2026",
+    comments: 0,
+    link: "./samar-caves-sohoton-calbiga",
+    quiz: {name: "Samar caves, Sohoton and Calbiga", vibes: ["adventure","nature"], cost: 2, reach: 3, minDays: 3, family: false, boats: 1, goodMonths: [11,12,1,2,3,4,5], why: "a river-and-kayak cave tour at Sohoton and guided caving at Langun-Gobingob, reached via Tacloban or Calbayog"},
+    location: "Samar",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/kalanggaman-island.jpg",
     postNumber: 124,
     title: "Kalanggaman Island From Cebu: Routes, Fees and Camping",
