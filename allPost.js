@@ -1,6 +1,19 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/Sipalay-and-Danjugan_Island.jpg",
+    postNumber: 122,
+    title: "Sipalay and Danjugan Island Guide: Routes and 2026 Costs",
+    desc: "Plan Sipalay and Danjugan Island: 2026 tour rates, how to reach the Bulata pier from Cebu or Dumaguete, beaches to base at, booking rules and the best months.",
+    datePublished: "21 October 2026",
+    comments: 0,
+    link: "./sipalay-danjugan-island-guide",
+    quiz: {name: "Sipalay and Danjugan Island", vibes: ["beach","nature","slow","dive"], cost: 2, reach: 3, minDays: 4, family: false, boats: 1, goodMonths: [11,12,1,2,3,4,5], why: "quiet coves, a conservation island with five lagoons and a bat cave, reached by flight and a long bus ride"},
+    location: "Sipalay, Negros Occidental",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/kawa-bath-in-antique.jpg",
     postNumber: 121,
     title: "Antique From Cebu: Kawa Hot Bath and Mararison Island",
