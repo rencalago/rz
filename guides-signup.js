@@ -23,6 +23,7 @@
   }
 
   function chosenGuides(form) {
+    if (form.dataset.guides) return form.dataset.guides.split(",").map((g) => g.trim()).filter(Boolean);
     const boxes = form.querySelectorAll('input[name="guides"]');
     if (!boxes.length) return ["weekend-escapes", "bisaya-phrasebook", "food-passport"];
     return Array.from(boxes).filter((b) => b.checked).map((b) => b.value);

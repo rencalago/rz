@@ -194,6 +194,32 @@
   <li><strong>Choose by route, not reputation alone:</strong> Cebu City traffic can make a nearby restaurant feel much farther away. A branch close to your hotel or to the places you already plan to visit usually beats a long detour for one meal.</li>
 </ul>
 <br>
+<!-- guides-box: written for the free guides sign-up; keep the markers so it can be updated in one go -->
+<aside class="guides-inline" aria-label="Free PDF guide">
+  <img class="gi-cover" src="./Images/free-guides/visayas-food-passport-cover-small.jpg" alt="Cover of Visayas Food Passport" width="96" height="136" loading="lazy" decoding="async">
+  <div class="gi-body">
+    <p class="gi-eyebrow">Free PDF guide</p>
+    <p class="gi-title">Visayas Food Passport</p>
+    <p class="gi-line">27 dishes to find, taste and stamp, from Cebu lechon to Camiguin lanzones.</p>
+    <form class="gi-form js-guides-form" data-guides="food-passport" data-source="article:where-to-eat-lechon-in-cebu" data-success="gi-done" novalidate>
+      <label class="sr-only" for="gi-email">Email address</label>
+      <div class="gi-row">
+        <input id="gi-email" type="email" name="email" placeholder="Your email" autocomplete="email" required>
+        <button type="submit">Send it to me</button>
+      </div>
+      <input type="text" name="website" class="gs-trap" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <p class="gs-error" role="alert" hidden></p>
+      <p class="gi-fine">By signing up you agree to get the guide and occasional travel tips. <a href="./free-travel-guides#privacy">Privacy</a> · <a href="./free-travel-guides">See all 3 guides</a></p>
+    </form>
+    <div class="gi-done" id="gi-done" hidden>
+      <p class="gi-title" tabindex="-1">Your guide is ready</p>
+      <a class="gi-download" data-guide="food-passport" href="./downloads/visayas-food-passport.pdf" download>Download the Food Passport</a>
+      <p class="gi-fine">A copy of the link is on its way to your inbox. <a href="./free-travel-guides">See all 3 guides</a></p>
+    </div>
+  </div>
+</aside>
+<!-- /guides-box -->
+<br>
 <h2>Where to Eat Lechon in Cebu: Which One Should You Pick?</h2>
 <br>
 <p>Pick House of Lechon when you want a comfortable table and company, CnT when you want the straightforward classic, and Rico's when you are curious about original against spicy. Choose Ayer's or Zubuchon when lunch has to fit around an itinerary, and Tatang's when boneless belly is what you are after. Keep the first order simple: share some lechon, add rice or puso, and taste the pork before the sauce.</p>
@@ -408,6 +434,7 @@
   </div>
 </footer><!-- /build:footer --></my-footer>
     <script type="module" src="./post.js"></script>
+    <script src="./guides-signup.js" defer></script>
     <!-- build:analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-1K13C294LJ"></script>
     <script>
