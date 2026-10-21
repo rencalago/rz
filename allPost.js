@@ -1,6 +1,19 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/sohoton-cave.jpg",
+    postNumber: 125,
+    title: "Samar Caves: Sohoton and Calbiga Costs, Routes and Seasons",
+    desc: "Compare Sohoton and Calbiga's Langun-Gobingob caves: fees, Trexplore tour rates, routes from Cebu via Tacloban or Ormoc, and why the rainy months matter.",
+    datePublished: "21 October 2026",
+    comments: 0,
+    link: "./samar-caves-sohoton-calbiga",
+    quiz: {name: "Samar caves, Sohoton and Calbiga", vibes: ["nature","adventure"], cost: 2, reach: 3, minDays: 3, family: false, boats: 0, goodMonths: [3,4,5,6], why: "an easy river-and-cave half day at Sohoton and a mud-and-rope caving day at Langun-Gobingob, reached by flight to Tacloban"},
+    location: "Basey and Calbiga, Samar",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/kalanggaman-island.jpg",
     postNumber: 124,
     title: "Kalanggaman Island From Cebu: Routes, Fees and Camping",
