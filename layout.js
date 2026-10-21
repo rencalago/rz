@@ -22,6 +22,7 @@ const NAV = [
   { key: "dest=luzon", label: "Luzon", href: "./#dest=luzon" },
   { key: "cat=Cafes & Restaurant", label: "Food & Cafes", href: "./#cat=Cafes%20%26%20Restaurant" },
   { key: "cat=Beach Resort", label: "Resorts", href: "./#cat=Beach%20Resort" },
+  { key: "map", label: "Map", href: "./philippines-travel-map", page: "philippines-travel-map" },
   { key: "contact", label: "Contact", href: "./contact" },
 ];
 
