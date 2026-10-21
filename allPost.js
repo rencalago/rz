@@ -4,7 +4,7 @@ let newPostTwo = [
     imagesrc: "./Images/featured-images/mambulod-marble-cave-la-libertad-negros-oriental.jpeg",
     postNumber: 118,
     title: "La Libertad, Negros Oriental: Getting There and What to See",
-    desc: "La Libertad, Negros Oriental: how to get there via the Tangil ferry from Cebu, Lalimar Beach Resort, caves, hiking, best months and a two-day plan.",
+    desc: "La Libertad, Negros Oriental: how to get there via the Tangil ferry from Cebu, Lalimar Beach Resort, the caves, best months and a two-day plan.",
     datePublished: "21 October 2026",
     comments: 0,
     link: "./la-libertad-negros-oriental-guide",
