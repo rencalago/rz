@@ -174,6 +174,32 @@
 <br>
 <p>Pack a dry bag for your phone and cash, a hat, sunscreen, water and a light towel. Wear shoes that can get wet, since the boat landing and the sand can be hot and sharp. If you are not confident in the water, a life vest is a sensible request at the port.</p>
 <br>
+<!-- guides-box: written for the free guides sign-up; keep the markers so it can be updated in one go -->
+<aside class="guides-inline" aria-label="Free PDF guide">
+  <img class="gi-cover" src="./Images/free-guides/weekend-escapes-from-cebu-cover-small.jpg" alt="Cover of Weekend Escapes from Cebu" width="96" height="136" loading="lazy" decoding="async">
+  <div class="gi-body">
+    <p class="gi-eyebrow">Free PDF guide</p>
+    <p class="gi-title">Weekend Escapes from Cebu</p>
+    <p class="gi-line">10 short trips by bus, boat and plane, each with the route, the costs and a two-day plan.</p>
+    <form class="gi-form js-guides-form" data-guides="weekend-escapes" data-source="article:sumilon-island-day-trip-from-oslob" data-success="gi-done" novalidate>
+      <label class="sr-only" for="gi-email">Email address</label>
+      <div class="gi-row">
+        <input id="gi-email" type="email" name="email" placeholder="Your email" autocomplete="email" required>
+        <button type="submit">Send it to me</button>
+      </div>
+      <input type="text" name="website" class="gs-trap" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <p class="gs-error" role="alert" hidden></p>
+      <p class="gi-fine">By signing up you agree to get the guide and occasional travel tips. <a href="./free-travel-guides#privacy">Privacy</a> · <a href="./free-travel-guides">See all 3 guides</a></p>
+    </form>
+    <div class="gi-done" id="gi-done" hidden>
+      <p class="gi-title" tabindex="-1">Your guide is ready</p>
+      <a class="gi-download" data-guide="weekend-escapes" href="./downloads/weekend-escapes-from-cebu.pdf" download>Download Weekend Escapes</a>
+      <p class="gi-fine">A copy of the link is on its way to your inbox. <a href="./free-travel-guides">See all 3 guides</a></p>
+    </div>
+  </div>
+</aside>
+<!-- /guides-box -->
+<br>
 <h2>Who This Day Suits</h2>
 <br>
 <p>Sumilon suits people who want a sandbar, a short boat ride and some snorkelling, without a long walk or a busy schedule. It is a good choice for families and for anyone who has already seen the whale sharks and wants a calmer afternoon. It is less suitable if you are prone to seasickness or dislike small boats in choppy water.</p>
@@ -388,6 +414,7 @@
   </div>
 </footer><!-- /build:footer --></my-footer>
     <script type="module" src="./post.js"></script>
+    <script src="./guides-signup.js" defer></script>
     <!-- build:analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-1K13C294LJ"></script>
     <script>
