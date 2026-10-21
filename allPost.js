@@ -1,6 +1,19 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/tne-ruins-in-talisay.jpg",
+    postNumber: 123,
+    title: "The Ruins and Silay Heritage Houses: A Negros Day Plan",
+    desc: "Plan a day around The Ruins in Talisay and Silay's heritage houses: fees, what is open, the best order to visit, and how to get there from Cebu by air or sea.",
+    datePublished: "21 October 2026",
+    comments: 0,
+    link: "./the-ruins-silay-heritage-houses-negros",
+    quiz: {name: "Silay and The Ruins, Negros Occidental", vibes: ["culture","slow","food"], cost: 2, reach: 2, minDays: 2, family: true, boats: 0, goodMonths: [11,12,1,2,3,4,5], why: "sugar-era ancestral houses in Silay and a burned mansion at sunset in Talisay, reached by a one-hour flight from Cebu"},
+    location: "Negros Occidental",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/Sipalay-and-Danjugan_Island.jpg",
     postNumber: 122,
     title: "Sipalay and Danjugan Island Guide: Routes and 2026 Costs",
