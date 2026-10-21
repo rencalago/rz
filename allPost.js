@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/san-juanico-bridge.jpg",
+    postNumber: 127,
+    title: "San Juanico Bridge and Tacloban: A 2-Day Plan from Cebu",
+    desc: "San Juanico Bridge, Leyte Landing Memorial and Tacloban food, with flights and ferry routes from Cebu, current bridge load limits and the best months to go.",
+    datePublished: "21 October 2026",
+    comments: 0,
+    link: "./tacloban-san-juanico-bridge-guide",
+    location: "Tacloban, Leyte",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/tops-artfest-2026-cebu-busay.jpg",
     postNumber: 126,
     title: "TOPS ArtFest 2026: Schedule, Prizes and How to Get There",
