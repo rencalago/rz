@@ -11,7 +11,7 @@
   "use strict";
 
   // The web app URL from Apps Script (Deploy > Manage deployments), ending in /exec.
-  const ENDPOINT = "";
+  const ENDPOINT = "https://script.google.com/macros/s/AKfycbxZ-fUexdI3IPhW2ffTHPVIHNSMjfNHBILU7aR_7BX6eKx39O8b4Dj_3YN1cPM-2lxq/exec";
 
   const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
