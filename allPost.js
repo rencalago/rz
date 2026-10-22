@@ -1647,12 +1647,12 @@ let newPostTwo = [
   },
   {
     category: "Cafes & Restaurant",
-    imagesrc:
-      "https://drive.google.com/thumbnail?id=1PnHpobsmOVrqYdQLSwYYsW1LiHas6Tai&sz=s4000",
+    imagesrc: "./Images/featured-images/alimyon-san-jose-dumaguete.jpeg",
     postNumber: 6,
-    title: "Alimyon Kapehan San Jose",
-    desc: "Alimyon Kapehan in San Jose, Negros Oriental: a Filipino-style mountain cafe about 20 minutes off the highway, a good coffee stop on the way to Twin Lakes.",
+    title: "Alimyon Kapehan San Jose: Mountain Cafe Near Twin Lakes",
+    desc: "Alimyon Kapehan (kapihan) in San Jose, Negros Oriental: a Filipino-style mountain cafe with a pond and views, 20 minutes off the highway near Twin Lakes.",
     datePublished: "25 Feb 2023",
+    dateModified: "22 October 2026",
     comments: "",
     link: "./alimyon-kapehan-san-jose",
     location: "San Jose, Negros Oriental",
