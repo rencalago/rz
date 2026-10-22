@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/bukidnon-dahilayan-adventure-park.jpg",
+    postNumber: 135,
+    title: "Dahilayan Adventure Park Guide: Rides, Fees and Cebu Route",
+    desc: "Plan Dahilayan Adventure Park in Bukidnon: zipline, coaster and Dropzone prices, Forest Park fees, the CDO shuttle and how to get there from Cebu.",
+    datePublished: "22 October 2026",
+    comments: 0,
+    link: "./bukidnon-dahilayan-adventure-park-guide",
+    location: "Bukidnon, Mindanao",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/White-Water-Rafting-in-Cagayan-de-Oro-River.jpg",
     postNumber: 134,
     title: "Cagayan de Oro White-Water Rafting: Rates, Runs and Tips",
