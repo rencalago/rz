@@ -1571,7 +1571,7 @@ let newPostTwo = [
       "https://drive.google.com/thumbnail?id=1n8e8tr-5NeiW7jx7K0YMU7SbmliN2OzI&sz=s4000",
     postNumber: 2,
     title: "Sakada Cafe and Farm Pamplona: Hours, Food and Road Tips",
-    desc: "Planning Sakada Cafe and Farm in Pamplona, Negros Oriental? See hours, reservations, food and coffee prices, the mountain drive and the best seats.",
+    desc: "Planning Sakada Cafe and Farm in Pamplona, Negros Oriental? See opening hours, walk-in tips, food and coffee prices, the mountain drive and the best seats.",
     datePublished: "11 Feb 2023",
     dateModified: "22 October 2026",
     comments: "2",
