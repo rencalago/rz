@@ -1637,9 +1637,10 @@ let newPostTwo = [
     imagesrc:
       "https://drive.google.com/thumbnail?id=14kJ3ou0ndreCtKhk8jvGo0dZpZOGjlnZ&sz=s4000",
     postNumber: 7,
-    title: "First Time at Cebu Ocean Park",
-    desc: "The Cebu Ocean Park is a must-visit in Cebu City. This unique experience is well-suited for people who wants to enjoy discovering our marine biodiversity.",
+    title: "Cebu Ocean Park Guide: Tickets, Hours and Show Times",
+    desc: "Cebu Ocean Park in SRP, Cebu City: how to get there, ticket rates, opening hours, feeding and show times, add-on experiences and tips for a smoother visit.",
     datePublished: "8 Mar 2023",
+    dateModified: "22 October 2026",
     comments: "",
     link: "./cebu-ocean-park",
     location: "Cebu City",
