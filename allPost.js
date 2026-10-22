@@ -1702,9 +1702,10 @@ let newPostTwo = [
     imagesrc:
       "https://drive.google.com/thumbnail?id=16fR0SpWq1j_5y6cK29xpxYX7Mhg7x6MQ&sz=s4000",
     postNumber: 1,
-    title: "Tops Cebu Lookout - Busay, Cebu City",
-    desc: "See the skyline of Cebu City from up the hill of Busay Cebu City. It has the best view of metropolitan Cebu. I think a month after we visited here, this spot in busay is closed for visitors.",
+    title: "Tops Cebu Lookout at Sunrise: Busay Before the Renovation",
+    desc: "Our sunrise visit to Tops Lookout in Busay, Cebu City before the renovation: the view, the cold early start, photo tips, and how sunrise compares with dusk.",
     datePublished: "10 Feb 2023",
+    dateModified: "22 October 2026",
     comments: "61",
     link: "./tops-cebu-look-out",
     location: "cebu",
