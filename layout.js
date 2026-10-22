@@ -19,7 +19,7 @@ const NAV = [
   { key: "dest=cebu", label: "Cebu", href: "./cebu-travel-guides", page: "cebu-travel-guides" },
   { key: "dest=dumaguete", label: "Dumaguete", href: "./dumaguete-travel-guides", page: "dumaguete-travel-guides" },
   { key: "dest=negros-oriental", label: "Negros Oriental", href: "./negros-oriental-travel-guides", page: "negros-oriental-travel-guides" },
-  { key: "dest=luzon", label: "Luzon", href: "./#dest=luzon" },
+  { key: "dest=luzon", label: "Luzon", href: "./luzon-travel-guides", page: "luzon-travel-guides" },
   { key: "cat=Cafes & Restaurant", label: "Food & Cafes", href: "./#cat=Cafes%20%26%20Restaurant" },
   { key: "cat=Beach Resort", label: "Resorts", href: "./#cat=Beach%20Resort" },
   { key: "map", label: "Map", href: "./philippines-travel-map", page: "philippines-travel-map" },
@@ -38,9 +38,9 @@ export const CATEGORIES = Array.from(new Set(newPostTwo.map((p) => p.category)))
 
 // "Start here" box in the sidebar: the "link" of each post you want to feature
 export const START_HERE = [
-  "./tops-cebu-look-out",
-  "./travel-to-baguio-city-places-to-visit",
-  "./travel-to-dumaguete-places-to-visit",
+  "./cebu-3-day-itinerary",
+  "./dumaguete-vs-cebu-which-to-visit-first",
+  "./philippines-itinerary-7-10-14-days",
 ];
 
 // Agoda hotel ad (sidebar, below "Browse by label"). Scripts written through
