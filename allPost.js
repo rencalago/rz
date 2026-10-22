@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/anda-bohol-tourism.jpg",
+    postNumber: 130,
+    title: "Anda, Bohol: Quiet Beaches and the Cabagnow Cave Pool",
+    desc: "Plan Anda in eastern Bohol: how to reach it from Cebu, Quinale Beach, Cabagnow Cave Pool fees and closed days, other cave pools and the best months.",
+    datePublished: "22 October 2026",
+    comments: 0,
+    link: "./anda-bohol-quiet-beaches-cabagnow-cave-pool",
+    location: "Bohol",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/camotes-beach-cebu-province.jpg",
     postNumber: 129,
     title: "Camotes Islands Guide: Ferries, Caves and Costs",
