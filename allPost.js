@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/hinatuan-enchanted-river-surigao.jpg",
+    postNumber: 132,
+    title: "Britania Islands and Hinatuan Enchanted River Trip Guide",
+    desc: "Plan Britania Islands and the Hinatuan Enchanted River in Surigao del Sur: routes from Cebu via Butuan, fees, swimming rules, island tides and when to go.",
+    datePublished: "22 October 2026",
+    comments: 0,
+    link: "./britania-islands-hinatuan-enchanted-river",
+    location: "Surigao del Sur",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/sohoton-cove-national-park-socorro.jpg",
     postNumber: 131,
     title: "Sohoton Cove, Bucas Grande: Routes, Costs and Jellyfish",
