@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/philippine-eagle-center.jpg",
+    postNumber: 137,
+    title: "Philippine Eagle Center Davao: Fees, Hours and Tips",
+    desc: "Plan a visit to the Philippine Eagle Center in Malagos, Davao: PHP 150 entry, 8 AM to 5 PM hours, bus and Grab routes, what to see and the best months.",
+    datePublished: "22 October 2026",
+    comments: 0,
+    link: "./philippine-eagle-center-davao-guide",
+    location: "Davao, Mindanao",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/lake-sebu-south-cotabato.jpg",
     postNumber: 136,
     title: "Lake Sebu Guide: T'boli Culture, Falls and Zipline",
