@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/sohoton-cove-national-park-socorro.jpg",
+    postNumber: 131,
+    title: "Sohoton Cove, Bucas Grande: Routes, Costs and Jellyfish",
+    desc: "Plan a Sohoton Cove day on Bucas Grande: tour stops, jellyfish season, routes from Siargao, Surigao City and Cebu, why prices vary and when seas turn rough.",
+    datePublished: "22 October 2026",
+    comments: 0,
+    link: "./bucas-grande-sohoton-cove-surigao",
+    location: "Bucas Grande, Surigao del Norte",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/anda-bohol-tourism.jpg",
     postNumber: 130,
     title: "Anda, Bohol: Quiet Beaches and the Cabagnow Cave Pool",
