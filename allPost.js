@@ -1621,7 +1621,8 @@ let newPostTwo = [
   },
   {
     category: "Travel",
-    imagesrc: "./Images/featured-images/pulangbato-falls-valencia-negros-oriental.jpg",
+    imagesrc:
+      "https://drive.google.com/thumbnail?id=1b3L0Tqpxi2sOuY_C-RFFthNZePHshdSR&sz=s4000",
     postNumber: 8,
     title: "Places to Visit in Dumaguete: City Spots, Falls and Lakes",
     desc: "Places to visit in Dumaguete: Rizal Boulevard, the bell tower, Pulangbato Falls, Forest Camp and Twin Lakes, with fees, transport and when to go.",
