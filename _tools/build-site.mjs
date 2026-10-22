@@ -308,9 +308,6 @@ function ensureMarkers(html) {
     html = html.replace(/\s*<!-- Google tag \(gtag\.js\) -->\s*<script async src="https:\/\/www\.googletagmanager\.com\/gtag\/js\?id=[^"]+"><\/script>\s*<script>[\s\S]*?<\/script>/, "");
     html = html.replace(/(\s*)<\/body>/, "\n    <!-- build:analytics --><!-- /build:analytics -->$1</body>");
   }
-  if (!html.includes("<!-- build:headscripts -->")) {
-    html = html.replace(/(\s*)<\/head>/, "\n    <!-- build:headscripts --><!-- /build:headscripts -->$1</head>");
-  }
   if (!html.includes("<!-- build:seo -->")) {
     html = html.replace(/(\s*)<\/head>/, "\n    <!-- build:seo --><!-- /build:seo -->$1</head>");
   }
@@ -326,19 +323,6 @@ const analyticsSnippet = `
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', '${GA_ID}');
-    </script>
-    `;
-
-// Travelpayouts script, placed inside <head> on every page. Edit here and rebuild to update every page.
-const headScriptsSnippet = `
-    <script nowprocket data-noptimize="1" data-cfasync="false" data-wpfc-render="false" seraph-accel-crit="1" data-no-defer="1" data-cmp-ab="2">
-      (function () {
-          var script = document.createElement("script");
-          script.async = 1;
-          script.setAttribute("data-cmp-ab","2");
-          script.src = 'https://tp-em.com/NTg5NDc4.js?t=589478';
-          document.head.appendChild(script);
-      })();
     </script>
     `;
 
@@ -501,7 +485,6 @@ function buildPages(site, destinationPages) {
     html = fillBlock(html, "seo", tags.length ? "\n    " + tags.join("\n    ") + "\n    " : "", file);
 
     html = fillBlock(html, "analytics", analyticsSnippet, file);
-    html = fillBlock(html, "headscripts", headScriptsSnippet, file);
 
     putFile(file, html);
     count++;
