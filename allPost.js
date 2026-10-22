@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/White-Water-Rafting-in-Cagayan-de-Oro-River.jpg",
+    postNumber: 134,
+    title: "Cagayan de Oro White-Water Rafting: Rates, Runs and Tips",
+    desc: "Plan white-water rafting in Cagayan de Oro: lower, middle and upper run rates, rapids, daily departures, what to bring and how to get there from Cebu.",
+    datePublished: "22 October 2026",
+    comments: 0,
+    link: "./cagayan-de-oro-white-water-rafting-guide",
+    location: "Cagayan de Oro, Mindanao",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/Tinuy-an-Falls.jpg",
     postNumber: 133,
     title: "Tinuy-an Falls Bislig: Fees, Raft Rides and How to Get There",
