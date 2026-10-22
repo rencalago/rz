@@ -1621,12 +1621,12 @@ let newPostTwo = [
   },
   {
     category: "Travel",
-    imagesrc:
-      "https://drive.google.com/thumbnail?id=1b3L0Tqpxi2sOuY_C-RFFthNZePHshdSR&sz=s4000",
+    imagesrc: "./Images/featured-images/pulangbato-falls-valencia-negros-oriental.jpg",
     postNumber: 8,
-    title: "Travel to Dumaguete City: Places to Visit",
-    desc: "Dumaguete is known its unique tourist spots like Pulangbato falls, forest camp in Valencia and the twin lake balinsasayao",
+    title: "Places to Visit in Dumaguete: City Spots, Falls and Lakes",
+    desc: "Places to visit in Dumaguete: Rizal Boulevard, the bell tower, Pulangbato Falls, Forest Camp and Twin Lakes, with fees, transport and when to go.",
     datePublished: "26 Mar 2023",
+    dateModified: "22 October 2026",
     comments: "",
     link: "./travel-to-dumaguete-places-to-visit",
     location: "Dumaguete City",
