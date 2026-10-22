@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/Tinuy-an-Falls.jpg",
+    postNumber: 133,
+    title: "Tinuy-an Falls Bislig: Fees, Raft Rides and How to Get There",
+    desc: "Plan Tinuy-an Falls in Bislig, Surigao del Sur: raft and entrance fees, habal-habal from Mangagoy, routes via Butuan or Davao, and rain closures to expect.",
+    datePublished: "22 October 2026",
+    comments: 0,
+    link: "./tinuy-an-falls-bislig-guide",
+    location: "Surigao del Sur",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/hinatuan-enchanted-river-surigao.jpg",
     postNumber: 132,
     title: "Britania Islands and Hinatuan Enchanted River Trip Guide",
