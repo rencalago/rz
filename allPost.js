@@ -1676,9 +1676,10 @@ let newPostTwo = [
     imagesrc:
       "https://drive.google.com/thumbnail?id=10nme7clU1_5CXZ7NG6MpgM2whNunI_RX&sz=s4000",
     postNumber: 4,
-    title: "Lalimar Beach Resort - Infinite Relaxation",
-    desc: "How about taking a dip on its infinite pool while enjoying the sunset view of the horizon? Or just sit in the Cabana with refreshments you craved for.",
+    title: "Lalimar Beach Resort in La Libertad: What to Expect",
+    desc: "Lalimar Beach Resort in La Libertad, Negros Oriental: rooms, day-use cottages, the infinity pool over the Tañon Strait, food, events and visiting tips.",
     datePublished: "14 Feb 2023",
+    dateModified: "22 October 2026",
     comments: "14",
     link: "./lalimar-beach-resort-la-libertad",
     location: "La Libertad",
