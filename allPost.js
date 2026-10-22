@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/camotes-beach-cebu-province.jpg",
+    postNumber: 129,
+    title: "Camotes Islands Guide: Ferries, Caves and Costs",
+    desc: "Plan Camotes from Cebu: Danao and Mactan ferry options, what to see on Pacijan and Poro, fees, a rough budget and a 3-day itinerary with the best months.",
+    datePublished: "22 October 2026",
+    comments: 0,
+    link: "./camotes-islands-full-guide",
+    location: "Cebu",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/pondo-falls-biliran.jpg",
     postNumber: 128,
     title: "Biliran Waterfalls Guide: Tinago, Ulan-Ulan and Pondol Falls",
