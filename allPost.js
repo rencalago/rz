@@ -1610,9 +1610,10 @@ let newPostTwo = [
     imagesrc:
       "https://drive.google.com/thumbnail?id=1wYVQLCG2rfVX6D9L1WTkFz6lQLQ3Vire&sz=s4000",
     postNumber: 9,
-    title: "Travel to Baguio City - Places to Visit",
-    desc: "Without a doubt, Baguio City is one of the top tourist destination in the Philippines. Thanks to its cool temperature, and numerous fun things to-do!",
+    title: "5-Day Baguio Itinerary With a Toddler: Places We Visited",
+    desc: "Our 5-day Baguio itinerary with a toddler: Wright Park, Mines View, Camp John Hay, Igorot Stone Kingdom and La Trinidad strawberries, with current entry fees.",
     datePublished: "12 Sep 2024",
+    dateModified: "22 October 2026",
     comments: "",
     link: "./travel-to-baguio-city-places-to-visit",
     quiz: {name: "Baguio", vibes: ["cool","food","culture"], cost: 1, reach: 2, minDays: 2, family: true, boats: 0, goodMonths: [2,3], why: "cool mountain air, strawberry farms and a lively food and market scene"},
