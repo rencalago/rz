@@ -211,7 +211,7 @@ function buildDestinationPages(site) {
     }
 
     const cards = (list) => list.map((p) => site.storyCard(p)).join("");
-    const intro = cfg.intro.map((paragraph) => `<p>${paragraph}</p>`).join("\n          ");
+    const intro = cfg.intro.map((paragraph) => `<p>${paragraph}</p>`).join("\n              ");
     const section = (heading, list) =>
       list.length
         ? `
@@ -245,16 +245,15 @@ function buildDestinationPages(site) {
     <my-header><!-- build:header --><!-- /build:header --></my-header>
 
     <main>
-      <section class="wrap page-head">
-        <p class="kicker">Destination</p>
-        <h1>${escapeHtml(cfg.h1)}</h1>
-        <div class="page-head__intro">
-          ${intro}
-        </div>
-      </section>
-
-      <section class="wrap columns">
-        <div class="feed">${section("Start with these", start)}${section(start.length ? `More ${dest.name} stories` : `${dest.name} stories`, rest)}
+      <section class="wrap columns columns--dest">
+        <div class="feed">
+          <header class="page-head page-head--dest">
+            <p class="kicker">Destination</p>
+            <h1>${escapeHtml(cfg.h1)}</h1>
+            <div class="page-head__intro">
+              ${intro}
+            </div>
+          </header>${section("Start with these", start)}${section(start.length ? `More ${dest.name} stories` : `${dest.name} stories`, rest)}
         </div>
 
         <aside class="side" aria-label="Sidebar">
