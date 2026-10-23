@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/moriones-festival-marinduque.jpg",
+    postNumber: 139,
+    title: "Moriones Festival Marinduque: A Holy Week Visitor's Guide",
+    desc: "Plan Moriones in Marinduque: 2027 Holy Week dates, the Longinus story, what happens each day in Boac, plus ferry and flight routes, costs and etiquette.",
+    datePublished: "23 October 2026",
+    comments: 0,
+    link: "./moriones-festival-marinduque-guide",
+    location: "Boac, Marinduque",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/rizal-shrine-dapitan-city.jpg",
     postNumber: 138,
     title: "Dapitan Rizal Shrine Guide: Fees, Hours and Getting There",
