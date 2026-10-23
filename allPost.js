@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/best-dive-sites-philippines-by-season.jpg",
+    postNumber: 141,
+    title: "Best Dive Sites in the Philippines by Season (Tubbataha)",
+    desc: "Plan Philippine diving by month: Tubbataha's March to June window, Malapascua threshers, Anilao macro, Coron wrecks, Apo Reef and Moalboal, with costs.",
+    datePublished: "24 October 2026",
+    comments: 0,
+    link: "./best-dive-sites-philippines-by-season",
+    location: "Philippines",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/giant-lantern-festival-pampanga.jpg",
     postNumber: 140,
     title: "Giant Lantern Festival Pampanga: Ligligan Parul Guide",
