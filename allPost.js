@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/giant-lantern-festival-pampanga.jpg",
+    postNumber: 140,
+    title: "Giant Lantern Festival Pampanga: Ligligan Parul Guide",
+    desc: "Plan the Giant Lantern Festival in San Fernando, Pampanga: Ligligan Parul night vs display nights, free viewing, Clark and Manila routes, hotels and tips.",
+    datePublished: "23 October 2026",
+    comments: 0,
+    link: "./giant-lantern-festival-pampanga-guide",
+    location: "San Fernando, Pampanga",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/moriones-festival-marinduque.jpg",
     postNumber: 139,
     title: "Moriones Festival Marinduque: A Holy Week Visitor's Guide",
