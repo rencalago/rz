@@ -6,10 +6,16 @@
     "keywords": "Cebu travel guides, Cebu itinerary, things to do in Cebu, Cebu day trips, Sinulog Cebu, Oslob whale shark, Kawasan Falls canyoneering, Bohol day trip from Cebu",
     "h1": "Cebu travel guides",
     "intro": [
-      "Cebu is where this blog's travel coverage began. The stories below cover Cebu City and the rest of the island: a <a href=\"./cebu-3-day-itinerary\">three-day itinerary</a>, the <a href=\"./sinulog-first-timers-guide\">Sinulog festival</a>, a <a href=\"./cebu-heritage-walk-old-houses-historic-streets\">heritage walk</a> through old houses and historic streets, whale shark watching in Oslob, canyoneering at Kawasan Falls, a waterfall road trip in the south and a day trip to Bohol.",
-      "These guides try to say plainly what to expect: what could be confirmed about costs, how crowded a place gets, and what changes with the season or the rules. Prices, schedules and regulations shift, so confirm with the operator or the official source before you book. Crossing over to Negros Island? See the <a href=\"./dumaguete-travel-guides\">Dumaguete</a> and <a href=\"./negros-oriental-travel-guides\">Negros Oriental</a> guides."
+      "Cebu is a long, narrow island in the middle of the Visayas, and most trips start at Mactan-Cebu International Airport or the ports of Cebu City. The city is the busy part: old streets, churches and Carbon Market downtown, malls and hotels uptown, and the hills of Busay just above it. The <a href=\"./cebu-3-day-itinerary\">three-day itinerary</a> is a good first plan, and the <a href=\"./cebu-heritage-walk-old-houses-historic-streets\">heritage walk</a> covers the old quarter on foot.",
+      "Leave the city and the island splits into two very different trips. The south is for the classic day trips: Oslob for whale sharks and Sumilon Island, Moalboal for the sardine run, Badian for canyoneering at Kawasan Falls, and Dalaguete for the climb up Osme&ntilde;a Peak. Plan on long bus rides from the South Bus Terminal, and start early, because the road along the coast is slow after mid-morning. The north is quieter and better for staying a few nights: Bantayan Island for flat white-sand beaches, Malapascua for diving with thresher sharks, and the Camotes Islands to the east for lakes, caves and empty coves.",
+      "Timing matters more than most visitors expect. The driest months are usually from about January to May, while the second half of the year brings more rain and the chance of typhoons, which can cancel boats at short notice. January is also Sinulog month, when Cebu City fills up and hotel prices rise. The <a href=\"./best-time-to-visit-cebu-month-by-month\">month-by-month guide</a> goes through what each part of the year is like.",
+      "The guides below are newest first, with the most useful starting points at the top. Fees, boat schedules and rules at places like Oslob change, so check the current details with the operator or the town tourism office before you go. Crossing to Negros? The <a href=\"./dumaguete-travel-guides\">Dumaguete</a> and <a href=\"./negros-oriental-travel-guides\">Negros Oriental</a> pages pick up where this one ends."
     ],
-    "startWith": ["cebu-3-day-itinerary", "7-cebu-places-beyond-the-crowds", "sinulog-first-timers-guide"]
+    "startWith": [
+      "cebu-3-day-itinerary",
+      "7-cebu-places-beyond-the-crowds",
+      "sinulog-first-timers-guide"
+    ]
   },
   "dumaguete": {
     "page": "dumaguete-travel-guides",
@@ -18,10 +24,16 @@
     "keywords": "Dumaguete travel guides, things to do in Dumaguete, Dumaguete budget trip, Dumaguete food, Cebu to Dumaguete, Siquijor from Dumaguete, Buglasan Festival",
     "h1": "Dumaguete travel guides",
     "intro": [
-      "Dumaguete is the capital of Negros Oriental, a coastal city on the southeastern side of Negros Island. The guides below cover <a href=\"./cebu-to-dumaguete-by-sea-or-road\">getting there from Cebu</a>, what a <a href=\"./dumaguete-on-a-budget-3-day-trip-cost\">three-day trip costs</a>, where to eat breakfast and what to try on a first food trip, how the city is changing, local events such as the Buglasan Festival, and day trips to Bais, Manjuyod, Mabinay and Siquijor.",
-      "Not sure whether to start here or in Cebu? <a href=\"./dumaguete-vs-cebu-which-to-visit-first\">Dumaguete vs Cebu</a> compares the two. Costs, ferry schedules and event dates change, so check current details before you go. Looking beyond the city? See the <a href=\"./negros-oriental-travel-guides\">Negros Oriental</a> guides."
+      "Dumaguete is the capital of Negros Oriental, a small, walkable city on the southeastern coast of Negros Island. It is a university town first: Silliman University, founded in 1901, sits right in the middle of it, and the students shape the cafes, the cheap eats and the slow pace of the place. The seafront Rizal Boulevard is where the city goes in the early morning and again at sunset.",
+      "Most people come for a mix of city time and day trips, and Dumaguete works well as a base for both. Within an hour or two you can reach Apo Island for snorkelling, the Twin Lakes in the hills of Sibulan, dolphin watching and the Manjuyod sandbar off Bais, or the ferry to Siquijor. Getting here is straightforward: the airport is in neighbouring Sibulan, and ferries and fast craft link the port with Cebu, Siquijor and Bohol. The <a href=\"./cebu-to-dumaguete-by-sea-or-road\">sea or road guide</a> compares the routes.",
+      "It is also one of the more affordable cities in the Visayas. A <a href=\"./dumaguete-on-a-budget-3-day-trip-cost\">three-day trip on a budget</a> is realistic, and food is a big part of the appeal, from <a href=\"./best-breakfast-spots-dumaguete\">breakfast spots</a> to a <a href=\"./a-first-timers-food-trip-in-dumaguete\">first-timer&#39;s food trip</a>. October is the busiest month for local events, with the Buglasan Festival bringing the towns of the province into the city.",
+      "The stories below cover the city itself, how it is changing, and its festivals and events. Ferry times, fares and event schedules change from season to season, so confirm them before you travel. Still choosing between this city and Cebu? Read <a href=\"./dumaguete-vs-cebu-which-to-visit-first\">Dumaguete vs Cebu</a> first, and see the <a href=\"./negros-oriental-travel-guides\">Negros Oriental</a> guides for the rest of the province."
     ],
-    "startWith": ["travel-to-dumaguete-places-to-visit", "dumaguete-on-a-budget-3-day-trip-cost", "cebu-to-dumaguete-by-sea-or-road"]
+    "startWith": [
+      "travel-to-dumaguete-places-to-visit",
+      "dumaguete-on-a-budget-3-day-trip-cost",
+      "cebu-to-dumaguete-by-sea-or-road"
+    ]
   },
   "negros-oriental": {
     "page": "negros-oriental-travel-guides",
@@ -30,11 +42,40 @@
     "keywords": "Negros Oriental travel guides, things to do in Negros Oriental, Negros Oriental weekend getaways, Mabinay, Bais dolphin watching, Pamplona cafe, La Libertad beach resort",
     "h1": "Negros Oriental travel guides",
     "intro": [
-      "Negros Oriental covers the eastern half of Negros Island, with Dumaguete as its capital. This page follows the province beyond the city: <a href=\"./negros-oriental-weekend-getaways\">weekend trips for different budgets</a>, <a href=\"./5-places-near-dumaguete-worth-the-drive\">places within driving distance of Dumaguete</a>, Mabinay's caves and nature, dolphin watching from Bais, mountain cafes in Pamplona, a beach resort in La Libertad and views in Tanjay.",
-      "For the city itself, including food, budgets and events, see the <a href=\"./dumaguete-travel-guides\">Dumaguete guides</a>. Distances, ferry schedules and opening hours change, so confirm before you travel."
+      "Negros Oriental covers the eastern half of Negros Island, a long strip of coast backed by mountains and volcanic highlands. Dumaguete is the capital and the easiest base, but most of what makes the province worth the trip is outside the city: towns where the main road still passes rice fields and small markets, and a coastline with far fewer resorts than Cebu or Bohol.",
+      "Head north and you reach Bais, known for dolphin watching and the Manjuyod sandbar, and Tanjay, with views from the hills above town. Inland, Mabinay has dozens of caves, and Pamplona and San Jose have farm cafes in the cooler uplands. Head south and the coast runs past Zamboanguita, the jumping-off point for Apo Island, toward Siaton and the beaches beyond. Along the northern coast are quiet beach towns such as La Libertad, and inland, Canlaon City sits on the slopes of Kanlaon Volcano, so check the <a href=\"./is-it-safe-to-visit-canlaon-kanlaon-alert-level\">current alert level</a> before planning anything on that side.",
+      "Public transport is mostly buses and vans along the coastal highway, with tricycles and habal-habal for the last stretch. That works for the main towns, but caves, waterfalls and mountain cafes are easier with a hired car or driver, especially in the rainy months when side roads turn muddy. The <a href=\"./negros-oriental-weekend-getaways\">weekend getaways for different budgets</a> and <a href=\"./5-places-near-dumaguete-worth-the-drive\">places worth the drive</a> are good places to start.",
+      "The stories below follow the province beyond the city limits, newest first. Distances look short on a map, but mountain roads are slow, and opening hours at smaller attractions change, so confirm before you set out. For food, budgets and events in the city itself, see the <a href=\"./dumaguete-travel-guides\">Dumaguete guides</a>."
     ],
-    "startWith": ["negros-oriental-weekend-getaways", "5-places-near-dumaguete-worth-the-drive", "mabinay-travel-guide-caves-nature-things-to-do"],
-    "excludeLocation": ["dumaguete"],
-    "include": ["5-places-near-dumaguete-worth-the-drive", "buglasan-festival-2026-events-schedule"]
+    "startWith": [
+      "negros-oriental-weekend-getaways",
+      "5-places-near-dumaguete-worth-the-drive",
+      "mabinay-travel-guide-caves-nature-things-to-do"
+    ],
+    "excludeLocation": [
+      "dumaguete"
+    ],
+    "include": [
+      "5-places-near-dumaguete-worth-the-drive",
+      "buglasan-festival-2026-events-schedule"
+    ]
+  },
+  "luzon": {
+    "page": "luzon-travel-guides",
+    "title": "Luzon Travel Guides: Mountains, Beaches and Food",
+    "description": "Luzon travel guides: Baguio, Sagada, Banaue, Vigan, Batanes, Manila food crawls, La Union and Baler surf, Zambales coves, Mayon and Bicol, with costs.",
+    "keywords": "Luzon travel guides, things to do in Luzon, Baguio, Sagada, Banaue rice terraces, Vigan, Batanes, Manila food trip, La Union surfing, Zambales coves, Mayon Volcano",
+    "h1": "Luzon travel guides",
+    "intro": [
+      "Luzon is the largest island in the Philippines and the one with the most variety in a single trip. In the north are the cool mountain towns of the Cordillera, the old Spanish-era streets of Ilocos and the far-off islands of Batanes. Manila sits in the middle, and the long tail of the island runs south through Batangas and down to the volcanoes and islands of Bicol.",
+      "The mountains are the main draw for many visitors. Baguio is the easiest to reach, and it gets crowded during <a href=\"./panagbenga-baguio-february\">Panagbenga in February</a> and on long weekends. Farther in, Sagada has caves and hanging coffins, the <a href=\"./banaue-batad-rice-terraces-how-to-visit\">rice terraces of Banaue and Batad</a> are a full day by road, and Mount Pulag is known for its sea of clouds at dawn. Expect long, winding drives and cold nights, and pack layers even in summer.",
+      "Closer to Manila, the trips get shorter. Zambales has camping coves and the Mount Pinatubo crater lake, Pampanga is a food trip built around sisig, and La Union and Baler are the surf towns. To the south, Tagaytay overlooks Taal Lake, Anilao is a dive spot within driving distance of the capital, and Bicol has Mayon Volcano, the Caramoan islands and the whale sharks of Donsol. In Manila itself, the guides cover a <a href=\"./manila-24-hour-stopover-intramuros\">24-hour stopover in Intramuros</a> and a food crawl through Binondo.",
+      "Distances on Luzon are big, so most people pick one region per trip rather than trying to see it all. The northern half catches most of the typhoons between about June and November, and mountain roads can close after heavy rain, so leave a spare day. Fees, permits and transport schedules change, so check current details with the local tourism office before you go."
+    ],
+    "startWith": [
+      "manila-24-hour-stopover-intramuros",
+      "banaue-batad-rice-terraces-how-to-visit",
+      "vigan-heritage-weekend-calle-crisologo-food"
+    ]
   }
 }

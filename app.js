@@ -45,7 +45,21 @@ const DESTINATIONS = [
       "Opening hours and prices change, so confirm current details before you visit.",
     ],
   },
-  { key: "luzon", name: "Luzon", tile: false, tone: "#5B6B3A", keywords: ["baguio", "mckinley", "taguig", "manila", "angono", "rizal"] },
+  {
+    key: "luzon",
+    name: "Luzon",
+    tile: false,
+    tone: "#5B6B3A",
+    // Matched against the post's location only, so a Visayas story that merely
+    // mentions a Manila flight in its description is not listed under Luzon.
+    locationOnly: true,
+    keywords: [
+      "baguio", "benguet", "ifugao", "mountain province", "ilocos", "batanes", "la union", "pangasinan",
+      "zambales", "pampanga", "aurora", "manila", "intramuros", "mckinley", "taguig", "angono", "rizal",
+      "tagaytay", "batangas", "albay", "bicol", "camarines", "sorsogon",
+    ],
+    href: "./luzon-travel-guides",
+  },
 ];
 // -------------------------------------------------------------------------------
 
@@ -73,7 +87,7 @@ function matchesFilter(p, filter) {
   if (filter.type === "cat") return p.category === filter.value;
   const d = DESTINATIONS.find((x) => x.key === filter.value);
   if (!d) return true;
-  const text = haystack(p);
+  const text = d.locationOnly ? String(p.location || "").toLowerCase() : haystack(p);
   return d.keywords.some((k) => text.includes(k));
 }
 

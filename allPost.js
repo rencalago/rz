@@ -1717,7 +1717,7 @@ let newPostTwo = [
     dateModified: "22 October 2026",
     comments: "61",
     link: "./tops-cebu-look-out",
-    location: "cebu",
+    location: "Busay, Cebu City",
     author: "Ren Calago",
   },
 ];

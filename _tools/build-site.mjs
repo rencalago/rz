@@ -13,8 +13,10 @@
 //                runs on top and keeps search, filters and pagination working.
 //   every page  the menu, sidebar and footer written in as plain HTML, plus the
 //                canonical link and Open Graph tags (see buildPages below).
+//   every post  a "Keep reading" block of three related stories under the
+//                article, and width/height on the article's own photos.
 //   cebu-travel-guides.html, dumaguete-travel-guides.html,
-//   negros-oriental-travel-guides.html
+//   negros-oriental-travel-guides.html, luzon-travel-guides.html
 //                the destination pages: a short intro (from
 //                _tools/destinations.json) and plain-HTML lists of the stories
 //                that belong to each destination.
@@ -158,6 +160,11 @@ function buildArchivePages(site) {
   return pages;
 }
 
+// The " | Ren Calago blog" suffix is added only when the whole title still fits
+// in 60 characters, so search results do not cut it short.
+const TITLE_SUFFIX = " | Ren Calago blog";
+const withSiteSuffix = (title) => ((title + TITLE_SUFFIX).length <= 60 ? title + TITLE_SUFFIX : title);
+
 // STEP: destination pages --------------------------------------------------------
 // /cebu-travel-guides, /dumaguete-travel-guides and /negros-oriental-travel-guides.
 // The wording lives in _tools/destinations.json. The story lists follow the same
@@ -198,6 +205,7 @@ function buildDestinationPages(site) {
     });
     const rest = stories.filter((p) => !start.includes(p));
 
+    if (withSiteSuffix(cfg.title).length > 60) warnings.push(`${cfg.page}: title is ${cfg.title.length} characters (aim for 60 or fewer)`);
     if (cfg.description.length < 140 || cfg.description.length > 165) {
       warnings.push(`${cfg.page}: description is ${cfg.description.length} characters (aim for about 150-160)`);
     }
@@ -218,7 +226,7 @@ function buildDestinationPages(site) {
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>${escapeHtml(cfg.title)} | Ren Calago blog</title>
+    <title>${escapeHtml(withSiteSuffix(cfg.title))}</title>
     <link rel="icon" type="image/x-icon" href="./Images/rencalago-favicon.png" />
     <meta name="description" content="${escapeHtml(cfg.description)}" />
     <meta name="keywords" content="${escapeHtml(cfg.keywords)}" />
@@ -270,6 +278,232 @@ function buildDestinationPages(site) {
     });
   }
   return pages;
+}
+
+// STEP: "Keep reading" block on every post -------------------------------------------
+// Three related stories under each article, written as plain HTML so readers and
+// crawlers can follow them. Stories are matched by place first (same town, then
+// same region, then a neighbouring region); stories the article already links to
+// are skipped. Among equally good matches, the story with the fewest "Keep
+// reading" links so far wins, so links spread across the whole site instead of
+// piling onto the newest posts, and every story ends up linked from somewhere.
+const RELATED_COUNT = 3;
+const REGIONS = [
+  ["cebu", ["cebu", "oslob", "moalboal", "badian", "bantayan", "malapascua", "camotes", "cordova", "talisay", "dumanjug", "dalaguete", "carmen", "busay"]],
+  ["negros-oriental", ["dumaguete", "negros oriental", "bais", "tanjay", "pamplona", "san jose", "la libertad", "sibulan", "mabinay", "apo island", "canlaon"]],
+  ["siquijor", ["siquijor"]],
+  ["bohol", ["bohol", "panglao", "corella"]],
+  ["negros-occidental", ["negros occidental", "bacolod", "sipalay", "silay"]],
+  ["eastern-visayas", ["leyte", "samar", "biliran", "tacloban"]],
+  ["western-visayas", ["iloilo", "guimaras", "antique", "aklan", "boracay"]],
+  ["palawan-mimaropa", ["palawan", "coron", "mindoro", "romblon"]],
+  ["mindanao", ["mindanao", "davao", "surigao", "siargao", "camiguin", "bukidnon", "cagayan de oro", "cotabato"]],
+  ["north-luzon", ["baguio", "benguet", "ifugao", "mountain province", "ilocos", "batanes", "la union", "pangasinan", "zambales", "pampanga", "aurora"]],
+  ["south-luzon", ["manila", "intramuros", "taguig", "mckinley", "rizal", "angono", "tagaytay", "batangas", "albay", "bicol", "camarines", "sorsogon"]],
+];
+const NEIGHBOURS = {
+  cebu: ["bohol", "negros-oriental", "eastern-visayas"],
+  "negros-oriental": ["siquijor", "cebu", "negros-occidental"],
+  siquijor: ["negros-oriental", "bohol"],
+  bohol: ["cebu", "siquijor", "mindanao"],
+  "negros-occidental": ["negros-oriental", "western-visayas"],
+  "eastern-visayas": ["cebu"],
+  "western-visayas": ["negros-occidental", "palawan-mimaropa"],
+  "palawan-mimaropa": ["western-visayas"],
+  mindanao: ["bohol"],
+  "north-luzon": ["south-luzon"],
+  "south-luzon": ["north-luzon"],
+};
+
+function regionsOf(post) {
+  const text = String(post.location || "").toLowerCase();
+  return new Set(REGIONS.filter(([, words]) => words.some((w) => text.includes(w))).map(([key]) => key));
+}
+// The town or city, e.g. "oslob" from "Oslob, Cebu"
+const placeOf = (post) => String(post.location || "").split(",")[0].trim().toLowerCase();
+
+// What kind of trip a story is about, from its title and slug.
+const TOPICS = {
+  islands: /\b(island|islands|sandbar|island-hopping)\b/,
+  beaches: /\b(beach|beaches|cove|coves|resort)\b/,
+  festivals: /\b(festival|fiesta|sinulog|masskara|buglasan|panagbenga|ati-atihan|dinagyang|higantes|artfest|oktoberfest)\b/,
+  food: /\b(food|eat|eats|lechon|breakfast|sisig|cafe|kapehan|siomai|pasalubong|inasal)\b/,
+  waterfalls: /\b(falls|waterfall|waterfalls|canyoneering)\b/,
+  diving: /\b(diving|dive|snorkelling|snorkeling|sardine|whale|thresher|wreck)\b/,
+  heritage: /\b(heritage|historic|ruins|intramuros|church|old houses)\b/,
+  mountains: /\b(peak|trek|mount|volcano|terraces|hills|lookout|look-out)\b/,
+  surf: /\b(surf|surfing)\b/,
+  planning: /\b(itinerary|budget|cost|costs|arrival|safety|best time|month by month|peak season)\b/,
+};
+const topicsOf = (post) => {
+  const text = `${post.title} ${slugOf(post).replace(/-/g, " ")}`.toLowerCase();
+  return Object.keys(TOPICS).filter((k) => TOPICS[k].test(text));
+};
+
+// Small, stable number from two slugs, used only to break ties evenly.
+function tieBreak(a, b) {
+  let h = 0;
+  for (const c of a + "|" + b) h = (h * 31 + c.charCodeAt(0)) >>> 0;
+  return h;
+}
+
+function relatedScore(from, to) {
+  const a = regionsOf(from);
+  const b = regionsOf(to);
+  let score = 0;
+  if (placeOf(from) && placeOf(from) === placeOf(to)) score += 6;
+  if ([...a].some((r) => b.has(r))) score += 4;
+  else if ([...a].some((r) => (NEIGHBOURS[r] || []).some((n) => b.has(n)))) score += 2;
+  if (!a.size && !b.size) score += 3; // two nationwide stories (budgets, arrival tips)
+  if (from.category === to.category && from.category !== "Travel") score += 1;
+  const fromTopics = topicsOf(from);
+  if (topicsOf(to).some((t) => fromTopics.includes(t))) score += 2;
+  return score;
+}
+
+// Slugs an article already links to inside its text.
+function linkedFromBody(html) {
+  const body = (html.match(/<article class="full-content">([\s\S]*?)<\/article>/) || [])[1] || "";
+  return new Set([...body.matchAll(/href="\.\/([a-z0-9-]+)(?:\.html)?(?:#[^"]*)?"/g)].map((m) => m[1]));
+}
+
+function planRelated(site) {
+  const inbound = new Map(site.posts.map((p) => [slugOf(p), 0]));
+  const plan = new Map();
+  for (const from of site.posts) {
+    const slug = slugOf(from);
+    const file = slug + ".html";
+    if (!fs.existsSync(path.join(root, file))) continue;
+    const skip = linkedFromBody(readFile(file));
+    const candidates = site.posts
+      .filter((to) => slugOf(to) !== slug && !skip.has(slugOf(to)))
+      .map((to) => ({ to, score: relatedScore(from, to) }));
+    const picks = [];
+    while (picks.length < RELATED_COUNT && candidates.length) {
+      candidates.sort(
+        (x, y) =>
+          y.score - x.score ||
+          inbound.get(slugOf(x.to)) - inbound.get(slugOf(y.to)) ||
+          tieBreak(slug, slugOf(x.to)) - tieBreak(slug, slugOf(y.to))
+      );
+      const { to } = candidates.shift();
+      picks.push(to);
+      inbound.set(slugOf(to), inbound.get(slugOf(to)) + 1);
+    }
+    plan.set(slug, picks);
+  }
+  // Second pass: a story nobody picked takes the weakest slot on the page that
+  // matches it best, as long as the story it replaces is linked from elsewhere.
+  const bySlug = new Map(site.posts.map((p) => [slugOf(p), p]));
+  for (const [target, count] of inbound) {
+    if (count > 0) continue;
+    const to = bySlug.get(target);
+    const options = [...plan]
+      .filter(([from, picks]) => from !== target && !picks.includes(to) && !linkedFromBody(readFile(from + ".html")).has(target))
+      .map(([from, picks]) => {
+        const source = bySlug.get(from);
+        const slot = picks
+          .map((p, i) => ({ i, score: relatedScore(source, p), spare: inbound.get(slugOf(p)) > 1 }))
+          .filter((s) => s.spare)
+          .sort((a, b) => a.score - b.score)[0];
+        return slot ? { from, slot, gain: relatedScore(source, to) - slot.score } : null;
+      })
+      .filter(Boolean)
+      .sort((a, b) => b.gain - a.gain || tieBreak(a.from, target) - tieBreak(b.from, target));
+    if (!options.length) continue;
+    const { from, slot } = options[0];
+    const picks = plan.get(from);
+    inbound.set(slugOf(picks[slot.i]), inbound.get(slugOf(picks[slot.i])) - 1);
+    picks[slot.i] = to;
+    inbound.set(target, 1);
+  }
+  const missed = [...inbound].filter(([, n]) => n === 0).map(([s]) => s);
+  if (missed.length) warnings.push(`"Keep reading" links nowhere to: ${missed.join(", ")}`);
+  return plan;
+}
+
+function relatedBlock(picks) {
+  if (!picks || !picks.length) return "";
+  const items = picks
+    .map(
+      (p) => `
+    <a class="related__item" href="${p.link}">
+      <span class="related__img"><img src="${String(p.imagesrc || "").replace(/sz=s\d+/, "sz=w600")}" alt="" loading="lazy" decoding="async"></span>
+      <span class="related__meta">${escapeHtml(p.location || p.category)}</span>
+      <span class="related__title">${escapeHtml(p.title)}</span>
+    </a>`
+    )
+    .join("");
+  return `
+<section class="related" aria-labelledby="related-heading">
+  <h2 id="related-heading">Keep reading</h2>
+  <div class="related__grid">${items}
+  </div>
+</section>
+`;
+}
+
+// Adds the "Keep reading" markers right after the article text the first time.
+function ensureRelatedMarkers(html) {
+  if (html.includes("<!-- build:related -->")) return html;
+  const start = html.indexOf('<article class="full-content">');
+  const end = start < 0 ? -1 : html.indexOf("</article>", start);
+  if (end < 0) return html;
+  const at = end + "</article>".length;
+  return html.slice(0, at) + "\n              <!-- build:related --><!-- /build:related -->" + html.slice(at);
+}
+
+// IMAGE SIZES ----------------------------------------------------------------------
+// Photos inside an article get width and height from the image file itself, so
+// the browser reserves the right space before the photo arrives and the text
+// does not jump (better Core Web Vitals). The CSS keeps them responsive.
+const sizeCache = new Map();
+function imageSize(file) {
+  if (sizeCache.has(file)) return sizeCache.get(file);
+  let size = null;
+  try {
+    const buf = fs.readFileSync(file);
+    if (buf.length > 24 && buf.readUInt32BE(0) === 0x89504e47) {
+      size = { width: buf.readUInt32BE(16), height: buf.readUInt32BE(20) }; // PNG
+    } else if (buf[0] === 0xff && buf[1] === 0xd8) {
+      let i = 2; // JPEG: walk the markers to the frame header
+      while (i < buf.length - 9) {
+        if (buf[i] !== 0xff) { i++; continue; }
+        const marker = buf[i + 1];
+        if (marker >= 0xc0 && marker <= 0xcf && ![0xc4, 0xc8, 0xcc].includes(marker)) {
+          size = { height: buf.readUInt16BE(i + 5), width: buf.readUInt16BE(i + 7) };
+          break;
+        }
+        i += 2 + buf.readUInt16BE(i + 2);
+      }
+    } else if (buf.toString("ascii", 0, 4) === "RIFF" && buf.toString("ascii", 8, 12) === "WEBP") {
+      const kind = buf.toString("ascii", 12, 16);
+      if (kind === "VP8X") size = { width: 1 + buf.readUIntLE(24, 3), height: 1 + buf.readUIntLE(27, 3) };
+      else if (kind === "VP8 ") size = { width: buf.readUInt16LE(26) & 0x3fff, height: buf.readUInt16LE(28) & 0x3fff };
+      else if (kind === "VP8L") {
+        const b = buf.readUInt32LE(21);
+        size = { width: (b & 0x3fff) + 1, height: ((b >> 14) & 0x3fff) + 1 };
+      }
+    }
+  } catch {
+    size = null;
+  }
+  sizeCache.set(file, size);
+  return size;
+}
+
+function withImageSizes(html) {
+  return html.replace(/(<article class="full-content">)([\s\S]*?)(<\/article>)/, (_m, open, body, close) => {
+    const sized = body.replace(/<img\b[^>]*>/g, (tag) => {
+      if (/\swidth=/.test(tag) || /\sheight=/.test(tag)) return tag;
+      const src = (tag.match(/\ssrc=["']([^"']+)["']/) || [])[1] || "";
+      if (!/^\.?\/?Images\//.test(src)) return tag; // only files hosted in the repo
+      const size = imageSize(path.join(root, decodeURIComponent(src.replace(/^\.?\//, ""))));
+      if (!size || !size.width || !size.height) return tag;
+      return tag.replace(/<img\b/, `<img width="${size.width}" height="${size.height}"`);
+    });
+    return open + sized + close;
+  });
 }
 
 // STEP: every page --------------------------------------------------------------------
@@ -457,6 +691,7 @@ function checkSearchSnippet(html, file) {
 function buildPages(site, destinationPages) {
   const postSlugs = new Set(site.posts.map(slugOf));
   const destinationSlugs = destinationPages.map((p) => p.slug);
+  const related = planRelated(site);
   const files = new Set([
     ...fs.readdirSync(root).filter((f) => f.endsWith(".html")),
     ...[...pending.keys()].filter((f) => f.endsWith(".html")),
@@ -478,8 +713,13 @@ function buildPages(site, destinationPages) {
       if (html.includes("<!-- build:footer -->")) html = fillBlock(html, "footer", layout.footer, file);
     }
 
-    if (postSlugs.has(slug)) checkSearchSnippet(html, file);
-    if (postSlugs.has(slug)) html = withPostingMeta(html, site.posts.find((p) => slugOf(p) === slug));
+    if (postSlugs.has(slug)) {
+      checkSearchSnippet(html, file);
+      html = withPostingMeta(html, site.posts.find((p) => slugOf(p) === slug));
+      html = withImageSizes(html);
+      html = ensureRelatedMarkers(html);
+      if (html.includes("<!-- build:related -->")) html = fillBlock(html, "related", relatedBlock(related.get(slug)), file);
+    }
     const tags = seoTags(html, slug, postSlugs.has(slug), site.posts.find((p) => slugOf(p) === slug));
     tags.push(structuredData(html, slug, site, destinationPages));
     html = fillBlock(html, "seo", tags.length ? "\n    " + tags.join("\n    ") + "\n    " : "", file);
