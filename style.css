@@ -1652,6 +1652,17 @@ my-sidebar {
   color: var(--text);
 }
 
+/* On destination pages the heading and intro sit inside the story column, so the
+   sidebar starts level with the heading instead of below a full-width intro. */
+.page-head--dest {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.page-head--dest .page-head__intro {
+  max-width: none;
+}
+
 /* The page heading sits above the story list, so the list needs no extra top space. */
 .page-head + .columns {
   padding-top: 16px;
