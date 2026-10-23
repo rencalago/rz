@@ -56,7 +56,7 @@ const DESTINATIONS = [
     keywords: [
       "baguio", "benguet", "ifugao", "mountain province", "ilocos", "batanes", "la union", "pangasinan",
       "zambales", "pampanga", "aurora", "manila", "intramuros", "mckinley", "taguig", "angono", "rizal",
-      "tagaytay", "batangas", "albay", "bicol", "camarines", "sorsogon",
+      "tagaytay", "batangas", "albay", "bicol", "camarines", "sorsogon", "marinduque",
     ],
     href: "./luzon-travel-guides",
   },

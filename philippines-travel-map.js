@@ -41,6 +41,7 @@ import { AREAS, VIEWBOX } from "./philippines-travel-map-data.js";
     "cavite": ["cavite", "tagaytay"],
     "albay": ["albay", "legazpi"],
     "sorsogon": ["sorsogon", "donsol"],
+    "marinduque": ["marinduque", "boac"],
     "camarines-sur": ["camarines sur", "caramoan"],
     "aklan": ["aklan", "boracay", "kalibo"],
     "iloilo": ["iloilo"],
