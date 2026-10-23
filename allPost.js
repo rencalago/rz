@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/rizal-shrine-dapitan-city.jpg",
+    postNumber: 138,
+    title: "Dapitan Rizal Shrine Guide: Fees, Hours and Getting There",
+    desc: "Plan a Dapitan trip: the free Rizal Shrine, its hours and Monday museum closure, the relief map in the plaza, Dakak day rates, flights, ferries and best months.",
+    datePublished: "23 October 2026",
+    comments: 0,
+    link: "./dapitan-rizal-shrine-guide",
+    location: "Dapitan, Zamboanga del Norte",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/philippine-eagle-center.jpg",
     postNumber: 137,
     title: "Philippine Eagle Center Davao: Fees, Hours and Tips",
