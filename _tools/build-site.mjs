@@ -34,6 +34,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { loadSite } from "./site-runtime.mjs";
+import { regionOf } from "../regions.js";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const checkOnly = process.argv.includes("--check");
@@ -171,6 +172,16 @@ const withSiteSuffix = (title) => ((title + TITLE_SUFFIX).length <= 60 ? title +
 // rule as the homepage filter, so a new post lands on the right pages by itself.
 const warnings = [];
 
+// Every story's location should name a place in one of the 18 official regions
+// (regions.js), or be "Philippines" for nationwide stories. That region decides
+// which destination page, and so which breadcrumb, the story gets.
+function checkRegions(site) {
+  const unplaced = site.posts.filter((p) => !regionOf(p.location) && String(p.location).trim().toLowerCase() !== "philippines");
+  for (const p of unplaced) {
+    warnings.push(`${slugOf(p)}: location "${p.location}" matches no region in regions.js (add the province or town there)`);
+  }
+}
+
 function buildDestinationPages(site) {
   const config = JSON.parse(fs.readFileSync(path.join(root, "_tools", "destinations.json"), "utf8"));
   const bySlug = new Map(site.posts.map((p) => [slugOf(p), p]));
@@ -187,6 +198,10 @@ function buildDestinationPages(site) {
     );
     for (const word of cfg.excludeLocation || []) {
       for (const p of site.posts) if (String(p.location || "").toLowerCase().includes(word)) wanted.delete(slugOf(p));
+    }
+    // Stories that already have a more specific page (the Visayas page leaves out Cebu, for example).
+    for (const other of cfg.excludeDestinations || []) {
+      for (const p of site.posts) if (site.matchesFilter(p, { type: "dest", value: other })) wanted.delete(slugOf(p));
     }
     for (const slug of cfg.exclude || []) wanted.delete(slug);
     for (const slug of cfg.include || []) {
@@ -812,6 +827,7 @@ let pageCount = 0;
 try {
   if (!Array.isArray(site.posts) || site.posts.length === 0) throw new Error("allPost.js has no posts");
   buildHomepage(site);
+  checkRegions(site);
   destinationPages = buildDestinationPages(site);
   archivePages = buildArchivePages(site);
   pageCount = buildPages(site, destinationPages);

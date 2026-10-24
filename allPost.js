@@ -428,7 +428,7 @@ let newPostTwo = [
     datePublished: "20 October 2026",
     comments: 0,
     link: "./tagaytay-taal-day-trip-manila",
-    location: "Tagaytay, Batangas",
+    location: "Tagaytay, Cavite",
     author: "Ren Calago",
   },
   {
@@ -675,7 +675,7 @@ let newPostTwo = [
     comments: 0,
     link: "./panagbenga-baguio-february",
     festival: [{ name: "Panagbenga", place: "Baguio City", month: 2, region: "luzon", when: "Usually all of February, with the main parades in late February or early March", about: "Baguio's flower festival, with a street dance and a float parade covered in blooms." }],
-    location: "Baguio",
+    location: "Baguio City",
     author: "Ren Calago",
   },
   {
@@ -688,7 +688,7 @@ let newPostTwo = [
     comments: 0,
     link: "./ati-atihan-dinagyang-2027",
     festival: [{ name: "Ati-Atihan", place: "Kalibo, Aklan", month: 1, start: "2027-01-17", end: "2027-01-17", region: "visayas", when: "Main Sunday on 17 January 2027", about: "Painted faces, drums and crowds that dance through Kalibo's streets for the Santo Niño." }, { name: "Dinagyang", place: "Iloilo City", month: 1, start: "2027-01-22", end: "2027-01-24", region: "visayas", when: "Main weekend expected 22 to 24 January 2027", about: "Iloilo's choreographed warrior-tribe performances on the fourth weekend of January." }],
-    location: "Philippines",
+    location: "Kalibo, Aklan and Iloilo City",
     author: "Ren Calago",
   },
   {
@@ -939,7 +939,7 @@ let newPostTwo = [
     datePublished: "16 October 2026",
     comments: 0,
     link: "./baguio-quieter-cheaper-right-now",
-    location: "Baguio",
+    location: "Baguio City",
     author: "Ren Calago",
   },
   {
@@ -1183,7 +1183,7 @@ let newPostTwo = [
     comments: "0",
     link: "./bantayan-island-guide",
     quiz: {name: "Bantayan Island", vibes: ["beach","slow"], cost: 1, reach: 2, minDays: 3, family: true, boats: 1, why: "flat roads, calm water and long white beaches with little to do but relax"},
-    location: "Bantayan Island",
+    location: "Bantayan Island, Cebu",
     author: "Ren Calago",
   },
   {
@@ -1207,7 +1207,7 @@ let newPostTwo = [
     datePublished: "13 October 2026",
     comments: "0",
     link: "./bais-dolphin-watching-manjuyod-sandbar",
-    location: "Bais City",
+    location: "Bais City, Negros Oriental",
     author: "Ren Calago",
   },
   {
@@ -1611,7 +1611,7 @@ let newPostTwo = [
     dateModified: "22 October 2026",
     comments: "3",
     link: "./white-sand-beach-of-sipalay",
-    location: "Sipalay City",
+    location: "Sipalay City, Negros Occidental",
     author: "Ren Calago",
   },
   {
@@ -1625,7 +1625,7 @@ let newPostTwo = [
     dateModified: "22 October 2026",
     comments: "2",
     link: "./sakada-cafe-and-farm-pamplona",
-    location: "Pamplona",
+    location: "Pamplona, Negros Oriental",
     author: "Ren Calago",
   },
   {
@@ -1639,7 +1639,7 @@ let newPostTwo = [
     dateModified: "22 October 2026",
     comments: "5",
     link: "./metro-gaisano-bais-city",
-    location: "Bais City",
+    location: "Bais City, Negros Oriental",
     author: "Ren Calago",
   },
   {
@@ -1737,7 +1737,7 @@ let newPostTwo = [
     dateModified: "22 October 2026",
     comments: "14",
     link: "./lalimar-beach-resort-la-libertad",
-    location: "La Libertad",
+    location: "La Libertad, Negros Oriental",
     author: "Ren Calago",
   },
   {
@@ -1751,7 +1751,7 @@ let newPostTwo = [
     dateModified: "22 October 2026",
     comments: "",
     link: "./victorias-mountain-view-tanjay-city",
-    location: "Tanjay City",
+    location: "Tanjay City, Negros Oriental",
     author: "Ren Calago",
   },
   {

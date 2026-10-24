@@ -10,7 +10,9 @@ export function escapeHtml(value) {
 
 // MENU -------------------------------------------------------------------
 // key  = how the link is matched to the current page (for the underline)
-// href = where it goes. Cebu, Dumaguete and Negros Oriental have their own
+// group = "more" puts the link in the "More places" dropdown, so the menu stays
+//        on one row on laptops. The footer still lists every destination.
+// href = where it goes. Each destination (Cebu, Dumaguete, Luzon...) has its own
 //        pages (set "page" to that page's file name so the menu can underline
 //        it). "./#dest=..." and "./#cat=..." open the homepage with the stories
 //        filtered (see DESTINATIONS in app.js).
@@ -18,8 +20,11 @@ const NAV = [
   { key: "home", label: "Home", href: "./" },
   { key: "dest=cebu", label: "Cebu", href: "./cebu-travel-guides", page: "cebu-travel-guides" },
   { key: "dest=dumaguete", label: "Dumaguete", href: "./dumaguete-travel-guides", page: "dumaguete-travel-guides" },
-  { key: "dest=negros-oriental", label: "Negros Oriental", href: "./negros-oriental-travel-guides", page: "negros-oriental-travel-guides" },
-  { key: "dest=luzon", label: "Luzon", href: "./luzon-travel-guides", page: "luzon-travel-guides" },
+  { key: "dest=negros-oriental", label: "Negros Oriental", href: "./negros-oriental-travel-guides", page: "negros-oriental-travel-guides" , group: "more"},
+  { key: "dest=luzon", label: "Luzon", href: "./luzon-travel-guides", page: "luzon-travel-guides" , group: "more"},
+  { key: "dest=palawan-mimaropa", label: "Palawan", href: "./palawan-mimaropa-travel-guides", page: "palawan-mimaropa-travel-guides" , group: "more"},
+  { key: "dest=visayas", label: "Visayas", href: "./visayas-travel-guides", page: "visayas-travel-guides" , group: "more"},
+  { key: "dest=mindanao", label: "Mindanao", href: "./mindanao-travel-guides", page: "mindanao-travel-guides" , group: "more"},
   { key: "cat=Cafes & Restaurant", label: "Food & Cafes", href: "./#cat=Cafes%20%26%20Restaurant" },
   { key: "cat=Beach Resort", label: "Resorts", href: "./#cat=Beach%20Resort" },
   { key: "map", label: "Map", href: "./philippines-travel-map", page: "philippines-travel-map" },
@@ -192,9 +197,19 @@ export function registerLayout() {
         const social = SOCIAL.map(
           (s) => `<a href="${s.href}" aria-label="${s.label}">${s.short}</a>`
         ).join("");
-        const links = NAV.map(
-          (n) => `<a href="${n.href}" data-nav="${escapeHtml(n.key)}"${n.page ? ` data-page="${n.page}"` : ""}>${escapeHtml(n.label)}</a>`
-        ).join("");
+        const link = (n) =>
+          `<a href="${n.href}" data-nav="${escapeHtml(n.key)}"${n.page ? ` data-page="${n.page}"` : ""}>${escapeHtml(n.label)}</a>`;
+        const more = NAV.filter((n) => n.group === "more");
+        const moreMenu = `
+      <div class="nav-more">
+        <button class="nav-more__toggle" type="button" aria-expanded="false" aria-controls="nav-more-list">More places <i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
+        <div class="nav-more__list" id="nav-more-list">${more.map(link).join("")}</div>
+      </div>`;
+        // The dropdown sits right after the last top-level destination link.
+        const lastDest = NAV.map((n) => !n.group && n.key.startsWith("dest=")).lastIndexOf(true);
+        const links = NAV.filter((n) => !n.group)
+          .map((n, i) => link(n) + (i === lastDest ? moreMenu : ""))
+          .join("");
         this.innerHTML = `
 <div class="topbar">
   <div class="topbar__inner">
@@ -223,10 +238,29 @@ export function registerLayout() {
           const open = nav.classList.toggle("is-open");
           toggle.setAttribute("aria-expanded", String(open));
         });
+        const moreToggle = this.querySelector(".nav-more__toggle");
+        const moreBox = this.querySelector(".nav-more");
+        const setMore = function (open) {
+          moreBox.classList.toggle("is-open", open);
+          moreToggle.setAttribute("aria-expanded", String(open));
+        };
+        moreToggle.addEventListener("click", function () {
+          setMore(moreToggle.getAttribute("aria-expanded") !== "true");
+        });
+        document.addEventListener("click", function (e) {
+          if (e.target && e.target.closest && !e.target.closest(".nav-more")) setMore(false);
+        });
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape" && moreToggle.getAttribute("aria-expanded") === "true") {
+            setMore(false);
+            moreToggle.focus();
+          }
+        });
         nav.addEventListener("click", function (e) {
           if (e.target.closest("a")) {
             nav.classList.remove("is-open");
             toggle.setAttribute("aria-expanded", "false");
+            setMore(false);
           }
         });
         markCurrent(nav);
