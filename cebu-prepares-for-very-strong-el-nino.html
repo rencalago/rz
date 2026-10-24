@@ -631,7 +631,28 @@
   </div>
 </section>
 <!-- /build:related -->
-              <!-- build:comments --><!-- /build:comments -->
+              <!-- build:comments -->
+<section id="comments" class="comments" aria-labelledby="comments-heading">
+  <h2 id="comments-heading" class="comments__heading">Comments</h2>
+  <p class="comments__empty">No comments yet. Been here recently? Share a tip or ask a question.</p>
+  <div class="comment-form-box">
+    <h3 class="comment-form__title">Leave a Reply</h3>
+    <form class="comment-form" data-post="cebu-prepares-for-very-strong-el-nino" novalidate>
+      <label class="sr-only" for="comment-text">Comment</label>
+      <textarea id="comment-text" name="comment" rows="5" maxlength="2000" required placeholder="Write your comment here..."></textarea>
+      <label class="sr-only" for="comment-name">Your name (required)</label>
+      <input id="comment-name" name="name" type="text" maxlength="60" autocomplete="name" required placeholder="Your Name *">
+      <label class="sr-only" for="comment-email">Email (optional)</label>
+      <input id="comment-email" name="email" type="email" maxlength="254" autocomplete="email" placeholder="Email (optional)">
+      <div class="comment-form__trap" aria-hidden="true"><label for="comment-website">Leave this empty</label><input id="comment-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+      <p class="comment-form__note">Comments are checked before they appear. Add your email to hear when I reply; it is never shown.</p>
+      <button type="submit" class="comment-form__submit">Post Comment</button>
+      <p class="comment-form__status" role="status" aria-live="polite"></p>
+    </form>
+    <noscript><p class="comment-form__note">Please turn on JavaScript to post a comment.</p></noscript>
+  </div>
+</section>
+<!-- /build:comments -->
 
             </div>
 
