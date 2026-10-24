@@ -37,7 +37,9 @@ function buildArticleHeader() {
   band.className = "article-header";
   const inner = document.createElement("div");
   inner.className = "article-header__inner";
-  if (post) {
+  // The build adds a breadcrumb trail inside the title block; when it is there
+  // it replaces the category label, which says "Travel" on every post.
+  if (post && !title.querySelector(".breadcrumbs")) {
     inner.insertAdjacentHTML(
       "beforeend",
       `<a class="kicker" href="./#cat=${encodeURIComponent(post.category)}">${esc(post.category)}</a>`

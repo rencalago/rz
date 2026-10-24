@@ -582,6 +582,35 @@ function breadcrumbs(trail) {
   };
 }
 
+// An article's place on the site: Home > destination page (when it has one) > article.
+// Used for both the BreadcrumbList data and the visible trail, so the two always match.
+function postTrail(post, slug, destinationPages) {
+  const hub = destinationPages.find((d) => d.members.has(slug));
+  return [
+    { name: "Home", url: `${BASE}/`, href: "./" },
+    ...(hub ? [{ name: hub.name, url: pageUrl(hub.slug), href: `./${hub.slug}` }] : []),
+    { name: post.title, url: pageUrl(slug) },
+  ];
+}
+
+// The visible breadcrumb trail above an article's title.
+function breadcrumbNav(trail) {
+  const items = trail
+    .map((item, i) =>
+      i === trail.length - 1
+        ? `<li aria-current="page">${escapeHtml(item.name)}</li>`
+        : `<li><a href="${item.href}">${escapeHtml(item.name)}</a></li>`
+    )
+    .join("");
+  return `<nav class="breadcrumbs" aria-label="Breadcrumb"><ol>${items}</ol></nav>`;
+}
+
+// Adds the breadcrumb markers at the top of the title block the first time.
+function ensureBreadcrumbMarkers(html) {
+  if (html.includes("<!-- build:breadcrumbs -->")) return html;
+  return html.replace(/(<div class="title">)(\s*)(<h1)/, "$1$2<!-- build:breadcrumbs --><!-- /build:breadcrumbs -->$2$3");
+}
+
 function structuredData(html, slug, site, destinationPages) {
   const home = { name: "Home", url: `${BASE}/` };
   const post = site.posts.find((p) => slugOf(p) === slug);
@@ -604,8 +633,7 @@ function structuredData(html, slug, site, destinationPages) {
     };
     if (post.imagesrc) article.image = absoluteImage(post.imagesrc);
     graph.push(article);
-    const hub = destinationPages.find((d) => d.members.has(slug));
-    graph.push(breadcrumbs([home, ...(hub ? [{ name: hub.name, url: pageUrl(hub.slug) }] : []), { name: post.title, url: pageUrl(slug) }]));
+    graph.push(breadcrumbs(postTrail(post, slug, destinationPages)));
   } else {
     const title = String((html.match(/<title>([\s\S]*?)<\/title>/) || [])[1] || slug)
       .replace(/\s+/g, " ")
@@ -714,7 +742,14 @@ function buildPages(site, destinationPages) {
 
     if (postSlugs.has(slug)) {
       checkSearchSnippet(html, file);
-      html = withPostingMeta(html, site.posts.find((p) => slugOf(p) === slug));
+      const post = site.posts.find((p) => slugOf(p) === slug);
+      html = withPostingMeta(html, post);
+      html = ensureBreadcrumbMarkers(html);
+      if (html.includes("<!-- build:breadcrumbs -->")) {
+        html = fillBlock(html, "breadcrumbs", breadcrumbNav(postTrail(post, slug, destinationPages)), file);
+      } else {
+        warnings.push(`${file}: no <div class="title"><h1> block, so no breadcrumb trail was added`);
+      }
       html = withImageSizes(html);
       html = ensureRelatedMarkers(html);
       if (html.includes("<!-- build:related -->")) html = fillBlock(html, "related", relatedBlock(related.get(slug)), file);
