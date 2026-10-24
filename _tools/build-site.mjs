@@ -559,7 +559,7 @@ function commentsBlock(slug, list) {
       const reply = c.reply
         ? `
         <div class="comment__reply">
-          <p class="comment__head"><span class="comment__avatar comment__avatar--author" aria-hidden="true"><img src="./Images/rencalago-favicon.png" alt="" width="34" height="34" loading="lazy" decoding="async"></span><span class="comment__name">Ren Calago <span class="comment__badge">Author</span></span></p>
+          <p class="comment__head"><span class="comment__avatar comment__avatar--author" aria-hidden="true"><img src="./Images/ren-calago-author.jpg" alt="" width="34" height="34" loading="lazy" decoding="async"></span><span class="comment__name">Ren Calago <span class="comment__badge">Author</span></span></p>
           <div class="comment__body">${commentText(c.reply)}</div>
         </div>`
         : "";
