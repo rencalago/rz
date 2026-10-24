@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "News",
+    imagesrc: "./Images/featured-images/cebu-city-traffic-undas-2026.jpg",
+    postNumber: 144,
+    title: "Undas 2026 Traffic in Cebu City: Cemetery Roads to Avoid",
+    desc: "Undas 2026 traffic in Cebu City: road closures, parking bans and jeepney limits at Carreta, Calamba, Pardo and other cemeteries, plus the best times to go.",
+    datePublished: "24 October 2026",
+    comments: 0,
+    link: "./undas-2026-cebu-city-traffic-cemetery-roads",
+    location: "Cebu City, Cebu",
+    author: "Ren Calago",
+  },
+  {
+    category: "News",
     imagesrc: "./Images/featured-images/loboc-river-cruise-floating-restaurant.jpg",
     postNumber: 143,
     title: "Loboc River Works Resume: What It Means for the Cruise",
