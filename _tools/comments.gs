@@ -16,8 +16,12 @@
  *  2. In the sheet: Extensions > Apps Script. Delete what is in Code.gs and
  *     paste this whole file in. Save.
  *  3. Run the function `setup` once (pick it in the toolbar, press Run) and
- *     allow the permissions it asks for. It adds the header row, the
- *     checkboxes and an hourly job that emails readers when you reply.
+ *     allow the permissions it asks for. It adds the header row and an
+ *     hourly job that emails readers when you reply. Each comment gets its
+ *     own "Approved" checkbox when it arrives.
+ *
+ *  Keep the sheet private (Share > General access > Restricted): it holds
+ *  readers' email addresses.
  *  4. Deploy > New deployment > type "Web app".
  *       Execute as: Me
  *       Who has access: Anyone
@@ -51,7 +55,7 @@ function setup() {
   sheet.getRange(1, 1, 1, HEADERS.length).setFontWeight("bold");
   sheet.setColumnWidth(COL.comment, 420);
   sheet.setColumnWidth(COL.reply, 320);
-  sheet.getRange(2, COL.approved, sheet.getMaxRows() - 1, 1).insertCheckboxes();
+  tidyRows_(sheet);
 
   // Hourly job that emails readers when you have replied to them.
   const exists = ScriptApp.getProjectTriggers().some((t) => t.getHandlerFunction() === "notifyReplies");
@@ -84,10 +88,14 @@ function doPost(e) {
   try {
     const sheet = getSheet_();
     if (sheet.getLastRow() === 0) sheet.appendRow(HEADERS);
+    // Written into the first empty row (by the Date column), so stray
+    // checkboxes or formatting further down never push comments out of view.
     // Comment text keeps its line breaks; a leading = + - @ is neutralised so
     // the sheet never treats it as a formula.
-    sheet.appendRow([new Date(), post, name, email, safeCell_(comment), false, "", "", id, clean_(p.page, 300)]);
-    sheet.getRange(sheet.getLastRow(), COL.approved).insertCheckboxes();
+    const row = lastRow_(sheet) + 1;
+    if (row > sheet.getMaxRows()) sheet.insertRowsAfter(sheet.getMaxRows(), 50);
+    sheet.getRange(row, 1, 1, HEADERS.length).setValues([[new Date(), post, name, email, safeCell_(comment), false, "", "", id, clean_(p.page, 300)]]);
+    sheet.getRange(row, COL.approved).insertCheckboxes();
   } finally {
     lock.releaseLock();
   }
@@ -113,7 +121,8 @@ function doPost(e) {
 // Emails are never included.
 function doGet() {
   const sheet = getSheet_();
-  const rows = sheet.getLastRow() > 1 ? sheet.getRange(2, 1, sheet.getLastRow() - 1, HEADERS.length).getValues() : [];
+  const last = lastRow_(sheet);
+  const rows = last > 1 ? sheet.getRange(2, 1, last - 1, HEADERS.length).getValues() : [];
   const comments = rows
     .filter((r) => r[COL.approved - 1] === true && r[COL.id - 1] && r[COL.post - 1])
     .map((r) => ({
@@ -131,8 +140,9 @@ function doGet() {
 // to an approved comment.
 function notifyReplies() {
   const sheet = getSheet_();
-  if (sheet.getLastRow() < 2) return;
-  const rows = sheet.getRange(2, 1, sheet.getLastRow() - 1, HEADERS.length).getValues();
+  const last = lastRow_(sheet);
+  if (last < 2) return;
+  const rows = sheet.getRange(2, 1, last - 1, HEADERS.length).getValues();
   rows.forEach((r, i) => {
     const email = String(r[COL.email - 1] || "").trim();
     const reply = String(r[COL.reply - 1] || "").trim();
@@ -155,6 +165,31 @@ function notifyReplies() {
       sheet.getRange(i + 2, COL.notified).setValue("error: " + String(err).slice(0, 60));
     }
   });
+}
+
+// Each comment gets its own "Approved" checkbox when it arrives. Checkboxes on
+// empty rows count as filled rows in Sheets and would push new comments to the
+// bottom, so this moves every comment up under the header (keeping ticks and
+// replies) and clears everything below them. Safe to run any time.
+function tidyRows_(sheet) {
+  const filled = sheet.getLastRow();
+  if (filled < 2) return;
+  const rows = sheet.getRange(2, 1, filled - 1, HEADERS.length).getValues();
+  const keep = rows.filter((r) => r[COL.date - 1] !== "" && r[COL.date - 1] !== null);
+  sheet.getRange(2, 1, filled - 1, HEADERS.length).clearDataValidations().clearContent();
+  if (sheet.getMaxRows() > filled) sheet.getRange(filled + 1, 1, sheet.getMaxRows() - filled, HEADERS.length).clearDataValidations().clearContent();
+  if (!keep.length) return;
+  sheet.getRange(2, 1, keep.length, HEADERS.length).setValues(keep);
+  sheet.getRange(2, COL.approved, keep.length, 1).insertCheckboxes();
+}
+
+// The last row that has a date in column A (1 = only the header row).
+function lastRow_(sheet) {
+  const filled = sheet.getLastRow();
+  if (filled < 2) return Math.max(filled, 1);
+  const dates = sheet.getRange(1, COL.date, filled, 1).getValues();
+  for (let i = dates.length - 1; i >= 0; i--) if (dates[i][0] !== "" && dates[i][0] !== null) return i + 1;
+  return 1;
 }
 
 function getSheet_() {
