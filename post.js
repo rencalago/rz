@@ -25,6 +25,7 @@ cleanOldSidebar();
 insertArticleAd();
 improveImages();
 loadComments();
+setUpShareBar();
 
 // The title, author and date sit in a band right under the menu (above both
 // the article and the sidebar). The page's own HTML is not changed: the
@@ -203,4 +204,50 @@ function loadComments() {
   setTimeout(function () {
     if (!section.querySelector("iframe")) showBlockedNotice();
   }, 8000);
+}
+
+// The share bar the build writes under each article: the links work on their
+// own; this adds "copy link" and, on phones, the system share sheet.
+function setUpShareBar() {
+  const bar = document.querySelector(".share-bar");
+  if (!bar) return;
+  const field = bar.querySelector(".share-bar__url");
+  if (field) field.addEventListener("focus", () => field.select());
+
+  const copy = bar.querySelector("[data-share-copy]");
+  if (copy) {
+    copy.hidden = false;
+    copy.addEventListener("click", async () => {
+      const url = copy.dataset.shareCopy;
+      try {
+        await navigator.clipboard.writeText(url);
+      } catch {
+        if (!field) return;
+        field.select();
+        document.execCommand("copy");
+      }
+      copy.classList.add("is-copied");
+      copy.setAttribute("title", "Link copied");
+      copy.setAttribute("aria-label", "Link copied");
+      setTimeout(() => {
+        copy.classList.remove("is-copied");
+        copy.setAttribute("title", "Copy link");
+        copy.setAttribute("aria-label", "Copy link");
+      }, 2000);
+    });
+  }
+
+  const native = bar.querySelector("[data-share-native]");
+  if (native && navigator.share && window.matchMedia("(pointer: coarse)").matches) {
+    native.hidden = false;
+    native.addEventListener("click", () => {
+      navigator
+        .share({ title: post ? post.title : document.title, url: copy ? copy.dataset.shareCopy : location.href })
+        .catch(() => {});
+    });
+  }
+
+  // The comment button only makes sense when the comment box is on the page.
+  const toComments = bar.querySelector(".share-bar__btn--comment");
+  if (toComments && !document.getElementById("comments")) toComments.hidden = true;
 }

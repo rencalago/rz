@@ -13,8 +13,8 @@
 //                runs on top and keeps search, filters and pagination working.
 //   every page  the menu, sidebar and footer written in as plain HTML, plus the
 //                canonical link and Open Graph tags (see buildPages below).
-//   every post  a "Keep reading" block of three related stories under the
-//                article, and width/height on the article's own photos.
+//   every post  a share bar and a "Keep reading" block of three related stories
+//                under the article, and width/height on the article's own photos.
 //   cebu-travel-guides.html, dumaguete-travel-guides.html,
 //   negros-oriental-travel-guides.html, luzon-travel-guides.html
 //                the destination pages: a short intro (from
@@ -457,6 +457,53 @@ function relatedBlock(picks) {
 `;
 }
 
+// STEP: share bar at the end of every post -----------------------------------------
+// Plain links, so sharing works without JavaScript. post.js adds the copy-link
+// action and the phone share sheet on top. Messenger only shows on phones (CSS),
+// since its share link opens the Messenger app.
+const SHARE_ICONS = {
+  facebook: '<path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/>',
+  messenger: '<path d="M12 2C6.36 2 2 6.13 2 11.7c0 2.91 1.19 5.44 3.14 7.17.16.14.26.35.27.57l.05 1.78c.02.57.6.94 1.12.71l1.98-.87c.17-.08.36-.09.54-.04.91.25 1.87.38 2.9.38 5.64 0 10-4.13 10-9.7S17.64 2 12 2zm6 7.46-2.93 4.66a1.5 1.5 0 0 1-2.17.4l-2.33-1.75a.6.6 0 0 0-.72 0l-3.15 2.4c-.42.31-.97-.19-.69-.64l2.93-4.66a1.5 1.5 0 0 1 2.17-.4l2.33 1.75a.6.6 0 0 0 .72 0l3.15-2.4c.42-.31.97.19.69.64z"/>',
+  whatsapp: '<path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35zM12.05 21.5h-.01a9.45 9.45 0 0 1-4.82-1.32l-.35-.21-3.58.94.96-3.49-.23-.36a9.43 9.43 0 0 1-1.45-5.03c0-5.22 4.25-9.47 9.48-9.47a9.4 9.4 0 0 1 6.7 2.78 9.41 9.41 0 0 1 2.77 6.7c0 5.22-4.25 9.46-9.47 9.46zm8.06-17.53A11.32 11.32 0 0 0 12.05.63C5.76.63.64 5.75.64 12.04c0 2.01.52 3.97 1.52 5.7L.54 23.66l6.06-1.59a11.4 11.4 0 0 0 5.45 1.39h.01c6.29 0 11.41-5.12 11.41-11.41 0-3.05-1.19-5.91-3.36-8.08z"/>',
+  x: '<path d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.66l-5.21-6.82-5.97 6.82H1.67l7.73-8.84L1.25 2.25h6.83l4.71 6.23 5.45-6.23zm-1.16 17.52h1.83L7.08 4.13H5.12l11.96 15.64z"/>',
+  comment: '<path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M4 4h16v12H8l-4 4V4z"/>',
+  copy: '<g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="9" y="9" width="11" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></g>',
+  share: '<g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></g>',
+};
+const shareIcon = (name) => `<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">${SHARE_ICONS[name]}</svg>`;
+
+function shareBlock(post, slug) {
+  if (!post) return "";
+  const url = pageUrl(slug);
+  const u = encodeURIComponent(url);
+  const t = encodeURIComponent(post.title);
+  const link = (cls, href, label, icon) =>
+    `\n    <a class="share-bar__btn share-bar__btn--${cls}" href="${href}" target="_blank" rel="noopener" aria-label="${label}" title="${label}">${shareIcon(icon)}</a>`;
+  return `
+<section class="share-bar" aria-label="Share this article">
+  <p class="share-bar__label">${shareIcon("share")}<span>Share this article:</span></p>
+  <div class="share-bar__buttons">${link("facebook", `https://www.facebook.com/sharer/sharer.php?u=${u}`, "Share on Facebook", "facebook")}${link("messenger", `fb-messenger://share/?link=${u}`, "Send with Messenger", "messenger")}${link("whatsapp", `https://wa.me/?text=${t}%20${u}`, "Share on WhatsApp", "whatsapp")}${link("x", `https://x.com/intent/post?text=${t}&url=${u}`, "Share on X", "x")}
+    <a class="share-bar__btn share-bar__btn--comment" href="#comments" aria-label="Go to comments" title="Comments">${shareIcon("comment")}</a>
+    <button type="button" class="share-bar__btn share-bar__btn--copy" data-share-copy="${url}" aria-label="Copy link" title="Copy link" hidden>${shareIcon("copy")}</button>
+    <button type="button" class="share-bar__btn share-bar__btn--native" data-share-native aria-label="More ways to share" title="More ways to share" hidden>${shareIcon("share")}</button>
+  </div>
+  <input class="share-bar__url" type="text" value="${url}" readonly aria-label="Link to this article">
+</section>
+`;
+}
+
+// Adds the share bar markers right after the article text the first time.
+function ensureShareMarkers(html) {
+  if (html.includes("<!-- build:share -->")) return html;
+  const related = html.indexOf("<!-- build:related -->");
+  if (related >= 0) return html.slice(0, related) + "<!-- build:share --><!-- /build:share -->\n              " + html.slice(related);
+  const start = html.indexOf('<article class="full-content">');
+  const end = start < 0 ? -1 : html.indexOf("</article>", start);
+  if (end < 0) return html;
+  const at = end + "</article>".length;
+  return html.slice(0, at) + "\n              <!-- build:share --><!-- /build:share -->" + html.slice(at);
+}
+
 // Adds the "Keep reading" markers right after the article text the first time.
 function ensureRelatedMarkers(html) {
   if (html.includes("<!-- build:related -->")) return html;
@@ -768,6 +815,8 @@ function buildPages(site, destinationPages) {
       html = withImageSizes(html);
       html = ensureRelatedMarkers(html);
       if (html.includes("<!-- build:related -->")) html = fillBlock(html, "related", relatedBlock(related.get(slug)), file);
+      html = ensureShareMarkers(html);
+      if (html.includes("<!-- build:share -->")) html = fillBlock(html, "share", shareBlock(post, slug), file);
     }
     const tags = seoTags(html, slug, postSlugs.has(slug), site.posts.find((p) => slugOf(p) === slug));
     tags.push(structuredData(html, slug, site, destinationPages));
