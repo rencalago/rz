@@ -2511,9 +2511,10 @@ my-sidebar {
   gap: 12px 16px;
   margin-top: 36px;
   padding: 14px 18px;
-  border: 1px solid #f3c48f;
+  border: 1px solid var(--line-strong);
+  border-left: 4px solid var(--accent);
   border-radius: var(--radius);
-  background: #fff4e6;
+  background: var(--soft);
 }
 
 .share-bar__label {
@@ -2522,7 +2523,7 @@ my-sidebar {
   gap: 8px;
   margin: 0;
   font-weight: 700;
-  color: #8a4b0f;
+  color: var(--deep);
 }
 
 .share-bar__buttons {
@@ -2538,10 +2539,10 @@ my-sidebar {
   width: 42px;
   height: 42px;
   padding: 0;
-  border: 1px solid #f0e2d2;
+  border: 1px solid var(--line);
   border-radius: 50%;
-  background: #fff;
-  color: var(--ink);
+  background: var(--card);
+  color: var(--accent-dark);
   cursor: pointer;
   fill: currentColor;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
@@ -2562,11 +2563,11 @@ my-sidebar {
   outline-offset: 2px;
 }
 
-.share-bar__btn--facebook { color: #1877f2; }
-.share-bar__btn--messenger { color: #0a7cff; }
-.share-bar__btn--whatsapp { color: #25d366; }
-.share-bar__btn--x { color: #000; }
-.share-bar__btn--comment { color: #e8700c; }
+/* Icons use the site teal; each turns its own brand colour on hover. */
+.share-bar__btn--facebook:hover { color: #1877f2; }
+.share-bar__btn--messenger:hover { color: #0a7cff; }
+.share-bar__btn--whatsapp:hover { color: #1fa855; }
+.share-bar__btn--x:hover { color: #000; }
 .share-bar__btn--copy.is-copied { color: #fff; background: var(--accent); border-color: var(--accent); }
 
 /* The Messenger link opens the app, so it only shows on phones and tablets. */
@@ -2578,9 +2579,9 @@ my-sidebar {
   flex: 1 1 200px;
   min-width: 0;
   padding: 10px 16px;
-  border: 1px solid #f0e2d2;
+  border: 1px solid var(--line);
   border-radius: 999px;
-  background: #fff;
+  background: var(--card);
   color: var(--muted);
   font: 14px/1.2 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
