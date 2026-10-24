@@ -1,5 +1,5 @@
 // Article pages (and the contact page): shared layout, labels, author/date,
-// lazy-loaded images and the Cusdis comment box.
+// lazy-loaded images, the share bar and the comment form.
 import { newPostTwo } from "./allPost.js";
 import * as config from "./config.js";
 import { ADSENSE_CLIENT, SQUARE_AD } from "./ad-codes.js";
@@ -7,9 +7,7 @@ import { registerLayout, currentSlug, escapeHtml as esc } from "./layout.js";
 
 // Read the settings defensively: an old config.js (without these names) must
 // never stop the page from loading. Comments simply stay off until it is updated.
-const SITE_URL = config.SITE_URL || "https://www.rencalago.com";
-const CUSDIS_APP_ID = (config.CUSDIS_APP_ID || "").trim();
-const cusdisReady = CUSDIS_APP_ID !== "";
+const COMMENTS_ENDPOINT = (config.COMMENTS_ENDPOINT || "").trim();
 
 registerLayout();
 
@@ -24,7 +22,7 @@ buildArticleHeader();
 cleanOldSidebar();
 insertArticleAd();
 improveImages();
-loadComments();
+setUpComments();
 setUpShareBar();
 
 // The title, author and date sit in a band right under the menu (above both
@@ -145,65 +143,109 @@ function improveImages() {
   });
 }
 
-//CUSDIS COMMENTS
-// Pages not listed in allPost.js (contact, 404, leftover copies) get no comments.
-function loadComments() {
-  const container = document.querySelector(".post-container");
-  if (!post || !container) return;
-  if (!cusdisReady) {
-    console.warn("Comments: set CUSDIS_APP_ID in config.js to enable comments.");
-    return;
-  }
+// COMMENTS
+// The build writes approved comments and the form into the page as plain HTML
+// (see _tools/build-site.mjs). This sends the form to the comments Google
+// Apps Script and shows older comments on request.
+function setUpComments() {
+  const section = document.getElementById("comments");
+  if (!section) return;
 
-  // Every post gets one stable address, so its comments never get split
-  // between /post and /post.html
-  const postUrl = `${SITE_URL}/${slug}`;
-
-  const section = document.createElement("section");
-  section.id = "comments";
-  section.className = "comments-section";
-  section.innerHTML = `<h2 class="comments-heading">Comments</h2>
-    <div id="cusdis_thread"
-      data-host="https://cusdis.com"
-      data-app-id="${esc(CUSDIS_APP_ID)}"
-      data-page-id="post-${post.postNumber}"
-      data-page-url="${postUrl}"
-      data-page-title="${esc(post.title)}"
-      data-theme="light"></div>
-    <noscript>Please enable JavaScript to view the comments.</noscript>`;
-  container.appendChild(section);
-
-  // If the visitor arrived through a link ending in #comments, the section did
-  // not exist yet when the browser tried to jump to it.
-  if (window.location.hash === "#comments") {
-    section.scrollIntoView();
-    window.addEventListener("load", function () {
-      section.scrollIntoView();
+  const olderButton = section.querySelector("[data-comments-older]");
+  if (olderButton) {
+    olderButton.hidden = false;
+    olderButton.addEventListener("click", () => {
+      section.querySelectorAll(".comment[hidden]").forEach((li) => (li.hidden = false));
+      olderButton.remove();
     });
   }
 
-  function showBlockedNotice() {
-    if (section.querySelector(".comments-notice")) return;
-    const note = document.createElement("p");
-    note.className = "comments-notice";
-    note.textContent =
-      "The comment box could not load. If you use an ad blocker or strict tracking protection, try turning it off for this site, or open this page in another browser.";
-    section.appendChild(note);
+  // A link to one comment (#comment-abc123) may point at an older, hidden one.
+  const target = window.location.hash.startsWith("#comment-") && document.getElementById(window.location.hash.slice(1));
+  if (target && target.hidden) {
+    section.querySelectorAll(".comment[hidden]").forEach((li) => (li.hidden = false));
+    if (olderButton) olderButton.remove();
+    target.scrollIntoView();
   }
 
-  // The Cusdis script loads in the background (async), so it does not slow the article down.
-  console.info("Comments: loading Cusdis comment box for", postUrl);
-  const script = document.createElement("script");
-  script.async = true;
-  script.defer = true;
-  script.src = "https://cusdis.com/js/cusdis.es.js";
-  script.onerror = showBlockedNotice;
-  document.body.appendChild(script);
+  const form = section.querySelector(".comment-form");
+  if (!form || !COMMENTS_ENDPOINT) return;
+  const status = form.querySelector(".comment-form__status");
+  const button = form.querySelector(".comment-form__submit");
+  const openedAt = Date.now();
 
-  // If nothing has been drawn after a few seconds, tell the reader why.
-  setTimeout(function () {
-    if (!section.querySelector("iframe")) showBlockedNotice();
-  }, 8000);
+  const say = (text, kind) => {
+    status.textContent = text;
+    status.className = "comment-form__status" + (kind ? " is-" + kind : "");
+  };
+
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const comment = form.comment.value.trim();
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    if (comment.length < 2) {
+      say("Please write your comment first.", "error");
+      form.comment.focus();
+      return;
+    }
+    if (!name) {
+      say("Please add your name.", "error");
+      form.name.focus();
+      return;
+    }
+    if (email && !form.email.checkValidity()) {
+      say("That email doesn't look right. You can also leave it empty.", "error");
+      form.email.focus();
+      return;
+    }
+
+    button.disabled = true;
+    button.textContent = "Sending…";
+    say("");
+    const data = {
+      post: form.dataset.post,
+      name,
+      email,
+      comment,
+      website: form.website.value,
+      elapsed: String(Date.now() - openedAt),
+      page: window.location.href,
+    };
+    try {
+      // Apps Script does not send CORS headers, so the answer cannot be read;
+      // a network failure still throws and is reported below.
+      await fetch(COMMENTS_ENDPOINT, { method: "POST", mode: "no-cors", body: new URLSearchParams(data) });
+      showPending(name, comment);
+      form.reset();
+      say("Thanks! Your comment will appear here once it has been approved.", "ok");
+    } catch {
+      say("Your comment could not be sent. Please check your connection and try again.", "error");
+    } finally {
+      button.disabled = false;
+      button.textContent = "Post Comment";
+    }
+  });
+
+  // Show the reader their own comment straight away, marked as waiting.
+  function showPending(name, comment) {
+    let list = section.querySelector(".comments__list");
+    if (!list) {
+      list = document.createElement("ol");
+      list.className = "comments__list";
+      const empty = section.querySelector(".comments__empty");
+      if (empty) empty.replaceWith(list);
+      else section.querySelector(".comments__heading").after(list);
+    }
+    const li = document.createElement("li");
+    li.className = "comment comment--pending";
+    const paragraphs = comment
+      .split(/\n{2,}/)
+      .map((p) => `<p>${esc(p).replace(/\n/g, "<br>")}</p>`)
+      .join("");
+    li.innerHTML = `<p class="comment__head"><span class="comment__avatar" aria-hidden="true">${esc(name.charAt(0).toUpperCase())}</span><span class="comment__name">${esc(name)}</span><span class="comment__badge comment__badge--pending">Awaiting approval</span></p><div class="comment__body">${paragraphs}</div>`;
+    list.appendChild(li);
+  }
 }
 
 // The share bar the build writes under each article: the links work on their

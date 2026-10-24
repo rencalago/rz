@@ -14,7 +14,9 @@
 //   every page  the menu, sidebar and footer written in as plain HTML, plus the
 //                canonical link and Open Graph tags (see buildPages below).
 //   every post  a share bar and a "Keep reading" block of three related stories
-//                under the article, and width/height on the article's own photos.
+//                under the article, the approved reader comments (from
+//                _data/comments.json, see fetch-comments.mjs) with the comment
+//                form, and width/height on the article's own photos.
 //   cebu-travel-guides.html, dumaguete-travel-guides.html,
 //   negros-oriental-travel-guides.html, luzon-travel-guides.html
 //                the destination pages: a short intro (from
@@ -35,6 +37,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { loadSite } from "./site-runtime.mjs";
 import { regionOf } from "../regions.js";
+import { commentsReady } from "../config.js";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const checkOnly = process.argv.includes("--check");
@@ -504,6 +507,111 @@ function ensureShareMarkers(html) {
   return html.slice(0, at) + "\n              <!-- build:share --><!-- /build:share -->" + html.slice(at);
 }
 
+// STEP: reader comments under every post --------------------------------------------
+// Approved comments come from _data/comments.json (written by
+// fetch-comments.mjs from the comments Google Sheet) and are written into the
+// page as plain HTML, so readers and search engines see them without waiting
+// for a script. The form is plain HTML too; post.js sends it. Until
+// COMMENTS_ENDPOINT is set in config.js, posts get no comment section.
+const VISIBLE_COMMENTS = 20; // older ones sit behind a "Show older comments" button
+
+function loadComments() {
+  const file = path.join(root, "_data", "comments.json");
+  const byPost = new Map();
+  if (!fs.existsSync(file)) return byPost;
+  const data = JSON.parse(fs.readFileSync(file, "utf8"));
+  for (const c of data.comments || []) {
+    if (!byPost.has(c.post)) byPost.set(c.post, []);
+    byPost.get(c.post).push(c);
+  }
+  for (const list of byPost.values()) list.sort((a, b) => a.date.localeCompare(b.date) || a.id.localeCompare(b.id));
+  return byPost;
+}
+
+const LONG_MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+function commentDate(iso) {
+  const m = String(iso).match(/^(\d{4})-(\d{2})-(\d{2})/);
+  return m ? `${Number(m[3])} ${LONG_MONTHS[Number(m[2]) - 1]} ${m[1]}` : "";
+}
+
+// Reader text: escaped, paragraphs on blank lines, links marked as user content.
+function commentText(text) {
+  return String(text)
+    .trim()
+    .split(/\n{2,}/)
+    .map((para) => {
+      const linked = escapeHtml(para).replace(/\b(https?:\/\/[^\s<]+[^\s<.,;:!?)\]'"])/g, (url) =>
+        `<a href="${url}" rel="ugc nofollow noopener" target="_blank">${url}</a>`
+      );
+      return `<p>${linked.replace(/\n/g, "<br>")}</p>`;
+    })
+    .join("");
+}
+
+function commentsBlock(slug, list) {
+  list = list || [];
+  if (!commentsReady && !list.length) return "";
+  const count = list.length;
+  const heading = count === 0 ? "Comments" : count === 1 ? "1 Comment" : `${count} Comments`;
+  const older = Math.max(0, count - VISIBLE_COMMENTS);
+  const items = list
+    .map((c, i) => {
+      const reply = c.reply
+        ? `
+        <div class="comment__reply">
+          <p class="comment__head"><span class="comment__avatar comment__avatar--author" aria-hidden="true">R</span><span class="comment__name">Ren Calago <span class="comment__badge">Author</span></span></p>
+          <div class="comment__body">${commentText(c.reply)}</div>
+        </div>`
+        : "";
+      return `
+      <li class="comment" id="comment-${escapeHtml(c.id)}"${i < older ? " hidden" : ""}>
+        <p class="comment__head"><span class="comment__avatar" aria-hidden="true">${escapeHtml(c.name.trim().charAt(0).toUpperCase() || "?")}</span><span class="comment__name">${escapeHtml(c.name)}</span><time class="comment__date" datetime="${escapeHtml(c.date)}">${commentDate(c.date)}</time></p>
+        <div class="comment__body">${commentText(c.comment)}</div>${reply}
+      </li>`;
+    })
+    .join("");
+  const list_ = count
+    ? `
+  <ol class="comments__list">${items}
+  </ol>${older ? `\n  <button type="button" class="comments__older" data-comments-older hidden>Show ${older} older comment${older === 1 ? "" : "s"}</button>` : ""}`
+    : commentsReady
+      ? `\n  <p class="comments__empty">No comments yet. Been here recently? Share a tip or ask a question.</p>`
+      : "";
+  const form = commentsReady
+    ? `
+  <div class="comment-form-box">
+    <h3 class="comment-form__title">Leave a Reply</h3>
+    <form class="comment-form" data-post="${escapeHtml(slug)}" novalidate>
+      <label class="sr-only" for="comment-text">Comment</label>
+      <textarea id="comment-text" name="comment" rows="5" maxlength="2000" required placeholder="Write your comment here..."></textarea>
+      <label class="sr-only" for="comment-name">Your name (required)</label>
+      <input id="comment-name" name="name" type="text" maxlength="60" autocomplete="name" required placeholder="Your Name *">
+      <label class="sr-only" for="comment-email">Email (optional)</label>
+      <input id="comment-email" name="email" type="email" maxlength="254" autocomplete="email" placeholder="Email (optional)">
+      <div class="comment-form__trap" aria-hidden="true"><label for="comment-website">Leave this empty</label><input id="comment-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+      <p class="comment-form__note">Comments are checked before they appear. Add your email to hear when I reply; it is never shown.</p>
+      <button type="submit" class="comment-form__submit">Post Comment</button>
+      <p class="comment-form__status" role="status" aria-live="polite"></p>
+    </form>
+    <noscript><p class="comment-form__note">Please turn on JavaScript to post a comment.</p></noscript>
+  </div>`
+    : "";
+  return `
+<section id="comments" class="comments" aria-labelledby="comments-heading">
+  <h2 id="comments-heading" class="comments__heading">${heading}</h2>${list_}${form}
+</section>
+`;
+}
+
+// Adds the comment markers after the "Keep reading" block the first time.
+function ensureCommentsMarkers(html) {
+  if (html.includes("<!-- build:comments -->")) return html;
+  const end = html.indexOf("<!-- /build:related -->");
+  if (end < 0) return html;
+  const at = end + "<!-- /build:related -->".length;
+  return html.slice(0, at) + "\n              <!-- build:comments --><!-- /build:comments -->" + html.slice(at);
+}
+
 // Adds the "Keep reading" markers right after the article text the first time.
 function ensureRelatedMarkers(html) {
   if (html.includes("<!-- build:related -->")) return html;
@@ -694,6 +802,17 @@ function structuredData(html, slug, site, destinationPages) {
       mainEntityOfPage: pageUrl(slug),
     };
     if (post.imagesrc) article.image = absoluteImage(post.imagesrc);
+    const comments = (site.comments && site.comments.get(slug)) || [];
+    if (comments.length) {
+      article.commentCount = comments.length;
+      article.comment = comments.map((c) => ({
+        "@type": "Comment",
+        author: { "@type": "Person", name: c.name },
+        dateCreated: c.date,
+        text: c.comment,
+        url: `${pageUrl(slug)}#comment-${c.id}`,
+      }));
+    }
     graph.push(article);
     graph.push(breadcrumbs(postTrail(post, slug, destinationPages)));
   } else {
@@ -781,6 +900,8 @@ function buildPages(site, destinationPages) {
   const postSlugs = new Set(site.posts.map(slugOf));
   const destinationSlugs = destinationPages.map((p) => p.slug);
   const related = planRelated(site);
+  const comments = loadComments();
+  site.comments = comments; // structuredData adds them to the BlogPosting data
   const files = new Set([
     ...fs.readdirSync(root).filter((f) => f.endsWith(".html")),
     ...[...pending.keys()].filter((f) => f.endsWith(".html")),
@@ -817,6 +938,8 @@ function buildPages(site, destinationPages) {
       if (html.includes("<!-- build:related -->")) html = fillBlock(html, "related", relatedBlock(related.get(slug)), file);
       html = ensureShareMarkers(html);
       if (html.includes("<!-- build:share -->")) html = fillBlock(html, "share", shareBlock(post, slug), file);
+      html = ensureCommentsMarkers(html);
+      if (html.includes("<!-- build:comments -->")) html = fillBlock(html, "comments", commentsBlock(slug, comments.get(slug)), file);
     }
     const tags = seoTags(html, slug, postSlugs.has(slug), site.posts.find((p) => slugOf(p) === slug));
     tags.push(structuredData(html, slug, site, destinationPages));

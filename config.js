@@ -1,12 +1,13 @@
-// Comment settings shared by app.js and post.js.
+// Comment settings shared by post.js and the build tools.
 
-// Base address used so every post has one stable comment thread,
+// Base address used so every post has one stable address,
 // no matter if it is opened as /post or /post.html
 export const SITE_URL = "https://www.rencalago.com";
 
-// Paste your Cusdis App ID between the quotes (see the steps in the chat).
-// It looks like a long string of letters, numbers and dashes.
-// Leave it empty ("") and no comment box is shown.
-export const CUSDIS_APP_ID = "";
+// Paste the Web app URL of the comments Google Apps Script between the quotes
+// (set-up steps at the top of _tools/comments.gs). It ends in /exec.
+// While it is empty, articles have no comment form. After pasting it, run
+// node _tools/build-site.mjs so every article gets the form.
+export const COMMENTS_ENDPOINT = "";
 
-export const cusdisReady = CUSDIS_APP_ID.trim() !== "";
+export const commentsReady = COMMENTS_ENDPOINT.trim() !== "";
