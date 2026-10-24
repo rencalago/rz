@@ -2503,6 +2503,94 @@ my-sidebar {
   height: auto;
 }
 
+/* Share bar at the end of each article (build-site.mjs, actions in post.js) */
+.share-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 16px;
+  margin-top: 36px;
+  padding: 14px 18px;
+  border: 1px solid #f3c48f;
+  border-radius: var(--radius);
+  background: #fff4e6;
+}
+
+.share-bar__label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  font-weight: 700;
+  color: #8a4b0f;
+}
+
+.share-bar__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.share-bar__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border: 1px solid #f0e2d2;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--ink);
+  cursor: pointer;
+  fill: currentColor;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.share-bar__btn[hidden] {
+  display: none;
+}
+
+.share-bar__btn:hover,
+.share-bar__btn:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+}
+
+.share-bar__btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.share-bar__btn--facebook { color: #1877f2; }
+.share-bar__btn--messenger { color: #0a7cff; }
+.share-bar__btn--whatsapp { color: #25d366; }
+.share-bar__btn--x { color: #000; }
+.share-bar__btn--comment { color: #e8700c; }
+.share-bar__btn--copy.is-copied { color: #fff; background: var(--accent); border-color: var(--accent); }
+
+/* The Messenger link opens the app, so it only shows on phones and tablets. */
+@media (hover: hover) and (pointer: fine) {
+  .share-bar__btn--messenger { display: none; }
+}
+
+.share-bar__url {
+  flex: 1 1 200px;
+  min-width: 0;
+  padding: 10px 16px;
+  border: 1px solid #f0e2d2;
+  border-radius: 999px;
+  background: #fff;
+  color: var(--muted);
+  font: 14px/1.2 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .share-bar__btn { transition: none; }
+  .share-bar__btn:hover,
+  .share-bar__btn:focus-visible { transform: none; }
+}
+
 /* "Keep reading": three related stories under each article (build-site.mjs) */
 .related {
   margin-top: 40px;
