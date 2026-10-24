@@ -1786,6 +1786,8 @@ my-sidebar {
 }
 
 .comment__avatar {
+  flex: none;
+  overflow: hidden;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1800,6 +1802,14 @@ my-sidebar {
 .comment__avatar--author {
   background: var(--accent);
   color: #fff;
+}
+
+.comment__avatar--author img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .comment__name {
