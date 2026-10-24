@@ -1,6 +1,6 @@
 let newPostTwo = [
   {
-    category: "Travel",
+    category: "News",
     imagesrc: "./Images/featured-images/loboc-river-cruise-floating-restaurant.jpg",
     postNumber: 143,
     title: "Loboc River Works Resume: What It Means for the Cruise",
