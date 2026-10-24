@@ -1,5 +1,17 @@
 let newPostTwo = [
   {
+    category: "Travel",
+    imagesrc: "./Images/featured-images/beginner-friendly-hikes-philippines.jpg",
+    postNumber: 145,
+    title: "Beginner-Friendly Hikes in the Philippines: 9 Easy Trails",
+    desc: "Nine beginner-friendly hikes in the Philippines, from Osmeña Peak in Cebu to Batulao and Mount Ulap, with honest difficulty, timing and first-climb tips.",
+    datePublished: "24 October 2026",
+    comments: 0,
+    link: "./beginner-friendly-hikes-philippines",
+    location: "Philippines",
+    author: "Ren Calago",
+  },
+  {
     category: "News",
     imagesrc: "./Images/featured-images/cebu-city-traffic-undas-2026.jpg",
     postNumber: 144,
