@@ -39,7 +39,13 @@ const SOCIAL = [
   { label: "Twitter", short: "X", href: "https://www.twitter.com/rencalago", icon: "fa-brands fa-twitter" },
 ];
 
-export const CATEGORIES = Array.from(new Set(newPostTwo.map((p) => p.category)));
+// Category chips keep a fixed order, so a new post in another category
+// does not reshuffle the menu on every page. Unlisted categories follow.
+const CATEGORY_ORDER = ["Travel", "News"];
+const usedCategories = new Set(newPostTwo.map((p) => p.category));
+export const CATEGORIES = CATEGORY_ORDER.filter((c) => usedCategories.has(c)).concat(
+  Array.from(usedCategories).filter((c) => !CATEGORY_ORDER.includes(c))
+);
 
 // "Start here" box in the sidebar: the "link" of each post you want to feature
 export const START_HERE = [
