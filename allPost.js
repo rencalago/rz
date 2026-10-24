@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/loboc-river-cruise-floating-restaurant.jpg",
+    postNumber: 143,
+    title: "Loboc River Works Resume: What It Means for the Cruise",
+    desc: "Flood control works are back on Bohol's Loboc River. What the P3.5B project involves, why it divides the town, and how the lunch cruise looks if you go now.",
+    datePublished: "24 October 2026",
+    comments: 0,
+    link: "./loboc-river-works-resume-bohol-update",
+    location: "Loboc, Bohol",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/subic-bay-freeport-waterfront.jpg",
     postNumber: 142,
     title: "Subic Bay Guide: Things to Do, Beaches and Costs",
