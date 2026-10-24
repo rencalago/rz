@@ -9,6 +9,7 @@ let newPostTwo = [
     comments: 0,
     link: "./best-dive-sites-philippines-by-season",
     location: "Philippines",
+    mapAreas: ["palawan", "cebu", "batangas", "bohol", "occidental-mindoro"],
     author: "Ren Calago",
   },
   {
