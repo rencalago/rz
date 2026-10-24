@@ -234,6 +234,109 @@ my-sidebar {
   }
 }
 
+/* "More places" dropdown in the menu: a click-to-open list on laptops,
+   an always-open group inside the phone menu. */
+.nav-more {
+  position: relative;
+}
+
+.nav-more__toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 14px;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  background: none;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+.nav-more__toggle i {
+  font-size: 11px;
+  transition: transform 0.15s;
+}
+
+.nav-more__toggle:hover {
+  border-bottom-color: var(--line-strong);
+}
+
+.nav-more:has([aria-current="page"]) .nav-more__toggle {
+  border-bottom-color: var(--accent);
+}
+
+.nav-more.is-open .nav-more__toggle i {
+  transform: rotate(180deg);
+}
+
+.nav-more__list {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 50;
+  min-width: 200px;
+  padding: 6px;
+  flex-direction: column;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 10px 28px rgba(18, 59, 60, 0.14);
+}
+
+.nav-more.is-open .nav-more__list {
+  display: flex;
+}
+
+.site-nav .nav-more__list a {
+  padding: 10px 12px;
+  border-bottom: 0;
+  border-radius: 6px;
+}
+
+.site-nav .nav-more__list a:hover {
+  background: var(--soft);
+}
+
+.site-nav .nav-more__list a[aria-current="page"] {
+  color: var(--accent-dark);
+  background: var(--soft);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-more__toggle i {
+    transition: none;
+  }
+}
+
+@media (max-width: 860px) {
+  .nav-more__toggle {
+    display: none;
+  }
+
+  .nav-more__list,
+  .nav-more.is-open .nav-more__list {
+    display: flex;
+    position: static;
+    min-width: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .site-nav .nav-more__list a {
+    padding: 14px 4px;
+    border-bottom: 1px solid var(--line);
+    border-radius: 0;
+  }
+
+  .site-nav .nav-more__list a:hover {
+    background: none;
+  }
+}
+
 /* ===== Quote strip (homepage) ===== */
 .quote-strip {
   background: var(--soft);
@@ -1735,7 +1838,8 @@ my-sidebar {
     font-size: 14px;
   }
 
-  .site-nav a {
+  .site-nav a,
+  .nav-more__toggle {
     padding: 12px 8px;
   }
 }

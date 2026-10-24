@@ -57,9 +57,9 @@ export async function loadSite(root) {
   // Copy the three browser modules to a temp folder as .mjs so Node treats them
   // as ES modules on any version, then point their imports at the copies.
   const tmp = fs.mkdtempSync(path.join(os.tmpdir(), "rencalago-build-"));
-  for (const name of ["allPost", "layout", "app"]) {
+  for (const name of ["allPost", "layout", "app", "regions"]) {
     const source = fs.readFileSync(path.join(root, name + ".js"), "utf8");
-    const rewritten = source.replace(/(from\s+["'])\.\/(allPost|layout)\.js(["'])/g, "$1./$2.mjs$3");
+    const rewritten = source.replace(/(from\s+["'])\.\/(allPost|layout|regions)\.js(["'])/g, "$1./$2.mjs$3");
     fs.writeFileSync(path.join(tmp, name + ".mjs"), rewritten);
   }
 

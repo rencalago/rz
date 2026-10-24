@@ -1,5 +1,6 @@
 // Homepage: hero, editor's picks, destination tiles, filterable story feed.
 import { newPostTwo } from "./allPost.js";
+import { regionsOf } from "./regions.js";
 import { registerLayout, thumb, escapeHtml as esc, metaLine, storyCard } from "./layout.js";
 
 registerLayout();
@@ -9,11 +10,14 @@ const PER_PAGE = 6; // stories per page in "Latest stories"
 // (The "Start here" list and the menu are in layout.js)
 
 // Destination tiles / menu filters. A story belongs to a destination when its
-// title, location or description contains one of the keywords (lower case).
+// location contains one of the keywords (lower case), or when its location is
+// in one of the destination's official "regions" (see regions.js). Only the
+// location is used, so a story that mentions "from Cebu" in its description is
+// not listed under Cebu.
 // "href" is where a tile goes. Without it the tile opens the homepage filtered
 // to that destination. "cta" is the small line under the name.
 const DESTINATIONS = [
-  { key: "cebu", name: "Cebu", tile: true, tone: "#2F6F8F", keywords: ["cebu"], href: "./cebu-travel-guides" },
+  { key: "cebu", name: "Cebu", tile: true, tone: "#2F6F8F", keywords: ["cebu", "bantayan", "malapascua", "camotes", "oslob", "moalboal", "badian"], href: "./cebu-travel-guides" },
   { key: "dumaguete", name: "Dumaguete", tile: true, tone: "#3F7A5A", keywords: ["dumaguete"], href: "./dumaguete-travel-guides" },
   {
     key: "negros-oriental",
@@ -50,15 +54,41 @@ const DESTINATIONS = [
     name: "Luzon",
     tile: false,
     tone: "#5B6B3A",
-    // Matched against the post's location only, so a Visayas story that merely
-    // mentions a Manila flight in its description is not listed under Luzon.
-    locationOnly: true,
-    keywords: [
-      "baguio", "benguet", "ifugao", "mountain province", "ilocos", "batanes", "la union", "pangasinan",
-      "zambales", "pampanga", "aurora", "manila", "intramuros", "mckinley", "taguig", "angono", "rizal",
-      "tagaytay", "batangas", "albay", "bicol", "camarines", "sorsogon", "marinduque",
+    keywords: [],
+    regions: [
+      "National Capital Region", "Cordillera Administrative Region", "Ilocos Region", "Cagayan Valley",
+      "Central Luzon", "CALABARZON", "Bicol Region",
     ],
     href: "./luzon-travel-guides",
+  },
+  {
+    key: "palawan-mimaropa",
+    name: "Palawan & MIMAROPA",
+    tile: false,
+    tone: "#2E7D74",
+    keywords: [],
+    regions: ["MIMAROPA Region"],
+    href: "./palawan-mimaropa-travel-guides",
+  },
+  {
+    key: "visayas",
+    name: "Visayas",
+    tile: false,
+    tone: "#3D6E8C",
+    // Cebu, Dumaguete and Negros Oriental stories have their own pages and are
+    // left off this one (see "excludeDestinations" in _tools/destinations.json).
+    keywords: [],
+    regions: ["Western Visayas", "Negros Island Region", "Central Visayas", "Eastern Visayas"],
+    href: "./visayas-travel-guides",
+  },
+  {
+    key: "mindanao",
+    name: "Mindanao",
+    tile: false,
+    tone: "#7A5A2E",
+    keywords: [],
+    regions: ["Zamboanga Peninsula", "Northern Mindanao", "Davao Region", "SOCCSKSARGEN", "Caraga", "BARMM"],
+    href: "./mindanao-travel-guides",
   },
 ];
 // -------------------------------------------------------------------------------
@@ -87,8 +117,9 @@ function matchesFilter(p, filter) {
   if (filter.type === "cat") return p.category === filter.value;
   const d = DESTINATIONS.find((x) => x.key === filter.value);
   if (!d) return true;
-  const text = d.locationOnly ? String(p.location || "").toLowerCase() : haystack(p);
-  return d.keywords.some((k) => text.includes(k));
+  const location = String(p.location || "").toLowerCase();
+  if (d.keywords.some((k) => location.includes(k))) return true;
+  return Boolean(d.regions) && regionsOf(p.location).some((r) => d.regions.includes(r));
 }
 
 // RENDERERS ---------------------------------------------------------------------

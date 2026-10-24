@@ -1,22 +1,4 @@
 {
-  "cebu": {
-    "page": "cebu-travel-guides",
-    "title": "Cebu Travel Guides: Itineraries, Day Trips and Festivals",
-    "description": "Cebu travel guides: a 3-day itinerary, Oslob and Kawasan Falls, a Bohol day trip, Sinulog, heritage walks and local food, with notes on costs and crowds.",
-    "keywords": "Cebu travel guides, Cebu itinerary, things to do in Cebu, Cebu day trips, Sinulog Cebu, Oslob whale shark, Kawasan Falls canyoneering, Bohol day trip from Cebu",
-    "h1": "Cebu travel guides",
-    "intro": [
-      "Cebu is a long, narrow island in the middle of the Visayas, and most trips start at Mactan-Cebu International Airport or the ports of Cebu City. The city is the busy part: old streets, churches and Carbon Market downtown, malls and hotels uptown, and the hills of Busay just above it. The <a href=\"./cebu-3-day-itinerary\">three-day itinerary</a> is a good first plan, and the <a href=\"./cebu-heritage-walk-old-houses-historic-streets\">heritage walk</a> covers the old quarter on foot.",
-      "Leave the city and the island splits into two very different trips. The south is for the classic day trips: Oslob for whale sharks and Sumilon Island, Moalboal for the sardine run, Badian for canyoneering at Kawasan Falls, and Dalaguete for the climb up Osme&ntilde;a Peak. Plan on long bus rides from the South Bus Terminal, and start early, because the road along the coast is slow after mid-morning. The north is quieter and better for staying a few nights: Bantayan Island for flat white-sand beaches, Malapascua for diving with thresher sharks, and the Camotes Islands to the east for lakes, caves and empty coves.",
-      "Timing matters more than most visitors expect. The driest months are usually from about January to May, while the second half of the year brings more rain and the chance of typhoons, which can cancel boats at short notice. January is also Sinulog month, when Cebu City fills up and hotel prices rise. The <a href=\"./best-time-to-visit-cebu-month-by-month\">month-by-month guide</a> goes through what each part of the year is like.",
-      "The guides below are newest first, with the most useful starting points at the top. Fees, boat schedules and rules at places like Oslob change, so check the current details with the operator or the town tourism office before you go. Crossing to Negros? The <a href=\"./dumaguete-travel-guides\">Dumaguete</a> and <a href=\"./negros-oriental-travel-guides\">Negros Oriental</a> pages pick up where this one ends."
-    ],
-    "startWith": [
-      "cebu-3-day-itinerary",
-      "7-cebu-places-beyond-the-crowds",
-      "sinulog-first-timers-guide"
-    ]
-  },
   "dumaguete": {
     "page": "dumaguete-travel-guides",
     "title": "Dumaguete Travel Guides: Food, Budget and Day Trips",
@@ -60,6 +42,24 @@
       "buglasan-festival-2026-events-schedule"
     ]
   },
+  "cebu": {
+    "page": "cebu-travel-guides",
+    "title": "Cebu Travel Guides: Itineraries, Day Trips and Festivals",
+    "description": "Cebu travel guides: a 3-day itinerary, Oslob and Kawasan Falls, Bantayan and Malapascua, Sinulog, heritage walks and local food, with notes on costs.",
+    "keywords": "Cebu travel guides, Cebu itinerary, things to do in Cebu, Cebu day trips, Sinulog Cebu, Oslob whale shark, Kawasan Falls canyoneering, Bantayan Island, Malapascua",
+    "h1": "Cebu travel guides",
+    "intro": [
+      "Cebu is a long, narrow island in the middle of the Visayas, and most trips start at Mactan-Cebu International Airport or the ports of Cebu City. The city is the busy part: old streets, churches and Carbon Market downtown, malls and hotels uptown, and the hills of Busay just above it. The <a href=\"./cebu-3-day-itinerary\">three-day itinerary</a> is a good first plan, and the <a href=\"./cebu-heritage-walk-old-houses-historic-streets\">heritage walk</a> covers the old quarter on foot.",
+      "Leave the city and the island splits into two very different trips. The south is for the classic day trips: Oslob for whale sharks and Sumilon Island, Moalboal for the sardine run, Badian for canyoneering at Kawasan Falls, and Dalaguete for the climb up Osme&ntilde;a Peak. Plan on long bus rides from the South Bus Terminal, and start early, because the road along the coast is slow after mid-morning. The north is quieter and better for staying a few nights: Bantayan Island for flat white-sand beaches, Malapascua for diving with thresher sharks, and the Camotes Islands to the east for lakes, caves and empty coves.",
+      "Timing matters more than most visitors expect. The driest months are usually from about January to May, while the second half of the year brings more rain and the chance of typhoons, which can cancel boats at short notice. January is also Sinulog month, when Cebu City fills up and hotel prices rise. The <a href=\"./best-time-to-visit-cebu-month-by-month\">month-by-month guide</a> goes through what each part of the year is like.",
+      "The guides below are newest first, with the most useful starting points at the top. Fees, boat schedules and rules at places like Oslob change, so check the current details with the operator or the town tourism office before you go. Crossing to Negros? The <a href=\"./dumaguete-travel-guides\">Dumaguete</a> and <a href=\"./negros-oriental-travel-guides\">Negros Oriental</a> pages pick up where this one ends, and the <a href=\"./visayas-travel-guides\">Visayas guides</a> cover Bohol, Siquijor and the islands farther out."
+    ],
+    "startWith": [
+      "cebu-3-day-itinerary",
+      "7-cebu-places-beyond-the-crowds",
+      "sinulog-first-timers-guide"
+    ]
+  },
   "luzon": {
     "page": "luzon-travel-guides",
     "title": "Luzon Travel Guides: Mountains, Beaches and Food",
@@ -76,6 +76,65 @@
       "manila-24-hour-stopover-intramuros",
       "banaue-batad-rice-terraces-how-to-visit",
       "vigan-heritage-weekend-calle-crisologo-food"
+    ]
+  },
+  "palawan-mimaropa": {
+    "page": "palawan-mimaropa-travel-guides",
+    "title": "Palawan and MIMAROPA Travel Guides: Coron, Mindoro, Romblon",
+    "description": "Palawan and MIMAROPA travel guides: Coron wrecks, Underground River permits, quiet Palawan beaches, Puerto Galera, Romblon and the Moriones Festival.",
+    "keywords": "Palawan travel guides, MIMAROPA, Coron, El Nido, Puerto Princesa Underground River, Puerto Galera, Romblon, Sibuyan Island, Marinduque Moriones Festival",
+    "h1": "Palawan and MIMAROPA travel guides",
+    "intro": [
+      "MIMAROPA takes its name from the provinces it groups together: Mindoro (split into Occidental and Oriental), Marinduque, Romblon and Palawan. On official maps it belongs to Luzon, but none of it is on the main island, so every trip here starts with a flight or a boat, and each province works as a separate destination rather than one long route.",
+      "Palawan draws most of the visitors, and the first decision is which part of it to base yourself in. The <a href=\"./palawan-el-nido-coron-puerto-princesa-from-cebu\">El Nido, Coron and Puerto Princesa comparison</a> lays out how they differ in cost, travel time and pace. Coron suits divers and island-hoppers, with Second World War wrecks in the bay, while Puerto Princesa is the base for the Underground River, a UNESCO World Heritage Site where visitor numbers are capped, so read the <a href=\"./puerto-princesa-underground-river-permits\">permit guide</a> before booking flights.",
+      "The rest of the region is quieter and slower to reach. Puerto Galera on Mindoro is the easiest escape from Manila, a short boat ride from Batangas, with beaches and dive sites close together. Romblon has marble workshops, old forts and the hard climb up Mount Guiting-Guiting on Sibuyan. Marinduque comes alive in Holy Week, when masked Moriones fill the streets of Boac and nearby towns; the <a href=\"./moriones-festival-marinduque-guide\">Moriones guide</a> has the dates and the best days to go.",
+      "Island-hopping trips and ferries here depend on the sea, and boats stay in port whenever the coast guard raises a warning, so leave a spare day before any flight out. Environmental fees, permit rules and tour prices change from season to season, and each town sets its own, so confirm them with the local tourism office or your operator before you travel."
+    ],
+    "startWith": [
+      "palawan-el-nido-coron-puerto-princesa-from-cebu",
+      "puerto-princesa-underground-river-permits",
+      "coron-wreck-diving-kayangan-lake"
+    ]
+  },
+  "visayas": {
+    "page": "visayas-travel-guides",
+    "title": "Visayas Travel Guides: Bohol, Siquijor, Iloilo and More",
+    "description": "Visayas travel guides beyond Cebu and Negros Oriental: Bohol, Siquijor, Bacolod and Silay, Iloilo and Guimaras, Boracay, Leyte and Samar, with real costs.",
+    "keywords": "Visayas travel guides, Bohol, Panglao, Siquijor, Bacolod, Silay, Iloilo, Guimaras, Boracay, Antique, Leyte, Samar, Biliran, Kalanggaman Island",
+    "h1": "Visayas travel guides",
+    "intro": [
+      "The Visayas are the islands in the middle of the Philippines, grouped today into four regions: Western Visayas, the Negros Island Region, Central Visayas and Eastern Visayas. Cebu, Dumaguete and Negros Oriental each have their own page on this site, so this one gathers everything else, from islands an hour's boat ride from Cebu to provinces most visitors never reach.",
+      "Bohol and Siquijor are the easiest additions to a Cebu or Dumaguete trip. Bohol has the beaches of <a href=\"./panglao-alona-beach-bohol\">Panglao and Alona Beach</a>, the tarsiers of Corella and quieter coves in the east around Anda. Siquijor is small enough to circle in a day by motorbike, but it rewards a slower pace, and the <a href=\"./siquijor-3-day-itinerary-ring-road-guide\">three-day ring road plan</a> spreads the falls, beaches and old churches over a few days.",
+      "To the west, Negros Occidental pairs Bacolod's food and its October MassKara Festival with the heritage houses of Silay. Across the Guimaras Strait, Panay offers Iloilo's food scene and its January Dinagyang, mangoes on Guimaras, the hot-bath villages of Antique and Boracay at the island's northern tip. In the east, Leyte and Samar are less visited, with the <a href=\"./tacloban-san-juanico-bridge-guide\">San Juanico Bridge</a>, the Kalanggaman sandbar, Biliran's waterfalls and the caves of Samar.",
+      "Most of these trips mix fast craft, roll-on roll-off ferries and long van rides, and sea travel stops whenever storm signals go up, which happens most often in the second half of the year. Book the boat leg with some slack, and check schedules and fares close to the date, since routes are added and dropped from one season to the next."
+    ],
+    "startWith": [
+      "panglao-alona-beach-bohol",
+      "siquijor-3-day-itinerary-ring-road-guide",
+      "iloilo-guimaras-food-trip"
+    ],
+    "excludeDestinations": [
+      "cebu",
+      "dumaguete",
+      "negros-oriental"
+    ]
+  },
+  "mindanao": {
+    "page": "mindanao-travel-guides",
+    "title": "Mindanao Travel Guides: Siargao, Camiguin and Davao",
+    "description": "Mindanao travel guides: Siargao, Camiguin, Davao and Mount Apo, Bukidnon, Cagayan de Oro rafting, Lake Sebu and the coves of Surigao, with planning notes.",
+    "keywords": "Mindanao travel guides, Siargao, Camiguin, Davao, Samal Island, Mount Apo, Cagayan de Oro, Bukidnon, Lake Sebu, Surigao, Bucas Grande, Tinuy-an Falls, Dapitan",
+    "h1": "Mindanao travel guides",
+    "intro": [
+      "Mindanao is the large southern island group of the Philippines, split into six regions: Zamboanga Peninsula, Northern Mindanao, the Davao Region, SOCCSKSARGEN, Caraga and BARMM. Distances are long and road trips between regions can take most of a day, so most visitors fly into one city and stay in one area rather than trying to cover the whole island.",
+      "The northeast is where many first trips go. Siargao is the surf island, and the <a href=\"./siargao-from-cebu\">Siargao from Cebu guide</a> compares the flight with the overnight boat route. Nearby in Surigao are the lagoons of Bucas Grande, the Enchanted River in Hinatuan and Tinuy-an Falls in Bislig. Off the northern coast, Camiguin is a compact volcanic island that fits a long weekend, and its Lanzones Festival fills Mambajao every October.",
+      "Inland and to the south, the trips change character. Cagayan de Oro is known for white-water rafting and Bukidnon for its cool highlands and adventure parks. Davao combines a big, easygoing city with Samal Island and the foothills of Mount Apo, the highest mountain in the Philippines, where the <a href=\"./philippine-eagle-center-davao-guide\">Philippine Eagle Center</a> cares for the national bird. Farther south, Lake Sebu is home to T'boli communities and a string of waterfalls, while Dapitan in the west keeps the place where Jose Rizal lived in exile.",
+      "Safety conditions vary a lot from one province to another, and the destinations in these guides are established tourist areas. Before travelling overland into places you do not know, check current advisories and ask your accommodation or the local tourism office about the route. Flight schedules to smaller airports change often, so confirm them before you plan connections."
+    ],
+    "startWith": [
+      "siargao-from-cebu",
+      "camiguin-weekend-from-cebu-or-bohol-guide",
+      "davao-samal-island-mount-apo-food"
     ]
   }
 }
