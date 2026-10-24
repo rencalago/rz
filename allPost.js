@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/subic-bay-freeport-waterfront.jpg",
+    postNumber: 142,
+    title: "Subic Bay Guide: Things to Do, Beaches and Costs",
+    desc: "Things to do in Subic Bay Freeport: Zoobic Safari, Ocean Adventure, Inflatable Island, wreck dives and beaches, plus Clark routes, a 2-day plan and costs.",
+    datePublished: "24 October 2026",
+    comments: 0,
+    link: "./subic-bay-things-to-do-places-to-visit-guide",
+    location: "Subic Bay Freeport, Zambales",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/best-dive-sites-philippines-by-season.jpg",
     postNumber: 141,
     title: "Best Dive Sites in the Philippines by Season (Tubbataha)",
