@@ -202,7 +202,7 @@ export function registerLayout() {
         const more = NAV.filter((n) => n.group === "more");
         const moreMenu = `
       <div class="nav-more">
-        <button class="nav-more__toggle" type="button" aria-expanded="false" aria-controls="nav-more-list">More places <i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
+        <button class="nav-more__toggle" type="button" aria-expanded="false" aria-controls="nav-more-list">More places <svg class="nav-more__chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
         <div class="nav-more__list" id="nav-more-list">${more.map(link).join("")}</div>
       </div>`;
         // The dropdown sits right after the last top-level destination link.
@@ -227,7 +227,7 @@ export function registerLayout() {
     </button>
     <nav class="site-nav" id="site-nav" aria-label="Main">
       ${links}
-      <a class="site-nav__search" href="./#search" aria-label="Search stories"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></a>
+      <a class="site-nav__search" href="./#search" aria-label="Search stories"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="m20 20-4-4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></a>
     </nav>
   </div>
 </header>`;
