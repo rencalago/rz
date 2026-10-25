@@ -53,6 +53,8 @@
   }
 
   function handle(form) {
+    if (form.dataset.gsBound) return;
+    form.dataset.gsBound = "1";
     const emailInput = form.querySelector('input[name="email"]');
     const params = new URLSearchParams(location.search);
     if (emailInput && params.get("email") && !emailInput.value) emailInput.value = params.get("email");
@@ -99,5 +101,9 @@
     });
   }
 
-  document.querySelectorAll("form.js-guides-form").forEach(handle);
+  function bindAll() {
+    document.querySelectorAll("form.js-guides-form").forEach(handle);
+  }
+  window.rcBindGuidesForms = bindAll; // for forms added after load (post.js)
+  bindAll();
 })();

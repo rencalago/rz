@@ -1470,6 +1470,32 @@ my-sidebar {
   margin-top: 14px;
 }
 
+/* Free-guides sign-up beside the article title (added by post.js).
+   Wide screens only: on narrower ones it would push the article down. */
+.article-header__signup {
+  display: none;
+}
+
+@media (min-width: 1000px) {
+  .article-header--signup {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 300px;
+    gap: 32px;
+    align-items: center;
+  }
+
+  .article-header--signup > :not(.article-header__signup) {
+    grid-column: 1;
+  }
+
+  .article-header--signup .article-header__signup {
+    display: flex;
+    flex: none;
+    grid-column: 2;
+    grid-row: 1 / span 2;
+  }
+}
+
 .full-content {
   margin-top: 0;
   font-size: 17px;
