@@ -3,7 +3,7 @@
 import { newPostTwo } from "./allPost.js";
 import * as config from "./config.js";
 import { ADSENSE_CLIENT, SQUARE_AD } from "./ad-codes.js";
-import { KLOOK_WIDGETS } from "./klook-codes.js";
+import { KLOOK_PLACES } from "./klook-codes.js";
 import { registerLayout, currentSlug, escapeHtml as esc } from "./layout.js";
 
 // Read the settings defensively: an old config.js (without these names) must
@@ -149,16 +149,27 @@ function insertArticleAd() {
 }
 
 // KLOOK WIDGET: one horizontal Klook widget per article, from klook-codes.js.
-// The article's destination is the middle link of its breadcrumb (written by
-// the build). The widget goes after the first paragraph that mentions one of
+// The article's place comes from its location in allPost.js (the place named
+// first wins). The widget goes after the first paragraph that mentions one of
 // its keywords; with no match, the first widget with a code goes at the bottom.
 function insertKlookWidget() {
   if (!post) return;
   const body = document.querySelector(".full-content");
-  const hubLink = document.querySelector(".breadcrumbs li:nth-child(2) a");
-  if (!body || !hubLink) return; // no destination page: no widget
-  const hub = (hubLink.getAttribute("href") || "").replace("./", "").replace(/\.html$/, "");
-  const widgets = (KLOOK_WIDGETS[hub] || []).filter((w) => (w.code || "").trim() !== "");
+  if (!body) return;
+  const location = String(post.location || "").toLowerCase();
+  let place = null;
+  let placeAt = Infinity;
+  for (const pl of KLOOK_PLACES || []) {
+    for (const m of pl.match || []) {
+      const at = keywordAt(location, m);
+      if (at >= 0 && at < placeAt) {
+        placeAt = at;
+        place = pl;
+      }
+    }
+  }
+  if (!place) return; // location matches no place: no widget
+  const widgets = (place.widgets || []).filter((w) => (w.code || "").trim() !== "");
   if (!widgets.length) return;
 
   // Paragraphs of the article itself (not image captions or the ad box).
