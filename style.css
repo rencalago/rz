@@ -2124,6 +2124,15 @@ my-sidebar {
   overflow: hidden;
 }
 
+/* The Agoda date picker opens below the form, so its box must not clip it.
+   Its width is kept inside the column by fitAgodaWidth() in post.js. The
+   stacking keeps the open calendar above the text that follows. */
+.agoda-widget {
+  overflow: visible;
+  position: relative;
+  z-index: 5;
+}
+
 /* ===== All stories (plain list of every post, on the homepage) ===== */
 .archive {
   padding-top: 8px;
