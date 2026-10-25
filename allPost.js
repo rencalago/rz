@@ -1,6 +1,19 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/biri-island-rock-formations-northern-samar-guide.jpg",
+    postNumber: 154,
+    title: "Biri Island Rock Formations: Tides, Fees and Getting There",
+    desc: "Biri Island rock formations in Northern Samar: the Lavezares boat, fees, habal-habal rates, low-tide timing and the best months to see Magasang and Bel-at.",
+    datePublished: "26 October 2026",
+    comments: 0,
+    link: "./biri-island-rock-formations-northern-samar-guide",
+    location: "Biri, Northern Samar",
+    agodaDestination: "Catarman",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/parada-ng-lechon-balayan-batangas-guide.jpg",
     postNumber: 153,
     title: "Parada ng Lechon Balayan: Batangas Lechon Festival Guide",
