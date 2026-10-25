@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/philippines-ferry-travel-guide-routes-booking.jpg",
+    postNumber: 149,
+    title: "Philippines Ferry Guide: Main Routes and How to Book",
+    desc: "Philippines ferry guide: the main routes, which of 2GO, OceanJet, FastCat and Montenegro runs them, how to book online or at the port, and what to bring.",
+    datePublished: "25 October 2026",
+    comments: 0,
+    link: "./philippines-ferry-travel-guide-routes-booking",
+    location: "Philippines",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/hot-springs-philippines-guide.jpg",
     postNumber: 148,
     title: "Hot Springs in the Philippines: Where to Soak by Region",
