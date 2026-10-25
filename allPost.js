@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/pintados-kasadyaan-festival-tacloban-guide.jpg",
+    postNumber: 151,
+    title: "Pintados-Kasadyaan Festival Tacloban: June Visitor Guide",
+    desc: "Pintados-Kasadyaan in Tacloban: the painted-warrior dances, Leyte's Festival of Festivals, June dates, where to sit at the Grandstand and how to plan the trip.",
+    datePublished: "25 October 2026",
+    comments: 0,
+    link: "./pintados-kasadyaan-festival-tacloban-guide",
+    location: "Tacloban, Leyte",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/hot-air-balloon-fiesta-clark-pampanga-guide.jpg",
     postNumber: 150,
     title: "Hot Air Balloon Fiesta Clark: Dates, Tickets, Getting There",
