@@ -17,14 +17,14 @@ const PER_PAGE = 6; // stories per page in "Latest stories"
 // "href" is where a tile goes. Without it the tile opens the homepage filtered
 // to that destination. "cta" is the small line under the name.
 const DESTINATIONS = [
-  { key: "cebu", name: "Cebu", tile: true, tone: "#2F6F8F", image: "./Images/featured-images/moalboal-tourism-in-cebu.jpg", group: "Visayas", tagline: "South coast day trips, northern islands and the old city", keywords: ["cebu", "bantayan", "malapascua", "camotes", "oslob", "moalboal", "badian"], href: "./cebu-travel-guides" },
-  { key: "dumaguete", name: "Dumaguete", tile: true, tone: "#3F7A5A", image: "./Images/featured-images/dumaguete-city.jpeg", group: "Visayas", tagline: "Slow-paced university town by the sea", keywords: ["dumaguete"], href: "./dumaguete-travel-guides" },
+  { key: "cebu", name: "Cebu", tile: true, tone: "#2F6F8F", image: "./Images/destinations/cebu.jpg", group: "Visayas", tagline: "South coast day trips, northern islands and the old city", keywords: ["cebu", "bantayan", "malapascua", "camotes", "oslob", "moalboal", "badian"], href: "./cebu-travel-guides" },
+  { key: "dumaguete", name: "Dumaguete", tile: true, tone: "#3F7A5A", image: "./Images/destinations/dumaguete.jpg", group: "Visayas", tagline: "Slow-paced university town by the sea", keywords: ["dumaguete"], href: "./dumaguete-travel-guides" },
   {
     key: "negros-oriental",
     name: "Negros Oriental",
     tile: true,
     tone: "#8A5A2B",
-    image: "./Images/featured-images/apo-island-snorkeling.jpg",
+    image: "./Images/destinations/negros-oriental.jpg",
     group: "Visayas",
     tagline: "Reefs, caves and cool highland towns",
     keywords: ["negros oriental", "dumaguete", "bais", "tanjay", "pamplona", "san jose", "la libertad"],
@@ -35,7 +35,7 @@ const DESTINATIONS = [
     name: "Baguio",
     tile: true,
     tone: "#5B6B3A",
-    image: "./Images/featured-images/baguio-bell-amphitheater-travel.jpg",
+    image: "./Images/destinations/baguio.jpg",
     group: "Luzon",
     tagline: "Pine-scented highland city",
     keywords: ["baguio"],
@@ -49,7 +49,7 @@ const DESTINATIONS = [
     name: "Metro Manila",
     tile: true,
     tone: "#6B4A7A",
-    image: "./Images/featured-images/intramuros-manila.jpg",
+    image: "./Images/destinations/metro-manila.jpg",
     group: "Luzon",
     tagline: "Old walls, food streets and new skylines",
     keywords: ["mckinley", "taguig", "manila"],
@@ -165,7 +165,7 @@ function renderDestinations() {
     .map(
       (d, i) => `
       <a class="dest${i === 0 ? " dest--lead" : ""}" href="${d.href || "./#dest=" + d.key}" style="--tone:${d.tone}">
-        ${d.image ? `<img class="dest__img" src="${d.image}" alt="" loading="lazy" decoding="async">` : ""}
+        ${d.image ? `<img class="dest__img" src="${d.image}" alt="" width="${i === 0 ? 720 : 640}" height="${i === 0 ? 540 : 480}" decoding="async" onload="this.classList.add('is-loaded')">` : ""}
         ${d.group ? `<span class="dest__group">${esc(d.group)}</span>` : ""}
         <span class="dest__body">
           <strong>${esc(d.name)}</strong>
