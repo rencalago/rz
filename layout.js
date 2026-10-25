@@ -80,9 +80,15 @@ function loadAgodaAd(host) {
 // "winners" (contest, winner, place) and the card fills in by itself on the next
 // build. Leave a list empty until a result is confirmed from an official or
 // news source.
+//
+// Archive: a set with `archived: true` stays here as a record but no longer shows
+// in the sidebar. When every set is archived, the whole card is hidden. To show a
+// new festival (e.g. Sinulog), add its set below, list it in RESULTS_TABS and
+// point DEFAULT_RESULTS_TAB at it.
 export const DEFAULT_RESULTS_TAB = "masskara";
 
 export const BUGLASAN = {
+  archived: true, // archived 25 October 2026
   label: "Buglasan 2026",
   eyebrow: "Buglasan Festival 2026",
   dates: "15 to 25 October 2026, Dumaguete",
@@ -106,6 +112,7 @@ export const BUGLASAN = {
 // MassKara Festival 2026 (Bacolod City) barangay results, from the official
 // results sheet shared by the owner. The guide link is the festival article.
 export const MASSKARA = {
+  archived: true, // archived 25 October 2026
   label: "MassKara 2026",
   eyebrow: "MassKara Festival 2026",
   dates: "Barangay competition, 18 October 2026, Bacolod City",
@@ -128,6 +135,12 @@ export const MASSKARA = {
     { contest: "Casino Plus Choice Award", winner: "Brgy. Handumanan" },
   ],
 };
+
+// Every results set, newest first. Archived sets are skipped in the sidebar.
+export const RESULTS_TABS = [
+  { id: "masskara", set: MASSKARA },
+  { id: "buglasan", set: BUGLASAN },
+];
 
 // Google Drive thumbnails are requested at s4000 (huge). Ask for a sensible width.
 export function thumb(url, width) {
@@ -334,11 +347,11 @@ export function registerLayout() {
           )
           .join("");
         // Festival results card: one tab per festival, the default tab open first
-        const resultsTabs = [
-          { id: "masskara", set: MASSKARA },
-          { id: "buglasan", set: BUGLASAN },
-        ];
-        const isDefault = (id) => id === DEFAULT_RESULTS_TAB;
+        const resultsTabs = RESULTS_TABS.filter(({ set }) => !set.archived);
+        const defaultId = resultsTabs.some(({ id }) => id === DEFAULT_RESULTS_TAB)
+          ? DEFAULT_RESULTS_TAB
+          : resultsTabs[0] && resultsTabs[0].id;
+        const isDefault = (id) => id === defaultId;
         const tabButtons = resultsTabs
           .map(
             ({ id, set }) => `
@@ -371,11 +384,13 @@ export function registerLayout() {
   </div>`;
           })
           .join("");
-        const resultsCard = `
+        const resultsCard = resultsTabs.length
+          ? `
 <section class="card bw" data-results-tabs>
   <div class="bw__tabs" role="tablist" aria-label="Festival results">${tabButtons}
   </div>${panels}
-</section>`;
+</section>`
+          : "";
         this.innerHTML = `
 ${resultsCard}
 <section class="card">
