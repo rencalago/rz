@@ -75,60 +75,6 @@ function loadAgodaAd(host) {
   host.parentNode.appendChild(lib);
 }
 
-// Festival results card at the top of the sidebar, with one tab per festival.
-// The tab named in DEFAULT_RESULTS_TAB opens first. Add each confirmed result to
-// "winners" (contest, winner, place) and the card fills in by itself on the next
-// build. Leave a list empty until a result is confirmed from an official or
-// news source.
-export const DEFAULT_RESULTS_TAB = "masskara";
-
-export const BUGLASAN = {
-  label: "Buglasan 2026",
-  eyebrow: "Buglasan Festival 2026",
-  dates: "15 to 25 October 2026, Dumaguete",
-  guide: "./buglasan-festival-2026-events-schedule",
-  guideLabel: "Read the festival guide",
-  note: "Results will appear here once they are confirmed.",
-  winners: [
-    { contest: "Major winners", winner: "Bais City", place: "Champion" },
-    { contest: "Major winners", winner: "Dumaguete City", place: "2nd place" },
-    { contest: "Major winners", winner: "Tanjay City", place: "3rd place" },
-    { contest: "Major winners", winner: "Bayawan City", place: "4th place" },
-    { contest: "Major winners", winner: "Mabinay", place: "5th place" },
-    { contest: "Buglasan Festival King", winner: "San Jose" },
-    { contest: "Buglasan Festival Queen", winner: "Bayawan City" },
-    { contest: "Best in streetdancing", winner: "Bais City" },
-    { contest: "Best identification arch", winner: "Bayawan City" },
-    { contest: "Best in costume", winner: "Dumaguete City" },
-  ],
-};
-
-// MassKara Festival 2026 (Bacolod City) barangay results, from the official
-// results sheet shared by the owner. The guide link is the festival article.
-export const MASSKARA = {
-  label: "MassKara 2026",
-  eyebrow: "MassKara Festival 2026",
-  dates: "Barangay competition, 18 October 2026, Bacolod City",
-  guide: "./masskara-festival-2026-bacolod-final-weekend",
-  guideLabel: "Read the festival guide",
-  note: "Results will appear here once they are confirmed.",
-  winners: [
-    { contest: "Major awards", winner: "Brgy. Taculing", place: "Champion" },
-    { contest: "Major awards", winner: "Brgy. Mandalagan", place: "1st runner-up" },
-    { contest: "Major awards", winner: "Brgy. Handumanan", place: "2nd runner-up" },
-    { contest: "Merry making competition", winner: "Brgy. Alangilan", place: "Champion" },
-    { contest: "Merry making competition", winner: "Brgy. 6", place: "1st runner-up" },
-    { contest: "Merry making competition", winner: "Brgy. Taculing", place: "2nd runner-up" },
-    { contest: "Best in mask and costume", winner: "Brgy. Mandalagan" },
-    { contest: "Best in theme and concept", winner: "Brgy. Taculing" },
-    { contest: "Best in music", winner: "Brgy. Taculing" },
-    { contest: "Best in introduction", winner: "Brgy. Taculing" },
-    { contest: "Most disciplined", winner: "Brgy. Bata" },
-    { contest: "Pocari Sweat special award", winner: "Brgy. Taculing" },
-    { contest: "Casino Plus Choice Award", winner: "Brgy. Handumanan" },
-  ],
-};
-
 // Google Drive thumbnails are requested at s4000 (huge). Ask for a sensible width.
 export function thumb(url, width) {
   return String(url).replace(/sz=s\d+/, "sz=w" + width);
@@ -333,51 +279,7 @@ export function registerLayout() {
     </a>`
           )
           .join("");
-        // Festival results card: one tab per festival, the default tab open first
-        const resultsTabs = [
-          { id: "masskara", set: MASSKARA },
-          { id: "buglasan", set: BUGLASAN },
-        ];
-        const isDefault = (id) => id === DEFAULT_RESULTS_TAB;
-        const tabButtons = resultsTabs
-          .map(
-            ({ id, set }) => `
-    <button type="button" role="tab" id="bw-${id}-tab" class="bw__tab${isDefault(id) ? " is-active" : ""}" aria-selected="${isDefault(id)}" aria-controls="bw-${id}" tabindex="${isDefault(id) ? 0 : -1}">${escapeHtml(set.label)}</button>`
-          )
-          .join("");
-        const panels = resultsTabs
-          .map(({ id, set }) => {
-            const body = set.winners.length
-              ? `<ul class="bw__list">${set.winners
-                  .map(
-                    (w) => `
-      <li class="bw__row">
-        <span class="bw__contest">${escapeHtml(w.contest)}</span>
-        <span class="bw__winner">${escapeHtml(w.winner)}</span>
-        ${w.place ? `<span class="bw__place">${escapeHtml(w.place)}</span>` : ""}
-      </li>`
-                  )
-                  .join("")}</ul>`
-              : `<p class="bw__note">${escapeHtml(set.note)}</p>`;
-            return `
-  <div class="bw__panel" id="bw-${id}" role="tabpanel" aria-labelledby="bw-${id}-tab"${isDefault(id) ? "" : " hidden"}>
-    <div class="bw__head">
-      <span class="bw__eyebrow"><i class="fa-solid fa-star" aria-hidden="true"></i> ${escapeHtml(set.eyebrow)}</span>
-      <h2>Festival winners</h2>
-      <p class="bw__dates"><i class="fa-regular fa-calendar" aria-hidden="true"></i> ${escapeHtml(set.dates)}</p>
-    </div>
-    ${body}
-    <a class="bw__link" href="${set.guide}">${escapeHtml(set.guideLabel)} <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-  </div>`;
-          })
-          .join("");
-        const resultsCard = `
-<section class="card bw" data-results-tabs>
-  <div class="bw__tabs" role="tablist" aria-label="Festival results">${tabButtons}
-  </div>${panels}
-</section>`;
         this.innerHTML = `
-${resultsCard}
 <section class="card">
   <h2>Start here</h2>${startItems}
 </section>
@@ -398,20 +300,6 @@ ${resultsCard}
 <section class="card agoda-card">
   <div id="adgshp545693965"></div>
 </section>`;
-        // Switch the festival results tabs (buttons are keyboard operable)
-        const tabs = this.querySelectorAll(".bw__tab");
-        tabs.forEach((tab) =>
-          tab.addEventListener("click", () => {
-            tabs.forEach((t) => {
-              const on = t === tab;
-              t.classList.toggle("is-active", on);
-              t.setAttribute("aria-selected", String(on));
-              t.tabIndex = on ? 0 : -1;
-              const panel = this.querySelector("#" + t.getAttribute("aria-controls"));
-              if (panel) panel.hidden = !on;
-            });
-          })
-        );
         renderLabels(this.querySelector(".labels-container"));
         loadAgodaAd(this.querySelector("#adgshp545693965"));
       }
