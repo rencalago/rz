@@ -65,7 +65,7 @@ export const KLOOK_PLACES = [
     name: "Bohol",
     match: ["bohol", "panglao", "corella", "loboc"],
     widgets: [
-      { name: "Tours & sightseeing", keywords: TOURS_KEYWORDS, code: `<script>(function(){var s=document.currentScript;setTimeout(function(){var w=document.createElement("div");w.innerHTML=\x27<ins><iframe style="width:100%;height:470px"></iframe></ins>\x27;s.parentNode.insertBefore(w,s)},300)})()</script>` },
+      { name: "Tours & sightseeing", keywords: TOURS_KEYWORDS, code: `<script async src="https://tpemb.com/content?currency=USD&trs=589478&shmarker=794050.Bohol-Tours%26Sightseeings&locale=en-US&city_id=144&category=2&amount=3&powered_by=false&campaign_id=137&promo_id=4497" charset="utf-8"></script>` },
       { name: "Activities & experiences", keywords: ACTIVITIES_KEYWORDS, code: `<script async src="https://tpemb.com/content?currency=USD&trs=589478&shmarker=794050.Bohol-Tours%26Sightseeings&locale=en-US&city_id=144&category=3&amount=3&powered_by=false&campaign_id=137&promo_id=4497" charset="utf-8"></script>` },
     ],
   },
