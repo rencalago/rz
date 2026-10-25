@@ -271,7 +271,29 @@ function makeAgodaBox(code) {
   box.className = "agoda-widget";
   box.setAttribute("aria-label", "Hotels");
   setHtmlWithScripts(box, code);
+  fitAgodaWidth(box);
   return box;
+}
+
+// The Agoda (Travelpayouts) form sets its bordered box to the full column
+// width plus a 1px border each side, so its right edge is cut off. The form
+// lives in a shadow root, which outside CSS cannot reach, so a small style is
+// added inside it once the widget script has drawn it.
+function fitAgodaWidth(box) {
+  const css = ".cascoon-widget-resize-container{box-sizing:border-box!important;max-width:100%!important}";
+  let tries = 0;
+  const timer = setInterval(() => {
+    tries += 1;
+    const root = box.querySelector("tp-cascoon")?.shadowRoot;
+    if (root) {
+      const style = document.createElement("style");
+      style.textContent = css;
+      root.appendChild(style);
+      clearInterval(timer);
+    } else if (tries > 60) {
+      clearInterval(timer);
+    }
+  }, 250);
 }
 
 // The place named first in the text. "headings" also counts each place's
