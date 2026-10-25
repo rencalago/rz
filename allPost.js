@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/burnham-park-lake-baguio-swan-boats.jpg",
+    postNumber: 155,
+    title: "Panagbenga Meaning and History: Baguio's Flower Festival",
+    desc: "What does Panagbenga mean? The Kankanaey word, the 1990 earthquake that sparked Baguio's flower festival, the bendian dance and the people who started it.",
+    datePublished: "26 October 2026",
+    comments: 0,
+    link: "./panagbenga-meaning-history-baguio",
+    location: "Baguio City, Benguet",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/biri-island-rock-formations-northern-samar-guide.jpg",
     postNumber: 154,
     title: "Biri Island Rock Formations: Tides, Fees and Getting There",
