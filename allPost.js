@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/parada-ng-lechon-balayan-batangas-guide.jpg",
+    postNumber: 153,
+    title: "Parada ng Lechon Balayan: Batangas Lechon Festival Guide",
+    desc: "Parada ng Lechon in Balayan, Batangas: costumed roast pigs, June 24 Mass, the basaan water tradition, how to get there and what to pack for a soaking.",
+    datePublished: "26 October 2026",
+    comments: 0,
+    link: "./parada-ng-lechon-balayan-batangas-guide",
+    location: "Balayan, Batangas",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/hinagdanan-cave-bohol-visitor-guide.jpg",
     postNumber: 152,
     title: "Hinagdanan Cave Bohol: Fees, Swimming and Best Time",
