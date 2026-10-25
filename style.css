@@ -1366,11 +1366,38 @@ my-sidebar {
 .posting-meta p {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 4px 18px;
 }
 
 .posting-meta i {
   margin-right: 6px;
+}
+
+/* Comment count button after the date (written by the build) */
+.posting-meta .meta-comments {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 2px 10px 2px 8px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  color: var(--accent-dark);
+  font-weight: 600;
+  line-height: 1.5;
+  text-decoration: none;
+  transition: background-color 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.posting-meta .meta-comments:hover,
+.posting-meta .meta-comments:focus-visible {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.posting-meta .meta-comments svg {
+  flex: none;
 }
 
 /* Breadcrumb trail above the article title (added by the build) */
