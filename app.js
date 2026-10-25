@@ -165,7 +165,7 @@ function renderDestinations() {
     .map(
       (d, i) => `
       <a class="dest${i === 0 ? " dest--lead" : ""}" href="${d.href || "./#dest=" + d.key}" style="--tone:${d.tone}">
-        ${d.image ? `<img class="dest__img" src="${d.image}" alt="" width="${i === 0 ? 960 : 640}" height="${i === 0 ? 720 : 480}" decoding="async" onload="this.classList.add('is-loaded')">` : ""}
+        ${d.image ? `<img class="dest__img" src="${d.image}" alt="" width="${i === 0 ? 720 : 640}" height="${i === 0 ? 540 : 480}" decoding="async" onload="this.classList.add('is-loaded')">` : ""}
         ${d.group ? `<span class="dest__group">${esc(d.group)}</span>` : ""}
         <span class="dest__body">
           <strong>${esc(d.name)}</strong>
