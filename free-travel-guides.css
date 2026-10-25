@@ -58,6 +58,10 @@
 .ftg-privacy__grid dt { font-size: 11.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
 .ftg-privacy__grid dd { margin: 6px 0 0; font-size: 13px; line-height: 1.6; color: var(--muted); }
 .full-content .ftg-privacy a { color: var(--accent); text-decoration: underline; }
+.ftg-privacy--two .ftg-privacy__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.ftg-privacy--two .ftg-privacy__grid > div:nth-child(odd) { padding-left: 0; border-left: 0; }
+.ftg-privacy--two .ftg-privacy__grid > div:nth-child(n+3) { margin-top: 12px; border-top: 1px dashed var(--line); }
+.full-content .ftg-privacy__foot { margin: 14px 0 0; padding-top: 12px; border-top: 1px solid var(--line); font-size: 13px; line-height: 1.6; color: var(--muted); }
 
 @media (max-width: 760px) {
   .ftg-grid { grid-template-columns: 1fr; }
@@ -71,4 +75,6 @@
   .ftg-privacy__grid { grid-template-columns: 1fr; }
   .ftg-privacy__grid > div, .ftg-privacy__grid > div + div { padding: 12px 0 0; border-left: 0; }
   .ftg-privacy__grid > div + div { margin-top: 12px; border-top: 1px dashed var(--line); }
+  .ftg-privacy--two .ftg-privacy__grid { grid-template-columns: 1fr; }
+  .ftg-privacy--two .ftg-privacy__grid > div:nth-child(n+3) { margin-top: 12px; }
 }
