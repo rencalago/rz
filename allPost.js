@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/hinagdanan-cave-bohol-visitor-guide.jpg",
+    postNumber: 152,
+    title: "Hinagdanan Cave Bohol: Fees, Swimming and Best Time",
+    desc: "Hinagdanan Cave in Dauis, Bohol: how to get there, the entrance fee and hours, swimming in the underground pool, and the best time to catch the light beams.",
+    datePublished: "25 October 2026",
+    comments: 0,
+    link: "./hinagdanan-cave-bohol-visitor-guide",
+    location: "Dauis, Bohol",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/pintados-kasadyaan-festival-tacloban-guide.jpg",
     postNumber: 151,
     title: "Pintados-Kasadyaan Festival Tacloban: June Visitor Guide",
