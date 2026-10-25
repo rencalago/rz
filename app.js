@@ -17,13 +17,16 @@ const PER_PAGE = 6; // stories per page in "Latest stories"
 // "href" is where a tile goes. Without it the tile opens the homepage filtered
 // to that destination. "cta" is the small line under the name.
 const DESTINATIONS = [
-  { key: "cebu", name: "Cebu", tile: true, tone: "#2F6F8F", keywords: ["cebu", "bantayan", "malapascua", "camotes", "oslob", "moalboal", "badian"], href: "./cebu-travel-guides" },
-  { key: "dumaguete", name: "Dumaguete", tile: true, tone: "#3F7A5A", keywords: ["dumaguete"], href: "./dumaguete-travel-guides" },
+  { key: "cebu", name: "Cebu", tile: true, tone: "#2F6F8F", image: "./Images/featured-images/moalboal-tourism-in-cebu.jpg", group: "Visayas", tagline: "South coast day trips, northern islands and the old city", keywords: ["cebu", "bantayan", "malapascua", "camotes", "oslob", "moalboal", "badian"], href: "./cebu-travel-guides" },
+  { key: "dumaguete", name: "Dumaguete", tile: true, tone: "#3F7A5A", image: "./Images/featured-images/dumaguete-city.jpeg", group: "Visayas", tagline: "Slow-paced university town by the sea", keywords: ["dumaguete"], href: "./dumaguete-travel-guides" },
   {
     key: "negros-oriental",
     name: "Negros Oriental",
     tile: true,
     tone: "#8A5A2B",
+    image: "./Images/featured-images/apo-island-snorkeling.jpg",
+    group: "Visayas",
+    tagline: "Reefs, caves and cool highland towns",
     keywords: ["negros oriental", "dumaguete", "bais", "tanjay", "pamplona", "san jose", "la libertad"],
     href: "./negros-oriental-travel-guides",
   },
@@ -32,6 +35,9 @@ const DESTINATIONS = [
     name: "Baguio",
     tile: true,
     tone: "#5B6B3A",
+    image: "./Images/featured-images/baguio-bell-amphitheater-travel.jpg",
+    group: "Luzon",
+    tagline: "Pine-scented highland city",
     keywords: ["baguio"],
     intro: [
       'Baguio is the highland city of northern Luzon, known for its cool weather and for being a popular escape from the lowland heat. The stories below look at <a href="./baguio-quieter-cheaper-right-now">how crowds, hotel prices and attractions such as Burnham Lake stand in 2026</a> and at <a href="./travel-to-baguio-city-places-to-visit">places to visit on a family trip</a>.',
@@ -43,6 +49,9 @@ const DESTINATIONS = [
     name: "Metro Manila",
     tile: true,
     tone: "#6B4A7A",
+    image: "./Images/featured-images/intramuros-manila.jpg",
+    group: "Luzon",
+    tagline: "Old walls, food streets and new skylines",
     keywords: ["mckinley", "taguig", "manila"],
     intro: [
       'Metro Manila coverage here is just getting started. For now there is <a href="./venice-grand-canal-mckinley-hill">the Venice Grand Canal in McKinley Hill, Taguig</a>, a canal-side spot for dining, a boat ride or an easy stroll.',
@@ -154,10 +163,15 @@ function renderPicks() {
 function renderDestinations() {
   destEl.innerHTML = DESTINATIONS.filter((d) => d.tile)
     .map(
-      (d) => `
-      <a class="dest" href="${d.href || "./#dest=" + d.key}" style="--tone:${d.tone}">
-        <strong>${esc(d.name)}</strong>
-        <span>${esc(d.cta || "View stories →")}</span>
+      (d, i) => `
+      <a class="dest${i === 0 ? " dest--lead" : ""}" href="${d.href || "./#dest=" + d.key}" style="--tone:${d.tone}">
+        ${d.image ? `<img class="dest__img" src="${d.image}" alt="" loading="lazy" decoding="async">` : ""}
+        ${d.group ? `<span class="dest__group">${esc(d.group)}</span>` : ""}
+        <span class="dest__body">
+          <strong>${esc(d.name)}</strong>
+          ${d.tagline ? `<span class="dest__tag">${esc(d.tagline)}</span>` : ""}
+          <span class="dest__cta">${esc(d.cta || "Explore guides")} <span class="dest__arrow" aria-hidden="true">→</span></span>
+        </span>
       </a>`
     )
     .join("");
