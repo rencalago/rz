@@ -13,9 +13,13 @@
 //   from the third paragraph on. If a Klook box is already there, the Agoda
 //   box goes under it.
 // - No stay keyword anywhere in the article: the widget goes at the bottom.
-// - A place with an empty code (``), or an article whose location matches no
-//   place, shows no Agoda widget. Nationwide stories ("Philippines") get none
-//   unless you add a manual spot.
+// - A place with an empty code (``) is skipped.
+// - FALLBACK: an article with no Klook box and no place below still gets an
+//   Agoda box, built from AGODA_TEMPLATE with its search set to the article's
+//   own place: "agodaDestination" in allPost.js if set (e.g. "Siquijor"),
+//   otherwise the first part of "location" ("Sipalay City, Negros Occidental"
+//   -> "Sipalay City"). Use a town or island Agoda lists hotels for.
+//   Nationwide stories ("Philippines") get none unless agodaDestination is set.
 // - Manual override: put <div class="agoda-here"></div> in an article where the
 //   widget should go. Optional: data-place="clark" (any match word).
 //
@@ -27,6 +31,10 @@ export const STAY_KEYWORDS = [
   "where to stay", "staying", "hotel", "hotels", "resort", "resorts",
   "accommodation", "accommodations", "lodging",
 ];
+
+// The fallback box: the Clark code with the destination swapped for
+// {DESTINATION} (filled in as "<place>, Philippines").
+export const AGODA_TEMPLATE = `<script async src="https://tpemb.com/content?trs=589478&shmarker=794050&locale=en&default_destination={DESTINATION}&powered_by=true&primary_override=%235392F9&color_button=%235392F9&color_icons=%235392F9&dark=%23262626&color_border=%235392F9&color_focused=%2332a8dd&border_radius=5&plain=false&promo_id=8303&campaign_id=104" charset="utf-8"></script>`;
 
 export const AGODA_PLACES = [
   {

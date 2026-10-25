@@ -105,6 +105,7 @@ let newPostTwo = [
     comments: 0,
     link: "./subic-bay-things-to-do-places-to-visit-guide",
     location: "Subic Bay Freeport, Zambales",
+    agodaDestination: "Subic",
     author: "Ren Calago",
   },
   {
@@ -130,6 +131,7 @@ let newPostTwo = [
     comments: 0,
     link: "./giant-lantern-festival-pampanga-guide",
     location: "San Fernando, Pampanga",
+    agodaDestination: "Pampanga",
     author: "Ren Calago",
   },
   {
@@ -142,6 +144,7 @@ let newPostTwo = [
     comments: 0,
     link: "./moriones-festival-marinduque-guide",
     location: "Boac, Marinduque",
+    agodaDestination: "Marinduque",
     author: "Ren Calago",
   },
   {
@@ -166,6 +169,7 @@ let newPostTwo = [
     comments: 0,
     link: "./philippine-eagle-center-davao-guide",
     location: "Davao, Mindanao",
+    agodaDestination: "Davao City",
     author: "Ren Calago",
   },
   {
@@ -178,6 +182,7 @@ let newPostTwo = [
     comments: 0,
     link: "./lake-sebu-tboli-falls-zipline-guide",
     location: "South Cotabato, Mindanao",
+    agodaDestination: "Lake Sebu",
     author: "Ren Calago",
   },
   {
@@ -214,6 +219,7 @@ let newPostTwo = [
     comments: 0,
     link: "./tinuy-an-falls-bislig-guide",
     location: "Surigao del Sur",
+    agodaDestination: "Bislig",
     author: "Ren Calago",
   },
   {
@@ -226,6 +232,7 @@ let newPostTwo = [
     comments: 0,
     link: "./britania-islands-hinatuan-enchanted-river",
     location: "Surigao del Sur",
+    agodaDestination: "Hinatuan",
     author: "Ren Calago",
   },
   {
@@ -238,6 +245,7 @@ let newPostTwo = [
     comments: 0,
     link: "./bucas-grande-sohoton-cove-surigao",
     location: "Bucas Grande, Surigao del Norte",
+    agodaDestination: "Siargao",
     author: "Ren Calago",
   },
   {
@@ -311,6 +319,7 @@ let newPostTwo = [
     link: "./samar-caves-sohoton-calbiga",
     quiz: {name: "Samar caves, Sohoton and Calbiga", vibes: ["nature","adventure"], cost: 2, reach: 3, minDays: 3, family: false, boats: 0, goodMonths: [3,4,5,6], why: "an easy river-and-cave half day at Sohoton and a mud-and-rope caving day at Langun-Gobingob, reached by flight to Tacloban"},
     location: "Basey and Calbiga, Samar",
+    agodaDestination: "Tacloban",
     author: "Ren Calago",
   },
   {
@@ -324,6 +333,7 @@ let newPostTwo = [
     link: "./kalanggaman-island-sandbar-leyte",
     quiz: {name: "Kalanggaman Island, Leyte", vibes: ["beach","nature","slow","adventure"], cost: 2, reach: 3, minDays: 3, family: false, boats: 1, goodMonths: [11,12,1,2,3,4,5], why: "a 750-metre white sandbar with camping and no resorts, reached by fast craft or ship from Cebu and a boat from Palompon"},
     location: "Palompon, Leyte",
+    agodaDestination: "Ormoc",
     author: "Ren Calago",
   },
   {
@@ -337,6 +347,7 @@ let newPostTwo = [
     link: "./the-ruins-silay-heritage-houses-negros",
     quiz: {name: "Silay and The Ruins, Negros Occidental", vibes: ["culture","slow","food"], cost: 2, reach: 2, minDays: 2, family: true, boats: 0, goodMonths: [11,12,1,2,3,4,5], why: "sugar-era ancestral houses in Silay and a burned mansion at sunset in Talisay, reached by a one-hour flight from Cebu"},
     location: "Negros Occidental",
+    agodaDestination: "Bacolod",
     author: "Ren Calago",
   },
   {
@@ -514,6 +525,7 @@ let newPostTwo = [
     comments: 0,
     link: "./mayon-volcano-cagsawa-ruins-albay",
     location: "Albay, Bicol",
+    agodaDestination: "Legazpi",
     author: "Ren Calago",
   },
   {
@@ -586,6 +598,7 @@ let newPostTwo = [
     comments: 0,
     link: "./pampanga-food-trip-sisig-kapampangan",
     location: "Pampanga",
+    agodaDestination: "Angeles / Clark",
     author: "Ren Calago",
   },
 
@@ -623,6 +636,7 @@ let newPostTwo = [
     comments: 0,
     link: "./mount-pinatubo-crater-lake-trek",
     location: "Zambales",
+    agodaDestination: "Angeles / Clark",
     author: "Ren Calago",
   },
   {
@@ -672,6 +686,7 @@ let newPostTwo = [
     comments: 0,
     link: "./baler-aurora-surfing-ditumabo-falls",
     location: "Aurora",
+    agodaDestination: "Baler",
     author: "Ren Calago",
   },
   {
@@ -697,6 +712,7 @@ let newPostTwo = [
     comments: 0,
     link: "./mount-pulag-sea-of-clouds-permits-trails",
     location: "Benguet",
+    agodaDestination: "Baguio",
     author: "Ren Calago",
   },
   {
@@ -709,6 +725,7 @@ let newPostTwo = [
     comments: 0,
     link: "./banaue-batad-rice-terraces-how-to-visit",
     location: "Ifugao",
+    agodaDestination: "Banaue",
     author: "Ren Calago",
   },
   {
@@ -722,6 +739,7 @@ let newPostTwo = [
     link: "./sagada-caves-hanging-coffins-etiquette",
     quiz: {name: "Sagada", vibes: ["cool","adventure","culture"], cost: 1, reach: 3, minDays: 3, family: false, boats: 0, why: "caves, hanging coffins and misty mornings in the Mountain Province"},
     location: "Mountain Province",
+    agodaDestination: "Sagada",
     author: "Ren Calago",
   },
   {
@@ -772,6 +790,7 @@ let newPostTwo = [
     comments: 0,
     link: "./eat-like-a-local-masskara-bacolod-food-trail",
     location: "Bacolod City, Negros Occidental",
+    agodaDestination: "Bacolod",
     author: "Ren Calago",
   },
   {
@@ -859,6 +878,7 @@ let newPostTwo = [
     link: "./davao-samal-island-mount-apo-food",
     quiz: {name: "Davao and Samal", vibes: ["food","beach","nature"], cost: 2, reach: 2, minDays: 3, family: true, boats: 1, why: "durian, Samal Island beaches and the country's highest peak on the horizon"},
     location: "Davao, Mindanao",
+    agodaDestination: "Davao City",
     author: "Ren Calago",
   },
   {
@@ -1024,6 +1044,7 @@ let newPostTwo = [
     link: "./higantes-festival-angono-rizal-2026-visitor-guide",
     festival: [{ name: "Higantes Festival", place: "Angono, Rizal", month: 11, start: "2026-10-31", end: "2026-11-30", region: "luzon", when: "All of November 2026. Fluvial parade on 23 November", about: "Giant papier-mache figures parade through the art town of Angono." }],
     location: "Angono, Rizal",
+    agodaDestination: "Antipolo",
     author: "Ren Calago",
   },
   {
@@ -1098,6 +1119,7 @@ let newPostTwo = [
     link: "./masskara-festival-2026-bacolod-final-weekend",
     festival: [{ name: "MassKara", place: "Bacolod City", month: 10, start: "2026-10-01", end: "2026-10-18", region: "negros", when: "1 to 18 October in 2026, peaking in the third week of October", about: "Smiling masks, Electric MassKara at night and street dance competitions." }],
     location: "Bacolod City, Negros Occidental",
+    agodaDestination: "Bacolod",
     author: "Ren Calago",
   },
   {
@@ -1721,6 +1743,7 @@ let newPostTwo = [
     comments: "3",
     link: "./white-sand-beach-of-sipalay",
     location: "Sipalay City, Negros Occidental",
+    agodaDestination: "Sipalay",
     author: "Ren Calago",
   },
   {
