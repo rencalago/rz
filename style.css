@@ -2118,7 +2118,7 @@ my-sidebar {
 /* Klook widget (klook-codes.js): full-width box inside the article text */
 .klook-widget {
   clear: both;
-  margin: 20px 0 24px;
+  margin: 16px 0 4px;
   max-width: 100%;
   overflow: hidden;
 }
