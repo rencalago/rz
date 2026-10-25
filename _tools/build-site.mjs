@@ -875,12 +875,20 @@ function seoTags(html, slug, isPost, post) {
 
 // Author and dates written into the page as plain HTML, so search engines see
 // them without running JavaScript. post.js draws the same markup in the browser.
-function withPostingMeta(html, post) {
+// The small comment button after the date shows the approved-comment count and
+// jumps to the comment section. Only drawn when the page has a comment section.
+function metaCommentsLink(count) {
+  const label = count === 1 ? "1 comment" : `${count} comments`;
+  return `<a class="meta-comments" href="#comments" aria-label="${label}, go to comments" title="${count ? "Read the comments" : "Leave a comment"}"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M4 4h16v12H8l-4 4V4z"/></svg><span class="meta-comments__count">${count}</span></a>`;
+}
+
+function withPostingMeta(html, post, commentCount = 0) {
   if (!post) return html;
+  const comments = commentsReady || commentCount ? metaCommentsLink(commentCount) : "";
   const updated = post.dateModified
     ? `<span class="postDate"><i class="fa-solid fa-rotate" aria-hidden="true"></i> Updated ${escapeHtml(post.dateModified)}</span>`
     : "";
-  const meta = `<p><span class="author"><i class="fa-solid fa-user" aria-hidden="true"></i> ${escapeHtml(post.author)}</span><span class="postDate"><i class="fa-regular fa-clock" aria-hidden="true"></i> ${escapeHtml(post.datePublished)}</span>${updated}</p>`;
+  const meta = `<p><span class="author"><i class="fa-solid fa-user" aria-hidden="true"></i> ${escapeHtml(post.author)}</span><span class="postDate"><i class="fa-regular fa-clock" aria-hidden="true"></i> ${escapeHtml(post.datePublished)}</span>${updated}${comments}</p>`;
   return html.replace(/<div class="posting-meta">[\s\S]*?<\/div>/, `<div class="posting-meta">${meta}</div>`);
 }
 
@@ -926,7 +934,7 @@ function buildPages(site, destinationPages) {
     if (postSlugs.has(slug)) {
       checkSearchSnippet(html, file);
       const post = site.posts.find((p) => slugOf(p) === slug);
-      html = withPostingMeta(html, post);
+      html = withPostingMeta(html, post, (comments.get(slug) || []).length);
       html = ensureBreadcrumbMarkers(html);
       if (html.includes("<!-- build:breadcrumbs -->")) {
         html = fillBlock(html, "breadcrumbs", breadcrumbNav(postTrail(post, slug, destinationPages)), file);

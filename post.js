@@ -59,6 +59,8 @@ function cleanOldSidebar() {
 function articleEssential() {
   const postingMeta = document.querySelector(".posting-meta");
   if (!postingMeta || !post) return;
+  // Keep the comment button the build wrote after the date.
+  const commentsLink = postingMeta.querySelector(".meta-comments");
   postingMeta.innerHTML = `<p><span class="author"><i class="fa-solid fa-user" aria-hidden="true"></i> ${esc(
     post.author
   )}</span><span class="postDate"><i class="fa-regular fa-clock" aria-hidden="true"></i> ${esc(
@@ -68,6 +70,7 @@ function articleEssential() {
       ? `<span class="postDate"><i class="fa-solid fa-rotate" aria-hidden="true"></i> Updated ${esc(post.dateModified)}</span>`
       : ""
   }</p>`;
+  if (commentsLink) postingMeta.querySelector("p").append(commentsLink);
 }
 
 // SQUARE AD: only added when SQUARE_AD in ad-codes.js has code in it.
