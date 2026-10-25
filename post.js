@@ -3,6 +3,7 @@
 import { newPostTwo } from "./allPost.js";
 import * as config from "./config.js";
 import { ADSENSE_CLIENT, SQUARE_AD } from "./ad-codes.js";
+import { KLOOK_WIDGETS } from "./klook-codes.js";
 import { registerLayout, currentSlug, escapeHtml as esc } from "./layout.js";
 
 // Read the settings defensively: an old config.js (without these names) must
@@ -21,6 +22,7 @@ articleEssential();
 buildArticleHeader();
 cleanOldSidebar();
 insertArticleAd();
+insertKlookWidget();
 improveImages();
 setUpComments();
 setUpShareBar();
@@ -144,6 +146,85 @@ function insertArticleAd() {
 
   loadAdSense();
   collapseIfUnfilled(box);
+}
+
+// KLOOK WIDGET: one horizontal Klook widget per article, from klook-codes.js.
+// The article's destination is the middle link of its breadcrumb (written by
+// the build). The widget goes after the first paragraph that mentions one of
+// its keywords; with no match, the first widget with a code goes at the bottom.
+function insertKlookWidget() {
+  if (!post) return;
+  const body = document.querySelector(".full-content");
+  const hubLink = document.querySelector(".breadcrumbs li:nth-child(2) a");
+  if (!body || !hubLink) return; // no destination page: no widget
+  const hub = (hubLink.getAttribute("href") || "").replace("./", "").replace(/\.html$/, "");
+  const widgets = (KLOOK_WIDGETS[hub] || []).filter((w) => (w.code || "").trim() !== "");
+  if (!widgets.length) return;
+
+  // Paragraphs of the article itself (not image captions or the ad box).
+  // The first two (the intro, beside the AdSense square) are skipped so the
+  // two ads never sit together at the top.
+  const paragraphs = Array.from(body.children).filter((el) => el.tagName === "P").slice(2);
+  let chosen = null;
+  let after = null;
+  for (const p of paragraphs) {
+    const text = p.textContent.toLowerCase();
+    // Both widgets can match one paragraph: the keyword that comes first wins.
+    let best = Infinity;
+    for (const w of widgets) {
+      for (const k of w.keywords || []) {
+        const at = keywordAt(text, k);
+        if (at >= 0 && at < best) {
+          best = at;
+          chosen = w;
+        }
+      }
+    }
+    if (chosen) {
+      after = p;
+      break;
+    }
+  }
+
+  const box = document.createElement("aside");
+  box.className = "klook-widget";
+  box.setAttribute("aria-label", "Tours and activities");
+  setHtmlWithScripts(box, (chosen || widgets[0]).code);
+
+  if (after) {
+    after.after(box);
+  } else {
+    // Bottom of the article, above a closing Sources box or photo credit.
+    let last = body.lastElementChild;
+    while (
+      last &&
+      (last.tagName === "BLOCKQUOTE" || last.tagName === "BR" ||
+        (last.tagName === "P" && /^\s*photo( credit)?\b/i.test(last.textContent)))
+    ) {
+      last = last.previousElementSibling;
+    }
+    if (last) last.after(box);
+    else body.appendChild(box);
+  }
+}
+
+// Position of a whole-word match (-1 if none), so "tour" does not match "tourism".
+function keywordAt(text, keyword) {
+  const k = String(keyword).toLowerCase().trim().replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  if (k === "") return -1;
+  const m = new RegExp(`(^|[^a-z])${k}([^a-z]|$)`).exec(text);
+  return m ? m.index : -1;
+}
+
+// innerHTML does not run <script> tags, so widget scripts are re-created.
+function setHtmlWithScripts(el, html) {
+  el.innerHTML = html;
+  el.querySelectorAll("script").forEach((old) => {
+    const s = document.createElement("script");
+    for (const attr of old.attributes) s.setAttribute(attr.name, attr.value);
+    s.text = old.text;
+    old.replaceWith(s);
+  });
 }
 
 // AdSense leaves an empty slot when it has no ad to show. Collapse the box in
