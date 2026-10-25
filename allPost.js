@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/philippine-coffee-trail-benguet-sagada-batangas-mt-apo.jpg",
+    postNumber: 146,
+    title: "Philippine Coffee Trail: Benguet, Sagada, Batangas, Mt Apo",
+    desc: "A Philippine coffee trail through Benguet and Sagada arabica, Batangas barako and Mt Apo farms: what each cup tastes like, where to go and how to get there.",
+    datePublished: "25 October 2026",
+    comments: 0,
+    link: "./philippine-coffee-trail-benguet-sagada-batangas-mt-apo",
+    location: "Philippines",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/beginner-friendly-hikes-philippines.jpg",
     postNumber: 145,
     title: "Beginner-Friendly Hikes in the Philippines: 9 Easy Trails",
