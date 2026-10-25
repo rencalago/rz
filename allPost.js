@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/hot-springs-philippines-guide.jpg",
+    postNumber: 148,
+    title: "Hot Springs in the Philippines: Where to Soak by Region",
+    desc: "Hot springs in the Philippines by region: Laguna's Pansol and Hidden Valley, Mambukal, Valencia's Red Rock, Camiguin's Ardent and more, with fees and tips.",
+    datePublished: "25 October 2026",
+    comments: 0,
+    link: "./hot-springs-philippines-guide",
+    location: "Philippines",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/sandugo-festival-bohol-guide.jpg",
     postNumber: 147,
     title: "Sandugo Festival Bohol: Tagbilaran's July Fiesta Guide",
