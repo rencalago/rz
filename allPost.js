@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/hot-air-balloon-fiesta-clark-pampanga-guide.jpg",
+    postNumber: 150,
+    title: "Hot Air Balloon Fiesta Clark: Dates, Tickets, Getting There",
+    desc: "Philippine International Hot Air Balloon Fiesta guide: how the day unfolds at New Clark City, ticket and ride prices, getting to Capas, and where to stay.",
+    datePublished: "25 October 2026",
+    comments: 0,
+    link: "./hot-air-balloon-fiesta-clark-pampanga-guide",
+    location: "Capas, Tarlac",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/philippines-ferry-travel-guide-routes-booking.jpg",
     postNumber: 149,
     title: "Philippines Ferry Guide: Main Routes and How to Book",
