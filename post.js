@@ -202,6 +202,8 @@ function insertKlookWidget() {
   box.setAttribute("aria-label", "Tours and activities");
   setHtmlWithScripts(box, (chosen || widgets[0]).code);
 
+  trimKlookHeight(box);
+
   if (after) {
     after.after(box);
   } else {
@@ -217,6 +219,21 @@ function insertKlookWidget() {
     if (last) last.after(box);
     else body.appendChild(box);
   }
+}
+
+// Klook's script gives its widget a fixed 470px height on wide layouts, but
+// the three cards in a row only need about 375px, which left a big blank band
+// under "Powered by Klook". Trim it once the widget appears. Narrow layouts
+// (cards stacked in a list) really do use the full height, so they are left alone.
+const KLOOK_WIDE_HEIGHT = "375px";
+function trimKlookHeight(box) {
+  const fix = () => {
+    const frame = box.querySelector("iframe");
+    if (!frame || frame.style.height !== "470px") return;
+    if ((frame.parentElement.parentElement || box).clientWidth < 655) return;
+    frame.style.setProperty("height", KLOOK_WIDE_HEIGHT, "important");
+  };
+  new MutationObserver(fix).observe(box, { childList: true, subtree: true, attributes: true, attributeFilter: ["style"] });
 }
 
 // Position of a whole-word match (-1 if none), so "tour" does not match "tourism".
