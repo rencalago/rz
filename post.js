@@ -4,7 +4,7 @@ import { newPostTwo } from "./allPost.js";
 import * as config from "./config.js";
 import { ADSENSE_CLIENT, SQUARE_AD } from "./ad-codes.js";
 import { KLOOK_PLACES } from "./klook-codes.js";
-import { AGODA_PLACES, STAY_KEYWORDS } from "./agoda-codes.js";
+import { AGODA_PLACES, AGODA_TEMPLATE, STAY_KEYWORDS } from "./agoda-codes.js";
 import { registerLayout, currentSlug, escapeHtml as esc } from "./layout.js";
 
 // Read the settings defensively: an old config.js (without these names) must
@@ -242,16 +242,29 @@ function insertAgodaWidget() {
   };
   const location = String(post.location || "").toLowerCase();
 
+  // Fallback for articles with no Klook box: the template, searching the
+  // article's own place (agodaDestination, else the first part of location).
+  const fallbackCode = () => {
+    if (body.querySelector(".klook-widget")) return "";
+    if (!AGODA_TEMPLATE) return "";
+    let dest = String(post.agodaDestination || "").trim();
+    if (!dest && keywordAt(location, "philippines") < 0) dest = String(post.location || "").split(",")[0].trim();
+    if (!dest) return "";
+    return AGODA_TEMPLATE.replace("{DESTINATION}", encodeURIComponent(`${dest}, Philippines`));
+  };
+
   const spot = body.querySelector(".agoda-here");
   if (spot) {
     const place = placeFor((spot.dataset.place || "").toLowerCase() || location);
-    if (place) spot.replaceWith(makeAgodaBox(place.code));
+    const code = place ? place.code : fallbackCode();
+    if (code) spot.replaceWith(makeAgodaBox(code));
     return;
   }
 
   const place = placeFor(location);
-  if (!place) return;
-  const box = makeAgodaBox(place.code);
+  const code = place ? place.code : fallbackCode();
+  if (!code) return;
+  const box = makeAgodaBox(code);
   const paragraphs = Array.from(body.children).filter((el) => el.tagName === "P").slice(2);
   const hit = paragraphs.find((p) => STAY_KEYWORDS.some((k) => keywordAt(p.textContent.toLowerCase(), k) >= 0));
   if (!hit) {
