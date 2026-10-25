@@ -2115,8 +2115,9 @@ my-sidebar {
   display: none;
 }
 
-/* Klook widget (klook-codes.js): full-width box inside the article text */
-.klook-widget {
+/* Klook and Agoda widgets (klook-codes.js, agoda-codes.js): full-width boxes inside the article text */
+.klook-widget,
+.agoda-widget {
   clear: both;
   margin: 16px 0 4px;
   max-width: 100%;
