@@ -1,0 +1,82 @@
+# Deletes branches whose pull requests have been merged.
+#
+# Runs only when you press "Run workflow" on the Actions tab.
+# A branch is deleted only if:
+#   - it had a pull request that was MERGED into this repo, and
+#   - the branch still points at the same commit that was merged
+#     (so a branch reused for new work after the merge is kept), and
+#   - it has no open pull request, and it is not main.
+# Branches that were never merged, or never had a pull request, are left alone.
+# Any deleted branch can be restored from its pull request page on GitHub.
+#
+# Tick "Dry run" to see the list in the run log without deleting anything.
+name: Delete merged branches
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run (list only, delete nothing)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pull-requests: read
+
+jobs:
+  delete:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const { owner, repo } = context.repo;
+            const dryRun = '${{ inputs.dry_run }}' === 'true';
+            const defaultBranch = context.payload.repository.default_branch;
+
+            const branches = await github.paginate(github.rest.repos.listBranches, { owner, repo, per_page: 100 });
+            const prs = await github.paginate(github.rest.pulls.list, { owner, repo, state: 'all', per_page: 100 });
+
+            const openRefs = new Set(
+              prs.filter(p => p.state === 'open' && p.head.repo && p.head.repo.full_name === `${owner}/${repo}`)
+                 .map(p => p.head.ref)
+            );
+            // head ref -> set of commit SHAs that were merged from it
+            const mergedShas = new Map();
+            for (const p of prs) {
+              if (!p.merged_at || !p.head.repo || p.head.repo.full_name !== `${owner}/${repo}`) continue;
+              if (!mergedShas.has(p.head.ref)) mergedShas.set(p.head.ref, new Set());
+              mergedShas.get(p.head.ref).add(p.head.sha);
+            }
+
+            const toDelete = [];
+            const kept = [];
+            for (const b of branches) {
+              const name = b.name;
+              if (name === defaultBranch || b.protected) { kept.push(`${name} (main/protected)`); continue; }
+              if (openRefs.has(name)) { kept.push(`${name} (open pull request)`); continue; }
+              const shas = mergedShas.get(name);
+              if (!shas) { kept.push(`${name} (never merged)`); continue; }
+              if (!shas.has(b.commit.sha)) { kept.push(`${name} (has commits after the merge)`); continue; }
+              toDelete.push(name);
+            }
+
+            core.info(`${toDelete.length} merged branch(es) to delete${dryRun ? ' (dry run)' : ''}:`);
+            let deleted = 0;
+            for (const name of toDelete) {
+              if (dryRun) { core.info(`  would delete ${name}`); continue; }
+              try {
+                await github.rest.git.deleteRef({ owner, repo, ref: `heads/${name}` });
+                deleted++;
+                core.info(`  deleted ${name}`);
+              } catch (e) {
+                core.warning(`  could not delete ${name}: ${e.message}`);
+              }
+            }
+            core.info(`Kept ${kept.length} branch(es):`);
+            for (const k of kept) core.info(`  ${k}`);
+            core.summary
+              .addHeading(dryRun ? 'Dry run: merged branches' : 'Deleted merged branches')
+              .addRaw(`${dryRun ? toDelete.length + ' would be deleted' : deleted + ' deleted'}, ${kept.length} kept.`)
+              .write();
