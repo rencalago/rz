@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/sandugo-festival-bohol-guide.jpg",
+    postNumber: 147,
+    title: "Sandugo Festival Bohol: Tagbilaran's July Fiesta Guide",
+    desc: "Sandugo Festival guide: the 1565 blood compact story, Tagbilaran's July street dancing and showdown, where to watch, getting there and festival-week tips.",
+    datePublished: "25 October 2026",
+    comments: 0,
+    link: "./sandugo-festival-bohol-guide",
+    location: "Tagbilaran City, Bohol",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/philippine-coffee-trail-benguet-sagada-batangas-mt-apo.jpg",
     postNumber: 146,
     title: "Philippine Coffee Trail: Benguet, Sagada, Batangas, Mt Apo",
