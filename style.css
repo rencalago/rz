@@ -2115,6 +2115,14 @@ my-sidebar {
   display: none;
 }
 
+/* Klook widget (klook-codes.js): full-width box inside the article text */
+.klook-widget {
+  clear: both;
+  margin: 20px 0 24px;
+  max-width: 100%;
+  overflow: hidden;
+}
+
 /* ===== All stories (plain list of every post, on the homepage) ===== */
 .archive {
   padding-top: 8px;
