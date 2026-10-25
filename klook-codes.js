@@ -128,15 +128,6 @@ export const KLOOK_PLACES = [
       { name: "Activities & experiences", keywords: ACTIVITIES_KEYWORDS, code: `` },
     ],
   },
-  // One Klook search widget for Angeles / Clark, used for every Clark, Pampanga and Tarlac story. Add a tours code later if you have one.
-  {
-    name: "Clark and Pampanga",
-    match: ["clark", "angeles", "pampanga", "capas", "tarlac"],
-    widgets: [
-      { name: "Tours & sightseeing", keywords: TOURS_KEYWORDS, code: `` },
-      { name: "Activities & experiences", keywords: ACTIVITIES_KEYWORDS, code: `<script async src="https://tpemb.com/content?trs=589478&shmarker=794050&locale=en&default_destination=Angeles%20%2F%20Clark%2C%20Philippines&powered_by=true&primary_override=%235392F9&color_button=%235392F9&color_icons=%235392F9&dark=%23262626&color_border=%235392F9&color_focused=%2332a8dd&border_radius=5&plain=false&promo_id=8303&campaign_id=104" charset="utf-8"></script>` },
-    ],
-  },
   // Tours left empty: the tours code you sent (city_id 702385) is the same as the Lapu-Lapu one. Paste the Manila tours code here.
   {
     name: "Manila",

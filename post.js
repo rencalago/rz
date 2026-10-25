@@ -4,6 +4,7 @@ import { newPostTwo } from "./allPost.js";
 import * as config from "./config.js";
 import { ADSENSE_CLIENT, SQUARE_AD } from "./ad-codes.js";
 import { KLOOK_PLACES } from "./klook-codes.js";
+import { AGODA_PLACES, STAY_KEYWORDS } from "./agoda-codes.js";
 import { registerLayout, currentSlug, escapeHtml as esc } from "./layout.js";
 
 // Read the settings defensively: an old config.js (without these names) must
@@ -23,6 +24,7 @@ buildArticleHeader();
 cleanOldSidebar();
 insertArticleAd();
 insertKlookWidget();
+insertAgodaWidget();
 improveImages();
 setUpComments();
 setUpShareBar();
@@ -213,6 +215,63 @@ function insertKlookWidget() {
     (lastP || heading).after(box);
     return;
   }
+}
+
+// AGODA WIDGET: one hotel search box per article, from agoda-codes.js.
+// A manual <div class="agoda-here"></div> wins (optional data-place="clark").
+// Otherwise the article's location picks the place, and the box goes after the
+// first paragraph (third on) that mentions a stay keyword, or at the bottom.
+function insertAgodaWidget() {
+  if (!post) return;
+  const body = document.querySelector(".full-content");
+  if (!body) return;
+  const usable = (AGODA_PLACES || []).filter((pl) => (pl.code || "").trim() !== "");
+  const placeFor = (text) => {
+    let place = null;
+    let placeAt = Infinity;
+    for (const pl of usable) {
+      for (const m of pl.match || []) {
+        const at = keywordAt(text, m);
+        if (at >= 0 && at < placeAt) {
+          placeAt = at;
+          place = pl;
+        }
+      }
+    }
+    return place;
+  };
+  const location = String(post.location || "").toLowerCase();
+
+  const spot = body.querySelector(".agoda-here");
+  if (spot) {
+    const place = placeFor((spot.dataset.place || "").toLowerCase() || location);
+    if (place) spot.replaceWith(makeAgodaBox(place.code));
+    return;
+  }
+
+  const place = placeFor(location);
+  if (!place) return;
+  const box = makeAgodaBox(place.code);
+  const paragraphs = Array.from(body.children).filter((el) => el.tagName === "P").slice(2);
+  const hit = paragraphs.find((p) => STAY_KEYWORDS.some((k) => keywordAt(p.textContent.toLowerCase(), k) >= 0));
+  if (!hit) {
+    placeAtBottom(body, box);
+    return;
+  }
+  // Keep the two boxes stacked rather than splitting one around the other.
+  let after = hit;
+  while (after.nextElementSibling && after.nextElementSibling.classList.contains("klook-widget")) {
+    after = after.nextElementSibling;
+  }
+  after.after(box);
+}
+
+function makeAgodaBox(code) {
+  const box = document.createElement("aside");
+  box.className = "agoda-widget";
+  box.setAttribute("aria-label", "Hotels");
+  setHtmlWithScripts(box, code);
+  return box;
 }
 
 // The place named first in the text. "headings" also counts each place's
