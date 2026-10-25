@@ -149,76 +149,137 @@ function insertArticleAd() {
 }
 
 // KLOOK WIDGET: one horizontal Klook widget per article, from klook-codes.js.
-// The article's place comes from its location in allPost.js (the place named
-// first wins). The widget goes after the first paragraph that mentions one of
-// its keywords; with no match, the first widget with a code goes at the bottom.
+// 1. A manual spot in the article HTML wins: <div class="klook-here"></div>,
+//    optionally with data-place="negros" (a match word) and
+//    data-widget="tours" or "activities".
+// 2. Otherwise the article's location in allPost.js picks the place (the place
+//    named first wins), and the widget goes after the first paragraph that
+//    mentions one of its keywords, or at the bottom when nothing matches.
+// 3. Nationwide stories (location "Philippines") use their section headings:
+//    the first H2/H3 that names a place with codes gets the widget at the end
+//    of its section.
 function insertKlookWidget() {
   if (!post) return;
   const body = document.querySelector(".full-content");
   if (!body) return;
   const location = String(post.location || "").toLowerCase();
+
+  // 1. Manual spot.
+  const spot = body.querySelector(".klook-here");
+  if (spot) {
+    const wanted = (spot.dataset.place || "").toLowerCase();
+    const place = placeIn(wanted || location, { headings: true, usableOnly: true });
+    if (!place) return;
+    const widgets = usableWidgets(place);
+    const kind = (spot.dataset.widget || "").toLowerCase();
+    const chosen = widgets.find((w) => kind && w.name.toLowerCase().startsWith(kind)) || widgets[0];
+    spot.replaceWith(makeKlookBox(chosen.code));
+    return;
+  }
+
+  // 2. Place from the article's location.
+  const place = placeIn(location, { headings: false, usableOnly: false });
+  if (place) {
+    const widgets = usableWidgets(place);
+    if (!widgets.length) return;
+    // Paragraphs of the article itself (not image captions or the ad box).
+    // The first two (the intro, beside the AdSense square) are skipped so the
+    // two ads never sit together at the top.
+    const paragraphs = Array.from(body.children).filter((el) => el.tagName === "P").slice(2);
+    const hit = firstKeywordParagraph(paragraphs, widgets);
+    const box = makeKlookBox((hit ? hit.widget : widgets[0]).code);
+    if (hit) hit.paragraph.after(box);
+    else placeAtBottom(body, box);
+    return;
+  }
+
+  // 3. Nationwide story: look for a section heading that names a place.
+  if (keywordAt(location, "philippines") < 0) return;
+  for (const heading of Array.from(body.children).filter((el) => /^H[23]$/.test(el.tagName))) {
+    const hp = placeIn(heading.textContent.toLowerCase(), { headings: true, usableOnly: true });
+    if (!hp) continue;
+    const widgets = usableWidgets(hp);
+    // The section runs to the next heading of the same or a higher level.
+    const level = Number(heading.tagName[1]);
+    const section = [];
+    for (let el = heading.nextElementSibling; el; el = el.nextElementSibling) {
+      if (/^H[1-6]$/.test(el.tagName) && Number(el.tagName[1]) <= level) break;
+      section.push(el);
+    }
+    const paragraphs = section.filter((el) => el.tagName === "P");
+    const hit = firstKeywordParagraph(paragraphs, widgets);
+    const box = makeKlookBox((hit ? hit.widget : widgets[0]).code);
+    const lastP = paragraphs[paragraphs.length - 1];
+    (lastP || heading).after(box);
+    return;
+  }
+}
+
+// The place named first in the text. "headings" also counts each place's
+// extra heading words (e.g. "negros"); "usableOnly" skips places with no codes.
+function placeIn(text, { headings, usableOnly }) {
   let place = null;
   let placeAt = Infinity;
   for (const pl of KLOOK_PLACES || []) {
-    for (const m of pl.match || []) {
-      const at = keywordAt(location, m);
+    if (usableOnly && !usableWidgets(pl).length) continue;
+    const words = (pl.match || []).concat(headings ? pl.headings || [] : []);
+    for (const m of words) {
+      const at = keywordAt(text, m);
       if (at >= 0 && at < placeAt) {
         placeAt = at;
         place = pl;
       }
     }
   }
-  if (!place) return; // location matches no place: no widget
-  const widgets = (place.widgets || []).filter((w) => (w.code || "").trim() !== "");
-  if (!widgets.length) return;
+  return place;
+}
 
-  // Paragraphs of the article itself (not image captions or the ad box).
-  // The first two (the intro, beside the AdSense square) are skipped so the
-  // two ads never sit together at the top.
-  const paragraphs = Array.from(body.children).filter((el) => el.tagName === "P").slice(2);
-  let chosen = null;
-  let after = null;
+function usableWidgets(place) {
+  return (place.widgets || []).filter((w) => (w.code || "").trim() !== "");
+}
+
+// The first paragraph that mentions a widget keyword, and which widget.
+// Both widgets can match one paragraph: the keyword that comes first wins.
+function firstKeywordParagraph(paragraphs, widgets) {
   for (const p of paragraphs) {
     const text = p.textContent.toLowerCase();
-    // Both widgets can match one paragraph: the keyword that comes first wins.
     let best = Infinity;
+    let widget = null;
     for (const w of widgets) {
       for (const k of w.keywords || []) {
         const at = keywordAt(text, k);
         if (at >= 0 && at < best) {
           best = at;
-          chosen = w;
+          widget = w;
         }
       }
     }
-    if (chosen) {
-      after = p;
-      break;
-    }
+    if (widget) return { paragraph: p, widget };
   }
+  return null;
+}
 
+function makeKlookBox(code) {
   const box = document.createElement("aside");
   box.className = "klook-widget";
   box.setAttribute("aria-label", "Tours and activities");
-  setHtmlWithScripts(box, (chosen || widgets[0]).code);
-
+  setHtmlWithScripts(box, code);
   trimKlookHeight(box);
+  return box;
+}
 
-  if (after) {
-    after.after(box);
-  } else {
-    // Bottom of the article, above a closing Sources box or photo credit.
-    let last = body.lastElementChild;
-    while (
-      last &&
-      (last.tagName === "BLOCKQUOTE" || last.tagName === "BR" ||
-        (last.tagName === "P" && /^\s*photo( credit)?\b/i.test(last.textContent)))
-    ) {
-      last = last.previousElementSibling;
-    }
-    if (last) last.after(box);
-    else body.appendChild(box);
+// Bottom of the article, above a closing Sources box or photo credit.
+function placeAtBottom(body, box) {
+  let last = body.lastElementChild;
+  while (
+    last &&
+    (last.tagName === "BLOCKQUOTE" || last.tagName === "BR" ||
+      (last.tagName === "P" && /^\s*photo( credit)?\b/i.test(last.textContent)))
+  ) {
+    last = last.previousElementSibling;
   }
+  if (last) last.after(box);
+  else body.appendChild(box);
 }
 
 // Klook's script gives its widget a fixed 470px height on wide layouts, but

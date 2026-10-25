@@ -15,6 +15,12 @@
 //   at the bottom of the article instead.
 // - A widget with an empty code (``) is skipped. A place with no codes, or an
 //   article whose location matches no place, shows no Klook widget at all.
+// - Nationwide stories (location "Philippines") use their section headings
+//   instead: the first H2/H3 naming a place with codes gets the widget at the
+//   end of that section. "headings" adds extra words for this only.
+// - Manual override: put <div class="klook-here"></div> in an article where the
+//   widget should go. Optional: data-place="cebu" (any match word) and
+//   data-widget="tours" or "activities".
 // - The AdSense square at the top of the article is not affected.
 //
 // To add a place: copy a block below, set its name and "match" words (lower
@@ -56,6 +62,9 @@ export const KLOOK_PLACES = [
   {
     name: "Dumaguete and Negros Oriental",
     match: ["dumaguete", "negros oriental", "apo island", "sibulan", "bais", "tanjay", "pamplona", "mabinay", "canlaon"],
+    // Extra words for headings in nationwide stories ("Negros: a big resort...").
+    // Move "negros" to Bacolod once its codes are in, if you prefer.
+    headings: ["negros"],
     widgets: [
       { name: "Tours & sightseeing", keywords: TOURS_KEYWORDS, code: `<script async src="https://tpemb.com/content?currency=USD&trs=589478&shmarker=794050.Dumaguete-Tours%26Sightseeings&locale=en-US&city_id=148&category=2&amount=3&powered_by=true&campaign_id=137&promo_id=4497" charset="utf-8"></script>` },
       { name: "Activities & experiences", keywords: ACTIVITIES_KEYWORDS, code: `<script async src="https://tpemb.com/content?currency=USD&trs=589478&shmarker=794050.Dumaguete-Tours%26Sightseeings&locale=en-US&city_id=148&category=2&amount=3&powered_by=true&campaign_id=137&promo_id=4497" charset="utf-8"></script>` },
