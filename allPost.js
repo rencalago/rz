@@ -1,6 +1,19 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/daanbantayan-island-hopping-beach.jpg",
+    postNumber: 163,
+    title: "Daanbantayan Beyond Malapascua: Carnaza Island and Gato",
+    desc: "Daanbantayan guide: which port goes where, Carnaza Island's once-a-day boat and where to sleep, Gato Island dives, the old church and the Haladaya Festival.",
+    datePublished: "26 October 2026",
+    comments: 0,
+    link: "./daanbantayan-beyond-malapascua-carnaza-island",
+    location: "Daanbantayan, Cebu",
+    agodaDestination: "Malapascua",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/bicol-express-albay-food-trip.jpg",
     postNumber: 162,
     title: "Bicol Food Trip in Albay: What to Eat in Legazpi",
