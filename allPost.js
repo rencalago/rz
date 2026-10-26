@@ -1,5 +1,18 @@
 let newPostTwo = [
   {
+    category: "Travel",
+    imagesrc: "./Images/featured-images/bicol-express-albay-food-trip.jpg",
+    postNumber: 162,
+    title: "Bicol Food Trip in Albay: What to Eat in Legazpi",
+    desc: "A Bicol food trip in Albay: Bicol Express, pinangat, kinunot and sili ice cream, where to eat in Legazpi, a Daraga to Guinobatan food route and pasalubong.",
+    datePublished: "26 October 2026",
+    comments: 0,
+    link: "./bicol-food-trip-albay-legazpi",
+    location: "Legazpi City, Albay",
+    agodaDestination: "Legazpi",
+    author: "Ren Calago",
+  },
+  {
     category: "News",
     imagesrc: "./Images/featured-images/is-mindanao-safe-to-travel.jpg",
     postNumber: 161,
