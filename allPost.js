@@ -1,6 +1,19 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/malajog-beach-calbayog-samar.jpg",
+    postNumber: 164,
+    title: "Malajog Beach, Calbayog: Zipline, Fees and Getting There",
+    desc: "Malajog Beach in Calbayog, Samar: how to get there, the ridge trail and zipline to Daraga islet, fees, cottages, crowds and the best time to visit.",
+    datePublished: "26 October 2026",
+    comments: 0,
+    link: "./malajog-beach-calbayog-samar",
+    location: "Calbayog City, Samar",
+    agodaDestination: "Calbayog",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/daanbantayan-island-hopping-beach.jpg",
     postNumber: 163,
     title: "Daanbantayan, Cebu Travel Guide: What to See and How to Go",
