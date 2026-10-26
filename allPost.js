@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/undas-2026-manila-cemetery-crowd.jpg",
+    postNumber: 157,
+    title: "Undas 2026 in Manila: Cemetery Hours and Road Closures",
+    desc: "Undas 2026 in Manila: North and South Cemetery hours, road closures near Blumentritt, banned items, LRT-1 tips and the best time to visit without the crush.",
+    datePublished: "26 October 2026",
+    comments: 0,
+    link: "./undas-2026-manila-cemetery-hours-road-closures",
+    location: "Santa Cruz, Manila",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/panagbenga-street-dance-parade-day-baguio.jpg",
     postNumber: 156,
     title: "Panagbenga Parade Day Guide: Route, Road Closures, Timing",
