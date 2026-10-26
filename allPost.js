@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/cebu-brt-station-bus-boarding.jpg",
+    postNumber: 160,
+    title: "Cebu BRT Guide: Route, Stations, Fares and Tips",
+    desc: "How to ride the Cebu BRT: the Il Corso to IT Park route, stations near Fuente, Ayala and SM Seaside, fares, free ride hours, and what it doesn't cover yet.",
+    datePublished: "26 October 2026",
+    comments: 0,
+    link: "./cebu-brt-guide-route-stations-fares",
+    location: "Cebu City, Cebu",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/samal-island-beach-sign.jpg",
     postNumber: 159,
     title: "Samal Island Beyond the Resorts: Bats, Falls and Sandbars",
