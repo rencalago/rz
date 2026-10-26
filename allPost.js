@@ -1,6 +1,19 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/daanbantayan-island-hopping-beach.jpg",
+    postNumber: 163,
+    title: "Daanbantayan, Cebu Travel Guide: What to See and How to Go",
+    desc: "Daanbantayan, Cebu travel guide: buses, Maya and Tapilon ports, Carnaza and Gato islands, the old church, Haladaya Festival, best time to visit and costs.",
+    datePublished: "26 October 2026",
+    comments: 0,
+    link: "./daanbantayan-cebu-travel-guide",
+    location: "Daanbantayan, Cebu",
+    agodaDestination: "Malapascua",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/bicol-express-albay-food-trip.jpg",
     postNumber: 162,
     title: "Bicol Food Trip in Albay: What to Eat in Legazpi",
