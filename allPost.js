@@ -1,5 +1,17 @@
 let newPostTwo = [
   {
+    category: "News",
+    imagesrc: "./Images/featured-images/is-mindanao-safe-to-travel.jpg",
+    postNumber: 161,
+    title: "Is Mindanao Safe to Travel in 2026? Area by Area",
+    desc: "Is Mindanao safe to travel in 2026? Where Siargao, Camiguin, Davao and the rest stand on US, UK and Australian advisories, plus habits for an easy trip.",
+    datePublished: "26 October 2026",
+    comments: 0,
+    link: "./is-mindanao-safe-to-travel",
+    location: "Davao City, Davao del Sur",
+    author: "Ren Calago",
+  },
+  {
     category: "Travel",
     imagesrc: "./Images/featured-images/cebu-brt-station-bus-boarding.jpg",
     postNumber: 160,
