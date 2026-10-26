@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/baguio-cold-season-morning-fog.jpg",
+    postNumber: 165,
+    title: "Coldest Months in Baguio: December to February Guide",
+    desc: "When is Baguio coldest? What December, January and February feel like, record lows, frost in Benguet, what to pack and how to stay warm where you sleep.",
+    datePublished: "27 October 2026",
+    comments: 0,
+    link: "./baguio-coldest-months-december-february",
+    location: "Baguio City, Benguet",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/malajog-beach-calbayog-samar.jpg",
     postNumber: 164,
     title: "Malajog Beach, Calbayog: Zipline, Fees and Getting There",
