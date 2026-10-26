@@ -1,5 +1,17 @@
 let newPostTwo = [
   {
+    category: "Travel",
+    imagesrc: "./Images/featured-images/samal-island-beach-sign.jpg",
+    postNumber: 159,
+    title: "Samal Island Beyond the Resorts: Bats, Falls and Sandbars",
+    desc: "Samal Island beyond the resort day: Monfort bat cave, Vanishing Island at low tide, the Adecor giant clam tour, reopened Hagimit Falls and quiet Talikud.",
+    datePublished: "26 October 2026",
+    comments: 0,
+    link: "./samal-island-beyond-the-resorts",
+    location: "Samal, Davao del Norte",
+    author: "Ren Calago",
+  },
+  {
     category: "News",
     imagesrc: "./Images/featured-images/ati-atihan-festival.jpg",
     postNumber: 158,
