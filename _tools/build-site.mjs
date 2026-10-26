@@ -46,7 +46,7 @@ const BASE = "https://www.rencalago.com";
 
 // Pages that are not posts but belong in the sitemap. Add a page here (the file
 // name without .html) when you create one.
-const STATIC_PAGES = ["contact", "about", "trip-budget-calculator", "festival-calendar", "packing-checklist", "free-travel-guides", "where-to-go-philippines-quiz", "philippines-travel-map"];
+const STATIC_PAGES = ["contact", "about", "work-with-me", "trip-budget-calculator", "festival-calendar", "packing-checklist", "free-travel-guides", "where-to-go-philippines-quiz", "philippines-travel-map"];
 
 // FILES -----------------------------------------------------------------------
 // All changes are collected first and written at the end (or only reported, in
