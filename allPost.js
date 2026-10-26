@@ -1,5 +1,17 @@
 let newPostTwo = [
   {
+    category: "News",
+    imagesrc: "./Images/featured-images/ati-atihan-festival.jpg",
+    postNumber: 158,
+    title: "Dinagyang 2027: What's Changing and the Dates So Far",
+    desc: "Dinagyang 2027 returns to downtown Iloilo City: five judging areas in City Proper, banderitas back, nine tribes, bigger processions, and 22-24 January dates.",
+    datePublished: "26 October 2026",
+    comments: 0,
+    link: "./dinagyang-2027-changes-dates",
+    location: "Iloilo City, Iloilo",
+    author: "Ren Calago",
+  },
+  {
     category: "Travel",
     imagesrc: "./Images/featured-images/undas-2026-manila-cemetery-crowd.jpg",
     postNumber: 157,
