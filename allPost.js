@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/panagbenga-street-dance-parade-day-baguio.jpg",
+    postNumber: 156,
+    title: "Panagbenga Parade Day Guide: Route, Road Closures, Timing",
+    desc: "Panagbenga parade day in Baguio: the route to Melvin Jones, road closures, when to arrive, where to stand, what to bring and how to see the floats up close.",
+    datePublished: "26 October 2026",
+    comments: 0,
+    link: "./panagbenga-parade-day-guide",
+    location: "Baguio City, Benguet",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/burnham-park-lake-baguio-swan-boats.jpg",
     postNumber: 155,
     title: "Panagbenga Meaning and History: Baguio's Flower Festival",
