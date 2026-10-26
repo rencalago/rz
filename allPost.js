@@ -1,5 +1,17 @@
 let newPostTwo = [
   {
+    category: "News",
+    imagesrc: "./Images/featured-images/michelin-guide-cebu-sashimi-sushi-calamansi.jpg",
+    postNumber: 166,
+    title: "Michelin Guide Cebu 2027: Reveal Date and Current List",
+    desc: "The Michelin Guide Cebu 2027 is revealed on 29 October. See Cebu's 6 Bib Gourmands and 12 Selected restaurants, how to watch, and how to plan a food trip.",
+    datePublished: "27 October 2026",
+    comments: 0,
+    link: "./michelin-guide-cebu-2027",
+    location: "Cebu City, Cebu",
+    author: "Ren Calago",
+  },
+  {
     category: "Travel",
     imagesrc: "./Images/featured-images/baguio-cold-season-morning-fog.jpg",
     postNumber: 165,
