@@ -57,20 +57,60 @@
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "WebSite",
+      "@id": "https://www.rencalago.com/#website",
+      "name": "Ren Calago Blog",
+      "url": "https://www.rencalago.com/",
+      "publisher": {
+        "@id": "https://www.rencalago.com/#organization"
+      },
+      "author": {
+        "@id": "https://www.rencalago.com/about#ren-calago"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.rencalago.com/#organization",
+      "name": "Ren Calago Blog",
+      "url": "https://www.rencalago.com/",
+      "founder": {
+        "@id": "https://www.rencalago.com/about#ren-calago"
+      },
+      "sameAs": [
+        "https://www.facebook.com/rencalago",
+        "https://www.instagram.com/rencalago",
+        "https://www.youtube.com/rencalago",
+        "https://x.com/rencalago"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.rencalago.com/about#ren-calago",
+      "name": "Ren Calago",
+      "url": "https://www.rencalago.com/about",
+      "image": "https://www.rencalago.com/Images/ren-signature.png",
+      "sameAs": [
+        "https://www.facebook.com/rencalago",
+        "https://www.instagram.com/rencalago",
+        "https://www.youtube.com/rencalago",
+        "https://x.com/rencalago",
+        "https://www.linkedin.com/in/rencalago"
+      ]
+    },
+    {
       "@type": "BlogPosting",
       "headline": "Cebu's Best Local Food to Try: Beyond Lechon",
       "description": "Cebu's best local food beyond lechon: puso and ngohiong, sutukil, tuslob buwa, siomai and other favorites worth tracking down on a Cebu food trip.",
       "datePublished": "2026-09-29",
       "dateModified": "2026-09-29",
       "author": {
-        "@type": "Person",
-        "name": "Ren Calago",
-        "url": "https://www.rencalago.com/about"
+        "@id": "https://www.rencalago.com/about#ren-calago"
       },
       "publisher": {
-        "@type": "Organization",
-        "name": "Ren Calago Blog",
-        "url": "https://www.rencalago.com/"
+        "@id": "https://www.rencalago.com/#organization"
+      },
+      "isPartOf": {
+        "@id": "https://www.rencalago.com/#website"
       },
       "mainEntityOfPage": "https://www.rencalago.com/cebus-best-local-food-to-try-beyond-lechon",
       "image": "https://drive.google.com/thumbnail?id=17RHAmRHMl89wslhXFDpC3iPZGzHMMWmd&sz=s4000"

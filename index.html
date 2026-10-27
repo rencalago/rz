@@ -44,8 +44,44 @@
   "@graph": [
     {
       "@type": "WebSite",
+      "@id": "https://www.rencalago.com/#website",
       "name": "Ren Calago Blog",
-      "url": "https://www.rencalago.com/"
+      "url": "https://www.rencalago.com/",
+      "publisher": {
+        "@id": "https://www.rencalago.com/#organization"
+      },
+      "author": {
+        "@id": "https://www.rencalago.com/about#ren-calago"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.rencalago.com/#organization",
+      "name": "Ren Calago Blog",
+      "url": "https://www.rencalago.com/",
+      "founder": {
+        "@id": "https://www.rencalago.com/about#ren-calago"
+      },
+      "sameAs": [
+        "https://www.facebook.com/rencalago",
+        "https://www.instagram.com/rencalago",
+        "https://www.youtube.com/rencalago",
+        "https://x.com/rencalago"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.rencalago.com/about#ren-calago",
+      "name": "Ren Calago",
+      "url": "https://www.rencalago.com/about",
+      "image": "https://www.rencalago.com/Images/ren-signature.png",
+      "sameAs": [
+        "https://www.facebook.com/rencalago",
+        "https://www.instagram.com/rencalago",
+        "https://www.youtube.com/rencalago",
+        "https://x.com/rencalago",
+        "https://www.linkedin.com/in/rencalago"
+      ]
     }
   ]
 }

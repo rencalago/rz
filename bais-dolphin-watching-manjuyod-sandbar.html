@@ -47,20 +47,60 @@
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "WebSite",
+      "@id": "https://www.rencalago.com/#website",
+      "name": "Ren Calago Blog",
+      "url": "https://www.rencalago.com/",
+      "publisher": {
+        "@id": "https://www.rencalago.com/#organization"
+      },
+      "author": {
+        "@id": "https://www.rencalago.com/about#ren-calago"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.rencalago.com/#organization",
+      "name": "Ren Calago Blog",
+      "url": "https://www.rencalago.com/",
+      "founder": {
+        "@id": "https://www.rencalago.com/about#ren-calago"
+      },
+      "sameAs": [
+        "https://www.facebook.com/rencalago",
+        "https://www.instagram.com/rencalago",
+        "https://www.youtube.com/rencalago",
+        "https://x.com/rencalago"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.rencalago.com/about#ren-calago",
+      "name": "Ren Calago",
+      "url": "https://www.rencalago.com/about",
+      "image": "https://www.rencalago.com/Images/ren-signature.png",
+      "sameAs": [
+        "https://www.facebook.com/rencalago",
+        "https://www.instagram.com/rencalago",
+        "https://www.youtube.com/rencalago",
+        "https://x.com/rencalago",
+        "https://www.linkedin.com/in/rencalago"
+      ]
+    },
+    {
       "@type": "BlogPosting",
       "headline": "Bais Dolphin Watching and the Manjuyod Sandbar: A Day Trip from Dumaguete",
       "description": "Dolphin watching in the Tañon Strait from Bais, plus the Manjuyod sandbar: boat fares, the trip from Dumaguete, timing, and what to expect on the water.",
       "datePublished": "2026-10-13",
       "dateModified": "2026-10-13",
       "author": {
-        "@type": "Person",
-        "name": "Ren Calago",
-        "url": "https://www.rencalago.com/about"
+        "@id": "https://www.rencalago.com/about#ren-calago"
       },
       "publisher": {
-        "@type": "Organization",
-        "name": "Ren Calago Blog",
-        "url": "https://www.rencalago.com/"
+        "@id": "https://www.rencalago.com/#organization"
+      },
+      "isPartOf": {
+        "@id": "https://www.rencalago.com/#website"
       },
       "mainEntityOfPage": "https://www.rencalago.com/bais-dolphin-watching-manjuyod-sandbar",
       "image": "https://drive.google.com/thumbnail?id=1t3i6s8hkB695YlgwifAaZaj4WJycA4r0&sz=s4000"
