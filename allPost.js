@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/pagadian-city-hill-road-illana-bay.jpg",
+    postNumber: 170,
+    title: "Pagadian City Guide: Tilted Tricycles, Dao Dao and Bay Views",
+    desc: "Pagadian City guide: ride the tilted tricycles, see the Rotonda and Plaza Luz, time a Dao Dao Islands trip with the tide, and reach Pulacan Falls by bus.",
+    datePublished: "27 October 2026",
+    comments: 0,
+    link: "./pagadian-city-guide-tilted-tricycles",
+    location: "Pagadian, Zamboanga del Sur",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/baguio-night-market-harrison-road.jpg",
     postNumber: 169,
     title: "Baguio Night Market Guide: Hours, Ukay Tips and Food",
