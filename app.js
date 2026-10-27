@@ -39,10 +39,7 @@ const DESTINATIONS = [
     group: "Luzon",
     tagline: "Pine-scented highland city",
     keywords: ["baguio"],
-    intro: [
-      'Baguio is the highland city of northern Luzon, known for its cool weather and for being a popular escape from the lowland heat. The stories below look at <a href="./baguio-quieter-cheaper-right-now">how crowds, hotel prices and attractions such as Burnham Lake stand in 2026</a> and at <a href="./travel-to-baguio-city-places-to-visit">places to visit on a family trip</a>.',
-      "Prices, opening hours and weather change through the year, so check current details before you go.",
-    ],
+    href: "./baguio-travel-guides",
   },
   {
     key: "metro-manila",

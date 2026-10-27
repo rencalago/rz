@@ -60,6 +60,24 @@
       "sinulog-first-timers-guide"
     ]
   },
+  "baguio": {
+    "page": "baguio-travel-guides",
+    "title": "Baguio Travel Guides: Weather, Festivals and Things to Do",
+    "description": "Baguio travel guides: the coldest months, Panagbenga, the night market, the new Arboretum, the Christmas Village, family trips, crowds and costs.",
+    "keywords": "Baguio travel guides, things to do in Baguio, Baguio itinerary, Panagbenga, Baguio night market, Baguio Arboretum, Baguio Christmas Village, Baguio weather, Baguio cold months",
+    "h1": "Baguio travel guides",
+    "intro": [
+      "Baguio sits about 1,500 metres up in the mountains of Benguet, and that altitude explains most of what draws people here: pine forests, cool air all year and properly cold mornings from December to February. It is the most visited city in the Cordillera and a long-standing weekend escape from the lowland heat, which also means traffic, full hotels and long queues on holidays.",
+      "The guides on this page cover the city through the year. The cold season brings fog, sweaters and the <a href=\"./baguio-coldest-months-december-february\">coldest weeks in January</a>. October to early January belongs to the Christmas Village and the city's holiday events, and February is Panagbenga, the flower festival, with its street dance and float parade. Our <a href=\"./panagbenga-meaning-history-baguio\">Panagbenga history</a> explains how it started.",
+      "Day to day, the city is easiest on foot around Session Road and Burnham Park, with taxis for anything farther. Evenings mean the <a href=\"./baguio-night-market-guide\">night market on Harrison Road</a>, and quieter mornings suit the parks, from the Botanical Garden to the new Arboretum next door. Families can start with the <a href=\"./travel-to-baguio-city-places-to-visit\">five-day itinerary with a toddler</a>.",
+      "The stories below are newest first, with good starting points at the top. Entrance fees, festival dates and traffic schemes change every season, so check current details with the city tourism office before you travel. For the rest of northern Luzon, from Sagada to Banaue and Mount Pulag, see the <a href=\"./luzon-travel-guides\">Luzon guides</a>."
+    ],
+    "startWith": [
+      "baguio-coldest-months-december-february",
+      "travel-to-baguio-city-places-to-visit",
+      "panagbenga-baguio-february"
+    ]
+  },
   "luzon": {
     "page": "luzon-travel-guides",
     "title": "Luzon Travel Guides: Mountains, Beaches and Food",
@@ -68,7 +86,7 @@
     "h1": "Luzon travel guides",
     "intro": [
       "Luzon is the largest island in the Philippines and the one with the most variety in a single trip. In the north are the cool mountain towns of the Cordillera, the old Spanish-era streets of Ilocos and the far-off islands of Batanes. Manila sits in the middle, and the long tail of the island runs south through Batangas and down to the volcanoes and islands of Bicol.",
-      "The mountains are the main draw for many visitors. Baguio is the easiest to reach, and it gets crowded during <a href=\"./panagbenga-baguio-february\">Panagbenga in February</a> and on long weekends. Farther in, Sagada has caves and hanging coffins, the <a href=\"./banaue-batad-rice-terraces-how-to-visit\">rice terraces of Banaue and Batad</a> are a full day by road, and Mount Pulag is known for its sea of clouds at dawn. Expect long, winding drives and cold nights, and pack layers even in summer.",
+      "The mountains are the main draw for many visitors. Baguio is the easiest to reach, and it has its own <a href=\"./baguio-travel-guides\">Baguio guides page</a> covering Panagbenga, the cold months and the night market. Farther in, Sagada has caves and hanging coffins, the <a href=\"./banaue-batad-rice-terraces-how-to-visit\">rice terraces of Banaue and Batad</a> are a full day by road, and Mount Pulag is known for its sea of clouds at dawn. Expect long, winding drives and cold nights, and pack layers even in summer.",
       "Closer to Manila, the trips get shorter. Zambales has camping coves and the Mount Pinatubo crater lake, Pampanga is a food trip built around sisig, and La Union and Baler are the surf towns. To the south, Tagaytay overlooks Taal Lake, Anilao is a dive spot within driving distance of the capital, and Bicol has Mayon Volcano, the Caramoan islands and the whale sharks of Donsol. In Manila itself, the guides cover a <a href=\"./manila-24-hour-stopover-intramuros\">24-hour stopover in Intramuros</a> and a food crawl through Binondo.",
       "Distances on Luzon are big, so most people pick one region per trip rather than trying to see it all. The northern half catches most of the typhoons between about June and November, and mountain roads can close after heavy rain, so leave a spare day. Fees, permits and transport schedules change, so check current details with the local tourism office before you go."
     ],
@@ -76,6 +94,9 @@
       "manila-24-hour-stopover-intramuros",
       "banaue-batad-rice-terraces-how-to-visit",
       "vigan-heritage-weekend-calle-crisologo-food"
+    ],
+    "excludeDestinations": [
+      "baguio"
     ]
   },
   "palawan-mimaropa": {
