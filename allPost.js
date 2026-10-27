@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "News",
+    imagesrc: "./Images/featured-images/asean-summit-2026-manila-traffic.jpg",
+    postNumber: 167,
+    title: "ASEAN Summit 2026 Manila: Road Closures and Holidays",
+    desc: "ASEAN Summit 2026 in Manila: Pasay road closures, the Nov 16–18 non-working days, holiday pay, flight changes and how to plan travel around the summit week.",
+    datePublished: "27 October 2026",
+    comments: 0,
+    link: "./asean-summit-2026-manila-road-closures-holidays",
+    location: "Pasay City, Metro Manila",
+    author: "Ren Calago",
+  },
+  {
+    category: "News",
     imagesrc: "./Images/featured-images/michelin-guide-cebu-sashimi-sushi-calamansi.jpg",
     postNumber: 166,
     title: "Michelin Guide Cebu 2027: Reveal Date and Current List",
