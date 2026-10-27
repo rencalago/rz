@@ -50,20 +50,60 @@
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "WebSite",
+      "@id": "https://www.rencalago.com/#website",
+      "name": "Ren Calago Blog",
+      "url": "https://www.rencalago.com/",
+      "publisher": {
+        "@id": "https://www.rencalago.com/#organization"
+      },
+      "author": {
+        "@id": "https://www.rencalago.com/about#ren-calago"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.rencalago.com/#organization",
+      "name": "Ren Calago Blog",
+      "url": "https://www.rencalago.com/",
+      "founder": {
+        "@id": "https://www.rencalago.com/about#ren-calago"
+      },
+      "sameAs": [
+        "https://www.facebook.com/rencalago",
+        "https://www.instagram.com/rencalago",
+        "https://www.youtube.com/rencalago",
+        "https://x.com/rencalago"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.rencalago.com/about#ren-calago",
+      "name": "Ren Calago",
+      "url": "https://www.rencalago.com/about",
+      "image": "https://www.rencalago.com/Images/ren-signature.png",
+      "sameAs": [
+        "https://www.facebook.com/rencalago",
+        "https://www.instagram.com/rencalago",
+        "https://www.youtube.com/rencalago",
+        "https://x.com/rencalago",
+        "https://www.linkedin.com/in/rencalago"
+      ]
+    },
+    {
       "@type": "BlogPosting",
       "headline": "Island-Hopping Safety in the Philippines: What to Bring",
       "description": "Planning island-hopping? Learn how Coast Guard weather halts work, what to check on a bangka, and what to pack in a dry bag for a safer day on the water.",
       "datePublished": "2026-10-18",
       "dateModified": "2026-10-18",
       "author": {
-        "@type": "Person",
-        "name": "Ren Calago",
-        "url": "https://www.rencalago.com/about"
+        "@id": "https://www.rencalago.com/about#ren-calago"
       },
       "publisher": {
-        "@type": "Organization",
-        "name": "Ren Calago Blog",
-        "url": "https://www.rencalago.com/"
+        "@id": "https://www.rencalago.com/#organization"
+      },
+      "isPartOf": {
+        "@id": "https://www.rencalago.com/#website"
       },
       "mainEntityOfPage": "https://www.rencalago.com/island-hopping-safety-what-to-bring",
       "image": "https://www.rencalago.com/Images/featured-images/island-hopping-best-thing-to-do-in-philippines.jpg"

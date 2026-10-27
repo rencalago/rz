@@ -40,20 +40,60 @@
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "WebSite",
+      "@id": "https://www.rencalago.com/#website",
+      "name": "Ren Calago Blog",
+      "url": "https://www.rencalago.com/",
+      "publisher": {
+        "@id": "https://www.rencalago.com/#organization"
+      },
+      "author": {
+        "@id": "https://www.rencalago.com/about#ren-calago"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.rencalago.com/#organization",
+      "name": "Ren Calago Blog",
+      "url": "https://www.rencalago.com/",
+      "founder": {
+        "@id": "https://www.rencalago.com/about#ren-calago"
+      },
+      "sameAs": [
+        "https://www.facebook.com/rencalago",
+        "https://www.instagram.com/rencalago",
+        "https://www.youtube.com/rencalago",
+        "https://x.com/rencalago"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.rencalago.com/about#ren-calago",
+      "name": "Ren Calago",
+      "url": "https://www.rencalago.com/about",
+      "image": "https://www.rencalago.com/Images/ren-signature.png",
+      "sameAs": [
+        "https://www.facebook.com/rencalago",
+        "https://www.instagram.com/rencalago",
+        "https://www.youtube.com/rencalago",
+        "https://x.com/rencalago",
+        "https://www.linkedin.com/in/rencalago"
+      ]
+    },
+    {
       "@type": "BlogPosting",
       "headline": "Alimyon Kapehan San Jose: Mountain Cafe Near Twin Lakes",
       "description": "Alimyon Kapehan (kapihan) in San Jose, Negros Oriental: a Filipino-style mountain cafe with a pond and views, 20 minutes off the highway near Twin Lakes.",
       "datePublished": "2023-02-25",
       "dateModified": "2026-10-22",
       "author": {
-        "@type": "Person",
-        "name": "Ren Calago",
-        "url": "https://www.rencalago.com/about"
+        "@id": "https://www.rencalago.com/about#ren-calago"
       },
       "publisher": {
-        "@type": "Organization",
-        "name": "Ren Calago Blog",
-        "url": "https://www.rencalago.com/"
+        "@id": "https://www.rencalago.com/#organization"
+      },
+      "isPartOf": {
+        "@id": "https://www.rencalago.com/#website"
       },
       "mainEntityOfPage": "https://www.rencalago.com/alimyon-kapehan-san-jose",
       "image": "https://www.rencalago.com/Images/featured-images/alimyon-san-jose-dumaguete.jpeg"

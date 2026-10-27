@@ -50,20 +50,60 @@
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "WebSite",
+      "@id": "https://www.rencalago.com/#website",
+      "name": "Ren Calago Blog",
+      "url": "https://www.rencalago.com/",
+      "publisher": {
+        "@id": "https://www.rencalago.com/#organization"
+      },
+      "author": {
+        "@id": "https://www.rencalago.com/about#ren-calago"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.rencalago.com/#organization",
+      "name": "Ren Calago Blog",
+      "url": "https://www.rencalago.com/",
+      "founder": {
+        "@id": "https://www.rencalago.com/about#ren-calago"
+      },
+      "sameAs": [
+        "https://www.facebook.com/rencalago",
+        "https://www.instagram.com/rencalago",
+        "https://www.youtube.com/rencalago",
+        "https://x.com/rencalago"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.rencalago.com/about#ren-calago",
+      "name": "Ren Calago",
+      "url": "https://www.rencalago.com/about",
+      "image": "https://www.rencalago.com/Images/ren-signature.png",
+      "sameAs": [
+        "https://www.facebook.com/rencalago",
+        "https://www.instagram.com/rencalago",
+        "https://www.youtube.com/rencalago",
+        "https://x.com/rencalago",
+        "https://www.linkedin.com/in/rencalago"
+      ]
+    },
+    {
       "@type": "BlogPosting",
       "headline": "Cebu Tourism Moves Off the Beaten Path in 2026",
       "description": "Cebu's 2026 arrivals and new hotel plans point beyond the city: Cordova, Bantayan, Malapascua, Moalboal and Oslob. What the shift means for your next trip.",
       "datePublished": "2026-10-16",
       "dateModified": "2026-10-16",
       "author": {
-        "@type": "Person",
-        "name": "Ren Calago",
-        "url": "https://www.rencalago.com/about"
+        "@id": "https://www.rencalago.com/about#ren-calago"
       },
       "publisher": {
-        "@type": "Organization",
-        "name": "Ren Calago Blog",
-        "url": "https://www.rencalago.com/"
+        "@id": "https://www.rencalago.com/#organization"
+      },
+      "isPartOf": {
+        "@id": "https://www.rencalago.com/#website"
       },
       "mainEntityOfPage": "https://www.rencalago.com/cebu-tourism-off-the-beaten-path-2026",
       "image": "https://www.rencalago.com/Images/featured-images/moalboal-tourism-in-cebu.jpg"

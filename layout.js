@@ -33,7 +33,9 @@ const NAV = [
 ];
 
 // SOCIAL LINKS -------------------------------------------------------------
-const SOCIAL = [
+// Also used by the build for the author schema (sameAs), so keep these to
+// profiles that are live and yours.
+export const SOCIAL = [
   { label: "Facebook", short: "Facebook", href: "https://www.facebook.com/rencalago", icon: "fa-brands fa-facebook" },
   { label: "Instagram", short: "Instagram", href: "https://www.instagram.com/rencalago", icon: "fa-brands fa-instagram" },
   { label: "YouTube", short: "YouTube", href: "https://www.youtube.com/rencalago", icon: "fa-brands fa-youtube" },

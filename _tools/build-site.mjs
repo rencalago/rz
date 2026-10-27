@@ -38,6 +38,7 @@ import { fileURLToPath } from "node:url";
 import { loadSite } from "./site-runtime.mjs";
 import { regionOf } from "../regions.js";
 import { commentsReady } from "../config.js";
+import { SOCIAL } from "../layout.js";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const checkOnly = process.argv.includes("--check");
@@ -734,7 +735,41 @@ const analyticsSnippet = `
 // sits on the site (breadcrumbs), and what the site itself is called.
 // Optional in allPost.js: dateModified: "20 October 2026" when you update a post.
 const SITE_NAME = "Ren Calago Blog";
-const AUTHOR = { "@type": "Person", name: "Ren Calago", url: `${BASE}/about` };
+
+// Who runs the site. Every page carries these, and articles point to them by @id,
+// so Google ties the posts, the author and his social profiles together.
+// Social links come from SOCIAL in layout.js (the header and footer icons).
+// Profiles that are not in the menu, such as LinkedIn, go in EXTRA_PROFILES.
+const EXTRA_PROFILES = ["https://www.linkedin.com/in/rencalago"];
+const SOCIAL_PROFILES = SOCIAL.map((s) => s.href.replace(/^https:\/\/(www\.)?twitter\.com\//, "https://x.com/"));
+const PERSON_ID = `${BASE}/about#ren-calago`;
+const ORG_ID = `${BASE}/#organization`;
+const WEBSITE_ID = `${BASE}/#website`;
+const PERSON = {
+  "@type": "Person",
+  "@id": PERSON_ID,
+  name: "Ren Calago",
+  url: `${BASE}/about`,
+  image: `${BASE}/Images/ren-signature.png`,
+  sameAs: [...SOCIAL_PROFILES, ...EXTRA_PROFILES],
+};
+const ORGANIZATION = {
+  "@type": "Organization",
+  "@id": ORG_ID,
+  name: SITE_NAME,
+  url: `${BASE}/`,
+  founder: { "@id": PERSON_ID },
+  sameAs: SOCIAL_PROFILES,
+};
+const WEBSITE = {
+  "@type": "WebSite",
+  "@id": WEBSITE_ID,
+  name: SITE_NAME,
+  url: `${BASE}/`,
+  publisher: { "@id": ORG_ID },
+  author: { "@id": PERSON_ID },
+};
+const AUTHOR = { "@id": PERSON_ID };
 
 function jsonLdScript(data) {
   const json = JSON.stringify(data, null, 2).replace(/</g, "\\u003c");
@@ -784,10 +819,20 @@ function ensureBreadcrumbMarkers(html) {
 function structuredData(html, slug, site, destinationPages) {
   const home = { name: "Home", url: `${BASE}/` };
   const post = site.posts.find((p) => slugOf(p) === slug);
-  const graph = [];
+  const graph = [WEBSITE, ORGANIZATION, PERSON];
 
   if (slug === "index") {
-    graph.push({ "@type": "WebSite", name: SITE_NAME, url: `${BASE}/` });
+    // WebSite, Organization and Person above say it all for the home page.
+  } else if (slug === "about") {
+    graph.push({
+      "@type": "ProfilePage",
+      "@id": pageUrl(slug),
+      url: pageUrl(slug),
+      name: "About Ren Calago",
+      mainEntity: { "@id": PERSON_ID },
+      isPartOf: { "@id": WEBSITE_ID },
+    });
+    graph.push(breadcrumbs([home, { name: "About", url: pageUrl(slug) }]));
   } else if (post) {
     const published = isoDate(post.datePublished);
     const modified = post.dateModified ? isoDate(post.dateModified) : published;
@@ -797,8 +842,9 @@ function structuredData(html, slug, site, destinationPages) {
       description: post.desc,
       datePublished: published,
       dateModified: modified,
-      author: post.author ? { ...AUTHOR, name: post.author } : AUTHOR,
-      publisher: { "@type": "Organization", name: SITE_NAME, url: `${BASE}/` },
+      author: !post.author || post.author === PERSON.name ? AUTHOR : { "@type": "Person", name: post.author },
+      publisher: { "@id": ORG_ID },
+      isPartOf: { "@id": WEBSITE_ID },
       mainEntityOfPage: pageUrl(slug),
     };
     if (post.imagesrc) article.image = absoluteImage(post.imagesrc);
