@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/el-nido-island-hopping-tours-a-b-c-d.jpg",
+    postNumber: 175,
+    title: "El Nido Island Hopping Tours A, B, C, D: Which to Book",
+    desc: "El Nido Tours A, B, C and D compared: stops, 2026 joiner rates, lagoon and eco fees, cancellation risk by season, and which tour to book for 1, 2 or 3 days.",
+    datePublished: "28 October 2026",
+    comments: 0,
+    link: "./el-nido-island-hopping-tours-a-b-c-d",
+    location: "El Nido, Palawan",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/baguio-country-club-christmas-village-snow.jpg",
     postNumber: 174,
     title: "Baguio Country Club Christmas Village 2026: Tickets, Hours",
