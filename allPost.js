@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/baguio-night-market-harrison-road.jpg",
+    postNumber: 169,
+    title: "Baguio Night Market Guide: Hours, Ukay Tips and Food",
+    desc: "Baguio Night Market on Harrison Road: opening hours, best time to go, how to shop the ukay-ukay stalls, what to eat, getting there and staying safe.",
+    datePublished: "27 October 2026",
+    comments: 0,
+    link: "./baguio-night-market-guide",
+    location: "Baguio City, Benguet",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/mactan-island-hopping-snorkeling.jpg",
     postNumber: 168,
     title: "Mactan Island Hopping: Costs and How to Book a Fair Trip",
