@@ -21,6 +21,7 @@ const NAV = [
   { key: "dest=cebu", label: "Cebu", href: "./cebu-travel-guides", page: "cebu-travel-guides" },
   { key: "dest=dumaguete", label: "Dumaguete", href: "./dumaguete-travel-guides", page: "dumaguete-travel-guides" },
   { key: "dest=negros-oriental", label: "Negros Oriental", href: "./negros-oriental-travel-guides", page: "negros-oriental-travel-guides" , group: "more"},
+  { key: "dest=baguio", label: "Baguio", href: "./baguio-travel-guides", page: "baguio-travel-guides" , group: "more"},
   { key: "dest=luzon", label: "Luzon", href: "./luzon-travel-guides", page: "luzon-travel-guides" , group: "more"},
   { key: "dest=palawan-mimaropa", label: "Palawan", href: "./palawan-mimaropa-travel-guides", page: "palawan-mimaropa-travel-guides" , group: "more"},
   { key: "dest=visayas", label: "Visayas", href: "./visayas-travel-guides", page: "visayas-travel-guides" , group: "more"},
