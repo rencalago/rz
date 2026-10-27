@@ -1,6 +1,19 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/bukidnon-highland-road-sunrise.jpg",
+    postNumber: 171,
+    title: "Bukidnon Road Trip: Malaybalay and Valencia From CDO",
+    desc: "Plan a two-day Bukidnon road trip: buses up the Sayre Highway, the Monastery of the Transfiguration in Malaybalay, Lake Apo in Valencia, and where to stay.",
+    datePublished: "27 October 2026",
+    comments: 0,
+    link: "./bukidnon-road-trip-malaybalay-valencia",
+    location: "Malaybalay City, Bukidnon",
+    agodaDestination: "Malaybalay",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/pagadian-city-hill-road-illana-bay.jpg",
     postNumber: 170,
     title: "Pagadian City Guide: Tilted Tricycles, Dao Dao and Bay Views",
