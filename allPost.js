@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/baguio-arboretum-boardwalk-pine-forest.jpg",
+    postNumber: 173,
+    title: "Baguio Arboretum Guide: Entrance Fee, What to See, Tips",
+    desc: "Baguio Arboretum, opened October 2026 beside the Botanical Garden: entrance fees, what's inside, getting there on Leonard Wood Road and the best time to visit.",
+    datePublished: "27 October 2026",
+    comments: 0,
+    link: "./baguio-arboretum-guide",
+    location: "Baguio City, Benguet",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/agusan-marsh-panlabuhan-floating-village.jpg",
     postNumber: 172,
     title: "Agusan Marsh Floating Village: How to Visit Lake Panlabuhan",
