@@ -1,6 +1,19 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/agusan-marsh-panlabuhan-floating-village.jpg",
+    postNumber: 172,
+    title: "Agusan Marsh Floating Village: How to Visit Lake Panlabuhan",
+    desc: "Visit the Agusan Marsh floating village at Lake Panlabuhan: how the overnight tour from Bunawan works, booking, getting there, when to go and what to pack.",
+    datePublished: "27 October 2026",
+    comments: 0,
+    link: "./agusan-marsh-floating-village-lake-panlabuhan",
+    location: "Bunawan, Agusan del Sur",
+    agodaDestination: "Butuan",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/bukidnon-highland-road-sunrise.jpg",
     postNumber: 171,
     title: "Bukidnon Road Trip: Malaybalay and Valencia From CDO",
