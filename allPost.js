@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/baguio-country-club-christmas-village-snow.jpg",
+    postNumber: 174,
+    title: "Baguio Country Club Christmas Village 2026: Tickets, Hours",
+    desc: "BCC Christmas Village 2026 in Baguio: Christmas in Candyland ticket prices, BLISTT and senior rates, hours, the two-in-one park deal, kids' rides and rules.",
+    datePublished: "27 October 2026",
+    comments: 0,
+    link: "./baguio-country-club-christmas-village-2026",
+    location: "Baguio City, Benguet",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/baguio-arboretum-boardwalk-pine-forest.jpg",
     postNumber: 173,
     title: "Baguio Arboretum Guide: Entrance Fee, What to See, Tips",
