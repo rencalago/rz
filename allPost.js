@@ -1,5 +1,17 @@
 let newPostTwo = [
   {
+    category: "Travel",
+    imagesrc: "./Images/featured-images/mactan-island-hopping-snorkeling.jpg",
+    postNumber: 168,
+    title: "Mactan Island Hopping: Real Costs and How to Avoid Scams",
+    desc: "Mactan island hopping costs in 2026: boat rates, island and environmental fees, which islands you visit, the canvasser trap, and how to book a fair-priced day.",
+    datePublished: "27 October 2026",
+    comments: 0,
+    link: "./mactan-island-hopping-costs-avoid-scams",
+    location: "Lapu-Lapu City, Cebu",
+    author: "Ren Calago",
+  },
+  {
     category: "News",
     imagesrc: "./Images/featured-images/asean-summit-2026-manila-traffic.jpg",
     postNumber: 167,
