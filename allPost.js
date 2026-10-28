@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/things-to-do-mactan-beach-rock-islet.jpg",
+    postNumber: 180,
+    title: "Things to Do in Mactan, Cebu: Shrine, Seafood and Islands",
+    desc: "Things to do in Mactan beyond the resort: Mactan Shrine, sutukil seafood, guitar workshops, island hopping, Mactan Newtown and Olango birdwatching.",
+    datePublished: "29 October 2026",
+    comments: 0,
+    link: "./things-to-do-in-mactan-cebu",
+    location: "Lapu-Lapu City, Cebu",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/manila-to-baguio-bus-arrival-baguio-city.jpg",
     postNumber: 179,
     title: "Manila to Baguio by Bus: Routes, Fares and Terminals",
