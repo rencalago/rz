@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/manila-to-baguio-bus-arrival-baguio-city.jpg",
+    postNumber: 179,
+    title: "Manila to Baguio by Bus: Routes, Fares and Terminals",
+    desc: "Manila to Baguio by bus in 2026: Victory Liner, Genesis, JoyBus and Solid North fares, Cubao, Pasay and PITX terminals, bus classes and booking tips.",
+    datePublished: "28 October 2026",
+    comments: 0,
+    link: "./manila-to-baguio-bus-routes-fares-terminals",
+    location: "Baguio City, Benguet",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/best-beaches-philippines-region-by-region.jpg",
     postNumber: 178,
     title: "Best Beaches in the Philippines, Region by Region",
