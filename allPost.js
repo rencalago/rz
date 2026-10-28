@@ -1,5 +1,17 @@
 let newPostTwo = [
   {
+    category: "Travel",
+    imagesrc: "./Images/featured-images/best-time-to-visit-philippines-month-by-month.jpg",
+    postNumber: 177,
+    title: "Best Time to Visit the Philippines, Month by Month",
+    desc: "When to visit the Philippines, month by month: dry and rainy seasons by region, typhoon months, major festivals, crowds and the cheapest weeks to travel.",
+    datePublished: "28 October 2026",
+    comments: 0,
+    link: "./best-time-to-visit-philippines-month-by-month",
+    location: "Philippines",
+    author: "Ren Calago",
+  },
+  {
     category: "News",
     imagesrc: "./Images/featured-images/michelin-guide-cebu-sashimi-sushi-calamansi.jpg",
     postNumber: 176,
