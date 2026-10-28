@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/best-beaches-philippines-region-by-region.jpg",
+    postNumber: 178,
+    title: "Best Beaches in the Philippines, Region by Region",
+    desc: "The best beaches in the Philippines by region: Luzon, Western, Central and Eastern Visayas, Palawan and Mindanao, with quieter picks and which months suit each.",
+    datePublished: "28 October 2026",
+    comments: 0,
+    link: "./best-beaches-philippines-region-by-region",
+    location: "Philippines",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/best-time-to-visit-philippines-month-by-month.jpg",
     postNumber: 177,
     title: "Best Time to Visit the Philippines, Month by Month",
