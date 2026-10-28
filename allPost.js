@@ -1,5 +1,17 @@
 let newPostTwo = [
   {
+    category: "News",
+    imagesrc: "./Images/featured-images/michelin-guide-cebu-sashimi-sushi-calamansi.jpg",
+    postNumber: 176,
+    title: "Michelin Guide Manila 2027: Stars, Bib Gourmands, Reveal",
+    desc: "Michelin Guide Manila 2027 is revealed on 29 October. See Manila's 9 starred restaurants and 19 Bib Gourmands by area, tasting menu costs and booking tips.",
+    datePublished: "28 October 2026",
+    comments: 0,
+    link: "./michelin-guide-manila-2027",
+    location: "Makati, Metro Manila",
+    author: "Ren Calago",
+  },
+  {
     category: "Travel",
     imagesrc: "./Images/featured-images/el-nido-island-hopping-tours-a-b-c-d.jpg",
     postNumber: 175,
