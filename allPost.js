@@ -1,7 +1,7 @@
 let newPostTwo = [
   {
     category: "Travel",
-    imagesrc: "https://drive.google.com/thumbnail?id=1L-ADv5QDhaCofFsS9XUwz519-1TRbDM-&sz=s4000",
+    imagesrc: "./Images/featured-images/sinulog-festival-dancers-santo-nino-cebu.jpg",
     postNumber: 187,
     title: "Sinulog 2027: Where to Stay and How to Get Around",
     desc: "Where to stay for Sinulog 2027 in Cebu City, how early to book, road closures, festival buses, getting in from the airport and leaving for the south.",
