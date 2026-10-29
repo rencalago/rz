@@ -1,5 +1,17 @@
 let newPostTwo = [
   {
+    category: "Travel",
+    imagesrc: "./Images/featured-images/taal-volcano-view-from-tagaytay.jpg",
+    postNumber: 185,
+    title: "Tagaytay vs Baguio: Which Cool Escape Fits Your Weekend?",
+    desc: "Tagaytay vs Baguio for the cool season: how cold each gets, bus time and fares from Manila, costs, crowds and Taal safety, so you can pick the right trip.",
+    datePublished: "29 October 2026",
+    comments: 0,
+    link: "./tagaytay-vs-baguio-cool-weather-weekend",
+    location: "Tagaytay, Cavite",
+    author: "Ren Calago",
+  },
+  {
     category: "Cafes & Restaurant",
     imagesrc: "./Images/featured-images/baguio-strawberry-taho-cup.jpg",
     postNumber: 184,
