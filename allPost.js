@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/cebu-lighthouse-il-corso-srp.jpg",
+    postNumber: 182,
+    title: "The Cebu Lighthouse at IL Corso: Fees, Hours and Tips",
+    desc: "The Cebu Lighthouse at IL Corso, SRP: P150 entry, opening hours, the 151-step climb, Urban Arts PH mural, how to get there and an SRP sunset evening plan.",
+    datePublished: "29 October 2026",
+    comments: 0,
+    link: "./cebu-lighthouse-il-corso-guide",
+    location: "Cebu City, Cebu",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/coron-island-hopping-lagoon-boardwalk.jpg",
     postNumber: 181,
     title: "Coron Island Hopping Tours 2026: Which One to Book",
