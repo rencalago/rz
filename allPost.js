@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/coron-island-hopping-lagoon-boardwalk.jpg",
+    postNumber: 181,
+    title: "Coron Island Hopping Tours 2026: Which One to Book",
+    desc: "Coron island hopping tours compared: Ultimate, Super Ultimate, beach, Reefs and Wrecks and Calauit, with 2026 rates, cash fees and a 2 to 4 day plan.",
+    datePublished: "29 October 2026",
+    comments: 0,
+    link: "./coron-island-hopping-tours",
+    location: "Coron, Palawan",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/things-to-do-mactan-beach-rock-islet.jpg",
     postNumber: 180,
     title: "Things to Do in Mactan, Cebu: Shrine, Seafood and Islands",
