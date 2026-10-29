@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/palawan-quiet-beach-bangka-kayak.jpg",
+    postNumber: 183,
+    title: "Palawan Itinerary: 5, 7 or 10 Days Without Backtracking",
+    desc: "Palawan itinerary for 5, 7 or 10 days: Puerto Princesa, Port Barton, El Nido and Coron in one direction, with van and ferry times, fares and a daily budget.",
+    datePublished: "29 October 2026",
+    comments: 0,
+    link: "./palawan-itinerary-5-7-10-days",
+    location: "Palawan",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/cebu-lighthouse-il-corso-srp.jpg",
     postNumber: 182,
     title: "The Cebu Lighthouse at IL Corso: Fees, Hours and Tips",
