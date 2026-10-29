@@ -8,7 +8,7 @@ let newPostTwo = [
     datePublished: "30 October 2026",
     comments: 0,
     link: "./sinulog-2027-hotels-getting-around",
-    location: "Cebu City",
+    location: "Cebu City, Cebu",
     author: "Ren Calago",
   },
   {
