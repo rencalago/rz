@@ -1,5 +1,17 @@
 let newPostTwo = [
   {
+    category: "Cafes & Restaurant",
+    imagesrc: "./Images/featured-images/baguio-strawberry-taho-cup.jpg",
+    postNumber: 184,
+    title: "Baguio Food Guide: Where Locals Eat and What to Try",
+    desc: "Baguio food guide: strawberry taho, Good Taste, sizzling plates, pinikpikan, Café by the Ruins, night market snacks and Good Shepherd ube jam to bring home.",
+    datePublished: "29 October 2026",
+    comments: 0,
+    link: "./baguio-food-guide-where-locals-eat",
+    location: "Baguio City, Benguet",
+    author: "Ren Calago",
+  },
+  {
     category: "Travel",
     imagesrc: "./Images/featured-images/palawan-quiet-beach-bangka-kayak.jpg",
     postNumber: 183,
