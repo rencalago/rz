@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "https://drive.google.com/thumbnail?id=1L-ADv5QDhaCofFsS9XUwz519-1TRbDM-&sz=s4000",
+    postNumber: 187,
+    title: "Sinulog 2027: Where to Stay and How to Get Around",
+    desc: "Where to stay for Sinulog 2027 in Cebu City, how early to book, road closures, festival buses, getting in from the airport and leaving for the south.",
+    datePublished: "30 October 2026",
+    comments: 0,
+    link: "./sinulog-2027-hotels-getting-around",
+    location: "Cebu City",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/best-december-beach-escapes-philippines.jpg",
     postNumber: 186,
     title: "Best December Beach Escapes in the Philippines",
