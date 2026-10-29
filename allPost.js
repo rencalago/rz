@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/best-december-beach-escapes-philippines.jpg",
+    postNumber: 186,
+    title: "Best December Beach Escapes in the Philippines",
+    desc: "Where to go for a December beach trip in the Philippines: which coasts stay dry under Amihan, plus Palawan, Boracay, Cebu islands, crowds and holiday prices.",
+    datePublished: "29 October 2026",
+    comments: 0,
+    link: "./best-december-beach-escapes-philippines",
+    location: "Philippines",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/taal-volcano-view-from-tagaytay.jpg",
     postNumber: 185,
     title: "Tagaytay vs Baguio: Which Cool Escape Fits Your Weekend?",
