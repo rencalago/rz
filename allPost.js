@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/medellin-cebu-cane-field-highway.jpg",
+    postNumber: 189,
+    title: "Medellin, Cebu: A Guide to the North's Sugar Bowl",
+    desc: "Medellin, Cebu guide: Gibitngil Island boats and diving, cane-field roads, the 1928 sugar mill, buses, where to stay and the town a year after the quake.",
+    datePublished: "30 October 2026",
+    comments: 0,
+    link: "./medellin-cebu-travel-guide",
+    location: "Medellin, Cebu",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/best-beaches-philippines-region-by-region.jpg",
     postNumber: 188,
     title: "Puerto Princesa to El Nido by Van: Fares, Times, Tips",
