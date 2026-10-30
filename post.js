@@ -245,7 +245,8 @@ function insertAgodaWidget() {
   // Fallback for articles with no Klook box: the template, searching the
   // article's own place (agodaDestination, else the first part of location).
   const fallbackCode = () => {
-    if (body.querySelector(".klook-widget")) return "";
+    // agodaAlways: true in allPost.js keeps the box even when a Klook box is on the page.
+    if (body.querySelector(".klook-widget") && !post.agodaAlways) return "";
     if (!AGODA_TEMPLATE) return "";
     let dest = String(post.agodaDestination || "").trim();
     if (!dest && keywordAt(location, "philippines") < 0) dest = String(post.location || "").split(",")[0].trim();

@@ -1,6 +1,20 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/where-to-stay-in-baguio-pine-park-family.jpg",
+    postNumber: 188,
+    title: "Where to Stay in Baguio: Best Areas for Every Trip",
+    desc: "Where to stay in Baguio by area: Session Road and Burnham Park, Camp John Hay, Outlook Drive, Leonard Wood and La Trinidad, plus transient house tips.",
+    datePublished: "30 October 2026",
+    comments: 0,
+    link: "./where-to-stay-in-baguio-best-areas",
+    location: "Baguio City, Benguet",
+    agodaDestination: "Baguio",
+    agodaAlways: true,
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/sinulog-festival-dancers-santo-nino-cebu.jpg",
     postNumber: 187,
     title: "Sinulog 2027: Where to Stay and How to Get Around",
