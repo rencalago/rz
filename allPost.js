@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/best-beaches-philippines-region-by-region.jpg",
+    postNumber: 188,
+    title: "Puerto Princesa to El Nido by Van: Fares, Times, Tips",
+    desc: "Puerto Princesa to El Nido by van in 2026: shared and private van fares, departure times, terminals, the bus option, stopovers and tips for a smoother ride.",
+    datePublished: "30 October 2026",
+    comments: 0,
+    link: "./puerto-princesa-to-el-nido-by-van",
+    location: "El Nido, Palawan",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/sinulog-festival-dancers-santo-nino-cebu.jpg",
     postNumber: 187,
     title: "Sinulog 2027: Where to Stay and How to Get Around",
