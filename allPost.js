@@ -1,6 +1,19 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/don-salvador-benedicto-pine-trees-highway.jpg",
+    postNumber: 192,
+    title: "Don Salvador Benedicto: A Stopover on the Road to Bacolod",
+    desc: "Break the San Carlos to Bacolod trip in Don Salvador Benedicto: pine-lined highway, Malatan-og Falls, bus tips, cool weather and Kanlaon checks before you go.",
+    datePublished: "31 October 2026",
+    comments: 0,
+    link: "./don-salvador-benedicto-stopover-road-to-bacolod",
+    location: "Don Salvador Benedicto, Negros Occidental",
+    agodaDestination: "Bacolod",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/mambukal-resort-murcia-river-boulders.jpg",
     postNumber: 191,
     title: "Mambukal Resort: A Nature Day Trip From Bacolod",
