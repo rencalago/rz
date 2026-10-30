@@ -1,6 +1,19 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/mambukal-resort-murcia-river-boulders.jpg",
+    postNumber: 191,
+    title: "Mambukal Resort: A Nature Day Trip From Bacolod",
+    desc: "Mambukal Resort day trip guide: Libertad bus to Murcia, sulfur pools, the seven falls trail, fruit bats, 2026 upgrades, fees and Kanlaon safety checks.",
+    datePublished: "30 October 2026",
+    comments: 0,
+    link: "./mambukal-resort-bacolod-day-trip",
+    location: "Murcia, Negros Occidental",
+    agodaDestination: "Bacolod",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/boracay-vs-palawan-vs-siargao-el-nido-karst.jpg",
     postNumber: 190,
     title: "Boracay vs Palawan vs Siargao: Which Island to Choose",
