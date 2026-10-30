@@ -2243,7 +2243,7 @@ let newPostTwo = [
   {
     category: "Travel",
     imagesrc:
-      "https://drive.google.com/thumbnail?id=1wYVQLCG2rfVX6D9L1WTkFz6lQLQ3Vire&sz=s4000",
+      "./Images/Baguio-Images/baguio-botanical-garden-flower-tunnel.jpg",
     postNumber: 9,
     title: "5-Day Baguio Itinerary With a Toddler: Places We Visited",
     desc: "Our 5-day Baguio itinerary with a toddler: Wright Park, Mines View, Camp John Hay, Igorot Stone Kingdom and La Trinidad strawberries, with current entry fees.",
