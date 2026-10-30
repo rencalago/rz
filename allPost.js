@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/boracay-vs-palawan-vs-siargao-el-nido-karst.jpg",
+    postNumber: 190,
+    title: "Boracay vs Palawan vs Siargao: Which Island to Choose",
+    desc: "Boracay, Palawan or Siargao? Compare travel time, fees, beaches, surf and the best months for each island, then match one to your trip length and travel style.",
+    datePublished: "30 October 2026",
+    comments: 0,
+    link: "./boracay-vs-palawan-vs-siargao",
+    location: "Philippines",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/medellin-cebu-cane-field-highway.jpg",
     postNumber: 189,
     title: "Medellin, Cebu: A Guide to the North's Sugar Bowl",
