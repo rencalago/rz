@@ -20,6 +20,9 @@
 //   otherwise the first part of "location" ("Sipalay City, Negros Occidental"
 //   -> "Sipalay City"). Use a town or island Agoda lists hotels for.
 //   Nationwide stories ("Philippines") get none unless agodaDestination is set.
+// - EXCEPTION: set agodaAlways: true on a post in allPost.js to show the
+//   fallback box even when the article also has a Klook box (used on the
+//   "Where to stay in Baguio" guide).
 // - Manual override: put <div class="agoda-here"></div> in an article where the
 //   widget should go. Optional: data-place="clark" (any match word).
 //
