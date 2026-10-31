@@ -1,5 +1,17 @@
 let newPostTwo = [
   {
+    category: "Travel",
+    imagesrc: "./Images/featured-images/philippine-holidays-2027-long-weekends-travel-planner.jpg",
+    postNumber: 194,
+    title: "Philippine Holidays 2027: Long Weekends and Leave Planner",
+    desc: "See all 2027 Philippine holidays, the long weekends they create and the leave days that stretch them, plus the kind of trip each break suits best.",
+    datePublished: "31 October 2026",
+    comments: 0,
+    link: "./philippine-holidays-2027-long-weekends-travel-planner",
+    location: "Philippines",
+    author: "Ren Calago",
+  },
+  {
     category: "News",
     imagesrc: "./Images/featured-images/mayon-volcano-from-legazpi-bay.jpg",
     postNumber: 193,
