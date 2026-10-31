@@ -1,6 +1,19 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/campuestohan-highland-resort-talisay-negros.jpg",
+    postNumber: 196,
+    title: "Campuestohan 2026: Fees, Shuttle and the Giant Rooster",
+    desc: "Campuestohan Highland Resort in 2026: ₱250 entrance, ride prices, the ₱100 Bacolod shuttle schedule, Rooster Room rates and how to pair it with The Ruins.",
+    datePublished: "31 October 2026",
+    comments: 0,
+    link: "./campuestohan-highland-resort-fees-shuttle-rooster",
+    location: "Talisay City, Negros Occidental",
+    agodaDestination: "Bacolod",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/lakawon-island-sunset-beach-letters.jpg",
     postNumber: 195,
     title: "Lakawon Island: Day Trip or Overnight? Costs and Tips",
