@@ -1,5 +1,17 @@
 let newPostTwo = [
   {
+    category: "News",
+    imagesrc: "./Images/featured-images/timezone-robinsons-dumaguete-arcade-entrance.jpg",
+    postNumber: 200,
+    title: "Timezone Is Now Open at Robinsons Dumaguete",
+    desc: "Timezone is now open at Robinsons Dumaguete: Level 3 location, 11 a.m. to 11 p.m. hours, arcade, VR, karaoke, billiards and bowling, plus Powercard tips.",
+    datePublished: "31 October 2026",
+    comments: 0,
+    link: "./timezone-now-open-robinsons-dumaguete",
+    location: "Dumaguete City, Negros Oriental",
+    author: "Ren Calago",
+  },
+  {
     category: "Travel",
     imagesrc: "./Images/featured-images/mount-talinis-trail-crater-lake-view.jpg",
     postNumber: 199,
