@@ -1,5 +1,18 @@
 let newPostTwo = [
   {
+    category: "News",
+    imagesrc: "./Images/featured-images/mayon-volcano-from-legazpi-bay.jpg",
+    postNumber: 193,
+    title: "Is It Safe to Visit Mayon Volcano Right Now?",
+    desc: "Mayon is back on Alert Level 3 after its 30 October eruption. What is closed, what still works in Legazpi, flights, ash and whether to keep your trip.",
+    datePublished: "31 October 2026",
+    comments: 0,
+    link: "./is-it-safe-to-visit-mayon-volcano-alert-level",
+    location: "Legazpi City, Albay",
+    agodaDestination: "Legazpi",
+    author: "Ren Calago",
+  },
+  {
     category: "Travel",
     imagesrc: "./Images/featured-images/don-salvador-benedicto-pine-trees-highway.jpg",
     postNumber: 192,
