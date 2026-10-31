@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/roxas-city-capiz-seafood-scallops-feast.jpg",
+    postNumber: 197,
+    title: "Roxas City Seafood Trip: What to Order and Where",
+    desc: "Plan a Roxas City seafood trip in Capiz: diwal season, baked scallops and talaba, the People's Park Seafood Court, Baybay paluto tips and how to get there.",
+    datePublished: "31 October 2026",
+    comments: 0,
+    link: "./roxas-city-capiz-seafood-food-trip",
+    location: "Roxas City, Capiz",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/campuestohan-highland-resort-talisay-negros.jpg",
     postNumber: 196,
     title: "Campuestohan 2026: Fees, Shuttle and the Giant Rooster",
