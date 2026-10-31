@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "News",
+    imagesrc: "./Images/featured-images/burnham-lake-boat-rental-baguio.jpg",
+    postNumber: 203,
+    title: "Burnham Lake Is Open Again: Boat Rental Prices and Guide",
+    desc: "Burnham Lake is open again: the ₱250 boat rental rate, how to avoid overcharging, walkway repairs, best times to ride and what else is open in Burnham Park.",
+    datePublished: "31 October 2026",
+    comments: 0,
+    link: "./burnham-lake-open-again-boat-rental-prices",
+    location: "Baguio City, Benguet",
+    author: "Ren Calago",
+  },
+  {
+    category: "News",
     imagesrc: "./Images/featured-images/dumaguete-market-street-stalls.jpg",
     postNumber: 202,
     title: "Dumaguete Charter Day 2026: What's Happening on November 24?",
