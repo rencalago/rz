@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "News",
+    imagesrc: "./Images/featured-images/cebu-white-sand-beach-palm-trees.jpg",
+    postNumber: 201,
+    title: "New Attractions in Cebu to Visit in 2026",
+    desc: "New attractions in Cebu for 2026: the Cebu Lighthouse, SM Seaside Cebu Arena, Fantasy World, the BRT, Mactan Expo, a Balamban rest stop and what's coming next.",
+    datePublished: "31 October 2026",
+    comments: 0,
+    link: "./new-attractions-in-cebu-2026",
+    location: "Cebu City, Cebu",
+    author: "Ren Calago",
+  },
+  {
+    category: "News",
     imagesrc: "./Images/featured-images/timezone-robinsons-dumaguete-arcade-entrance.jpg",
     postNumber: 200,
     title: "Timezone Is Now Open at Robinsons Dumaguete",
