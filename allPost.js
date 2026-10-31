@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/sandurot-festival-2026-street-dancers-red-costumes.jpg",
+    postNumber: 198,
+    title: "Sandurot Festival 2026: Dates, Events and Fiesta Week",
+    desc: "Sandurot Festival 2026 in Dumaguete now falls in fiesta week. Likely dates around Charter Day, the street dance and showdown, where to watch and when to book.",
+    datePublished: "31 October 2026",
+    comments: 0,
+    link: "./sandurot-festival-2026-events-schedule",
+    location: "Dumaguete City, Negros Oriental",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/roxas-city-capiz-seafood-scallops-feast.jpg",
     postNumber: 197,
     title: "Roxas City Seafood Trip: What to Order and Where",
