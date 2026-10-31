@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/mount-talinis-trail-crater-lake-view.jpg",
+    postNumber: 199,
+    title: "Mount Talinis Trails: What Hikers Need to Know",
+    desc: "Valencia closes its Mount Talinis trails from 1 November 2026. What it means for hikers, the Apolong and Bediao routes, Dauin permits, guides and what to pack.",
+    datePublished: "31 October 2026",
+    comments: 0,
+    link: "./mount-talinis-trails-what-hikers-need-to-know",
+    location: "Valencia, Negros Oriental",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/sandurot-festival-2026-street-dancers-red-costumes.jpg",
     postNumber: 198,
     title: "Sandurot Festival 2026: Dates, Events and Fiesta Week",
