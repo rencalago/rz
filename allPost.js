@@ -1,6 +1,19 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/lakawon-island-sunset-beach-letters.jpg",
+    postNumber: 195,
+    title: "Lakawon Island: Day Trip or Overnight? Costs and Tips",
+    desc: "Plan a Lakawon Island trip: the bus from Bacolod to the Cadiz port, fees, day cottages, room rates, crowds, and whether a day trip or a night suits you.",
+    datePublished: "31 October 2026",
+    comments: 0,
+    link: "./lakawon-island-day-trip-or-overnight",
+    location: "Cadiz City, Negros Occidental",
+    agodaDestination: "Bacolod",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/osmena-peak-traverse-to-kawasan.jpg",
     postNumber: 194,
     title: "Philippine Holidays 2027: Long Weekends and Leave Planner",
