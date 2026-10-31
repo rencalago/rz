@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "News",
+    imagesrc: "./Images/featured-images/dumaguete-market-street-stalls.jpg",
+    postNumber: 202,
+    title: "Dumaguete Charter Day 2026: What's Happening on November 24?",
+    desc: "Dumaguete Charter Day 2026 falls on Tuesday, 24 November: the mass, civic parade and fireworks, what closes, road closures and how it links to Sandurot week.",
+    datePublished: "31 October 2026",
+    comments: 0,
+    link: "./dumaguete-charter-day-2026-november-24",
+    location: "Dumaguete City, Negros Oriental",
+    author: "Ren Calago",
+  },
+  {
+    category: "News",
     imagesrc: "./Images/featured-images/cebu-white-sand-beach-palm-trees.jpg",
     postNumber: 201,
     title: "New Attractions in Cebu to Visit in 2026",
