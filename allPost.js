@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/la-trinidad-strawberry-farm-baguio-mountains.jpg",
+    postNumber: 214,
+    title: "Baguio and La Trinidad: A Complete Travel Guide",
+    desc: "Baguio and La Trinidad travel guide: getting there, jeepneys between the two, the strawberry farm, Valley of Colors, Bell Church, best season and a 3-day plan.",
+    datePublished: "1 November 2026",
+    comments: 0,
+    link: "./baguio-la-trinidad-travel-guide",
+    location: "Baguio City, Benguet",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/carcar-chicharon-pork-cracklings.jpg",
     postNumber: 213,
     title: "Carcar City Food Trip: Lechon, Chicharon and Local Delicacies",
