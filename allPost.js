@@ -1,5 +1,19 @@
 let newPostTwo = [
   {
+    category: "Travel",
+    imagesrc: "./Images/featured-images/animasola-island-masbate-rock-formations-guide.jpg",
+    postNumber: 210,
+    title: "Animasola Island Masbate: Rock Pools, Fees, Getting There",
+    desc: "Animasola Island in Burias, Masbate: layered rock formations, low-tide pools, boat charter rates, fees and the Pasacao to San Pascual route for island hopping.",
+    datePublished: "1 November 2026",
+    comments: 0,
+    link: "./animasola-island-masbate-rock-formations-guide",
+    location: "San Pascual, Masbate",
+    agodaDestination: "Naga",
+    quiz: {name: "Animasola Island, Burias, Masbate", vibes: ["nature","beach","adventure"], cost: 2, reach: 3, minDays: 3, family: false, boats: 1, goodMonths: [3,4,5,11,12], why: "banded rock walls and low-tide pools on a bare island off Burias, reached through Naga and a boat from Pasacao"},
+    author: "Ren Calago",
+  },
+  {
     category: "News",
     imagesrc: "./Images/featured-images/cebu-white-sand-beach-bangka-boats-aerial.jpg",
     postNumber: 209,
