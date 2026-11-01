@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/coron-palawan-beach-bangka-boats-aerial.jpg",
+    postNumber: 208,
+    title: "How to Get to Palawan from Cebu: Routes, Costs and Time",
+    desc: "How to get to Palawan from Cebu: direct flights to Puerto Princesa, El Nido and Busuanga for Coron, with the real door-to-door cost and time of each route.",
+    datePublished: "1 November 2026",
+    comments: 0,
+    link: "./how-to-get-to-palawan-from-cebu",
+    location: "Puerto Princesa City, Palawan",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/bukidnon-mountains-grassland-clouds.jpg",
     postNumber: 207,
     title: "Bukidnon Tourist Spots: Mountains, Parks and Scenic Views",
