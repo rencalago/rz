@@ -1,6 +1,19 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/davao-samal-island-cove-turquoise-water.jpg",
+    postNumber: 215,
+    title: "Davao City Itinerary: How to Spend 3 Days",
+    desc: "A 3-day Davao City itinerary: People's Park, museums and the night market, a Samal Island day by ferry, the Philippine Eagle Center, where to stay and tips.",
+    datePublished: "1 November 2026",
+    comments: 0,
+    link: "./davao-city-itinerary-3-days",
+    location: "Davao City, Davao del Sur",
+    agodaDestination: "Davao City",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/la-trinidad-strawberry-farm-baguio-mountains.jpg",
     postNumber: 214,
     title: "Baguio and La Trinidad: A Complete Travel Guide",
