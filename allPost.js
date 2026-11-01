@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/panagbenga-weekend-itinerary-festival-dancer.jpg",
+    postNumber: 211,
+    title: "Panagbenga Weekend Itinerary: Parades and Flower Farms",
+    desc: "A Panagbenga weekend itinerary: the street dance and float parades, La Trinidad's rose and strawberry farms, Baguio's quiet gardens and when to leave.",
+    datePublished: "1 November 2026",
+    comments: 0,
+    link: "./panagbenga-weekend-itinerary-flower-farms",
+    location: "Baguio City, Benguet",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/animasola-island-masbate-rock-formations-guide.jpg",
     postNumber: 210,
     title: "Animasola Island Masbate: Rock Pools, Fees, Getting There",
