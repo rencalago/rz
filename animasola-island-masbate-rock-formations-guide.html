@@ -176,6 +176,33 @@
               </div>
 
               <article class="full-content">
+<style>
+.ani-fees{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--card);box-shadow:0 10px 28px rgba(18,59,60,.08)}
+.ani-fees__head{background:linear-gradient(135deg,var(--deep),var(--accent));color:#fff;padding:16px 20px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.ani-fees__head strong{font-family:var(--font-display);font-size:1.15rem;font-weight:600}
+.ani-fees__head span{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;background:rgba(255,255,255,.16);padding:4px 10px;border-radius:999px}
+.ani-fees__row{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:14px 20px;border-top:1px solid var(--line)}
+.ani-fees__row:first-of-type{border-top:0}
+.ani-fees__label{font-weight:600;color:var(--ink)}
+.ani-fees__label small{display:block;font-weight:400;color:var(--muted);font-size:.85rem;margin-top:2px}
+.ani-fees__amt{font-family:var(--font-display);color:var(--accent-dark);font-size:1.1rem;white-space:nowrap;text-align:right}
+.ani-fees__amt small{display:block;font-family:var(--font-body);font-size:.75rem;color:var(--muted)}
+.ani-fees__foot{background:var(--soft);padding:12px 20px;font-size:.88rem;color:var(--text)}
+.ani-timing{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.ani-timing__card{position:relative;background:var(--card);border:1px solid var(--line);border-top:4px solid var(--accent);border-radius:12px;padding:20px 18px 18px;box-shadow:0 6px 18px rgba(18,59,60,.06)}
+.ani-timing__icon{width:42px;height:42px;border-radius:50%;background:var(--soft);color:var(--accent);display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+.ani-timing__eyebrow{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0}
+.ani-timing__title{font-family:var(--font-display);font-size:1.2rem;color:var(--ink);margin:4px 0 8px;line-height:1.25}
+.ani-timing__card p:last-child{margin:0;font-size:.95rem}
+.ani-pack{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:18px}
+.ani-pack ul.ani-pack__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;list-style:none;margin:0 !important;padding:0 !important}
+.ani-pack__item{display:flex;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px}
+.ani-pack__check{flex:0 0 26px;height:26px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center}
+.ani-pack__item strong{display:block;color:var(--ink);margin-bottom:2px}
+.ani-pack__item div>span{font-size:.92rem;color:var(--text)}
+@media (max-width:480px){.ani-fees__row{padding:12px 16px}.ani-fees__head{padding:14px 16px}}
+</style>
+
 <p>Animasola Island is a small, treeless rock island off Burias, the larger of the two big islands that make up the western side of Masbate province. It belongs to the town of San Pascual, and the only way to see it is on a hired outrigger, usually as the first stop of a Burias island-hopping day. The short version for planning: get yourself to San Pascual, register at the tourism office by the port, hire a boat for the morning, and time your arrival for low tide so the rock pools are open.</p>
 <br>
 <p>The name comes from the Spanish <em>ánima sola</em>, the lonely soul. It fits. There is no village, no store and almost no vegetation on the island, just banded rock walls rising out of clear water with a thin strip of white sand at their feet. You come for the rock and the pools, take your photos, have a swim, and move on to the next island before the midday sun turns the stone into a griddle.</p>
@@ -218,12 +245,14 @@
 <br>
 <p>On top of the boat, plan for a few small charges, each paid in cash to a different person:</p>
 <br>
-<ul>
-  <li><strong>Registration and environmental fee</strong> at the San Pascual port: roughly ₱50 to ₱100 per person, plus a small terminal fee.</li>
-  <li><strong>Animasola:</strong> about ₱20 to ₱50 per person and around ₱100 per boat for docking.</li>
-  <li><strong>Tinalisayan:</strong> about ₱50 to ₱100 per person, with a higher docking fee for the boat.</li>
-  <li><strong>Sombrero:</strong> about ₱50 to ₱100 per person, plus tent or cottage fees if you stay over.</li>
-</ul>
+<div class="ani-fees">
+  <div class="ani-fees__head"><strong>Fees to budget for</strong><span>Cash only</span></div>
+  <div class="ani-fees__row"><div class="ani-fees__label">Registration and environmental fee<small>Paid at the San Pascual port, plus a small terminal fee</small></div><div class="ani-fees__amt">₱50–₱100<small>per person</small></div></div>
+  <div class="ani-fees__row"><div class="ani-fees__label">Animasola<small>Plus around ₱100 per boat for docking</small></div><div class="ani-fees__amt">₱20–₱50<small>per person</small></div></div>
+  <div class="ani-fees__row"><div class="ani-fees__label">Tinalisayan<small>Higher docking fee for the boat</small></div><div class="ani-fees__amt">₱50–₱100<small>per person</small></div></div>
+  <div class="ani-fees__row"><div class="ani-fees__label">Sombrero<small>Tent or cottage fees extra if you stay over</small></div><div class="ani-fees__amt">₱50–₱100<small>per person</small></div></div>
+  <div class="ani-fees__foot">Each fee goes to a different person, so carry small bills.</div>
+</div>
 <br>
 <p>These amounts move from year to year, so ask the tourism office for the current list when you register. Split six ways, a full island-hopping day usually comes to somewhere around ₱1,200 to ₱1,500 a head, not counting the crossing to Burias.</p>
 <br>
@@ -231,11 +260,11 @@
 <br>
 <p>Three timing decisions shape the whole trip.</p>
 <br>
-<p><strong>Tide.</strong> Ask your boatman when low tide falls and build the route around it. Animasola and the Tinalisayan sandbar both need the water down, and a good boatman will order the stops so you catch each one at the right moment.</p>
-<br>
-<p><strong>Time of day.</strong> Leave San Pascual between about 5:30 and 8:00 AM. The wind picks up in the afternoon and the water between the islands gets choppy. An early start also gets you onto Animasola before other boats arrive and before the rock heats up.</p>
-<br>
-<p><strong>Season.</strong> March to May has the calmest seas and the most reliable sailing days. November and December are quieter but can still bring late storms. From June to October, the southwest monsoon and typhoons often lead to no-sail orders, and a cancelled crossing can strand you on either side.</p>
+<div class="ani-timing">
+  <div class="ani-timing__card"><div class="ani-timing__icon"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12c2 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2 2-2 4-2"/><path d="M2 18c2 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2 2-2 4-2"/></svg></div><p class="ani-timing__eyebrow">Tide</p><p class="ani-timing__title">Arrive at low tide</p><p>Ask your boatman when low tide falls and build the route around it. Animasola and the Tinalisayan sandbar both need the water down, and a good boatman will order the stops so you catch each one at the right moment.</p></div>
+  <div class="ani-timing__card"><div class="ani-timing__icon"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></div><p class="ani-timing__eyebrow">Time of day</p><p class="ani-timing__title">Leave by 8:00 AM</p><p>Set off from San Pascual between about 5:30 and 8:00 AM. The wind picks up in the afternoon and the water between the islands gets choppy. An early start also gets you onto Animasola before other boats arrive and before the rock heats up.</p></div>
+  <div class="ani-timing__card"><div class="ani-timing__icon"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg></div><p class="ani-timing__eyebrow">Season</p><p class="ani-timing__title">March to May is calmest</p><p>November and December are quieter but can still bring late storms. From June to October, the southwest monsoon and typhoons often lead to no-sail orders, and a cancelled crossing can strand you on either side.</p></div>
+</div>
 <br>
 <h2>The rest of the Burias circuit</h2>
 <br>
@@ -245,15 +274,17 @@
 <br>
 <h2>What to bring and what to know</h2>
 <br>
-<ul>
-  <li><strong>Cash, in small bills.</strong> There are no ATMs on Burias. Withdraw in Naga or Pasacao before crossing.</li>
-  <li><strong>Aqua shoes</strong> with a hard sole for the barnacle-covered rock.</li>
-  <li><strong>Sun cover.</strong> Animasola has no shade. Bring a hat that ties on, a rash guard and sunscreen.</li>
-  <li><strong>Water and food.</strong> There are no restaurants on the outer islands. Pack drinks and snacks in San Pascual.</li>
-  <li><strong>A dry bag</strong> for phones and cameras on the boat.</li>
-  <li><strong>Low expectations for signal.</strong> Mobile data is weak outside San Pascual town, and electricity in town is limited mostly to evening hours.</li>
-  <li><strong>A trash bag.</strong> Whatever you bring to Animasola leaves with you.</li>
-</ul>
+<div class="ani-pack">
+  <ul class="ani-pack__grid">
+    <li class="ani-pack__item"><span class="ani-pack__check"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span><div><strong>Cash, in small bills</strong><span>There are no ATMs on Burias. Withdraw in Naga or Pasacao before crossing.</span></div></li>
+    <li class="ani-pack__item"><span class="ani-pack__check"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span><div><strong>Aqua shoes</strong><span>with a hard sole for the barnacle-covered rock.</span></div></li>
+    <li class="ani-pack__item"><span class="ani-pack__check"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span><div><strong>Sun cover</strong><span>Animasola has no shade. Bring a hat that ties on, a rash guard and sunscreen.</span></div></li>
+    <li class="ani-pack__item"><span class="ani-pack__check"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span><div><strong>Water and food</strong><span>There are no restaurants on the outer islands. Pack drinks and snacks in San Pascual.</span></div></li>
+    <li class="ani-pack__item"><span class="ani-pack__check"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span><div><strong>A dry bag</strong><span>for phones and cameras on the boat.</span></div></li>
+    <li class="ani-pack__item"><span class="ani-pack__check"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span><div><strong>Low expectations for signal</strong><span>Mobile data is weak outside San Pascual town, and electricity in town is limited mostly to evening hours.</span></div></li>
+    <li class="ani-pack__item"><span class="ani-pack__check"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span><div><strong>A trash bag</strong><span>Whatever you bring to Animasola leaves with you.</span></div></li>
+  </ul>
+</div>
 <br>
 <p>For more on gear and boat safety in general, the <a href="./island-hopping-safety-what-to-bring">island hopping safety checklist</a> covers life vests, weather calls and what to pack.</p>
 <br>
