@@ -3136,3 +3136,29 @@ my-sidebar {
     color: var(--muted);
   }
 }
+
+/* Article info cards: fee card, timing cards, packing checklist (first used on Animasola Island article) */
+.ani-fees{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--card);box-shadow:0 10px 28px rgba(18,59,60,.08)}
+.ani-fees__head{background:linear-gradient(135deg,var(--deep),var(--accent));color:#fff;padding:16px 20px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.ani-fees__head strong{font-family:var(--font-display);font-size:1.15rem;font-weight:600}
+.ani-fees__head span{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;background:rgba(255,255,255,.16);padding:4px 10px;border-radius:999px}
+.ani-fees__row{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:14px 20px;border-top:1px solid var(--line)}
+.ani-fees__row:first-of-type{border-top:0}
+.ani-fees__label{font-weight:600;color:var(--ink)}
+.ani-fees__label small{display:block;font-weight:400;color:var(--muted);font-size:.85rem;margin-top:2px}
+.ani-fees__amt{font-family:var(--font-display);color:var(--accent-dark);font-size:1.1rem;white-space:nowrap;text-align:right}
+.ani-fees__amt small{display:block;font-family:var(--font-body);font-size:.75rem;color:var(--muted)}
+.ani-fees__foot{background:var(--soft);padding:12px 20px;font-size:.88rem;color:var(--text)}
+.ani-timing{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.ani-timing__card{position:relative;background:var(--card);border:1px solid var(--line);border-top:4px solid var(--accent);border-radius:12px;padding:20px 18px 18px;box-shadow:0 6px 18px rgba(18,59,60,.06)}
+.ani-timing__icon{width:42px;height:42px;border-radius:50%;background:var(--soft);color:var(--accent);display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+.ani-timing__eyebrow{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0}
+.ani-timing__title{font-family:var(--font-display);font-size:1.2rem;color:var(--ink);margin:4px 0 8px;line-height:1.25}
+.ani-timing__card p:last-child{margin:0;font-size:.95rem}
+.ani-pack{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:18px}
+.ani-pack ul.ani-pack__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;list-style:none;margin:0 !important;padding:0 !important}
+.ani-pack__item{display:flex;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px}
+.ani-pack__check{flex:0 0 26px;height:26px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center}
+.ani-pack__item strong{display:block;color:var(--ink);margin-bottom:2px}
+.ani-pack__item div>span{font-size:.92rem;color:var(--text)}
+@media (max-width:480px){.ani-fees__row{padding:12px 16px}.ani-fees__head{padding:14px 16px}}
