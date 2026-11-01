@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "News",
+    imagesrc: "./Images/featured-images/pasko-fiesta-davao-christmas-tree-confetti.jpg",
+    postNumber: 206,
+    title: "Davao City Christmas Attractions 2026: Pasko Fiesta",
+    desc: "Davao City Christmas attractions for Pasko Fiesta 2026: tree lighting, Rizal Park perya, the parade, dawn Masses at San Pedro, contests and year-end market.",
+    datePublished: "1 November 2026",
+    comments: 0,
+    link: "./davao-pasko-fiesta-2026-christmas-attractions",
+    location: "Davao City, Davao del Sur",
+    author: "Ren Calago",
+  },
+  {
+    category: "News",
     imagesrc: "./Images/featured-images/initao-misamis-oriental-diving-beach.jpg",
     postNumber: 205,
     title: "Initao, Misamis Oriental: Mindanao's Next Dive Destination?",
