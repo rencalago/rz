@@ -1,6 +1,19 @@
 let newPostTwo = [
   {
     category: "News",
+    imagesrc: "./Images/featured-images/initao-misamis-oriental-diving-beach.jpg",
+    postNumber: 205,
+    title: "Initao, Misamis Oriental: Mindanao's Next Dive Destination?",
+    desc: "Initao, Misamis Oriental is being eyed as a new dive spot after a rare marine find. What's known, MisOr Divefest 2026 dates, getting there and what to expect.",
+    datePublished: "1 November 2026",
+    comments: 0,
+    link: "./initao-misamis-oriental-diving-destination",
+    location: "Initao, Misamis Oriental",
+    agodaDestination: "Cagayan de Oro",
+    author: "Ren Calago",
+  },
+  {
+    category: "News",
     imagesrc: "./Images/featured-images/lapu-lapu-fiesta-sunset-bridge-silhouette.jpg",
     postNumber: 204,
     title: "Lapu-Lapu Fiesta 2026: Schedule of Events and Activities",
