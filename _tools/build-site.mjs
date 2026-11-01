@@ -308,7 +308,7 @@ function buildDestinationPages(site) {
 const RELATED_COUNT = 3;
 const REGIONS = [
   ["cebu", ["cebu", "oslob", "moalboal", "badian", "bantayan", "malapascua", "camotes", "cordova", "talisay", "dumanjug", "dalaguete", "carmen", "busay"]],
-  ["negros-oriental", ["dumaguete", "negros oriental", "bais", "tanjay", "pamplona", "san jose", "la libertad", "sibulan", "mabinay", "apo island", "canlaon"]],
+  ["negros-oriental", ["dumaguete", "negros oriental", "bais", "tanjay", "pamplona", "la libertad", "sibulan", "mabinay", "apo island", "canlaon"]],
   ["siquijor", ["siquijor"]],
   ["bohol", ["bohol", "panglao", "corella"]],
   ["negros-occidental", ["negros occidental", "bacolod", "sipalay", "silay"]],

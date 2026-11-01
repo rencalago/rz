@@ -27,7 +27,7 @@ const DESTINATIONS = [
     image: "./Images/destinations/negros-oriental.jpg",
     group: "Visayas",
     tagline: "Reefs, caves and cool highland towns",
-    keywords: ["negros oriental", "dumaguete", "bais", "tanjay", "pamplona", "san jose", "la libertad"],
+    keywords: ["negros oriental", "dumaguete", "bais", "tanjay", "pamplona", "la libertad"],
     href: "./negros-oriental-travel-guides",
   },
   {

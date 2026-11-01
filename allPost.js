@@ -1,6 +1,20 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/dinagat-islands-travel-guide-outrigger-boats.jpg",
+    postNumber: 212,
+    title: "Dinagat Islands Travel Guide: Everything You Need to Know",
+    desc: "Dinagat Islands travel guide: Surigao boat times and fares, Lake Bababu, Pangabangan Blue Lagoon, getting around, cash, weather and a 3-day plan.",
+    datePublished: "1 November 2026",
+    comments: 0,
+    link: "./dinagat-islands-travel-guide",
+    location: "San Jose, Dinagat Islands",
+    agodaDestination: "Surigao",
+    quiz: {name: "Dinagat Islands", vibes: ["nature","beach","slow","adventure"], cost: 1, reach: 3, minDays: 3, family: false, boats: 2, goodMonths: [3,4,5], why: "a quiet island province off Surigao with a karst-walled blue lagoon, a two-layer mountain lake and beaches with few visitors"},
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/panagbenga-weekend-itinerary-festival-dancer.jpg",
     postNumber: 211,
     title: "Panagbenga Weekend Itinerary: Parades and Flower Farms",
