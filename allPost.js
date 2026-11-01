@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "News",
+    imagesrc: "./Images/featured-images/lapu-lapu-fiesta-sunset-bridge-silhouette.jpg",
+    postNumber: 204,
+    title: "Lapu-Lapu Fiesta 2026: Schedule of Events and Activities",
+    desc: "Lapu-Lapu Fiesta 2026 schedule: the 291st feast of Nuestra Señora de Regla, with the 12 Nov seaborne procession, Garbo sa Lapu-Lapu, novena and fiesta days.",
+    datePublished: "1 November 2026",
+    comments: 0,
+    link: "./lapu-lapu-fiesta-2026-schedule",
+    location: "Lapu-Lapu City, Cebu",
+    author: "Ren Calago",
+  },
+  {
+    category: "News",
     imagesrc: "./Images/featured-images/burnham-lake-boat-rental-baguio.jpg",
     postNumber: 203,
     title: "Burnham Lake Is Open Again: Boat Rental Prices and Guide",
