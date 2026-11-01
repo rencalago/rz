@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/carcar-chicharon-pork-cracklings.jpg",
+    postNumber: 213,
+    title: "Carcar City Food Trip: Lechon, Chicharon and Local Delicacies",
+    desc: "Carcar City food trip: where to eat lechon at the public market, buy chicharon with laman, ampao and bocarillo, what it costs and how to avoid overpaying.",
+    datePublished: "1 November 2026",
+    comments: 0,
+    link: "./carcar-city-food-trip-lechon-chicharon",
+    location: "Carcar City, Cebu",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/dinagat-islands-travel-guide-outrigger-boats.jpg",
     postNumber: 212,
     title: "Dinagat Islands Travel Guide: Everything You Need to Know",
