@@ -3247,3 +3247,69 @@ my-sidebar {
   .trail-tips { padding: 16px; }
   .trail-tips__grid { grid-template-columns: 1fr; }
 }
+
+/* ===== Trip snapshot (two-place guides) ===== */
+.trip-snap { margin: 0 0 8px; }
+.trip-snap__stats { margin-bottom: 14px; }
+.trip-snap__duo {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+.trip-snap__card {
+  position: relative;
+  padding: 20px 20px 14px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 1px 2px rgba(18, 59, 60, 0.04), 0 8px 24px rgba(18, 59, 60, 0.06);
+  overflow: hidden;
+}
+.trip-snap__card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 4px;
+  background: var(--accent);
+}
+.trip-snap__card--valley::before { background: #b7863b; }
+.trip-snap__tag {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+  margin-bottom: 8px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--soft);
+  color: var(--accent-dark);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.trip-snap__card--valley .trip-snap__tag { background: #f7eedf; color: #8a5f1f; }
+.full-content .trip-snap__title { margin: 0 0 8px; font-size: 19px; line-height: 1.3; color: var(--ink); }
+.full-content .trip-snap__list { margin: 0; padding: 0; list-style: none; }
+.full-content .trip-snap__list li {
+  position: relative;
+  padding: 6px 0 6px 22px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--text);
+  border-top: 1px dashed var(--line);
+}
+.full-content .trip-snap__list li:first-child { border-top: 0; }
+.full-content .trip-snap__list li::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 14px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.trip-snap__card--valley .trip-snap__list li::before { background: #b7863b; }
+@media (max-width: 640px) {
+  .trip-snap__duo { grid-template-columns: 1fr; }
+}
