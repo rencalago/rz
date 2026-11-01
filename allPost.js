@@ -1,5 +1,18 @@
 let newPostTwo = [
   {
+    category: "Travel",
+    imagesrc: "./Images/featured-images/bukidnon-mountains-grassland-clouds.jpg",
+    postNumber: 207,
+    title: "Bukidnon Tourist Spots: Mountains, Parks and Scenic Views",
+    desc: "Bukidnon tourist spots by type: Mt. Capistrano, Musuan Peak, Kitanglad permits, Kaamulan Park, Lake Napalit, Lake Pinamaloy and Alalum Falls, with area tips.",
+    datePublished: "1 November 2026",
+    comments: 0,
+    link: "./bukidnon-tourist-spots-mountains-parks-views",
+    location: "Malaybalay City, Bukidnon",
+    agodaDestination: "Malaybalay",
+    author: "Ren Calago",
+  },
+  {
     category: "News",
     imagesrc: "./Images/featured-images/pasko-fiesta-davao-christmas-tree-confetti.jpg",
     postNumber: 206,
