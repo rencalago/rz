@@ -1,5 +1,17 @@
 let newPostTwo = [
   {
+    category: "News",
+    imagesrc: "./Images/featured-images/cebu-white-sand-beach-bangka-boats-aerial.jpg",
+    postNumber: 209,
+    title: "Santa Fe, Oslob and San Remigio: Cebu's Most Visited Towns",
+    desc: "Santa Fe, Oslob and San Remigio led Cebu tourist arrivals from January to September 2026. See the numbers, why each town draws visitors and how to plan a trip.",
+    datePublished: "1 November 2026",
+    comments: 0,
+    link: "./cebu-most-visited-towns-2026",
+    location: "Santa Fe, Cebu",
+    author: "Ren Calago",
+  },
+  {
     category: "Travel",
     imagesrc: "./Images/featured-images/coron-palawan-beach-bangka-boats-aerial.jpg",
     postNumber: 208,
