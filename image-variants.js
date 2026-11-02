@@ -13,6 +13,7 @@ export const IMAGE_VARIANTS = {
   "featured-images/apo-island-snorkeling.jpg": [1680, 400],
   "featured-images/asean-summit-2026-manila-traffic.jpg": [968, 400],
   "featured-images/ati-atihan-festival.jpg": [1920, 400],
+  "featured-images/baguio-3-day-itinerary-flower-tunnel-walkway.jpg": [772, 400],
   "featured-images/baguio-arboretum-boardwalk-pine-forest.jpg": [672, 400],
   "featured-images/baguio-bell-amphitheater-travel.jpg": [800, 400],
   "featured-images/baguio-cold-season-morning-fog.jpg": [1200, 400, 720],

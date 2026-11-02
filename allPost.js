@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/baguio-3-day-itinerary-flower-tunnel-walkway.jpg",
+    postNumber: 221,
+    title: "Baguio 3-Day Itinerary for First-Timers: Day-by-Day Plan",
+    desc: "A Baguio 3-day itinerary for first-timers: one area per day, from Session Road and Burnham Park to Mines View, Camp John Hay and Tam-awan, with daily costs.",
+    datePublished: "2 November 2026",
+    comments: 0,
+    link: "./baguio-3-day-itinerary-first-timers",
+    location: "Baguio City, Benguet",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/dumaguete-tree-lined-street-tricycles.jpg",
     postNumber: 220,
     title: "What Can ₱1,000 Get You in Dumaguete?",
