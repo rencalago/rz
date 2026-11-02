@@ -3330,3 +3330,107 @@ my-sidebar {
 @media (max-width: 640px) {
   .trip-snap__duo { grid-template-columns: 1fr; }
 }
+
+/* ===== Dish cards (food guides) ===== */
+.dish-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin: 4px 0;
+}
+.dish-card {
+  position: relative;
+  padding: 18px 18px 14px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 1px 2px rgba(18, 59, 60, 0.04), 0 8px 24px rgba(18, 59, 60, 0.06);
+}
+.dish-card::after {
+  content: "";
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 0;
+  height: 3px;
+  border-radius: 3px 3px 0 0;
+  background: linear-gradient(90deg, #8a3b1f 0%, #b7863b 100%);
+}
+.dish-card__kicker {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #b7863b;
+}
+.full-content .dish-card__name {
+  margin: 0 0 8px;
+  font-size: 20px;
+  line-height: 1.2;
+  color: var(--ink);
+}
+.full-content .dish-card__text {
+  margin: 0 0 6px;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--text);
+}
+
+/* ===== Restaurant cards (food guides) ===== */
+.eat-list { display: grid; gap: 14px; margin: 4px 0; }
+.eat-card {
+  position: relative;
+  padding: 20px 22px 16px 26px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 1px 2px rgba(18, 59, 60, 0.04), 0 8px 24px rgba(18, 59, 60, 0.06);
+}
+.eat-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 4px;
+  border-radius: 14px 0 0 14px;
+  background: linear-gradient(180deg, var(--accent) 0%, #b7863b 100%);
+}
+.eat-card__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 12px;
+  margin-bottom: 8px;
+}
+.eat-card__badge {
+  order: -1;
+  flex-basis: 100%;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #b7863b;
+}
+.full-content .eat-card__name { margin: 0; font-size: 21px; line-height: 1.25; color: var(--ink); }
+.eat-card__where { font-size: 14px; color: var(--muted); }
+.eat-card__where i { color: var(--accent); margin-right: 2px; }
+.full-content .eat-card__text { margin: 0 0 10px; font-size: 15.5px; line-height: 1.6; color: var(--text); }
+.full-content .eat-card__order {
+  margin: 0;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: var(--soft);
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: var(--ink);
+}
+.eat-card__order strong { color: var(--accent-dark); }
+
+@media (max-width: 860px) {
+  .dish-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 560px) {
+  .dish-grid { grid-template-columns: 1fr; }
+  .eat-card { padding: 18px 16px 14px 20px; }
+}
