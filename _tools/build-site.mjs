@@ -39,6 +39,12 @@ import { loadSite } from "./site-runtime.mjs";
 import { regionOf } from "../regions.js";
 import { commentsReady } from "../config.js";
 import { SOCIAL } from "../layout.js";
+import { ICONS as ALL_ICONS } from "./icons.mjs";
+import { svgIcon as runtimeIcon } from "../icons.js";
+
+// Icons written by the build use the same markup as the ones the page scripts
+// draw (icons.js); the full set lives in _tools/icons.mjs.
+const svgIcon = (key, extraClass) => runtimeIcon(key, extraClass) || buildIcon(key, extraClass);
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const checkOnly = process.argv.includes("--check");
@@ -130,13 +136,7 @@ function buildArchivePages(site) {
     <title>All Stories, Page ${n} | Ren Calago blog</title>
     <link rel="icon" type="image/x-icon" href="./Images/rencalago-favicon.png" />
     <meta name="description" content="${escapeHtml(description)}" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+    <!-- build:fonts --><!-- /build:fonts -->
     <link rel="stylesheet" href="./style.css" />
     <!-- build:seo --><!-- /build:seo -->
   </head>
@@ -249,13 +249,7 @@ function buildDestinationPages(site) {
     <link rel="icon" type="image/x-icon" href="./Images/rencalago-favicon.png" />
     <meta name="description" content="${escapeHtml(cfg.description)}" />
     <meta name="keywords" content="${escapeHtml(cfg.keywords)}" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+    <!-- build:fonts --><!-- /build:fonts -->
     <link rel="stylesheet" href="./style.css" />
     <!-- build:seo --><!-- /build:seo -->
   </head>
@@ -623,6 +617,109 @@ function ensureRelatedMarkers(html) {
   return html.slice(0, at) + "\n              <!-- build:related --><!-- /build:related -->" + html.slice(at);
 }
 
+// ICONS ----------------------------------------------------------------------------
+// Pages used to load the whole Font Awesome icon font (a render-blocking
+// stylesheet plus a 100 KB font) for a few dozen icons. Each
+// <i class="fa-solid fa-NAME"></i> in a page is now replaced by the icon's own
+// SVG, from _tools/icons.mjs. An icon missing there is left as it is, with a warning.
+function buildIcon(key, extraClass = "") {
+  const icon = ALL_ICONS[key];
+  if (!icon) return "";
+  const [w, h, d] = icon;
+  const width = String(Math.round((w / h) * 1000) / 1000);
+  const cls = ["icon", "icon-" + key.split("/")[1], extraClass].filter(Boolean).join(" ");
+  return `<svg class="${cls}" viewBox="0 0 ${w} ${h}" width="${width}em" height="1em" aria-hidden="true" focusable="false"><path d="${d}"/></svg>`;
+}
+
+function withInlineIcons(html, file) {
+  return html.replace(/<i class="fa-(solid|regular|brands) fa-([a-z0-9-]+)((?: [\w-]+)*)"[^>]*><\/i>/g, (tag, style, name, extra) => {
+    const svg = svgIcon(`${style}/${name}`, extra.trim());
+    if (!svg) {
+      warnings.push(`${file}: icon "fa-${style} fa-${name}" is not in _tools/icons.mjs, so it shows nothing; add it there`);
+      return tag;
+    }
+    return svg;
+  });
+}
+
+// HEAD: FONTS, OLD SCRIPTS ----------------------------------------------------------
+// The two web fonts load without holding up the page: the browser connects to
+// Google Fonts early (preconnect) and draws the text in a fallback font until
+// they arrive. They used to be pulled in by an @import at the top of style.css,
+// which made the browser wait for style.css before it even asked for them.
+const FONTS_URL = "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Figtree:wght@400;500;600;700&display=swap";
+const fontsBlock = `
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="${FONTS_URL.replace(/&/g, "&amp;")}" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="${FONTS_URL.replace(/&/g, "&amp;")}" /></noscript>
+    `;
+
+function withHeadAssets(html, file) {
+  // Font Awesome is no longer used (see ICONS above).
+  html = html.replace(/\s*<link\s+rel="stylesheet"\s+href="https:\/\/cdnjs\.cloudflare\.com\/ajax\/libs\/font-awesome\/[^"]+"[^>]*>/g, "");
+  // AdSense is loaded by the page scripts after the page has drawn (third-party.js),
+  // not from the head, where it held up the first paint.
+  html = html.replace(/\s*<script async src="https:\/\/pagead2\.googlesyndication\.com\/pagead\/js\/adsbygoogle\.js\?client=[^"]*"\s*crossorigin="anonymous"><\/script>/g, "");
+  if (!html.includes("<!-- build:fonts -->")) {
+    const styleLink = /(\n?[ \t]*)(<link rel="stylesheet" href="\.?\/style\.css")/;
+    if (!styleLink.test(html)) {
+      warnings.push(`${file}: no style.css link found, so the web fonts were not added`);
+      return html;
+    }
+    html = html.replace(styleLink, "$1<!-- build:fonts --><!-- /build:fonts -->$1$2");
+  }
+  return fillBlock(html, "fonts", fontsBlock, file);
+}
+
+// IMAGE COPIES ---------------------------------------------------------------------
+// _tools/resize-images.py writes smaller copies of story photos in w400/ and
+// w720/ folders next to them. Here they are listed in image-variants.js, which
+// layout.js and app.js read to add srcset to cards, tiles and the hero. Only
+// copies that exist are listed, so a missing copy never breaks an image.
+const VARIANT_WIDTHS = [400, 720]; // keep in step with WIDTHS in resize-images.py
+const VARIANT_DIRS = ["featured-images", "destinations", "Baguio-Images"]; // folders with story photos
+
+function imageVariantsModule() {
+  const entries = [];
+  for (const dir of VARIANT_DIRS) {
+    const base = path.join(root, "Images", dir);
+    if (!fs.existsSync(base)) continue;
+    const originals = fs.readdirSync(base).filter((f) => /\.(jpe?g)$/i.test(f)).sort();
+    for (const name of originals) {
+      const widths = VARIANT_WIDTHS.filter((w) => fs.existsSync(path.join(base, "w" + w, name)));
+      if (!widths.length) continue;
+      const size = imageSize(path.join(base, name));
+      if (!size || !size.width) continue;
+      entries.push(`  ${JSON.stringify(dir + "/" + name)}: [${[size.width, ...widths].join(", ")}],`);
+    }
+  }
+  return `// Written by _tools/build-site.mjs from the copies _tools/resize-images.py made.
+// Do not edit by hand. Each photo: [original width, widths of its smaller copies].
+export const IMAGE_VARIANTS = {
+${entries.join("\n")}
+};
+`;
+}
+
+// A repo photo used on story cards with no smaller copies yet: remind to run the resize script.
+function checkImageVariants(site, variantsSource) {
+  const listFile = path.join(root, "_tools", "image-copies-skipped.txt");
+  const skipped = new Set(fs.existsSync(listFile) ? fs.readFileSync(listFile, "utf8").split(/\r?\n/).map((l) => "./" + l.trim()) : []);
+  const missing = site.posts
+    .map((p) => String(p.imagesrc || ""))
+    .filter((src) => /^\.\/Images\/[\w-]+\/[^/]+\.jpe?g$/i.test(src))
+    .filter((src) => {
+      const key = src.replace("./Images/", "");
+      if (variantsSource.includes(JSON.stringify(key) + ":") || skipped.has(src)) return false;
+      const size = imageSize(path.join(root, src.replace(/^\.\//, "")));
+      return size && size.width >= VARIANT_WIDTHS[0] + 40;
+    });
+  if (missing.length) {
+    warnings.push(`${missing.length} story photo(s) have no smaller copies yet (${missing.slice(0, 3).join(", ")}${missing.length > 3 ? ", ..." : ""}); run: python3 _tools/resize-images.py, then the build again`);
+  }
+}
+
 // IMAGE SIZES ----------------------------------------------------------------------
 // Photos inside an article get width and height from the image file itself, so
 // the browser reserves the right space before the photo arrives and the text
@@ -932,9 +1029,9 @@ function withPostingMeta(html, post, commentCount = 0) {
   if (!post) return html;
   const comments = commentsReady || commentCount ? metaCommentsLink(commentCount) : "";
   const updated = post.dateModified
-    ? `<span class="postDate"><i class="fa-solid fa-rotate" aria-hidden="true"></i> Updated ${escapeHtml(post.dateModified)}</span>`
+    ? `<span class="postDate">${svgIcon("solid/rotate")} Updated ${escapeHtml(post.dateModified)}</span>`
     : "";
-  const meta = `<p><span class="author"><i class="fa-solid fa-user" aria-hidden="true"></i> ${escapeHtml(post.author)}</span><span class="postDate"><i class="fa-regular fa-clock" aria-hidden="true"></i> ${escapeHtml(post.datePublished)}</span>${updated}${comments}</p>`;
+  const meta = `<p><span class="author">${svgIcon("solid/user")} ${escapeHtml(post.author)}</span><span class="postDate">${svgIcon("regular/clock")} ${escapeHtml(post.datePublished)}</span>${updated}${comments}</p>`;
   return html.replace(/<div class="posting-meta">[\s\S]*?<\/div>/, `<div class="posting-meta">${meta}</div>`);
 }
 
@@ -969,6 +1066,8 @@ function buildPages(site, destinationPages) {
     const slug = file.replace(/\.html$/, "");
 
     html = ensureMarkers(html);
+    html = withHeadAssets(html, file);
+    html = withInlineIcons(html, file);
 
     if (html.includes("<!-- build:header -->")) {
       const layout = site.layoutFor(slug === "index" ? "" : slug);
@@ -1045,7 +1144,9 @@ function buildSitemap(site, destinationPages, archivePages) {
 }
 
 // RUN --------------------------------------------------------------------------------
-const site = await loadSite(root);
+const variantsSource = imageVariantsModule();
+putFile("image-variants.js", variantsSource);
+const site = await loadSite(root, { "image-variants": variantsSource });
 let sitemapCount;
 let destinationPages = [];
 let archivePages = [];
@@ -1057,6 +1158,9 @@ try {
   destinationPages = buildDestinationPages(site);
   archivePages = buildArchivePages(site);
   pageCount = buildPages(site, destinationPages);
+  // The error page is standalone (no shared layout), but gets the same fonts and icons.
+  putFile("404.html", withInlineIcons(withHeadAssets(readFile("404.html"), "404.html"), "404.html"));
+  checkImageVariants(site, variantsSource);
   sitemapCount = buildSitemap(site, destinationPages, archivePages);
 } finally {
   site.cleanup();

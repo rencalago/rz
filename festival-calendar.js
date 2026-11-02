@@ -6,6 +6,7 @@
 // place defaults to the post's location, about to its desc, when to the dates. "start"/"end" are set only when the dates have been announced;
 // otherwise "when" describes the usual timing. month is 1-12.
 import { newPostTwo as posts } from "./allPost.js";
+import { svgIcon } from "./icons.js";
 
 (function () {
   "use strict";
@@ -88,8 +89,8 @@ import { newPostTwo as posts } from "./allPost.js";
       var badge = st === "now" ? '<span class="fcal__badge fcal__badge--now">On now</span>' : st === "past" ? '<span class="fcal__badge">Done for this year</span>' : "";
       html += '<div class="fcal__item' + (st === "past" ? " is-past" : "") + '">' +
         '<p class="fcal__name">' + esc(f.name) + badge + "</p>" +
-        '<p class="fcal__meta"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> ' + esc(f.place) +
-        ' <span class="fcal__sep">·</span> <i class="fa-regular fa-calendar" aria-hidden="true"></i> ' + esc(f.when) + "</p>" +
+        '<p class="fcal__meta">' + svgIcon("solid/location-dot") + ' ' + esc(f.place) +
+        ' <span class="fcal__sep">·</span> ' + svgIcon("regular/calendar") + ' ' + esc(f.when) + "</p>" +
         '<p class="fcal__about">' + esc(f.about) + "</p>" +
         (f.guide ? '<a class="fcal__link" href="./' + f.guide + '">Read the guide</a>' : "") +
         "</div>";

@@ -53,13 +53,20 @@ class FakeElement {
 const fixAmpersands = (html) =>
   html.replace(/&(?!(?:[a-zA-Z][a-zA-Z0-9]*|#[0-9]+|#x[0-9a-fA-F]+);)/g, "&amp;");
 
-export async function loadSite(root) {
-  // Copy the three browser modules to a temp folder as .mjs so Node treats them
-  // as ES modules on any version, then point their imports at the copies.
+// The browser modules app.js and layout.js need (directly or through each other).
+const MODULES = ["allPost", "layout", "app", "regions", "icons", "image-variants", "third-party", "ad-codes"];
+
+// overrides: { "image-variants": "<source>" } uses that source instead of the
+// file on disk (the build passes the image list it has just worked out).
+export async function loadSite(root, overrides = {}) {
+  // Copy the browser modules to a temp folder as .mjs so Node treats them as ES
+  // modules on any version, then point their imports at the copies.
   const tmp = fs.mkdtempSync(path.join(os.tmpdir(), "rencalago-build-"));
-  for (const name of ["allPost", "layout", "app", "regions"]) {
-    const source = fs.readFileSync(path.join(root, name + ".js"), "utf8");
-    const rewritten = source.replace(/(from\s+["'])\.\/(allPost|layout|regions)\.js(["'])/g, "$1./$2.mjs$3");
+  const importPattern = new RegExp(`(from\\s+["'])\\./(${MODULES.join("|")})\\.js(["'])`, "g");
+  for (const name of MODULES) {
+    const file = path.join(root, name + ".js");
+    const source = name in overrides ? overrides[name] : fs.existsSync(file) ? fs.readFileSync(file, "utf8") : "";
+    const rewritten = source.replace(importPattern, "$1./$2.mjs$3");
     fs.writeFileSync(path.join(tmp, name + ".mjs"), rewritten);
   }
 
