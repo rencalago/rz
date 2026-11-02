@@ -150,6 +150,7 @@ export const IMAGE_VARIANTS = {
   "featured-images/temple-of-leah-busay-cebu-city.jpg": [1824, 400, 720],
   "featured-images/things-to-do-mactan-beach-rock-islet.jpg": [688, 400],
   "featured-images/timezone-robinsons-dumaguete-arcade-entrance.jpg": [1008, 400],
+  "featured-images/tinalisayan-island-sandbar-burias-masbate.jpg": [1024, 400],
   "featured-images/tne-ruins-in-talisay.jpg": [720, 400],
   "featured-images/tops-artfest-2026-cebu-busay.jpg": [800, 400],
   "featured-images/travel-to-sagada.jpg": [1600, 400],

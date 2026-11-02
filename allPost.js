@@ -1,6 +1,20 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/tinalisayan-island-sandbar-burias-masbate.jpg",
+    postNumber: 222,
+    title: "Tinalisayan Island: A Guide to Masbate's White-Sand Sandbar",
+    desc: "Tinalisayan Island in Burias, Masbate: the low-tide sandbar, swimming, snorkeling, fees, the best months to go and a 3-day San Pascual island-hopping itinerary.",
+    datePublished: "2 November 2026",
+    comments: 0,
+    link: "./tinalisayan-island-sandbar-masbate-guide",
+    location: "San Pascual, Masbate",
+    agodaDestination: "Naga",
+    quiz: {name: "Tinalisayan Island, Burias, Masbate", vibes: ["beach","nature"], cost: 2, reach: 3, minDays: 3, family: true, boats: 1, goodMonths: [3,4,5,11,12], why: "a white low-tide sandbar with calm, clear shallows off San Pascual, part of the Burias island-hopping day"},
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/baguio-3-day-itinerary-flower-tunnel-walkway.jpg",
     postNumber: 221,
     title: "Baguio 3-Day Itinerary for First-Timers: Day-by-Day Plan",
