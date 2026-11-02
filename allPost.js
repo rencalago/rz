@@ -1,6 +1,19 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/how-to-get-to-dinagat-islands-limestone-cove-aerial.jpg",
+    postNumber: 218,
+    title: "How to Get to Dinagat Islands: Flights, Ferries and Routes",
+    desc: "How to get to Dinagat Islands: Cebu and Manila routes to Surigao, the Butuan option, the boat to San Jose, fares, travel times and timing tips.",
+    datePublished: "2 November 2026",
+    comments: 0,
+    link: "./how-to-get-to-dinagat-islands",
+    location: "San Jose, Dinagat Islands",
+    agodaDestination: "Surigao",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/culion-palawan-beach-palm-trees-sunset.jpg",
     postNumber: 217,
     title: "Culion Island: History, Beaches and Things to Do",
