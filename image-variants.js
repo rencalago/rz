@@ -26,6 +26,7 @@ export const IMAGE_VARIANTS = {
   "featured-images/batanes.jpg": [1984, 400],
   "featured-images/beginner-friendly-hikes-philippines.jpg": [768, 400],
   "featured-images/best-beaches-philippines-region-by-region.jpg": [768, 400],
+  "featured-images/best-cafes-in-baguio-garden-cafe-pines.jpg": [1024, 400, 720],
   "featured-images/best-december-beach-escapes-philippines.jpg": [1280, 400, 720],
   "featured-images/best-dive-sites-philippines-by-season.jpg": [1200, 400, 720],
   "featured-images/best-time-to-visit-cebu-month-by-month.jpg": [1024, 400],
