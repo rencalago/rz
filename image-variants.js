@@ -73,6 +73,7 @@ export const IMAGE_VARIANTS = {
   "featured-images/hinagdanan-cave-bohol-visitor-guide.jpg": [1171, 400],
   "featured-images/hot-air-balloon-fiesta-clark-pampanga-guide.jpg": [1280, 400, 720],
   "featured-images/hot-springs-philippines-guide.jpg": [1280, 400],
+  "featured-images/how-to-get-to-dinagat-islands-limestone-cove-aerial.jpg": [590, 400],
   "featured-images/hundred-islands-pangasinan-2.jpg": [1408, 400],
   "featured-images/ilocos-norte-road-trip.jpg": [1920, 400],
   "featured-images/initao-misamis-oriental-diving-beach.jpg": [1000, 400, 720],
