@@ -1,5 +1,17 @@
 let newPostTwo = [
   {
+    category: "Travel",
+    imagesrc: "./Images/featured-images/dumaguete-tree-lined-street-tricycles.jpg",
+    postNumber: 220,
+    title: "What Can ₱1,000 Get You in Dumaguete?",
+    desc: "What can ₱1,000 get you in Dumaguete? Real 2026 prices for street food, tricycles and fees, three sample days on the budget, and the trips it won't cover.",
+    datePublished: "2 November 2026",
+    comments: 0,
+    link: "./what-can-1000-pesos-get-you-in-dumaguete",
+    location: "Dumaguete City, Negros Oriental",
+    author: "Ren Calago",
+  },
+  {
     category: "Cafes & Restaurant",
     imagesrc: "./Images/featured-images/best-cafes-in-baguio-garden-cafe-pines.jpg",
     postNumber: 219,

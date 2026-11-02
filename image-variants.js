@@ -65,6 +65,7 @@ export const IMAGE_VARIANTS = {
   "featured-images/don-salvador-benedicto-pine-trees-highway.jpg": [614, 400],
   "featured-images/donsol-whale-sharks.jpg": [600, 400],
   "featured-images/dumaguete-market-street-stalls.jpg": [640, 400],
+  "featured-images/dumaguete-tree-lined-street-tricycles.jpg": [772, 400],
   "featured-images/dumanjug-cebu-travel-guide.jpg": [800, 400],
   "featured-images/el-nido-island-hopping-tours-a-b-c-d.jpg": [1280, 400, 720],
   "featured-images/el-nido-palawan.jpg": [1408, 400],
