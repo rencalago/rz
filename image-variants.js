@@ -124,6 +124,7 @@ export const IMAGE_VARIANTS = {
   "featured-images/philippines-ferry-travel-guide-routes-booking.jpg": [1280, 400],
   "featured-images/pintados-kasadyaan-festival-tacloban-guide.jpg": [768, 400],
   "featured-images/pondo-falls-biliran.jpg": [480, 400],
+  "featured-images/port-barton-palawan-beach-palm-trees.jpg": [576, 400],
   "featured-images/puerto-galera-oriental-mindoro.jpg": [800, 400, 720],
   "featured-images/puerto-princesa-palawan-best-tourist-spot.jpg": [800, 400, 720],
   "featured-images/rizal-shrine-dapitan-city.jpg": [936, 400],

@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/port-barton-palawan-beach-palm-trees.jpg",
+    postNumber: 216,
+    title: "Port Barton Travel Guide: Beaches, Tours, Budget, Itinerary",
+    desc: "Port Barton travel guide: beaches, island hopping tours and fees, a 3-night budget, vans from Puerto Princesa and El Nido, cash and power tips and a 3-day plan.",
+    datePublished: "2 November 2026",
+    comments: 0,
+    link: "./port-barton-travel-guide",
+    location: "Port Barton, Palawan",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/davao-samal-island-cove-turquoise-water.jpg",
     postNumber: 215,
     title: "Davao City Itinerary: How to Spend 3 Days",
