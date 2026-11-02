@@ -1,4 +1,16 @@
-@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Figtree:wght@400;500;600;700&display=swap");
+/* Web fonts (Fraunces, Figtree) are linked in each page's <head> by the build
+   (build:fonts block), not imported here, so they load in parallel with this file. */
+
+/* Inline SVG icons (written by the build and icons.js; they replaced the
+   Font Awesome font). 1em tall, coloured like the text around them. */
+.icon {
+  display: inline-block;
+  height: 1em;
+  vertical-align: -0.125em;
+  fill: currentColor;
+  overflow: visible;
+  flex-shrink: 0;
+}
 
 /* ===== Ren Calago Blog: site styles (homepage, articles, contact) ===== */
 
@@ -1387,7 +1399,8 @@ my-sidebar {
   gap: 4px 18px;
 }
 
-.posting-meta i {
+.posting-meta i,
+.posting-meta .icon {
   margin-right: 6px;
 }
 
@@ -1795,7 +1808,9 @@ my-sidebar {
 }
 
 .fa-phone,
-.fa-envelope {
+.fa-envelope,
+.icon-phone,
+.icon-envelope {
   color: var(--accent);
   font-size: 1.3rem;
   margin-right: 8px;
@@ -2483,7 +2498,8 @@ my-sidebar {
   color: var(--muted);
 }
 
-.results__updated i {
+.results__updated i,
+.results__updated .icon {
   margin-right: 6px;
   color: var(--accent-dark);
 }
@@ -2783,7 +2799,8 @@ my-sidebar {
   color: var(--text);
 }
 
-.itin-day__note i {
+.itin-day__note i,
+.itin-day__note .icon {
   margin-top: 4px;
   color: var(--accent);
 }

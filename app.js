@@ -1,9 +1,15 @@
 // Homepage: hero, editor's picks, destination tiles, filterable story feed.
 import { newPostTwo } from "./allPost.js";
 import { regionsOf } from "./regions.js";
-import { registerLayout, thumb, escapeHtml as esc, metaLine, storyCard } from "./layout.js";
+import { registerLayout, thumb, srcsetAttrs, escapeHtml as esc, metaLine, storyCard } from "./layout.js";
+import { ADSENSE_CLIENT } from "./ad-codes.js";
+import { afterFirstInteraction, loadAdSenseScript } from "./third-party.js";
 
 registerLayout();
+
+// AdSense (Auto ads) starts after the page has drawn: on the first scroll or tap,
+// or a few seconds after loading, so the hero photo and menu are not kept waiting.
+afterFirstInteraction(() => loadAdSenseScript(ADSENSE_CLIENT));
 
 // SETTINGS you may want to edit -----------------------------------------------
 const PER_PAGE = 6; // stories per page in "Latest stories"
@@ -129,11 +135,22 @@ function matchesFilter(p, filter) {
 }
 
 // RENDERERS ---------------------------------------------------------------------
+// How wide the hero and destination photos are drawn (see .hero__img and
+// .dest-grid in style.css), so the browser can pick the right file from srcset.
+const HERO_IMG_SIZES = "(max-width: 1199px) calc(100vw - 48px), 828px";
+const LEAD_TILE_SIZES = "(max-width: 999px) calc(100vw - 32px), (max-width: 1199px) 48vw, 580px";
+const TILE_SIZES = "(max-width: 599px) calc(100vw - 32px), (max-width: 999px) 48vw, (max-width: 1199px) 24vw, 283px";
+
+// The build writes the hero, picks, tiles and first page of stories into
+// index.html. When they are there, the browser keeps them: redrawing would swap
+// in new image elements and make the page's main photo count as drawn later.
+const drawn = (el) => Boolean(el && el.firstElementChild);
+
 function renderHero() {
   if (!hero) return;
   heroEl.innerHTML = `
     <a class="hero__img" href="${hero.link}" tabindex="-1" aria-hidden="true">
-      <img src="${thumb(hero.imagesrc, 1400)}" alt="${esc(hero.title)}" fetchpriority="high" decoding="async"${hero.imageFilter ? ` style="filter: ${hero.imageFilter}"` : ""}>
+      <img src="${thumb(hero.imagesrc, 1400)}"${srcsetAttrs(hero.imagesrc, HERO_IMG_SIZES)} alt="${esc(hero.title)}" fetchpriority="high" decoding="async"${hero.imageFilter ? ` style="filter: ${hero.imageFilter}"` : ""}>
     </a>
     <div class="hero__body">
       <p class="kicker">${esc(hero.category)}</p>
@@ -162,7 +179,7 @@ function renderDestinations() {
     .map(
       (d, i) => `
       <a class="dest${i === 0 ? " dest--lead" : ""}" href="${d.href || "./#dest=" + d.key}" style="--tone:${d.tone}">
-        ${d.image ? `<img class="dest__img" src="${d.image}" alt="" width="${i === 0 ? 720 : 640}" height="${i === 0 ? 540 : 480}" decoding="async" onload="this.classList.add('is-loaded')">` : ""}
+        ${d.image ? `<img class="dest__img" src="${d.image}"${srcsetAttrs(d.image, i === 0 ? LEAD_TILE_SIZES : TILE_SIZES)} alt="" width="${i === 0 ? 720 : 640}" height="${i === 0 ? 540 : 480}" decoding="async" onload="this.classList.add('is-loaded')">` : ""}
         ${d.group ? `<span class="dest__group">${esc(d.group)}</span>` : ""}
         <span class="dest__body">
           <strong>${esc(d.name)}</strong>
@@ -199,7 +216,7 @@ function pageList(current, pages) {
   return out;
 }
 
-function renderFeed() {
+function renderFeed({ keepCards = false } = {}) {
   const q = state.query.trim();
   const list = visiblePosts();
   const pages = Math.max(1, Math.ceil(list.length / PER_PAGE));
@@ -218,7 +235,7 @@ function renderFeed() {
   feedIntro.innerHTML = introDest && introDest.intro ? introDest.intro.map((t) => `<p>${t}</p>`).join("") : "";
   feedIntro.hidden = !feedIntro.innerHTML;
 
-  feedList.innerHTML = slice.map(storyCard).join("");
+  if (!(keepCards && drawn(feedList))) feedList.innerHTML = slice.map(storyCard).join("");
   feedEmpty.hidden = list.length > 0;
 
   if (pages <= 1) {
@@ -243,7 +260,7 @@ function scrollToStories() {
 }
 
 // FILTERS (read from the address: #cat=Travel, #dest=cebu, #search, #all) ------
-function readHash() {
+function readHash(firstLoad = false) {
   const params = new URLSearchParams(location.hash.slice(1));
   let filter = null;
   if (params.get("cat")) {
@@ -254,7 +271,8 @@ function readHash() {
   }
   state.filter = filter;
   state.page = 1;
-  renderFeed();
+  // On first load with no filter, the stories the build wrote are already right.
+  renderFeed({ keepCards: firstLoad === true && !filter });
   if (filter || params.has("all")) scrollToStories();
   if (params.has("search")) {
     scrollToStories();
@@ -287,7 +305,7 @@ clearBtn.addEventListener("click", function () {
   window.dispatchEvent(new HashChangeEvent("hashchange"));
 });
 
-window.addEventListener("hashchange", readHash);
+window.addEventListener("hashchange", () => readHash());
 
 // Clicking the header search icon while the address already ends in #search
 // does not fire hashchange, so handle that case here.
@@ -302,10 +320,10 @@ document.addEventListener("click", function (e) {
 });
 
 // START --------------------------------------------------------------------------
-renderHero();
-renderPicks();
-renderDestinations();
-readHash();
+if (!drawn(heroEl)) renderHero();
+if (!drawn(picksEl)) renderPicks();
+if (!drawn(destEl)) renderDestinations();
+readHash(true);
 
 // Read by _tools/build-site.mjs (the destination list is defined once, here).
 export { DESTINATIONS, matchesFilter };

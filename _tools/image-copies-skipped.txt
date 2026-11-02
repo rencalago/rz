@@ -1,0 +1,6 @@
+# Written by _tools/resize-images.py: photos with no useful smaller copy.
+Images/featured-images/coron-palawan-beach-bangka-boats-aerial.jpg
+Images/featured-images/guimaras-tourist-spots-and-things-to-do.jpg
+Images/featured-images/hinatuan-enchanted-river-surigao.jpg
+Images/featured-images/intramuros-manila.jpg
+Images/featured-images/siargao-island-resort-surfing.jpg

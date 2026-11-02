@@ -1,6 +1,9 @@
 // Shared layout: header, footer and sidebar used by the homepage AND every
 // article page. Edit the menu, social links or footer in ONE place (here).
 import { newPostTwo } from "./allPost.js";
+import { svgIcon } from "./icons.js";
+import { IMAGE_VARIANTS } from "./image-variants.js";
+import { whenNear, nameFrames } from "./third-party.js";
 
 export function escapeHtml(value) {
   return String(value ?? "").replace(/[&<>"']/g, function (c) {
@@ -36,10 +39,10 @@ const NAV = [
 // Also used by the build for the author schema (sameAs), so keep these to
 // profiles that are live and yours.
 export const SOCIAL = [
-  { label: "Facebook", short: "Facebook", href: "https://www.facebook.com/rencalago", icon: "fa-brands fa-facebook" },
-  { label: "Instagram", short: "Instagram", href: "https://www.instagram.com/rencalago", icon: "fa-brands fa-instagram" },
-  { label: "YouTube", short: "YouTube", href: "https://www.youtube.com/rencalago", icon: "fa-brands fa-youtube" },
-  { label: "Twitter", short: "X", href: "https://www.twitter.com/rencalago", icon: "fa-brands fa-twitter" },
+  { label: "Facebook", short: "Facebook", href: "https://www.facebook.com/rencalago", icon: "brands/facebook" },
+  { label: "Instagram", short: "Instagram", href: "https://www.instagram.com/rencalago", icon: "brands/instagram" },
+  { label: "YouTube", short: "YouTube", href: "https://www.youtube.com/rencalago", icon: "brands/youtube" },
+  { label: "Twitter", short: "X", href: "https://www.twitter.com/rencalago", icon: "brands/twitter" },
 ];
 
 // Category chips keep a fixed order, so a new post in another category
@@ -63,9 +66,14 @@ export const START_HERE = [
 const AGODA_LIBRARY_SRC = "https://cdn0.agoda.net/images/sherpa/js/init-dynamic_v8.min.js";
 const AGODA_CONFIG = `var stg = new Object(); stg.crt="10006486859977";stg.version="1.05"; stg.id=stg.name="adgshp545693965"; stg.Width="160px"; stg.Height="600px";stg.RefKey="ynSCj/jmH6Y9AQrODGh5Rg==";stg.AutoScrollSpeed=3000;stg.AutoScrollToggle=true;stg.SearchboxShow=true;stg.DiscountedOnly=true;stg.Layout="thindynamic"; stg.Language="en-us";stg.ApiKey="636f6ea1-d6d4-4031-ac81-841baef60b1a";stg.Cid="1941279";  stg.City="18871";stg.Currency="USD";stg.OverideConf=false; new AgdDynamic('adgshp545693965').initialize(stg);`;
 
+// The widget (about half a megabyte of scripts, fonts and photos) loads only
+// when the sidebar box comes near the screen.
 function loadAgodaAd(host) {
-  // The build renders this layout without a real DOM; only load the ad in a browser.
-  if (typeof document === "undefined" || !host || !host.parentNode || host.dataset.loaded) return;
+  whenNear(host, () => startAgodaAd(host));
+}
+
+function startAgodaAd(host) {
+  if (!host || !host.parentNode || host.dataset.loaded) return;
   host.dataset.loaded = "1";
   const lib = document.createElement("script");
   lib.src = AGODA_LIBRARY_SRC;
@@ -83,6 +91,25 @@ export function thumb(url, width) {
   return String(url).replace(/sz=s\d+/, "sz=w" + width);
 }
 
+// Smaller copies of a photo (made by _tools/resize-images.py, listed in
+// image-variants.js by the build), offered to the browser with srcset so it
+// downloads a file close to the size it shows. "sizes" says how wide the image
+// is drawn. Photos without copies (and Google Drive images) get nothing extra.
+export function srcsetAttrs(src, sizes) {
+  const match = /^\.\/Images\/(([\w-]+)\/[^/?#\s,]+)$/.exec(String(src));
+  const entry = match && IMAGE_VARIANTS[match[1]];
+  if (!entry) return "";
+  const [original, ...widths] = entry;
+  const name = match[1].slice(match[2].length + 1);
+  const set = widths.map((w) => `./Images/${match[2]}/w${w}/${name} ${w}w`).concat(`${src} ${original}w`);
+  return ` srcset="${set.join(", ")}" sizes="${sizes}"`;
+}
+
+// How wide the story photos are drawn (see .story__img in style.css): full
+// width on phones, beside the text on wider screens. Measured in a browser;
+// update it if the card layout changes.
+export const STORY_IMG_SIZES = "(max-width: 600px) calc(100vw - 48px), (max-width: 1199px) 40vw, 340px";
+
 // "Cebu City · 13 October 2026"
 export function metaLine(p) {
   return [p.location, p.datePublished].filter(Boolean).map(escapeHtml).join(" · ");
@@ -93,7 +120,7 @@ export function storyCard(p) {
   return `
       <article class="story">
         <a class="story__img" href="${p.link}" tabindex="-1" aria-hidden="true">
-          <img src="${thumb(p.imagesrc, 700)}" alt="${escapeHtml(p.title)}" loading="lazy" decoding="async"${p.imageFilter ? ` style="filter: ${p.imageFilter}"` : ""}>
+          <img src="${thumb(p.imagesrc, 700)}"${srcsetAttrs(p.imagesrc, STORY_IMG_SIZES)} alt="${escapeHtml(p.title)}" loading="lazy" decoding="async"${p.imageFilter ? ` style="filter: ${p.imageFilter}"` : ""}>
         </a>
         <div class="story__body">
           <p class="kicker">${escapeHtml(p.category)}</p>
@@ -144,11 +171,22 @@ function defineOnce(name, cls) {
   if (!customElements.get(name)) customElements.define(name, cls);
 }
 
+// The build writes the header, sidebar and footer into every page as plain HTML.
+// When they are already there, the browser keeps them as they are (redrawing
+// would make the page do the work twice) and only wires up the menu buttons.
+// Empty elements (a page the build has not seen yet) are drawn here.
+const prerendered = (el) => Boolean(el.firstElementChild);
+
 export function registerLayout() {
+  nameFrames();
   defineOnce(
     "my-header",
     class extends HTMLElement {
       connectedCallback() {
+        if (!prerendered(this)) this.draw();
+        this.wireUp();
+      }
+      draw() {
         const social = SOCIAL.map(
           (s) => `<a href="${s.href}" aria-label="${s.label}">${s.short}</a>`
         ).join("");
@@ -186,7 +224,8 @@ export function registerLayout() {
     </nav>
   </div>
 </header>`;
-
+      }
+      wireUp() {
         const toggle = this.querySelector(".nav-toggle");
         const nav = this.querySelector(".site-nav");
         toggle.addEventListener("click", function () {
@@ -230,6 +269,7 @@ export function registerLayout() {
     "my-footer",
     class extends HTMLElement {
       connectedCallback() {
+        if (prerendered(this)) return;
         const year = new Date().getFullYear();
         const dest = NAV.filter((n) => n.key.startsWith("dest="))
           .map((n) => `<a href="${n.href}">${escapeHtml(n.label)}</a>`)
@@ -266,8 +306,12 @@ export function registerLayout() {
     "my-sidebar",
     class extends HTMLElement {
       connectedCallback() {
+        if (!prerendered(this)) this.draw();
+        loadAgodaAd(this.querySelector("#adgshp545693965"));
+      }
+      draw() {
         const icons = SOCIAL.map(
-          (s) => `<a href="${s.href}" aria-label="${s.label}"><i class="${s.icon}" aria-hidden="true"></i></a>`
+          (s) => `<a href="${s.href}" aria-label="${s.label}">${svgIcon(s.icon)}</a>`
         ).join("");
         // Don't suggest the article the reader is already on
         const here = "./" + currentSlug();
@@ -277,7 +321,7 @@ export function registerLayout() {
           .map(
             (p) => `
     <a class="start-item" href="${p.link}">
-      <img src="${thumb(p.imagesrc, 300)}" alt="" loading="lazy" decoding="async" width="96" height="64"${p.imageFilter ? ` style="filter: ${p.imageFilter}"` : ""}>
+      <img src="${thumb(p.imagesrc, 200)}"${srcsetAttrs(p.imagesrc, "96px")} alt="" loading="lazy" decoding="async" width="96" height="64"${p.imageFilter ? ` style="filter: ${p.imageFilter}"` : ""}>
       <span>${escapeHtml(p.title)}</span>
     </a>`
           )
@@ -304,7 +348,6 @@ export function registerLayout() {
   <div id="adgshp545693965"></div>
 </section>`;
         renderLabels(this.querySelector(".labels-container"));
-        loadAgodaAd(this.querySelector("#adgshp545693965"));
       }
     }
   );

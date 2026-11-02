@@ -6,6 +6,8 @@ import { ADSENSE_CLIENT, SQUARE_AD } from "./ad-codes.js";
 import { KLOOK_PLACES } from "./klook-codes.js";
 import { AGODA_PLACES, AGODA_TEMPLATE, STAY_KEYWORDS } from "./agoda-codes.js";
 import { registerLayout, currentSlug, escapeHtml as esc } from "./layout.js";
+import { svgIcon } from "./icons.js";
+import { afterFirstInteraction, whenNear, loadAdSenseScript } from "./third-party.js";
 
 // Read the settings defensively: an old config.js (without these names) must
 // never stop the page from loading. Comments simply stay off until it is updated.
@@ -117,13 +119,13 @@ function articleEssential() {
   if (!postingMeta || !post) return;
   // Keep the comment button the build wrote after the date.
   const commentsLink = postingMeta.querySelector(".meta-comments");
-  postingMeta.innerHTML = `<p><span class="author"><i class="fa-solid fa-user" aria-hidden="true"></i> ${esc(
+  postingMeta.innerHTML = `<p><span class="author">${svgIcon("solid/user")} ${esc(
     post.author
-  )}</span><span class="postDate"><i class="fa-regular fa-clock" aria-hidden="true"></i> ${esc(
+  )}</span><span class="postDate">${svgIcon("regular/clock")} ${esc(
     post.datePublished
   )}</span>${
     post.dateModified
-      ? `<span class="postDate"><i class="fa-solid fa-rotate" aria-hidden="true"></i> Updated ${esc(post.dateModified)}</span>`
+      ? `<span class="postDate">${svgIcon("solid/rotate")} Updated ${esc(post.dateModified)}</span>`
       : ""
   }</p>`;
   if (commentsLink) postingMeta.querySelector("p").append(commentsLink);
@@ -146,8 +148,7 @@ function insertArticleAd() {
   box.innerHTML = SQUARE_AD;
   body.insertBefore(box, body.firstChild);
 
-  loadAdSense();
-  collapseIfUnfilled(box);
+  loadAdSense(() => collapseIfUnfilled(box));
 }
 
 // KLOOK WIDGET: one horizontal Klook widget per article, from klook-codes.js.
@@ -283,8 +284,11 @@ function makeAgodaBox(code) {
   const box = document.createElement("aside");
   box.className = "agoda-widget";
   box.setAttribute("aria-label", "Hotels");
-  setHtmlWithScripts(box, code);
-  fitAgodaWidth(box);
+  // The widget's scripts load once the box comes near the screen.
+  whenNear(box, () => {
+    setHtmlWithScripts(box, code);
+    fitAgodaWidth(box);
+  });
   return box;
 }
 
@@ -357,8 +361,11 @@ function makeKlookBox(code) {
   const box = document.createElement("aside");
   box.className = "klook-widget";
   box.setAttribute("aria-label", "Tours and activities");
-  setHtmlWithScripts(box, code);
-  trimKlookHeight(box);
+  // The widget's scripts load once the box comes near the screen.
+  whenNear(box, () => {
+    setHtmlWithScripts(box, code);
+    trimKlookHeight(box);
+  });
   return box;
 }
 
@@ -429,21 +436,20 @@ function collapseIfUnfilled(box) {
   }, 250);
 }
 
-// Loads the AdSense script once and asks it to fill the ad slot(s) on this page.
-function loadAdSense() {
+// Asks AdSense to fill the ad slot(s) on this page. The request is queued now;
+// the AdSense script itself loads after the article has drawn (first scroll or
+// tap, or a few seconds after loading), then fills the queued slots. afterLoad
+// runs once the script has been added.
+function loadAdSense(afterLoad) {
   const client = (ADSENSE_CLIENT || "").trim();
   if (!client) {
     console.warn("Ads: add your publisher ID (ADSENSE_CLIENT) in ad-codes.js.");
     return;
   }
-  if (!document.querySelector("script[data-adsense-loader]")) {
-    const s = document.createElement("script");
-    s.async = true;
-    s.crossOrigin = "anonymous";
-    s.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${encodeURIComponent(client)}`;
-    s.dataset.adsenseLoader = "1";
-    document.head.appendChild(s);
-  }
+  afterFirstInteraction(() => {
+    loadAdSenseScript(client);
+    if (afterLoad) afterLoad();
+  });
   try {
     (window.adsbygoogle = window.adsbygoogle || []).push({});
   } catch (e) {
