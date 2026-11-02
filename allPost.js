@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/culion-palawan-beach-palm-trees-sunset.jpg",
+    postNumber: 217,
+    title: "Culion Island: History, Beaches and Things to Do",
+    desc: "Culion Island guide: the former leprosy colony's history, the fort, church and museum, nearby beaches and wrecks, the boat from Coron, cash and where to stay.",
+    datePublished: "2 November 2026",
+    comments: 0,
+    link: "./culion-island-history-beaches-things-to-do",
+    location: "Culion, Palawan",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/port-barton-palawan-beach-palm-trees.jpg",
     postNumber: 216,
     title: "Port Barton Travel Guide: Beaches, Tours, Budget, Itinerary",
