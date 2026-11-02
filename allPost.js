@@ -1,5 +1,17 @@
 let newPostTwo = [
   {
+    category: "Cafes & Restaurant",
+    imagesrc: "./Images/featured-images/best-cafes-in-baguio-garden-cafe-pines.jpg",
+    postNumber: 219,
+    title: "Best Cafes in Baguio: Scenic Views, Coffee and Pastries",
+    desc: "Best cafés in Baguio: ridge-view cafés like Arca's Yard, specialty coffee at Foam, Hatch and Hot Cat, Vizco's shortcake and Café by the Ruins, with timing tips.",
+    datePublished: "2 November 2026",
+    comments: 0,
+    link: "./best-cafes-in-baguio-scenic-views-coffee-pastries",
+    location: "Baguio City, Benguet",
+    author: "Ren Calago",
+  },
+  {
     category: "Travel",
     imagesrc: "./Images/featured-images/how-to-get-to-dinagat-islands-limestone-cove-aerial.jpg",
     postNumber: 218,
