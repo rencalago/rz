@@ -423,10 +423,10 @@ let newPostTwo = [
   },
   {
     category: "Cafes & Restaurant",
-    imagesrc: "./Images/featured-images/baguio-strawberry-taho-cup.jpg",
+    imagesrc: "./Images/featured-images/baguio-garden-cafe-koi-pond-interior.jpg",
     postNumber: 184,
-    title: "Baguio Food Guide: Where Locals Eat and What to Try",
-    desc: "Baguio food guide: strawberry taho, Good Taste, sizzling plates, pinikpikan, Café by the Ruins, night market snacks and Good Shepherd ube jam to bring home.",
+    title: "Baguio Food Guide: What to Eat and Where Locals Eat",
+    desc: "What to eat in Baguio: strawberry taho, pinikpikan, etag and other Cordillera dishes, plus Good Taste, Café by the Ruins and Farmer's Daughter, and pasalubong.",
     datePublished: "29 October 2026",
     comments: 0,
     link: "./baguio-food-guide-where-locals-eat",
