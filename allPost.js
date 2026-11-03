@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/el-nido-palawan-clear-water-swimmer-limestone.jpg",
+    postNumber: 226,
+    title: "Palawan Lagoons and Hidden Beaches Beyond the Usual Tours",
+    desc: "Palawan's best lagoons and hidden beaches by area: El Nido, Coron, Linapacan, Balabac and Cuyo, with how to get there, which tour to book and when to go.",
+    datePublished: "3 November 2026",
+    comments: 0,
+    link: "./palawan-lagoons-hidden-beaches",
+    location: "El Nido, Palawan",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/things-to-do-in-baguio-mansion-reflecting-pool.jpg",
     postNumber: 225,
     title: "15 Best Things to Do in Baguio City",
