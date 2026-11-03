@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/dumaguete-public-market-painitan-street.jpg",
+    postNumber: 228,
+    title: "Christmas in Dumaguete 2026: Lights, Masses and Markets",
+    desc: "Christmas in Dumaguete 2026: when the lights go up, a walking loop from Quezon Park to the boulevard, Simbang Gabi at the cathedral and a Christmas week plan.",
+    datePublished: "3 November 2026",
+    comments: 0,
+    link: "./christmas-in-dumaguete-2026-lights-masses-markets",
+    location: "Dumaguete City, Negros Oriental",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/cebu-city-night-lights-traffic.jpg",
     postNumber: 227,
     title: "Christmas in Cebu 2026: Lights, Simbang Gabi, Night Markets",
