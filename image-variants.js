@@ -70,6 +70,7 @@ export const IMAGE_VARIANTS = {
   "featured-images/dumaguete-tree-lined-street-tricycles.jpg": [772, 400],
   "featured-images/dumanjug-cebu-travel-guide.jpg": [800, 400],
   "featured-images/el-nido-island-hopping-tours-a-b-c-d.jpg": [1280, 400, 720],
+  "featured-images/el-nido-palawan-clear-water-swimmer-limestone.jpg": [1024, 400],
   "featured-images/el-nido-palawan.jpg": [1408, 400],
   "featured-images/gcash-booth-trade-fair.jpeg": [1024, 400],
   "featured-images/giant-lantern-festival-pampanga.jpg": [928, 400],
