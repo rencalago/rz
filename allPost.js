@@ -1,6 +1,19 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/davao-city-downtown-street.jpg",
+    postNumber: 223,
+    title: "Davao City Travel Guide for First-Time Visitors",
+    desc: "First time in Davao City? Where to stay, how to get around, top things to do, what to eat, the new city tours, when to go and how to budget your trip.",
+    datePublished: "3 November 2026",
+    comments: 0,
+    link: "./davao-city-travel-guide-first-time-visitors",
+    location: "Davao City, Davao del Sur",
+    agodaDestination: "Davao City",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/tinalisayan-island-sandbar-burias-masbate.jpg",
     postNumber: 222,
     title: "Tinalisayan Island: A Guide to Masbate's White-Sand Sandbar",
