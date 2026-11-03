@@ -3434,3 +3434,140 @@ my-sidebar {
   .dish-grid { grid-template-columns: 1fr; }
   .eat-card { padding: 18px 16px 14px 20px; }
 }
+
+/* ==========================================================================
+   Premium article sections (reusable)
+   Use these instead of plain <ul> lists for list-type sections in articles.
+   - .pd.pd-cards   icon cards (getting around, how-tos)      li > .pd-cards__icon + span > strong.pd__t + span.pd__d
+   - .pd.pd-menu    menu-style food panel                     .pd-menu__head (p.pd__eyebrow + p.pd-menu__title), li > .pd-menu__icon + text
+   - .pd.pd-days    numbered day cards (short day plans)      li > .pd-days__top (.pd-days__num + .pd-days__day/.pd-days__name) + p.pd-days__body
+   - .pd.pd-tips    dark-teal tips panel, frosted cards       p.pd__eyebrow, li > .pd-tips__check + text
+   - .pd-tipgrid    dark-teal panel with white numbered tip cards (see the Pasko Fiesta article)
+   Icons: <i class="fa-solid fa-NAME"></i> with names from _tools/icons.mjs only.
+   ========================================================================== */
+/* Shared */
+.pd{--x-teal:#0b7a7c;--x-deep:#123b3c;--x-gold:#b7863b;--x-goldl:#e8c480;--x-soft:#e4f1f0;--x-ink:#1b2626;--x-muted:#55615f;--x-line:#dde5e4;margin:6px 0 4px}
+.pd ul,.pd ol{list-style:none;margin:0;padding:0}
+.pd__eyebrow{margin:0 0 12px;font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--x-gold)}
+.pd-cards ul{display:grid;grid-template-columns:1fr;gap:12px}
+.pd-cards li{display:flex;gap:14px;align-items:flex-start;margin:0;padding:16px;border:1px solid var(--x-line);border-left:4px solid var(--x-teal);border-radius:12px;background:#fff;box-shadow:0 2px 8px rgba(18,59,60,.06)}
+.pd-cards__icon{flex:0 0 auto;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:var(--x-soft);color:var(--x-teal);font-size:1.05rem}
+.pd__t{display:block;font-weight:700;color:var(--x-deep);font-size:1rem;line-height:1.3;margin-bottom:4px}
+.pd__d{display:block;font-size:.93rem;line-height:1.55;color:var(--x-muted)}
+.pd-menu{padding:22px 20px;border-radius:16px;background:#fbf7ef;border:1px solid #eadfc8;position:relative}
+.pd-menu::before{content:"";position:absolute;inset:8px;border:1px dashed #e2d2ad;border-radius:11px;pointer-events:none}
+.pd-menu__head{position:relative;text-align:center;margin:0 0 14px}
+.pd-menu__head .pd__eyebrow{margin:0}
+.pd-menu__title{margin:2px 0 0;font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:var(--x-deep)}
+.pd-menu li{position:relative;display:flex;gap:14px;align-items:flex-start;margin:0;padding:14px 4px;border-top:1px dotted #d9c79d}
+.pd-menu li:first-child{border-top:0}
+.pd-menu__icon{flex:0 0 auto;width:38px;height:38px;border-radius:10px;display:grid;place-items:center;background:#fff;border:1px solid #eadfc8;color:var(--x-gold)}
+.pd-menu .pd__t{font-family:Georgia,"Times New Roman",serif;font-size:1.05rem}
+.pd-days ol{display:grid;grid-template-columns:1fr;gap:14px;counter-reset:none}
+.pd-days li{margin:0;border-radius:14px;overflow:hidden;background:#fff;border:1px solid var(--x-line);box-shadow:0 4px 14px rgba(18,59,60,.08)}
+.pd-days__top{display:flex;align-items:center;gap:12px;padding:14px 16px;background:linear-gradient(120deg,var(--x-deep) 0%,var(--x-teal) 70%,#3f8f7a 100%);color:#fff}
+.pd-days__num{flex:0 0 auto;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.14);border:1px solid var(--x-goldl);color:var(--x-goldl);font-weight:800;font-size:1rem}
+.pd-days__day{display:block;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--x-goldl);font-weight:700}
+.pd-days__name{display:block;font-weight:700;font-size:1.05rem;line-height:1.25}
+.pd-days__body{padding:14px 16px 16px;font-size:.94rem;line-height:1.55;color:var(--x-muted)}
+.pd-tips{position:relative;padding:22px 20px 20px;border-radius:16px;background:linear-gradient(160deg,#123b3c 0%,#0b5f61 55%,#0b7a7c 100%);color:#fff;overflow:hidden;box-shadow:0 10px 28px rgba(18,59,60,.18)}
+.pd-tips::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.14) 1px,transparent 1.5px);background-size:40px 40px;pointer-events:none}
+.pd-tips .pd__eyebrow{position:relative;color:var(--x-goldl)}
+.pd-tips ul{position:relative;display:grid;grid-template-columns:1fr;gap:10px}
+.pd-tips li{display:flex;gap:12px;align-items:flex-start;margin:0;padding:14px 16px;border-radius:12px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16)}
+.pd-tips__check{flex:0 0 auto;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:var(--x-gold);color:#fff;font-size:.8rem;margin-top:1px}
+.pd-tips .pd__t{color:#fff}
+.pd-tips .pd__d{color:rgba(255,255,255,.84)}
+@media (min-width:700px){.pd-cards ul,.pd-tips ul{grid-template-columns:1fr 1fr}.pd-tips li:last-child:nth-child(odd){grid-column:1 / -1}.pd-days ol{grid-template-columns:repeat(3,1fr)}.pd-menu{padding:26px 28px}}
+
+/* Tip grid */
+.pd-tipgrid { --tg-teal:#0b7a7c; --tg-deep:#123b3c; --tg-gold:#b7863b; --tg-soft:#e4f1f0; --tg-line:#dde5e4; --tg-ink:#1b2626; --tg-muted:#55615f; position:relative; margin:8px 0 4px; padding:22px 20px 20px; border-radius:16px; background:linear-gradient(160deg,#123b3c 0%,#0b5f61 55%,#0b7a7c 100%); color:#fff; overflow:hidden; box-shadow:0 10px 28px rgba(18,59,60,.18); }
+.pd-tipgrid::before { content:""; position:absolute; inset:0; background-image:radial-gradient(rgba(255,255,255,.18) 1px,transparent 1.5px),radial-gradient(rgba(183,134,59,.35) 1px,transparent 1.5px); background-size:46px 46px,72px 72px; background-position:0 0,23px 31px; pointer-events:none; }
+.pd-tipgrid__head { position:relative; display:flex; align-items:center; gap:12px; margin:0 0 16px; }
+.pd-tipgrid__star { flex:0 0 auto; width:40px; height:40px; border-radius:50%; display:grid; place-items:center; background:rgba(183,134,59,.22); border:1px solid rgba(232,196,128,.55); }
+.pd-tipgrid__eyebrow { margin:0; font-size:.78rem; letter-spacing:.12em; text-transform:uppercase; color:#e8c480; font-weight:700; }
+.pd-tipgrid__lead { margin:2px 0 0; font-size:.95rem; color:rgba(255,255,255,.88); line-height:1.45; }
+.full-content .pd-tipgrid__grid, .pd-tipgrid__grid { position:relative; list-style:none; margin:0; padding:0; display:grid; grid-template-columns:1fr; gap:12px; }
+.pd-tipgrid__item { display:flex; gap:14px; align-items:flex-start; margin:0; padding:16px; border-radius:12px; background:#fff; color:var(--tg-ink); border-top:3px solid var(--tg-gold); box-shadow:0 2px 6px rgba(0,0,0,.08); }
+.pd-tipgrid__icon { flex:0 0 auto; width:42px; height:42px; border-radius:10px; display:grid; place-items:center; background:var(--tg-soft); color:var(--tg-teal); }
+.pd-tipgrid__num { display:block; font-size:.72rem; font-weight:700; letter-spacing:.1em; color:var(--tg-gold); text-transform:uppercase; margin-bottom:2px; }
+.pd-tipgrid__title { display:block; font-size:1rem; font-weight:700; color:var(--tg-deep); line-height:1.3; margin-bottom:4px; }
+.pd-tipgrid__text { display:block; font-size:.93rem; line-height:1.55; color:var(--tg-muted); }
+@media (min-width:700px) { .full-content .pd-tipgrid__grid, .pd-tipgrid__grid { grid-template-columns:1fr 1fr; } .pd-tipgrid { padding:26px 24px 24px; } }
+
+/* ==========================================================================
+   Article section designs moved out of single articles (inline styles to classes)
+   - .trip-plan      dark-header sample itinerary with day timeline (Dinagat Islands guide)
+   - .ferry-steps    route header + numbered step timeline (How to get to Dinagat)
+   - .route-cards    "starting from" cards in a grid (How to get to Dinagat)
+   - .quick-facts    at-a-glance facts box (Osmena Peak traverse)
+   Copy-ready markup: _tools/premium-sections.html
+   ========================================================================== */
+/* trip-plan (dinagat-islands-travel-guide.html) */
+.trip-plan { margin: 0; border-radius: 18px; overflow: hidden; border: 1px solid #d3e3e2; background: #f8fbfb; box-shadow: 0 18px 40px -24px rgba(18,59,60,0.45); }
+.trip-plan .tp-head { padding: 22px 20px 14px; background: linear-gradient(135deg, #123b3c 0%, #0b5f61 55%, #0b7a7c 100%); color: #fff; }
+.trip-plan .tp-eyebrow { margin: 0 0 6px; font-size: 0.75em; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #f0c060; }
+.trip-plan .tp-title { margin: 0 0 6px; font-family: var(--font-display, Georgia, serif); font-size: 1.55em; font-weight: 700; line-height: 1.2; color: #fff; }
+.trip-plan .tp-lead { margin: 0 0 14px; color: #cfe0df; line-height: 1.5; }
+.trip-plan .tp-chips { margin: 0; }
+.trip-plan .tp-chip { display: inline-block; margin: 0 6px 8px 0; padding: 5px 12px; border-radius: 999px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.28); font-size: 0.82em; color: #fff; }
+.trip-plan .tp-days { list-style: none; margin: 0; padding: 22px 14px 2px; }
+.trip-plan .tp-day { position: relative; display: flex; gap: 12px; margin: 0 0 22px; padding: 0; }
+.trip-plan .tp-line { position: absolute; left: 23px; top: 54px; bottom: -22px; width: 2px; background: linear-gradient(#0b7a7c, #c5d2d1); }
+.trip-plan .tp-mark { position: relative; z-index: 1; flex: 0 0 48px; height: 48px; border-radius: 50%; background: #123b3c; color: #fff; box-shadow: 0 0 0 3px #f8fbfb, 0 0 0 5px #e0a526; display: flex; flex-direction: column; align-items: center; justify-content: center; line-height: 1; }
+.trip-plan .tp-mark-label { font-size: 0.55em; letter-spacing: 0.12em; font-weight: 700; color: #f0c060; }
+.trip-plan .tp-mark-num { font-family: var(--font-display, Georgia, serif); font-size: 1.3em; font-weight: 700; }
+.trip-plan .tp-card { flex: 1; min-width: 0; background: #fff; border: 1px solid #e3ebea; border-radius: 14px; box-shadow: 0 10px 24px -14px rgba(18,59,60,0.35); overflow: hidden; }
+.trip-plan .tp-card-body { padding: 14px 16px 4px; border-top: 4px solid #0b7a7c; }
+.trip-plan .tp-tag-wrap { margin: 0 0 4px; }
+.trip-plan .tp-tag { display: inline-block; padding: 3px 10px; border-radius: 999px; background: #fdf4dd; color: #8a5a00; font-size: 0.72em; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+.trip-plan .tp-card-title { margin: 6px 0 4px; font-family: var(--font-display, Georgia, serif); font-size: 1.22em; line-height: 1.3; color: #1b2626; }
+.trip-plan .tp-slots { list-style: none; margin: 0; padding: 0; }
+.trip-plan .tp-slot { display: flex; gap: 12px; align-items: flex-start; padding: 10px 0; }
+.trip-plan .tp-slot-icon { flex: 0 0 32px; height: 32px; border-radius: 9px; background: #e4f1f0; color: #0b5f61; display: flex; align-items: center; justify-content: center; }
+.trip-plan .tp-slot-text { flex: 1; min-width: 0; }
+.trip-plan .tp-slot-time { display: block; font-size: 0.74em; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #0b7a7c; margin-bottom: 1px; }
+.trip-plan .tp-slot-what { display: block; color: #2b3836; line-height: 1.55; }
+.trip-plan .tp-slot.tp-slot--rule { display: flex; gap: 12px; align-items: flex-start; border-top: 1px solid #eef3f2; padding: 10px 0; }
+.trip-plan .tp-tip { margin: 0; padding: 12px 16px; background: #f3f8f7; border-top: 1px solid #e3ebea; font-size: 0.92em; color: #123b3c; line-height: 1.5; }
+.trip-plan .tp-tip-label { color: #0b5f61; }
+.trip-plan .tp-pack { padding: 14px 18px 8px; border-top: 1px solid #e3ebea; background: #fff; }
+.trip-plan .tp-pack-title { margin: 0 0 8px; font-size: 0.75em; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #55615f; }
+.trip-plan .tp-pack-chip { display: inline-block; margin: 0 6px 8px 0; padding: 5px 12px; border-radius: 999px; background: #fff; border: 1px solid #d3e3e2; font-size: 0.85em; color: #2b3836; }
+@media (max-width: 480px) { .trip-plan .tp-mark, .trip-plan .tp-line { display: none; } .trip-plan .tp-days { padding: 16px 10px 2px; } }
+/* ferry-steps (how-to-get-to-dinagat-islands.html) */
+.ferry-steps { margin: 0; border-radius: 18px; overflow: hidden; border: 1px solid #d3e3e2; background: #f8fbfb; box-shadow: 0 18px 40px -24px rgba(18,59,60,0.45); }
+.ferry-steps .fs-head { padding: 20px 18px 12px; background: linear-gradient(135deg, #123b3c 0%, #0b5f61 55%, #0b7a7c 100%); color: #fff; }
+.ferry-steps .fs-eyebrow { margin: 0 0 6px; font-size: 0.75em; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #f0c060; }
+.ferry-steps .fs-title { margin: 0 0 16px; font-family: var(--font-display, Georgia, serif); font-size: 1.45em; font-weight: 700; line-height: 1.2; color: #fff; }
+.ferry-steps .fs-route { display: flex; align-items: flex-start; gap: 10px; margin: 0 0 16px; }
+.ferry-steps .fs-stop { flex: 0 0 auto; text-align: center; }
+.ferry-steps .fs-stop-dot { display: block; width: 14px; height: 14px; margin: 0 auto 6px; border-radius: 50%; background: #f0c060; box-shadow: 0 0 0 4px rgba(240,192,96,0.25); }
+.ferry-steps .fs-stop-name { display: block; font-weight: 700; color: #fff; font-size: 0.95em; }
+.ferry-steps .fs-stop-note { display: block; font-size: 0.75em; color: #cfe0df; }
+.ferry-steps .fs-route-line { flex: 1; position: relative; height: 14px; margin-top: 0; border-top: 2px dashed rgba(255,255,255,0.45); top: 6px; }
+.ferry-steps .fs-route-time { position: absolute; left: 50%; top: -22px; transform: translateX(-50%); padding: 3px 9px; border-radius: 999px; background: #fff; color: #0b5f61; font-size: 0.72em; font-weight: 700; white-space: nowrap; }
+.ferry-steps .fs-facts { margin: 0; }
+.ferry-steps .fs-fact { display: inline-block; margin: 0 6px 8px 0; padding: 6px 12px; border-radius: 10px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.25); line-height: 1.25; }
+.ferry-steps .fs-fact-label { display: block; font-size: 0.68em; letter-spacing: 0.12em; text-transform: uppercase; color: #f0c060; font-weight: 700; }
+.ferry-steps .fs-fact-value { display: block; font-size: 0.92em; color: #fff; font-weight: 600; }
+.ferry-steps .fs-steps { list-style: none; margin: 0; padding: 18px 14px 4px; }
+.ferry-steps .fs-step { position: relative; display: flex; gap: 14px; margin: 0 0 14px; padding: 0; }
+.ferry-steps .fs-line { position: absolute; left: 21px; top: 48px; bottom: -14px; width: 2px; background: linear-gradient(#0b7a7c, #d3e3e2); }
+.ferry-steps .fs-mark { position: relative; z-index: 1; flex: 0 0 44px; height: 44px; border-radius: 12px; background: #123b3c; color: #f0c060; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 14px -8px rgba(18,59,60,0.6); }
+.ferry-steps .fs-card { flex: 1; min-width: 0; background: #fff; border: 1px solid #e3ebea; border-radius: 12px; padding: 12px 14px; box-shadow: 0 8px 20px -16px rgba(18,59,60,0.4); }
+.ferry-steps .fs-step-num { margin: 0 0 2px; font-size: 0.72em; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #8a5a00; }
+.ferry-steps .fs-step-title { margin: 0 0 4px; font-family: var(--font-display, Georgia, serif); font-size: 1.12em; font-weight: 700; line-height: 1.3; color: #1b2626; }
+.ferry-steps .fs-step-text { margin: 0; color: #2b3836; line-height: 1.55; }
+.ferry-steps .fs-note { margin: 0; padding: 12px 16px; border-top: 1px solid #e3ebea; background: #fdf4dd; color: #5c4300; font-size: 0.92em; line-height: 1.5; }
+@media (max-width: 480px) { .ferry-steps .fs-mark, .ferry-steps .fs-line { display: none; } .ferry-steps .fs-steps { padding: 14px 10px 2px; } }
+/* route-cards (how-to-get-to-dinagat-islands.html) */
+.route-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; margin: 0; }
+.route-cards .rc-card { background: #fff; border: 1px solid #e3ebea; border-top: 4px solid #0b7a7c; border-radius: 14px; padding: 14px 16px; box-shadow: 0 10px 24px -16px rgba(18,59,60,0.35); }
+.route-cards .rc-eyebrow { margin: 0 0 4px; font-size: 0.72em; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #8a5a00; }
+.route-cards .rc-title { margin: 0 0 6px; font-family: var(--font-display, Georgia, serif); font-size: 1.12em; font-weight: 700; line-height: 1.3; color: #1b2626; }
+.route-cards .rc-text { margin: 0; color: #2b3836; font-size: 0.95em; line-height: 1.5; }
+/* quick-facts (osmena-peak-to-kawasan-falls-traverse.html) */
+.quick-facts { margin: 0; padding: 14px 18px; border: 1px solid #ddd; border-left: 4px solid #2f7d6d; border-radius: 6px; background: #f6faf9; }
+.quick-facts .qf-title { margin: 0 0 8px; }
+.quick-facts .qf-list { margin: 0; padding-left: 20px; }

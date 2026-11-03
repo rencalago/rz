@@ -1,0 +1,373 @@
+<!--
+  Article section designs: copy-ready markup for rencalago.com articles.
+  Styles live in style.css (no per-article <style> blocks needed).
+  Copy a block into the article body in place of a plain list, keep the <h2> above it, and swap the text.
+  Icons: <i class="fa-solid fa-NAME" aria-hidden="true"></i>, names from _tools/icons.mjs only (the build turns them into SVG).
+  Repeated items are trimmed to keep this file short; copy an item to add more.
+-->
+
+<!-- Icon cards (.pd-cards)
+     Use for: getting around, how-tos, short lists with an icon each
+     Example from davao-city-travel-guide-first-time-visitors.html -->
+<div class="pd pd-cards" role="region" aria-label="Getting around the city">
+  <ul>
+    <li><span class="pd-cards__icon"><i class="fa-solid fa-person-walking" aria-hidden="true"></i></span><span><strong class="pd__t">Downtown</strong><span class="pd__d">Group nearby stops and walk between them when the heat and the sidewalks allow it.</span></span></li>
+    <li><span class="pd-cards__icon"><i class="fa-solid fa-mountain-sun" aria-hidden="true"></i></span><span><strong class="pd__t">The uplands</strong><span class="pd__d">Book a round trip or settle your return ride before you leave the city, since cars are harder to find for the trip back.</span></span></li>
+  </ul>
+</div>
+
+<!-- Menu-style food panel (.pd-menu)
+     Use for: what to eat, local dishes
+     Example from davao-city-travel-guide-first-time-visitors.html -->
+<div class="pd pd-menu" role="region" aria-label="What to eat in Davao City">
+  <div class="pd-menu__head"><p class="pd__eyebrow">The Davao table</p><p class="pd-menu__title">Five things to taste</p></div>
+  <ul>
+    <li><span class="pd-menu__icon"><i class="fa-solid fa-seedling" aria-hidden="true"></i></span><span><strong class="pd__t">Durian</strong><span class="pd__d">The fruit Davao is most famous for. First-timers should start with a small piece, or try it as candy or ice cream before taking on the fresh fruit.</span></span></li>
+    <li><span class="pd-menu__icon"><i class="fa-solid fa-lemon" aria-hidden="true"></i></span><span><strong class="pd__t">Pomelo</strong><span class="pd__d">Big, sweet-sour citrus sold in markets and fruit stands, and easy to carry home.</span></span></li>
+  </ul>
+</div>
+
+<!-- Numbered day cards (.pd-days)
+     Use for: short 2-4 day plans, one line per day
+     Example from davao-city-travel-guide-first-time-visitors.html -->
+<div class="pd pd-days" role="region" aria-label="A simple plan for a first visit">
+  <ol>
+    <li><div class="pd-days__top"><span class="pd-days__num" aria-hidden="true">01</span><span><span class="pd-days__day">Day 1</span><span class="pd-days__name">Downtown</span></span></div><p class="pd-days__body">People's Park, a museum, a food walk and fruit in the evening. Keep it light after travelling.</p></li>
+    <li><div class="pd-days__top"><span class="pd-days__num" aria-hidden="true">02</span><span><span class="pd-days__day">Day 2</span><span class="pd-days__name">The uplands</span></span></div><p class="pd-days__body">The Philippine Eagle Center and one more stop nearby, such as a cacao farm or a garden.</p></li>
+    <li><div class="pd-days__top"><span class="pd-days__num" aria-hidden="true">03</span><span><span class="pd-days__day">Day 3</span><span class="pd-days__name">Your choice</span></span></div><p class="pd-days__body">A market and food tour in the city, or Samal for the beach. Do not try to do both.</p></li>
+  </ol>
+</div>
+
+<!-- Dark-teal tips panel (.pd-tips)
+     Use for: tips before you go, rules, reminders
+     Example from davao-city-travel-guide-first-time-visitors.html -->
+<div class="pd pd-tips" role="region" aria-label="Tips before you go">
+  <p class="pd__eyebrow">Before you fly</p>
+  <ul>
+    <li><span class="pd-tips__check"><i class="fa-solid fa-lightbulb" aria-hidden="true"></i></span><span><strong class="pd__t">Know the local rules</strong><span class="pd__d">Davao enforces a public smoking ban, a firecracker ban and speed limits, and the police act on them.</span></span></li>
+    <li><span class="pd-tips__check"><i class="fa-solid fa-lightbulb" aria-hidden="true"></i></span><span><strong class="pd__t">Carry cash</strong><span class="pd__d">Malls and larger restaurants take cards and e-wallets, but small vendors and drivers often want cash.</span></span></li>
+  </ul>
+</div>
+
+<!-- Tip grid (.pd-tipgrid)
+     Use for: numbered tips with a header and lead line
+     Example from davao-pasko-fiesta-2026-christmas-attractions.html -->
+<div class="pd-tipgrid" role="region" aria-label="Tips for a December trip to Davao">
+  <div class="pd-tipgrid__head">
+    <span class="pd-tipgrid__star" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><path fill="#e8c480" d="M12 2.5l2.7 6.1 6.6.6-5 4.4 1.5 6.5L12 16.7l-5.8 3.4 1.5-6.5-5-4.4 6.6-.6z"/></svg></span>
+    <div>
+      <p class="pd-tipgrid__eyebrow">Before you go</p>
+      <p class="pd-tipgrid__lead">Six things that make a December visit to Davao easier.</p>
+    </div>
+  </div>
+  <ul class="pd-tipgrid__grid">
+    <li class="pd-tipgrid__item"><span class="pd-tipgrid__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v7M3 14h18M3 18v2M21 18v2M7 9V6a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v3"/></svg></span><span><span class="pd-tipgrid__num">Tip 01</span><strong class="pd-tipgrid__title">Book rooms early for the second half of December</strong><span class="pd-tipgrid__text">Organisers expected around 100,000 visitors for last year's Pasko Fiesta, and families from nearby provinces fill hotels in the days before Christmas.</span></span></li>
+    <li class="pd-tipgrid__item"><span class="pd-tipgrid__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 16H3z"/><path d="M12 10v4M12 17h.01"/></svg></span><span><span class="pd-tipgrid__num">Tip 02</span><strong class="pd-tipgrid__title">Check road closures on event days</strong><span class="pd-tipgrid__text">The city posts closures for the parade and the dawn Mass food strip. Downtown traffic slows on these days, so walk or ride a taxi instead of driving into the centre.</span></span></li>
+  </ul>
+</div>
+
+<!-- Itinerary day timeline (.itin)
+     Use for: detailed day-by-day plans with times
+     Example from davao-city-itinerary-3-days.html -->
+<div class="itin">
+  <section class="itin-day" aria-labelledby="dv-day-1">
+    <header class="itin-day__head">
+      <span class="itin-day__num" aria-hidden="true">01</span>
+      <h3 class="itin-day__title" id="dv-day-1"><span class="itin-day__eyebrow">Day 1 &middot; Downtown</span>Parks, museums and the night market</h3>
+    </header>
+    <ol class="itin-day__list">
+      <li class="itin-day__item"><span class="itin-day__time">Morning</span><span class="itin-day__what"><span class="itin-day__icon"><i class="fa-solid fa-tree" aria-hidden="true"></i></span><span>People's Park and the National Museum<small>The museum sits inside the park compound; admission is free with a valid ID</small></span></span></li>
+      <li class="itin-day__item"><span class="itin-day__time">Midday</span><span class="itin-day__what"><span class="itin-day__icon"><i class="fa-solid fa-landmark" aria-hidden="true"></i></span><span>Museo Dabawenyo and San Pedro Cathedral<small>Both close to City Hall, an easy walk apart</small></span></span></li>
+      <li class="itin-day__item itin-day__item--rest"><span class="itin-day__time">Afternoon</span><span class="itin-day__what"><span class="itin-day__icon"><i class="fa-solid fa-mug-hot" aria-hidden="true"></i></span><span>Rest in the heat of the day<small>Fruit stand, café or a nap back at the hotel</small></span></span></li>
+      <li class="itin-day__item itin-day__item--food"><span class="itin-day__time">Evening</span><span class="itin-day__what"><span class="itin-day__icon"><i class="fa-solid fa-utensils" aria-hidden="true"></i></span><span>Roxas Night Market<small>Grilled skewers, fruit and a street massage</small></span></span></li>
+    </ol>
+  </section>
+</div>
+
+<!-- Sample itinerary with timeline (.trip-plan)
+     Use for: a full trip plan with header chips, day timeline and packing chips
+     Example from dinagat-islands-travel-guide.html -->
+<div class="trip-plan">
+  <div class="tp-head">
+    <p class="tp-eyebrow">Sample itinerary</p>
+    <p class="tp-title">Three days in the Dinagat Islands</p>
+    <p class="tp-lead">One base in San Jose, one big boat day, and a light last day in case the sea says no.</p>
+    <p class="tp-chips"><span class="tp-chip">3 days, 2 nights</span><span class="tp-chip">Base: San Jose</span><span class="tp-chip">Best: March to May</span><span class="tp-chip">Boat + habal-habal</span></p>
+  </div>
+  <ol class="tp-days">
+    <li class="tp-day">
+      <span class="tp-line" aria-hidden="true"></span><span class="tp-mark" aria-hidden="true"><span class="tp-mark-label">DAY</span><span class="tp-mark-num">1</span></span>
+      <div class="tp-card">
+        <div class="tp-card-body">
+          <p class="tp-tag-wrap"><span class="tp-tag">Day 1 &middot; Arrival</span></p>
+          <h3 class="tp-card-title">Cross over and settle into San Jose</h3>
+          <ul class="tp-slots">
+        <li class="tp-slot">
+          <span class="tp-slot-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3v2M5.6 7.6 4.2 6.2M18.4 7.6l1.4-1.4M3 15h2M19 15h2"/><path d="M7 15a5 5 0 0 1 10 0"/><path d="M3 19h18"/></svg></span>
+          <span class="tp-slot-text"><span class="tp-slot-time">Morning</span><span class="tp-slot-what">Early boat from the Surigao City ferry terminal to San Jose Port, about an hour and a half.</span></span>
+        </li>
+        <li class="tp-slot tp-slot--rule">
+          <span class="tp-slot-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M17 18a5 5 0 0 0-10 0"/><path d="M12 9V2M4.2 10.2l1.4 1.4M1 18h2M21 18h2M18.4 11.6l1.4-1.4M23 22H1M16 5l-4 4-4-4"/></svg></span>
+          <span class="tp-slot-text"><span class="tp-slot-time">Afternoon</span><span class="tp-slot-what">Check in, then ride up to the battleship-shaped provincial capitol for the view over the town.</span></span>
+        </li>
+        <li class="tp-slot tp-slot--rule">
+          <span class="tp-slot-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></span>
+          <span class="tp-slot-text"><span class="tp-slot-time">Evening</span><span class="tp-slot-what">Withdraw cash in San Jose and confirm tomorrow's boat and price with a boatman.</span></span>
+        </li>
+          </ul>
+        </div>
+        <p class="tp-tip"><strong class="tp-tip-label">Local tip:</strong> Aim for a departure before noon. Later trips are fewer and the first to go when the weather turns.</p>
+      </div>
+    </li>
+  </ol>
+  <div class="tp-pack">
+    <p class="tp-pack-title">Pack for the boats</p>
+    <p class="tp-chips"><span class="tp-pack-chip">Dry bag</span><span class="tp-pack-chip">Reef shoes</span><span class="tp-pack-chip">Enough cash</span><span class="tp-pack-chip">Power bank</span><span class="tp-pack-chip">Rain jacket</span></p>
+  </div>
+</div>
+
+<!-- Route and step timeline (.ferry-steps)
+     Use for: how to get there: route header, fare facts, numbered steps
+     Example from how-to-get-to-dinagat-islands.html -->
+<div class="ferry-steps">
+  <div class="fs-head">
+    <p class="fs-eyebrow">The sea crossing</p>
+    <p class="fs-title">Surigao City to San Jose</p>
+    <div class="fs-route">
+      <span class="fs-stop"><span class="fs-stop-dot"></span><span class="fs-stop-name">Surigao City</span><span class="fs-stop-note">Boulevard port area</span></span>
+      <span class="fs-route-line" aria-hidden="true"><span class="fs-route-time">1&ndash;1.5 hrs</span></span>
+      <span class="fs-stop"><span class="fs-stop-dot"></span><span class="fs-stop-name">San Jose</span><span class="fs-stop-note">Dinagat Islands</span></span>
+    </div>
+    <p class="fs-facts"><span class="fs-fact"><span class="fs-fact-label">Fare</span><span class="fs-fact-value">About &#8369;240</span></span><span class="fs-fact"><span class="fs-fact-label">Plus</span><span class="fs-fact-value">Terminal fee</span></span><span class="fs-fact"><span class="fs-fact-label">Pay with</span><span class="fs-fact-value">Cash</span></span></p>
+  </div>
+  <ol class="fs-steps">
+    <li class="fs-step">
+      <span class="fs-line" aria-hidden="true"></span><span class="fs-mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+      <div class="fs-card">
+        <p class="fs-step-num">Step 1</p>
+        <p class="fs-step-title">Go to the right port</p>
+        <p class="fs-step-text">Boats to San Jose commonly leave from the Boulevard port area. Confirm the departure point with the shipping line or the ticket office before heading over, since services to other places can use different piers.</p>
+      </div>
+    </li>
+    <li class="fs-step">
+      <span class="fs-line" aria-hidden="true"></span><span class="fs-mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 8a2 2 0 0 0 2-2h14a2 2 0 0 0 2 2v2a2 2 0 0 0 0 4v2a2 2 0 0 0-2 2H5a2 2 0 0 0-2-2v-2a2 2 0 0 0 0-4z"/><path d="M14 6v12" stroke-dasharray="2 2"/></svg></span>
+      <div class="fs-card">
+        <p class="fs-step-num">Step 2</p>
+        <p class="fs-step-title">Ask for San Jose by name</p>
+        <p class="fs-step-text">Say "San Jose, Dinagat Islands" at the window and check the destination printed on your ticket. Some boats go to other towns in the province.</p>
+      </div>
+    </li>
+  </ol>
+  <p class="fs-note"><strong>Flying out of Surigao after?</strong> Take an earlier boat back, not the last one of the day.</p>
+</div>
+
+<!-- Route cards (.route-cards)
+     Use for: "starting from" options side by side
+     Example from how-to-get-to-dinagat-islands.html -->
+<div class="route-cards">
+  <div class="rc-card">
+    <p class="rc-eyebrow">Starting in Cebu</p>
+    <p class="rc-title">Fly or sail to Surigao</p>
+    <p class="rc-text">A short flight is the quickest choice. A passenger ship can cost less but takes far longer.</p>
+  </div>
+  <div class="rc-card">
+    <p class="rc-eyebrow">Starting in Manila</p>
+    <p class="rc-title">Butuan by air, or Cebu to Surigao</p>
+    <p class="rc-text">Fly to Butuan and ride about three hours north, or connect through Cebu on a flight into Surigao.</p>
+  </div>
+  <div class="rc-card">
+    <p class="rc-eyebrow">Already in Surigao</p>
+    <p class="rc-title">Boat to San Jose</p>
+    <p class="rc-text">Head to the Boulevard port area. The crossing takes roughly one to one and a half hours.</p>
+  </div>
+</div>
+
+<!-- Fees table (.ani-fees)
+     Use for: entrance fees, boat rates, price lists
+     Example from animasola-island-masbate-rock-formations-guide.html -->
+<div class="ani-fees">
+  <div class="ani-fees__head"><strong>Fees to budget for</strong><span>Cash only</span></div>
+  <div class="ani-fees__row"><div class="ani-fees__label">Registration and environmental fee<small>Paid at the San Pascual port, plus a small terminal fee</small></div><div class="ani-fees__amt">₱50–₱100<small>per person</small></div></div>
+  <div class="ani-fees__row"><div class="ani-fees__label">Animasola<small>Plus around ₱100 per boat for docking</small></div><div class="ani-fees__amt">₱20–₱50<small>per person</small></div></div>
+  <div class="ani-fees__row"><div class="ani-fees__label">Tinalisayan<small>Higher docking fee for the boat</small></div><div class="ani-fees__amt">₱50–₱100<small>per person</small></div></div>
+  <div class="ani-fees__row"><div class="ani-fees__label">Sombrero<small>Tent or cottage fees extra if you stay over</small></div><div class="ani-fees__amt">₱50–₱100<small>per person</small></div></div>
+  <div class="ani-fees__foot">Each fee goes to a different person, so carry small bills.</div>
+</div>
+
+<!-- Timing cards (.ani-timing)
+     Use for: best time to go, seasons, time-of-day choices
+     Example from animasola-island-masbate-rock-formations-guide.html -->
+<div class="ani-timing">
+  <div class="ani-timing__card"><div class="ani-timing__icon"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12c2 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2 2-2 4-2"/><path d="M2 18c2 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2 2-2 4-2"/></svg></div><p class="ani-timing__eyebrow">Tide</p><p class="ani-timing__title">Arrive at low tide</p><p>Ask your boatman when low tide falls and build the route around it. Animasola and the Tinalisayan sandbar both need the water down, and a good boatman will order the stops so you catch each one at the right moment.</p></div>
+  <div class="ani-timing__card"><div class="ani-timing__icon"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></div><p class="ani-timing__eyebrow">Time of day</p><p class="ani-timing__title">Leave by 8:00 AM</p><p>Set off from San Pascual between about 5:30 and 8:00 AM. The wind picks up in the afternoon and the water between the islands gets choppy. An early start also gets you onto Animasola before other boats arrive and before the rock heats up.</p></div>
+  <div class="ani-timing__card"><div class="ani-timing__icon"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg></div><p class="ani-timing__eyebrow">Season</p><p class="ani-timing__title">March to May is calmest</p><p>November and December are quieter but can still bring late storms. From June to October, the southwest monsoon and typhoons often lead to no-sail orders, and a cancelled crossing can strand you on either side.</p></div>
+</div>
+
+<!-- Packing checklist (.ani-pack)
+     Use for: what to bring
+     Example from animasola-island-masbate-rock-formations-guide.html -->
+<div class="ani-pack">
+  <ul class="ani-pack__grid">
+    <li class="ani-pack__item"><span class="ani-pack__check"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span><div><strong>Cash, in small bills</strong><span>There are no ATMs on Burias. Withdraw in Naga or Pasacao before crossing.</span></div></li>
+    <li class="ani-pack__item"><span class="ani-pack__check"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span><div><strong>Aqua shoes</strong><span>with a hard sole for the barnacle-covered rock.</span></div></li>
+    <li class="ani-pack__item"><span class="ani-pack__check"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span><div><strong>Sun cover</strong><span>Animasola has no shade. Bring a hat that ties on, a rash guard and sunscreen.</span></div></li>
+    <li class="ani-pack__item"><span class="ani-pack__check"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span><div><strong>Water and food</strong><span>There are no restaurants on the outer islands. Pack drinks and snacks in San Pascual.</span></div></li>
+    <li class="ani-pack__item"><span class="ani-pack__check"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span><div><strong>A dry bag</strong><span>for phones and cameras on the boat.</span></div></li>
+    <li class="ani-pack__item"><span class="ani-pack__check"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span><div><strong>Low expectations for signal</strong><span>Mobile data is weak outside San Pascual town, and electricity in town is limited mostly to evening hours.</span></div></li>
+    <li class="ani-pack__item"><span class="ani-pack__check"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span><div><strong>A trash bag</strong><span>Whatever you bring to Animasola leaves with you.</span></div></li>
+  </ul>
+</div>
+
+<!-- Trail tips box (.trail-tips)
+     Use for: short practical tips under a heading
+     Example from baguio-3-day-itinerary-first-timers.html -->
+<div class="trail-tips">
+  <p class="trail-tips__intro">A few habits that keep a short trip relaxed.</p>
+  <div class="trail-tips__grid">
+    <div class="trail-tip">
+      <span class="trail-tip__num">01</span>
+      <span class="trail-tip__label">Traffic</span>
+      <h3 class="trail-tip__title">One area per day</h3>
+      <p class="trail-tip__text">Baguio's roads are narrow and jam easily. Staying in one part of the city each day saves hours in taxis.</p>
+    </div>
+    <div class="trail-tip">
+      <span class="trail-tip__num">02</span>
+      <span class="trail-tip__label">Timing</span>
+      <h3 class="trail-tip__title">Start early</h3>
+      <p class="trail-tip__text">Popular viewpoints and gardens get crowded by mid-morning on weekends. Being out by 7:30 makes a big difference.</p>
+    </div>
+    <div class="trail-tip">
+      <span class="trail-tip__num">03</span>
+      <span class="trail-tip__label">Weather</span>
+      <h3 class="trail-tip__title">Dress in layers</h3>
+      <p class="trail-tip__text">Mornings and evenings are cool year-round and cold from December to February. A light jacket is useful even in summer.</p>
+    </div>
+    <div class="trail-tip">
+      <span class="trail-tip__num">04</span>
+      <span class="trail-tip__label">Money</span>
+      <h3 class="trail-tip__title">Carry small bills</h3>
+      <p class="trail-tip__text">Taxis, market stalls, taho vendors and smaller attractions mostly want cash in small notes.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Dish cards (.dish-grid)
+     Use for: dishes to try, with a short note each
+     Example from baguio-3-day-itinerary-first-timers.html -->
+<div class="dish-grid">
+  <div class="dish-card">
+    <span class="dish-card__kicker">Budget</span>
+    <h3 class="dish-card__name">Around ₱800&ndash;1,200 a day</h3>
+    <p class="dish-card__text">Street food and carinderia meals, jeepneys and shared taxis, free parks and one paid garden or attraction.</p>
+  </div>
+  <div class="dish-card">
+    <span class="dish-card__kicker">Mid-range</span>
+    <h3 class="dish-card__name">Around ₱1,500&ndash;2,500 a day</h3>
+    <p class="dish-card__text">Restaurant meals, a café stop, taxis between areas, a few entrance fees and some pasalubong.</p>
+  </div>
+  <div class="dish-card">
+    <span class="dish-card__kicker">Comfortable</span>
+    <h3 class="dish-card__name">₱3,000 and up a day</h3>
+    <p class="dish-card__text">Sit-down meals at the better-known restaurants, taxis everywhere and a bigger pasalubong haul.</p>
+  </div>
+</div>
+
+<!-- Eatery cards (.eat-list)
+     Use for: restaurants and cafes with details
+     Example from baguio-food-guide-where-locals-eat.html -->
+<div class="eat-list">
+  <section class="eat-card">
+    <header class="eat-card__head">
+      <span class="eat-card__badge">Group feast</span>
+      <h3 class="eat-card__name">Good Taste</h3>
+      <span class="eat-card__where"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Near Burnham Park, with other branches</span>
+    </header>
+    <p class="eat-card__text">The classic answer when locals need to feed a group fast. A large, noisy Filipino-Chinese restaurant known for huge portions at low prices, and it keeps long hours. Half orders are often enough for two or three people.</p>
+    <p class="eat-card__order"><strong>Order:</strong> buttered chicken, fried rice, pancit, lechon kawali</p>
+  </section>
+  <section class="eat-card">
+    <header class="eat-card__head">
+      <span class="eat-card__badge">Local institution</span>
+      <h3 class="eat-card__name">Café by the Ruins</h3>
+      <span class="eat-card__where"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Shuntug Road, near City Hall</span>
+    </header>
+    <p class="eat-card__text">Started in 1988 by a group of Baguio artists, including BenCab, on the site of the Garden Theatre, a 1912 outdoor cinema. After a fire in 2017, it reopened at its original site in 2018. The menu leans on Cordillera ingredients and Benguet coffee, and the garden seating is pleasant at lunch.</p>
+    <p class="eat-card__order"><strong>Order:</strong> kamote bread, a Filipino breakfast plate, local coffee</p>
+  </section>
+
+</div>
+
+<!-- Trip snapshot (.trip-snap)
+     Use for: at-a-glance summary at the top of a guide
+     Example from baguio-la-trinidad-travel-guide.html -->
+<div class="trip-snap">
+  <div class="itin__overview trip-snap__stats">
+    <div class="itin__stat"><span class="itin__stat-value">2&ndash;3</span><span class="itin__stat-label">Days in Baguio</span></div>
+    <div class="itin__stat"><span class="itin__stat-value">&frac12;&ndash;1</span><span class="itin__stat-label">Day in La Trinidad</span></div>
+    <div class="itin__stat"><span class="itin__stat-value">15&ndash;45</span><span class="itin__stat-label">Minutes between</span></div>
+    <div class="itin__stat"><span class="itin__stat-value">Nov&ndash;May</span><span class="itin__stat-label">Strawberry season</span></div>
+  </div>
+  <div class="trip-snap__duo">
+    <div class="trip-snap__card">
+      <span class="trip-snap__tag"><i class="fa-solid fa-city" aria-hidden="true"></i> Baguio</span>
+      <h3 class="trip-snap__title">The city base</h3>
+      <ul class="trip-snap__list">
+        <li>Session Road, Burnham Park and the markets</li>
+        <li>Most hotels, cafés and restaurants</li>
+        <li>Gardens, Camp John Hay and the night market</li>
+      </ul>
+    </div>
+    <div class="trip-snap__card trip-snap__card--valley">
+      <span class="trip-snap__tag"><i class="fa-solid fa-seedling" aria-hidden="true"></i> La Trinidad</span>
+      <h3 class="trip-snap__title">The valley next door</h3>
+      <ul class="trip-snap__list">
+        <li>The strawberry farm and vegetable fields</li>
+        <li>Valley of Colors and the Bell Church</li>
+        <li>Mount Kalugong views and Bahong rose farms</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Quick facts box (.quick-facts)
+     Use for: simple at-a-glance facts list
+     Example from osmena-peak-to-kawasan-falls-traverse.html -->
+<div class="quick-facts">
+  <p class="qf-title"><strong>Osmeña Peak at a glance</strong></p>
+  <ul class="qf-list">
+    <li><strong>Height:</strong> 1,013 metres above sea level, widely described as the highest point in Cebu</li>
+    <li><strong>Jump-off:</strong> Mantalongon, Dalaguete, in southern Cebu</li>
+    <li><strong>Summit climb:</strong> about 15 to 30 minutes from the trailhead</li>
+    <li><strong>Traverse to Kawasan Falls:</strong> roughly 4 to 6 hours on foot, plus stops</li>
+    <li><strong>Entrance fee:</strong> reported at ₱50 to ₱150 per person; confirm on the day</li>
+    <li><strong>Best months:</strong> December to May</li>
+  </ul>
+</div>
+
+<!-- Festival results (.results)
+     Use for: contest winners and placings
+     Example from buglasan-festival-2026-events-schedule.html -->
+<div class="results">
+  <div class="results__head">
+    <span class="results__eyebrow"><i class="fa-solid fa-trophy" aria-hidden="true"></i> Major winners</span>
+    <p>Bais City took the overall title at the Buglasan Festival of Festivals 2026. Dumaguete City, Tanjay City, Bayawan City and Mabinay completed the top five.</p>
+  </div>
+  <div class="results__champ">
+    <span class="results__label">Champion</span>
+    <strong class="results__champ-name">Bais City</strong>
+  </div>
+  <ol class="results__placings">
+    <li><span class="results__rank">2nd</span><span class="results__name">Dumaguete City</span></li>
+    <li><span class="results__rank">3rd</span><span class="results__name">Tanjay City</span></li>
+    <li><span class="results__rank">4th</span><span class="results__name">Bayawan City</span></li>
+    <li><span class="results__rank">5th</span><span class="results__name">Mabinay</span></li>
+  </ol>
+  <h3 class="results__sub">Special awards</h3>
+  <div class="results__awards">
+    <div class="results__award"><span class="results__award-title">Buglasan Festival King</span><span class="results__award-winner">San Jose</span></div>
+    <div class="results__award"><span class="results__award-title">Buglasan Festival Queen</span><span class="results__award-winner">Bayawan City</span></div>
+    <div class="results__award"><span class="results__award-title">Best in streetdancing</span><span class="results__award-winner">Bais City</span></div>
+    <div class="results__award"><span class="results__award-title">Best identification arch</span><span class="results__award-winner">Bayawan City</span></div>
+    <div class="results__award"><span class="results__award-title">Best in costume</span><span class="results__award-winner">Dumaguete City</span></div>
+  </div>
+</div>
