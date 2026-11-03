@@ -98,6 +98,7 @@ export const IMAGE_VARIANTS = {
   "featured-images/lanzones-festival-in-camiguin.jpg": [761, 400],
   "featured-images/lapu-lapu-fiesta-sunset-bridge-silhouette.jpg": [896, 400, 720],
   "featured-images/loboc-river-cruise-floating-restaurant.jpg": [968, 400],
+  "featured-images/mactan-cebu-airport-terminal-2-interior.jpg": [1024, 400],
   "featured-images/mactan-island-hopping-snorkeling.jpg": [1400, 400, 720],
   "featured-images/malajog-beach-calbayog-samar.jpg": [691, 400],
   "featured-images/malapascua-diving-thresher-shark.jpg": [1952, 400],
