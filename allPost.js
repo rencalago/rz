@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/things-to-do-in-baguio-mansion-reflecting-pool.jpg",
+    postNumber: 225,
+    title: "15 Best Things to Do in Baguio City",
+    desc: "15 best things to do in Baguio City: Session Road, Burnham Lake boats, Mines View, Wright Park, the Botanical Garden, Camp John Hay, Tam-awan, night market.",
+    datePublished: "3 November 2026",
+    comments: 0,
+    link: "./best-things-to-do-in-baguio-city",
+    location: "Baguio City, Benguet",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/the-ruins-talisay-at-night-bacolod.jpg",
     postNumber: 224,
     title: "15 Best Things to Do in Bacolod City: A First-Timer's Guide",
