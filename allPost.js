@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/simbang-gabi-parol-star-lanterns.jpg",
+    postNumber: 230,
+    title: "Simbang Gabi 2026: Dates and How the Nine Dawn Masses Work",
+    desc: "Simbang Gabi 2026 runs 16 to 24 December, with evening Masses from the 15th. See the full calendar, the Sunday twist and tips for surviving the 4 a.m. Mass.",
+    datePublished: "3 November 2026",
+    comments: 0,
+    link: "./simbang-gabi-2026-dates-nine-dawn-masses",
+    location: "Philippines",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/mactan-cebu-airport-terminal-2-interior.jpg",
     postNumber: 229,
     title: "Mactan-Cebu Airport to Cebu City: Every Option and Fare",
