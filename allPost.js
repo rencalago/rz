@@ -3,7 +3,7 @@ let newPostTwo = [
     category: "Travel",
     imagesrc: "./Images/featured-images/davao-city-downtown-street.jpg",
     postNumber: 223,
-    title: "Davao City Travel Guide for First-Time Visitors",
+    title: "First Time in Davao City: What to Know Before You Go",
     desc: "First time in Davao City? Where to stay, how to get around, top things to do, what to eat, the new city tours, when to go and how to budget your trip.",
     datePublished: "3 November 2026",
     comments: 0,
