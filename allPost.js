@@ -1,6 +1,19 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/the-ruins-talisay-at-night-bacolod.jpg",
+    postNumber: 224,
+    title: "15 Best Things to Do in Bacolod City: A First-Timer's Guide",
+    desc: "First time in Bacolod? 15 things to do, from The Ruins at night and chicken inasal at Manokan Country to Silay's heritage houses, piaya and a two-day plan.",
+    datePublished: "3 November 2026",
+    comments: 0,
+    link: "./things-to-do-in-bacolod-city-first-timers-guide",
+    location: "Bacolod City, Negros Occidental",
+    agodaDestination: "Bacolod",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/davao-city-downtown-street.jpg",
     postNumber: 223,
     title: "First Time in Davao City: What to Know Before You Go",
