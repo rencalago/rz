@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/mactan-cebu-airport-terminal-2-interior.jpg",
+    postNumber: 229,
+    title: "Mactan-Cebu Airport to Cebu City: Every Option and Fare",
+    desc: "Mactan-Cebu Airport to Cebu City: MyBus routes and hours, white vs yellow taxi fares after the Sept 2026 hike, Grab pickup, jeepneys and which option to pick.",
+    datePublished: "3 November 2026",
+    comments: 0,
+    link: "./mactan-cebu-airport-to-cebu-city-every-option-and-fare",
+    location: "Lapu-Lapu City, Cebu",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/dumaguete-public-market-painitan-street.jpg",
     postNumber: 228,
     title: "Christmas in Dumaguete 2026: Lights, Masses and Markets",
