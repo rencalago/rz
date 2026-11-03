@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/cebu-city-night-lights-traffic.jpg",
+    postNumber: 227,
+    title: "Christmas in Cebu 2026: Lights, Simbang Gabi, Night Markets",
+    desc: "Christmas in Cebu 2026: where to see the lights, Simbang Gabi and Misa de Gallo churches and times, Carbon and the Colon night market, and a three-evening plan.",
+    datePublished: "3 November 2026",
+    comments: 0,
+    link: "./christmas-in-cebu-2026-lights-simbang-gabi-night-markets",
+    location: "Cebu City, Cebu",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/el-nido-palawan-clear-water-swimmer-limestone.jpg",
     postNumber: 226,
     title: "Palawan Lagoons and Hidden Beaches Beyond the Usual Tours",

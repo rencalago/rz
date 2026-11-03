@@ -50,6 +50,7 @@ export const IMAGE_VARIANTS = {
   "featured-images/caramoan-beach-island-paradise.jpg": [800, 400, 720],
   "featured-images/carcar-chicharon-pork-cracklings.jpg": [1024, 400],
   "featured-images/cebu-brt-station-bus-boarding.jpg": [960, 400],
+  "featured-images/cebu-city-night-lights-traffic.jpg": [1024, 400],
   "featured-images/cebu-city-traffic-undas-2026.jpg": [800, 400],
   "featured-images/cebu-lighthouse-il-corso-srp.jpg": [502, 400],
   "featured-images/cebu-white-sand-beach-bangka-boats-aerial.jpg": [1024, 400, 720],
