@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/cebu-city-skyline-sunrise-haze.jpg",
+    postNumber: 231,
+    title: "Where to Stay in Cebu by Area: City, Mactan and Beaches",
+    desc: "Where to stay in Cebu by area: IT Park, Ayala, Fuente, downtown, the SRP and Mactan, plus Moalboal, Oslob, Bantayan and Malapascua, with who each area suits.",
+    datePublished: "4 November 2026",
+    comments: 0,
+    link: "./where-to-stay-in-cebu-by-area",
+    location: "Cebu City, Cebu",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/simbang-gabi-parol-star-lanterns.jpg",
     postNumber: 230,
     title: "Simbang Gabi 2026: Dates and How the Nine Dawn Masses Work",
