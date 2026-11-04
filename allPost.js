@@ -1,6 +1,19 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/siargao-on-a-budget-cloud-9-boardwalk.jpg",
+    postNumber: 235,
+    title: "Siargao on a Budget: Daily Costs and Money-Saving Tips",
+    desc: "Siargao on a budget: real costs for rooms, food, scooters, surf lessons and island tours, a 4-day plan, a 4D3N budget breakdown and ways to save.",
+    datePublished: "4 November 2026",
+    comments: 0,
+    link: "./siargao-on-a-budget",
+    location: "General Luna, Surigao del Norte",
+    agodaDestination: "Siargao",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/christmas-manila-street-market-stalls.jpg",
     postNumber: 234,
     title: "Christmas in Manila 2026: Lights, Bazaars, Simbang Gabi",
