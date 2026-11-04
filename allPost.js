@@ -1,6 +1,19 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/eden-nature-park-davao-i-love-eden-sign.jpg",
+    postNumber: 233,
+    title: "Eden Nature Park, Davao: Things to Do and Visitor Guide",
+    desc: "Eden Nature Park in Toril, Davao City: sky rides, the shuttle tour, fishing village, how to get there, day tour or overnight, best time and what to bring.",
+    datePublished: "4 November 2026",
+    comments: 0,
+    link: "./eden-nature-park-davao-guide",
+    location: "Davao City, Davao del Sur",
+    agodaDestination: "Davao City",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/christmas-in-baguio-2026-pine-trees.jpg",
     postNumber: 232,
     title: "Christmas in Baguio 2026: Beyond the Christmas Village",
