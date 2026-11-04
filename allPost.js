@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/christmas-manila-street-market-stalls.jpg",
+    postNumber: 234,
+    title: "Christmas in Manila 2026: Lights, Bazaars, Simbang Gabi",
+    desc: "Christmas in Manila 2026: Ayala Triangle lights, Noel Bazaar and World Bazaar dates, Simbang Gabi masses at Quiapo, the Cathedral and Binondo, and a 2-day plan.",
+    datePublished: "4 November 2026",
+    comments: 0,
+    link: "./christmas-manila-lights-bazaars-simbang-gabi",
+    location: "Manila, Metro Manila",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/eden-nature-park-davao-i-love-eden-sign.jpg",
     postNumber: 233,
     title: "Eden Nature Park, Davao: Things to Do and Visitor Guide",
