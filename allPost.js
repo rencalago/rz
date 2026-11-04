@@ -26,10 +26,10 @@ let newPostTwo = [
   },
   {
     category: "Travel",
-    imagesrc: "./Images/featured-images/christmas-in-baguio-2026-pine-trees.jpg",
+    imagesrc: "./Images/featured-images/christmas-in-baguio-2026-hillside-pines-houses.jpg",
     postNumber: 232,
-    title: "Christmas in Baguio 2026: Beyond the Christmas Village",
-    desc: "Christmas in Baguio 2026 beyond the Christmas Village: Session Road tree lighting, SLU lantern parade, Rose Garden market, Simbang Gabi and New Year's Eve.",
+    title: "Christmas in Baguio 2026: Beyond Country Club Village",
+    desc: "Christmas in Baguio 2026 beyond the Country Club village: Botanical Garden lights, Camp John Hay shows, Session Road, Mirador, Simbang Gabi and crowd tips.",
     datePublished: "4 November 2026",
     comments: 0,
     link: "./christmas-in-baguio-2026-events",
