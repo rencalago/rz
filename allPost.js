@@ -1,6 +1,20 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc:
+      "https://drive.google.com/thumbnail?id=1LEeb0qQ-_Gjqg4eXwnZxRrVEtw1VRR6s&sz=s4000",
+    postNumber: 237,
+    title: "Where to Stay in Dumaguete by Area: Neighbourhood Guide",
+    desc: "Where to stay in Dumaguete by area: Rizal Boulevard, Silliman, Piapi and Bantayan, Calindagan, plus Dauin and Valencia, with rough rates and a 3-night plan.",
+    datePublished: "4 November 2026",
+    comments: 0,
+    link: "./where-to-stay-in-dumaguete-by-area",
+    location: "Dumaguete City, Negros Oriental",
+    agodaDestination: "Dumaguete",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/el-nido-island-hopping-tours-a-b-c-d.jpg",
     postNumber: 236,
     title: "Where to Stay in El Nido: Best Areas and Hotels Guide",
