@@ -73,6 +73,7 @@ export const IMAGE_VARIANTS = {
   "featured-images/dumaguete-public-market-painitan-street.jpg": [772, 400],
   "featured-images/dumaguete-tree-lined-street-tricycles.jpg": [772, 400],
   "featured-images/dumanjug-cebu-travel-guide.jpg": [800, 400],
+  "featured-images/eden-nature-park-davao-i-love-eden-sign.jpg": [768, 400],
   "featured-images/el-nido-island-hopping-tours-a-b-c-d.jpg": [1280, 400, 720],
   "featured-images/el-nido-palawan-clear-water-swimmer-limestone.jpg": [1024, 400],
   "featured-images/el-nido-palawan.jpg": [1408, 400],
