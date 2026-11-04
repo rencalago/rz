@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/el-nido-island-hopping-tours-a-b-c-d.jpg",
+    postNumber: 236,
+    title: "Where to Stay in El Nido: Best Areas and Hotels Guide",
+    desc: "Where to stay in El Nido on a first trip: El Nido Town, Corong-Corong, Marimegmeg and Lio Beach compared, with 2026 room prices, hotel picks and a simple plan.",
+    datePublished: "4 November 2026",
+    comments: 0,
+    link: "./where-to-stay-in-el-nido-best-areas-hotels",
+    location: "El Nido, Palawan",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/siargao-on-a-budget-cloud-9-boardwalk.jpg",
     postNumber: 235,
     title: "Siargao on a Budget: Daily Costs and Money-Saving Tips",
