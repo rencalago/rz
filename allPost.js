@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/christmas-in-baguio-2026-pine-trees.jpg",
+    postNumber: 232,
+    title: "Christmas in Baguio 2026: Beyond the Christmas Village",
+    desc: "Christmas in Baguio 2026 beyond the Christmas Village: Session Road tree lighting, SLU lantern parade, Rose Garden market, Simbang Gabi and New Year's Eve.",
+    datePublished: "4 November 2026",
+    comments: 0,
+    link: "./christmas-in-baguio-2026-events",
+    location: "Baguio City, Benguet",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/cebu-city-skyline-sunrise-haze.jpg",
     postNumber: 231,
     title: "Where to Stay in Cebu by Area: City, Mactan and Beaches",
