@@ -3,7 +3,7 @@ let newPostTwo = [
     category: "Travel",
     imagesrc: "./Images/featured-images/simala-shrine-sibonga-castle-church.jpg",
     postNumber: 244,
-    title: "Simala Shrine Sibonga Guide: Entrance Fee, Dress Code & Tips",
+    title: "Simala Shrine Sibonga Guide: Dress Code, Hours & How to Go",
     desc: "Simala Shrine guide: free entrance, the Simala Church dress code, Mass schedule, opening hours, and how to go from Cebu City by bus, habal-habal or car.",
     datePublished: "5 November 2026",
     dateModified: "5 November 2026",
