@@ -73,6 +73,7 @@ export const IMAGE_VARIANTS = {
   "featured-images/donsol-whale-sharks.jpg": [600, 400],
   "featured-images/dumaguete-market-street-stalls.jpg": [640, 400],
   "featured-images/dumaguete-public-market-painitan-street.jpg": [772, 400],
+  "featured-images/dumaguete-seaside-promenade-at-night.jpg": [1280, 400],
   "featured-images/dumaguete-tree-lined-street-tricycles.jpg": [772, 400],
   "featured-images/dumanjug-cebu-travel-guide.jpg": [800, 400],
   "featured-images/eden-nature-park-davao-i-love-eden-sign.jpg": [768, 400],
