@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/el-nido-palawan-clear-water-swimmer-limestone.jpg",
+    postNumber: 241,
+    title: "Where to Stay in Coron: Best Areas and Hotels Guide",
+    desc: "Where to stay in Coron on a first trip: Coron Town, the Busuanga coast, private island resorts and the airport side, with 2026 room prices and hotel picks.",
+    datePublished: "5 November 2026",
+    comments: 0,
+    link: "./where-to-stay-in-coron-best-areas-hotels",
+    location: "Coron, Palawan",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/the-ruins-fountain-talisay-negros.jpg",
     postNumber: 240,
     title: "Where to Stay in Bacolod: Best Areas and Hotels",
