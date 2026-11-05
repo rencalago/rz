@@ -1,6 +1,20 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/baguio-cold-season-morning-fog.jpg",
+    postNumber: 238,
+    title: "Where to Stay in Baguio City by Area: Best Neighborhoods",
+    desc: "Where to stay in Baguio City by area: Burnham Park, Session Road, Legarda, Camp John Hay, Mines View and La Trinidad compared, with tips for no-car trips.",
+    datePublished: "5 November 2026",
+    comments: 0,
+    link: "./where-to-stay-in-baguio-city-by-area",
+    location: "Baguio City, Benguet",
+    agodaDestination: "Baguio",
+    agodaAlways: true,
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc:
       "https://drive.google.com/thumbnail?id=1LEeb0qQ-_Gjqg4eXwnZxRrVEtw1VRR6s&sz=s4000",
     postNumber: 237,
