@@ -161,6 +161,7 @@ export const IMAGE_VARIANTS = {
   "featured-images/subic-bay-freeport-waterfront.jpg": [1152, 400],
   "featured-images/taal-volcano-view-from-tagaytay.jpg": [900, 400, 720],
   "featured-images/temple-of-leah-busay-cebu-city.jpg": [1824, 400, 720],
+  "featured-images/the-ruins-fountain-talisay-negros.jpg": [850, 400],
   "featured-images/the-ruins-talisay-at-night-bacolod.jpg": [821, 400],
   "featured-images/things-to-do-in-baguio-mansion-reflecting-pool.jpg": [600, 400],
   "featured-images/things-to-do-mactan-beach-rock-islet.jpg": [688, 400],

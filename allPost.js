@@ -1,6 +1,19 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/the-ruins-fountain-talisay-negros.jpg",
+    postNumber: 240,
+    title: "Where to Stay in Bacolod: Best Areas and Hotels",
+    desc: "Where to stay in Bacolod by area: Capitol and Lacson Street, downtown, Mandalagan, Goldenfield or a night near The Ruins, with hotel picks and booking tips.",
+    datePublished: "5 November 2026",
+    comments: 0,
+    link: "./where-to-stay-in-bacolod-best-areas-hotels",
+    location: "Bacolod City, Negros Occidental",
+    agodaDestination: "Bacolod",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/islas-de-bucas-cagdianao-stilt-cottages.jpg",
     postNumber: 239,
     title: "Islas de Bucas, Cagdianao: Dinagat's Gateway to Sohoton",
