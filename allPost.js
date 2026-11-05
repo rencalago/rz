@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/dumaguete-seaside-promenade-at-night.jpg",
+    postNumber: 242,
+    title: "Things to Do in Dumaguete at Night: First-Timer's Guide",
+    desc: "Things to do in Dumaguete at night: Rizal Boulevard street food, the Katada Street night market, live music at Hayahay, quiet cafés and a first-evening plan.",
+    datePublished: "5 November 2026",
+    comments: 0,
+    link: "./things-to-do-in-dumaguete-at-night",
+    location: "Dumaguete City, Negros Oriental",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/el-nido-palawan-clear-water-swimmer-limestone.jpg",
     postNumber: 241,
     title: "Where to Stay in Coron: Best Areas and Hotels Guide",
