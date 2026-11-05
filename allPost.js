@@ -1,5 +1,17 @@
 let newPostTwo = [
   {
+    category: "News",
+    imagesrc: "./Images/featured-images/pasko-fiesta-davao-christmas-tree-confetti.jpg",
+    postNumber: 243,
+    title: "New Year's Eve in Davao: The Firecracker Ban Explained",
+    desc: "Davao City has banned firecrackers since 2001. What Ordinance 060-02 covers, the penalties, the Torotot Festival story and how to spend New Year's Eve there.",
+    datePublished: "5 November 2026",
+    comments: 0,
+    link: "./new-years-eve-davao-firecracker-ban",
+    location: "Davao City, Davao del Sur",
+    author: "Ren Calago",
+  },
+  {
     category: "Travel",
     imagesrc: "./Images/featured-images/dumaguete-seaside-promenade-at-night.jpg",
     postNumber: 242,
