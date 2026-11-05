@@ -1,5 +1,17 @@
 let newPostTwo = [
   {
+    category: "Travel",
+    imagesrc: "./Images/featured-images/simala-shrine-sibonga-castle-church.jpg",
+    postNumber: 244,
+    title: "Simala Shrine, Sibonga: Guide to the Castle Church in Cebu",
+    desc: "Simala Shrine guide: history of the weeping image, dress code, opening hours, Mass schedule, free entry, bus and habal-habal fares and the best time to visit.",
+    datePublished: "5 November 2026",
+    comments: 0,
+    link: "./simala-shrine-sibonga-guide",
+    location: "Sibonga, Cebu",
+    author: "Ren Calago",
+  },
+  {
     category: "News",
     imagesrc: "./Images/featured-images/pasko-fiesta-davao-christmas-tree-confetti.jpg",
     postNumber: 243,
