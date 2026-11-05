@@ -94,6 +94,7 @@ export const IMAGE_VARIANTS = {
   "featured-images/is-mindanao-safe-to-travel.jpg": [616, 400],
   "featured-images/isla-de-gigantes.jpg": [792, 400],
   "featured-images/island-hopping-best-thing-to-do-in-philippines.jpg": [1920, 400],
+  "featured-images/islas-de-bucas-cagdianao-stilt-cottages.jpg": [1024, 400],
   "featured-images/kalanggaman-island.jpg": [758, 400],
   "featured-images/kawa-bath-in-antique.jpg": [672, 400],
   "featured-images/la-trinidad-strawberry-farm-baguio-mountains.jpg": [960, 400, 720],

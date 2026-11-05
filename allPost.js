@@ -1,6 +1,19 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/islas-de-bucas-cagdianao-stilt-cottages.jpg",
+    postNumber: 239,
+    title: "Islas de Bucas, Cagdianao: Dinagat's Gateway to Sohoton",
+    desc: "Islas de Bucas and Cagdianao, Dinagat: the Del Carmen ferry, Tagbirayan Beach, where to stay and how to reach Sohoton Cove on Bucas Grande in a day.",
+    datePublished: "5 November 2026",
+    comments: 0,
+    link: "./islas-de-bucas-cagdianao-guide",
+    location: "Cagdianao, Dinagat Islands",
+    agodaDestination: "Surigao",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/baguio-cold-season-morning-fog.jpg",
     postNumber: 238,
     title: "Where to Stay in Baguio City by Area: Best Neighborhoods",
