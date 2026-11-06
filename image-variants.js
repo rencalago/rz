@@ -81,6 +81,7 @@ export const IMAGE_VARIANTS = {
   "featured-images/el-nido-palawan-clear-water-swimmer-limestone.jpg": [1024, 400],
   "featured-images/el-nido-palawan.jpg": [1408, 400],
   "featured-images/gcash-booth-trade-fair.jpeg": [1024, 400],
+  "featured-images/general-santos-tuna-festival-float.jpg": [1024, 400, 720],
   "featured-images/giant-lantern-festival-pampanga.jpg": [928, 400],
   "featured-images/halad-inasal-festival-talisay-cebu.jpg": [850, 400, 720],
   "featured-images/higantes-festival-angono-rizal.jpg": [900, 400],

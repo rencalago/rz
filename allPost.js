@@ -1,6 +1,19 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/general-santos-tuna-festival-float.jpg",
+    postNumber: 245,
+    title: "General Santos: Tuna Capital and Fish Port Guide",
+    desc: "How General Santos became the tuna capital, how to visit the fish port at dawn after the 2026 quake, tuna dishes to order and when the Tuna Festival runs.",
+    datePublished: "6 November 2026",
+    comments: 0,
+    link: "./general-santos-tuna-fish-port-guide",
+    location: "General Santos City, South Cotabato",
+    agodaDestination: "General Santos",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/simala-shrine-sibonga-castle-church.jpg",
     postNumber: 244,
     title: "Simala Shrine Sibonga Guide: Dress Code, Hours & How to Go",
