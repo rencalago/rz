@@ -86,6 +86,7 @@ export const IMAGE_VARIANTS = {
   "featured-images/halad-inasal-festival-talisay-cebu.jpg": [850, 400, 720],
   "featured-images/higantes-festival-angono-rizal.jpg": [900, 400],
   "featured-images/hinagdanan-cave-bohol-visitor-guide.jpg": [1171, 400],
+  "featured-images/honda-bay-puerto-princesa-sandbar-island.jpg": [1024, 400, 720],
   "featured-images/hot-air-balloon-fiesta-clark-pampanga-guide.jpg": [1280, 400, 720],
   "featured-images/hot-springs-philippines-guide.jpg": [1280, 400],
   "featured-images/how-to-get-to-dinagat-islands-limestone-cove-aerial.jpg": [590, 400],
