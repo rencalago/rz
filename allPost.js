@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/malatapay-market-zamboanguita-wednesday.jpg",
+    postNumber: 246,
+    title: "Malatapay Market, Zamboanguita: Wednesday Guide",
+    desc: "Malatapay Market in Zamboanguita runs Wednesdays only: livestock trading, barter, lechon and seafood, how to get there, and pairing it with Apo Island.",
+    datePublished: "6 November 2026",
+    comments: 0,
+    link: "./malatapay-market-zamboanguita-guide",
+    location: "Zamboanguita, Negros Oriental",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/general-santos-tuna-festival-float.jpg",
     postNumber: 245,
     title: "General Santos: Tuna Capital and Fish Port Guide",
