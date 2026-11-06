@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/honda-bay-puerto-princesa-sandbar-island.jpg",
+    postNumber: 247,
+    title: "Honda Bay Island Hopping: A First-Timer's Guide",
+    desc: "Honda Bay island hopping in Puerto Princesa: Cowrie, Starfish, Luli and Pandan islands, Pambato Reef, 2026 tour prices and fees, getting to the wharf and tips.",
+    datePublished: "6 November 2026",
+    comments: 0,
+    link: "./honda-bay-island-hopping-guide",
+    location: "Puerto Princesa City, Palawan",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/malatapay-market-zamboanguita-wednesday.jpg",
     postNumber: 246,
     title: "Malatapay Market, Zamboanguita: Wednesday Guide",
