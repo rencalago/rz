@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/baguio-day-trips-cordillera-street-dancers.jpg",
+    postNumber: 250,
+    title: "Day Trips From Baguio: Where to Go and How Long It Takes",
+    desc: "Day trips from Baguio ranked by real travel time: La Trinidad, Atok, La Union and Hundred Islands, plus which trips like Sagada and Pulag need an overnight.",
+    datePublished: "8 November 2026",
+    comments: 0,
+    link: "./day-trips-from-baguio",
+    location: "Baguio City, Benguet",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/bohol-itinerary-2-3-days-chocolate-hills.jpg",
     postNumber: 249,
     title: "Bohol Itinerary: 2 or 3 Days for First-Timers",
