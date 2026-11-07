@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/tambobo-bay-siaton-sailboats-anchorage.jpg",
+    postNumber: 248,
+    title: "Tambobo Bay, Siaton: Where Sailboats Anchor in Negros",
+    desc: "Tambobo Bay in Siaton, Negros Oriental: the sheltered yacht anchorage, Siit mangrove walk, how to get there by car or bus, where to stay and tips.",
+    datePublished: "7 November 2026",
+    comments: 0,
+    link: "./tambobo-bay-siaton-negros-oriental",
+    location: "Siaton, Negros Oriental",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/honda-bay-puerto-princesa-sandbar-island.jpg",
     postNumber: 247,
     title: "Honda Bay Island Hopping: A First-Timer's Guide",
