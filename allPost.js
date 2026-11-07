@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/bohol-itinerary-2-3-days-chocolate-hills.jpg",
+    postNumber: 249,
+    title: "Bohol Itinerary: 2 or 3 Days for First-Timers (2026)",
+    desc: "Planning 2 or 3 days in Bohol? A day-by-day route for Chocolate Hills, tarsiers, Loboc and Panglao, timed around ferries, tides and island-hopping boats.",
+    datePublished: "7 November 2026",
+    comments: 0,
+    link: "./bohol-itinerary-2-3-days",
+    location: "Panglao, Bohol",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/tambobo-bay-siaton-sailboats-anchorage.jpg",
     postNumber: 248,
     title: "Tambobo Bay, Siaton: Where Sailboats Anchor in Negros",
