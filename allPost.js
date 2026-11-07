@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/siquijor-folk-healing-sunset-beach.jpg",
+    postNumber: 252,
+    title: "Siquijor Folk Healing: What Visitors Should Know",
+    desc: "Meet Siquijor's mananambal healers: bolo-bolo, the Holy Week healing festival with 2027 dates, donation etiquette and safety tips for respectful visits.",
+    datePublished: "8 November 2026",
+    comments: 0,
+    link: "./siquijor-folk-healing-what-visitors-should-know",
+    location: "Siquijor, Siquijor",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/jaro-cathedral-belfry-iloilo-heritage-walk.jpg",
     postNumber: 251,
     title: "Iloilo Heritage Walk: Calle Real, Jaro and the Esplanade",
