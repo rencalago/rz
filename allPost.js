@@ -13,7 +13,7 @@ let newPostTwo = [
   },
   {
     category: "Travel",
-    imagesrc: "./Images/featured-images/malatapay-market-zamboanguita-wednesday.jpg",
+    imagesrc: "./Images/featured-images/malatapay-market-stalls-coconut-palms-zamboanguita.jpg",
     postNumber: 246,
     title: "Malatapay Market, Zamboanguita: Wednesday Guide",
     desc: "Malatapay Market in Zamboanguita runs Wednesdays only: livestock trading, barter, lechon and seafood, how to get there, and pairing it with Apo Island.",

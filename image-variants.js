@@ -111,7 +111,7 @@ export const IMAGE_VARIANTS = {
   "featured-images/mactan-island-hopping-snorkeling.jpg": [1400, 400, 720],
   "featured-images/malajog-beach-calbayog-samar.jpg": [691, 400],
   "featured-images/malapascua-diving-thresher-shark.jpg": [1952, 400],
-  "featured-images/malatapay-market-zamboanguita-wednesday.jpg": [800, 400],
+  "featured-images/malatapay-market-stalls-coconut-palms-zamboanguita.jpg": [1024, 400],
   "featured-images/mambukal-resort-murcia-river-boulders.jpg": [672, 400],
   "featured-images/mambulod-marble-cave-la-libertad-negros-oriental.jpeg": [632, 400],
   "featured-images/manila-airport-airlines.jpg": [1616, 400],
