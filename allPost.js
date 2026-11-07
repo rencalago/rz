@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/jaro-cathedral-belfry-iloilo-heritage-walk.jpg",
+    postNumber: 251,
+    title: "Iloilo Heritage Walk: Calle Real, Jaro and the Esplanade",
+    desc: "One day in Iloilo City: Calle Real's old trading houses, Jaro Cathedral and its belfry, and the river Esplanade, with a walking order and practical tips.",
+    datePublished: "8 November 2026",
+    comments: 0,
+    link: "./iloilo-heritage-walk-calle-real-jaro-esplanade",
+    location: "Iloilo City, Iloilo",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/baguio-day-trips-cordillera-street-dancers.jpg",
     postNumber: 250,
     title: "Day Trips From Baguio: Where to Go and How Long It Takes",
