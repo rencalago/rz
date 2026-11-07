@@ -163,6 +163,7 @@ export const IMAGE_VARIANTS = {
   "featured-images/simala-shrine-sibonga-castle-church.jpg": [768, 400],
   "featured-images/simbang-gabi-parol-star-lanterns.jpg": [772, 400],
   "featured-images/sinulog-festival-dancers-santo-nino-cebu.jpg": [960, 400],
+  "featured-images/siquijor-folk-healing-sunset-beach.jpg": [1024, 400, 720],
   "featured-images/siquijor-island-beach-best.jpg": [1000, 400],
   "featured-images/sohoton-cave.jpg": [844, 400],
   "featured-images/sohoton-cove-national-park-socorro.jpg": [1075, 400],
