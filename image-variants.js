@@ -165,6 +165,7 @@ export const IMAGE_VARIANTS = {
   "featured-images/sohoton-cove-national-park-socorro.jpg": [1075, 400],
   "featured-images/subic-bay-freeport-waterfront.jpg": [1152, 400],
   "featured-images/taal-volcano-view-from-tagaytay.jpg": [900, 400, 720],
+  "featured-images/tambobo-bay-siaton-sailboats-anchorage.jpg": [1000, 400, 720],
   "featured-images/temple-of-leah-busay-cebu-city.jpg": [1824, 400, 720],
   "featured-images/the-ruins-fountain-talisay-negros.jpg": [850, 400],
   "featured-images/the-ruins-talisay-at-night-bacolod.jpg": [821, 400],
