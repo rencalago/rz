@@ -36,6 +36,7 @@ export const IMAGE_VARIANTS = {
   "featured-images/bicol-express-albay-food-trip.jpg": [768, 400],
   "featured-images/binondo-food-crawl.jpg": [600, 400],
   "featured-images/biri-island-rock-formations-northern-samar-guide.jpg": [800, 400],
+  "featured-images/bohol-itinerary-2-3-days-chocolate-hills.jpg": [1279, 400, 720],
   "featured-images/boracay-beach-island-philippines.jpg": [1344, 400],
   "featured-images/boracay-vs-palawan-vs-siargao-el-nido-karst.jpg": [1523, 400, 720],
   "featured-images/buglasan-trade-fair-2026-woven-textiles.jpg": [800, 400],
