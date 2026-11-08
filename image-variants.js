@@ -136,6 +136,7 @@ export const IMAGE_VARIANTS = {
   "featured-images/mount-pulag-sea-of-clouds.jpg": [1744, 400],
   "featured-images/mount-talinis-trail-crater-lake-view.jpg": [633, 400],
   "featured-images/moving-to-dumaguete-long-stay-waterfall.jpg": [1024, 400],
+  "featured-images/nacpan-beach-el-nido-white-sand-palm-trees.jpg": [1024, 400, 720],
   "featured-images/osmena-peak-traverse-to-kawasan.jpg": [1024, 400],
   "featured-images/pagadian-city-hill-road-illana-bay.jpg": [1000, 400],
   "featured-images/palawan-quiet-beach-bangka-kayak.jpg": [1200, 400, 720],
