@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/capitancillo-island-lighthouse-bogo-cebu.jpg",
+    postNumber: 255,
+    title: "Capitancillo Island, Bogo: Lighthouse, Diving and Costs",
+    desc: "Capitancillo Island off Bogo City, Cebu: the lighthouse, three dive sites, boat and entrance costs, jump-off ports, and how to reach it from Cebu City.",
+    datePublished: "8 November 2026",
+    comments: 0,
+    link: "./capitancillo-island-bogo-lighthouse-diving-guide",
+    location: "Bogo City, Cebu",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/coron-pier-bangka-boat-palawan.jpg",
     postNumber: 254,
     title: "El Nido to Coron Ferry: Times, Fares and Operators",
