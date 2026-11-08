@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/moving-to-dumaguete-long-stay-waterfall.jpg",
+    postNumber: 256,
+    title: "Moving to Dumaguete: Monthly Costs for a Long Stay",
+    desc: "Moving to Dumaguete for a month or longer? Real monthly costs for rent, food, utilities, internet, transport, visas and healthcare, plus where to live.",
+    datePublished: "8 November 2026",
+    comments: 0,
+    link: "./moving-to-dumaguete-cost-of-living-long-stay",
+    location: "Dumaguete City, Negros Oriental",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/capitancillo-island-lighthouse-bogo-cebu.jpg",
     postNumber: 255,
     title: "Capitancillo Island, Bogo: Lighthouse, Diving and Costs",
