@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/nacpan-beach-el-nido-white-sand-palm-trees.jpg",
+    postNumber: 257,
+    title: "Nacpan Beach, El Nido: Getting There, Costs and Tips",
+    desc: "Nacpan Beach in El Nido: how to get there from town, shuttle and tricycle costs, swimming safety, the Twin Beaches viewpoint, food, stays and a one-day plan.",
+    datePublished: "8 November 2026",
+    comments: 0,
+    link: "./nacpan-beach-el-nido-travel-guide",
+    location: "El Nido, Palawan",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/moving-to-dumaguete-long-stay-waterfall.jpg",
     postNumber: 256,
     title: "Moving to Dumaguete: Monthly Costs for a Long Stay",
