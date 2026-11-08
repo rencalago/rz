@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/coron-pier-bangka-boat-palawan.jpg",
+    postNumber: 254,
+    title: "El Nido to Coron Ferry: Times, Fares and Operators",
+    desc: "El Nido to Coron ferry guide: who sails, midday departures, fares, check-in rules, sea conditions, and how the boat compares with flying or a boat expedition.",
+    datePublished: "8 November 2026",
+    comments: 0,
+    link: "./el-nido-to-coron-ferry-schedule-fares",
+    location: "El Nido, Palawan",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/paoay-sand-dunes-4x4-sunset.jpg",
     postNumber: 253,
     title: "Paoay Sand Dunes: 4x4 Rides, Sandboarding and Costs",

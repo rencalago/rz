@@ -65,6 +65,7 @@ export const IMAGE_VARIANTS = {
   "featured-images/cordova-most-visited-town-in-2026.jpg": [1459, 400],
   "featured-images/coron-island-hopping-lagoon-boardwalk.jpg": [742, 400],
   "featured-images/coron-palawan-paradise.jpg": [700, 400],
+  "featured-images/coron-pier-bangka-boat-palawan.jpg": [1600, 400, 720],
   "featured-images/culion-palawan-beach-palm-trees-sunset.jpg": [848, 400],
   "featured-images/daanbantayan-island-hopping-beach.jpg": [1400, 400, 720],
   "featured-images/davao-city-downtown-street.jpg": [682, 400],
