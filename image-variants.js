@@ -141,6 +141,7 @@ export const IMAGE_VARIANTS = {
   "featured-images/panagbenga-street-dance-parade-day-baguio.jpg": [666, 400],
   "featured-images/panagbenga-weekend-itinerary-festival-dancer.jpg": [1344, 400, 720],
   "featured-images/panglao-island-bohol.jpg": [2064, 400],
+  "featured-images/paoay-sand-dunes-4x4-sunset.jpg": [1024, 400, 720],
   "featured-images/parada-ng-lechon-balayan-batangas-guide.jpg": [768, 400],
   "featured-images/pasko-fiesta-davao-christmas-tree-confetti.jpg": [864, 400],
   "featured-images/philippine-coffee-trail-benguet-sagada-batangas-mt-apo.jpg": [1280, 400, 720],

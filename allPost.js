@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/paoay-sand-dunes-4x4-sunset.jpg",
+    postNumber: 253,
+    title: "Paoay Sand Dunes: 4x4 Rides, Sandboarding and Costs",
+    desc: "Paoay Sand Dunes in Suba, Ilocos Norte: what the 4x4 ride and sandboarding involve, typical costs, how to get there from Laoag, and the best time to go.",
+    datePublished: "8 November 2026",
+    comments: 0,
+    link: "./paoay-sand-dunes-4x4-sandboarding",
+    location: "Paoay, Ilocos Norte",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/siquijor-folk-healing-sunset-beach.jpg",
     postNumber: 252,
     title: "Siquijor Folk Healing: What Visitors Should Know",
