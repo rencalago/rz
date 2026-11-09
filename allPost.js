@@ -1,6 +1,19 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/transcentral-highway-balamban-cebu-road.jpg",
+    postNumber: 257,
+    title: "Mount Manunggal: Magsaysay Crash Site Hike and How to Go",
+    desc: "Hike Mount Manunggal in Balamban, Cebu: the 1957 Magsaysay crash site, the 30-minute walk from the eco park, the long trail, costs and highway tips.",
+    datePublished: "9 November 2026",
+    comments: 0,
+    link: "./mount-manunggal-magsaysay-crash-site-hike-guide",
+    location: "Balamban, Cebu",
+    agodaDestination: "Cebu City",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/moving-to-dumaguete-long-stay-waterfall.jpg",
     postNumber: 256,
     title: "Moving to Dumaguete: Monthly Costs for a Long Stay",
