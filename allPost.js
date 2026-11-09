@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/baguio-vs-sagada-cordillera-mountain-town.jpg",
+    postNumber: 258,
+    title: "Baguio vs Sagada: Which Cordillera Trip Fits You?",
+    desc: "Baguio vs Sagada compared: bus times and fares, costs, weather, food, things to do and itineraries, plus how to combine both in one Cordillera trip.",
+    datePublished: "9 November 2026",
+    comments: 0,
+    link: "./baguio-vs-sagada-city-break-or-mountain-escape",
+    location: "Baguio City, Benguet",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/transcentral-highway-balamban-cebu-road.jpg",
     postNumber: 257,
     title: "Mount Manunggal: Magsaysay Crash Site Hike and How to Go",

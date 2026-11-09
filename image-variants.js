@@ -22,6 +22,7 @@ export const IMAGE_VARIANTS = {
   "featured-images/baguio-garden-cafe-koi-pond-interior.jpg": [864, 400, 720],
   "featured-images/baguio-night-market-harrison-road.jpg": [1024, 400, 720],
   "featured-images/baguio-strawberry-taho-cup.jpg": [900, 400, 720],
+  "featured-images/baguio-vs-sagada-cordillera-mountain-town.jpg": [1024, 400, 720],
   "featured-images/baler-ditumabo-falls.jpg": [1920, 400],
   "featured-images/balicasag-virgin-island-bohol-philippines.jpg": [1376, 400, 720],
   "featured-images/banaue-rice-terraces.jpg": [1920, 400],
