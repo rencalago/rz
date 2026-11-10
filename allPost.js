@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/danao-adventure-park-sky-ride-bohol.jpg",
+    postNumber: 260,
+    title: "Danao Adventure Park Bohol: Rides, Rates and Getting There",
+    desc: "Danao Adventure Park in Bohol: The Plunge, Suislide and caves, with ride rates, how to get there from Panglao or Tagbilaran, and a Sea of Clouds plan.",
+    datePublished: "10 November 2026",
+    comments: 0,
+    link: "./danao-adventure-park-bohol-guide",
+    location: "Danao, Bohol",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/mount-apo-climb-mountain-ridge-mindanao.jpg",
     postNumber: 259,
     title: "Mount Apo Climb: Permits, Trails, and Costs",
