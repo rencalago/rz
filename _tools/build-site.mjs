@@ -997,6 +997,8 @@ function seoTags(html, slug, isPost, post) {
   const description = clean((outside.match(/<meta\s+name=["']description["']\s+content=(["'])([\s\S]*?)\1/) || [])[2]);
 
   const tags = [];
+  // AdMaven site verification (placement ID), added to every page's head.
+  if (!has("name", "admaven-placement")) tags.push(`<meta name='admaven-placement' content=Bpja9qjw5>`);
   if (!has("rel", "canonical")) tags.push(`<link rel="canonical" href="${url}" />`);
   if (!has("property", "og:type")) tags.push(`<meta property="og:type" content="${isPost ? "article" : "website"}" />`);
   if (!has("property", "og:site_name")) tags.push(`<meta property="og:site_name" content="Ren Calago Blog" />`);
