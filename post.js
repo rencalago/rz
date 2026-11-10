@@ -2,12 +2,12 @@
 // lazy-loaded images, the share bar and the comment form.
 import { newPostTwo } from "./allPost.js";
 import * as config from "./config.js";
-import { SQUARE_AD } from "./ad-codes.js";
+import { ADSENSE_CLIENT, SQUARE_AD } from "./ad-codes.js";
 import { KLOOK_PLACES } from "./klook-codes.js";
 import { AGODA_PLACES, AGODA_TEMPLATE, STAY_KEYWORDS } from "./agoda-codes.js";
 import { registerLayout, currentSlug, escapeHtml as esc } from "./layout.js";
 import { svgIcon } from "./icons.js";
-import { whenNear } from "./third-party.js";
+import { afterFirstInteraction, whenNear, loadAdSenseScript } from "./third-party.js";
 
 // Read the settings defensively: an old config.js (without these names) must
 // never stop the page from loading. Comments simply stay off until it is updated.
@@ -134,8 +134,6 @@ function articleEssential() {
 // SQUARE AD: only added when SQUARE_AD in ad-codes.js has code in it.
 // If it is empty, the article is shown exactly as it was before (no box).
 // The ad sits at the top right of the article text, and the text wraps around it.
-// The code runs inside its own 300x250 frame, so it works exactly as pasted
-// (ad scripts that write into the page need to run while the frame loads).
 function insertArticleAd() {
   if (!post) return; // listed articles only (not the contact page)
   const hasCode = (SQUARE_AD || "").trim() !== "";
@@ -147,17 +145,10 @@ function insertArticleAd() {
   const box = document.createElement("aside");
   box.className = "ad-square";
   box.setAttribute("aria-label", "Advertisement");
-
-  const frame = document.createElement("iframe");
-  frame.title = "Advertisement";
-  frame.width = "300";
-  frame.height = "250";
-  frame.scrolling = "no";
-  frame.loading = "lazy";
-  frame.setAttribute("frameborder", "0");
-  frame.srcdoc = `<!doctype html><html><head><meta charset="utf-8"><base target="_blank"></head><body style="margin:0;overflow:hidden">${SQUARE_AD}</body></html>`;
-  box.appendChild(frame);
+  box.innerHTML = SQUARE_AD;
   body.insertBefore(box, body.firstChild);
+
+  loadAdSense(() => collapseIfUnfilled(box));
 }
 
 // KLOOK WIDGET: one horizontal Klook widget per article, from klook-codes.js.
@@ -425,6 +416,46 @@ function setHtmlWithScripts(el, html) {
     s.text = old.text;
     old.replaceWith(s);
   });
+}
+
+// AdSense leaves an empty slot when it has no ad to show. Collapse the box in
+// that case, so the article text and photos close up the space. If AdSense
+// never reports back (for example, an ad blocker), collapse after 10 seconds.
+function collapseIfUnfilled(box) {
+  const ins = box.querySelector("ins.adsbygoogle");
+  if (!ins) return;
+  let tries = 0;
+  const timer = setInterval(function () {
+    tries += 1;
+    const status = ins.getAttribute("data-ad-status");
+    if (status === "filled") {
+      clearInterval(timer);
+    } else if (status === "unfilled" || tries > 40) {
+      box.classList.add("is-empty");
+      clearInterval(timer);
+    }
+  }, 250);
+}
+
+// Asks AdSense to fill the ad slot(s) on this page. The request is queued now;
+// the AdSense script itself loads after the article has drawn (first scroll or
+// tap, or a few seconds after loading), then fills the queued slots. afterLoad
+// runs once the script has been added.
+function loadAdSense(afterLoad) {
+  const client = (ADSENSE_CLIENT || "").trim();
+  if (!client) {
+    console.warn("Ads: add your publisher ID (ADSENSE_CLIENT) in ad-codes.js.");
+    return;
+  }
+  afterFirstInteraction(() => {
+    loadAdSenseScript(client);
+    if (afterLoad) afterLoad();
+  });
+  try {
+    (window.adsbygoogle = window.adsbygoogle || []).push({});
+  } catch (e) {
+    console.warn("Ads: could not show the ad yet.", e);
+  }
 }
 
 // Photos in the article: load them lazily and make sure each has alt text.
