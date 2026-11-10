@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/mount-apo-climb-mountain-ridge-mindanao.jpg",
+    postNumber: 259,
+    title: "Mount Apo Climb: Permits, Trails, and Costs",
+    desc: "Mount Apo climb guide: compare the Kapatagan, Boulder Face, Mandangan, Makalangit and Bongolanon trails, plus permits, guide rules and costs to budget.",
+    datePublished: "10 November 2026",
+    comments: 0,
+    link: "./mount-apo-climb-permits-trails-costs",
+    location: "Davao City, Davao del Sur",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/baguio-vs-sagada-cordillera-mountain-town.jpg",
     postNumber: 258,
     title: "Baguio vs Sagada: Which Cordillera Trip Fits You?",

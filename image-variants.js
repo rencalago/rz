@@ -132,6 +132,7 @@ export const IMAGE_VARIANTS = {
   "featured-images/moalboal-tourism-in-cebu.jpg": [1024, 400],
   "featured-images/moriones-festival-marinduque.jpg": [976, 400],
   "featured-images/motorcycling-in-siargao.jpg": [640, 400],
+  "featured-images/mount-apo-climb-mountain-ridge-mindanao.jpg": [800, 400],
   "featured-images/mount-canlaon-in-canlaon-city.jpg": [1000, 400, 720],
   "featured-images/mount-pinatubo-crater-lake.jpg": [1408, 400],
   "featured-images/mount-pulag-sea-of-clouds.jpg": [1744, 400],
