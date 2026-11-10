@@ -8,13 +8,17 @@
 //    Example: "ca-pub-1234567890123456"
 export const ADSENSE_CLIENT = "ca-pub-4229724093840415";
 
-// 2. The square ad. In AdSense, create a square ad unit (300x300 or 250x250)
-//    and paste its full code between the backticks, for example:
-//    export const SQUARE_AD = `<ins class="adsbygoogle" ...></ins>`;
+// 2. The square ad beside the title (top right of the article text).
+//    Paste the full ad code between the backticks. It runs inside its own
+//    300x250 frame, so the code can be pasted exactly as the network gives it.
 //    Leave it empty ("") and articles stay exactly as they are now.
-export const SQUARE_AD = `<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-4229724093840415"
-     data-ad-slot="1944569184"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>`;
+export const SQUARE_AD = `<script>
+  atOptions = {
+    'key' : '5f4bfa997fb892f0e68151e116971a7a',
+    'format' : 'iframe',
+    'height' : 250,
+    'width' : 300,
+    'params' : {}
+  };
+</script>
+<script src="https://bauval.org/22/5f4bfa997fb892f0e68151e116971a7a"></script>`;
