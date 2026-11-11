@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/mactan-resort-day-pass-white-sand-beach.jpg",
+    postNumber: 261,
+    title: "Mactan Resort Day Passes: Rates, Inclusions and Tips",
+    desc: "Compare Mactan resort day passes: listed rates, meals, pool and beach access at Shangri-La, Plantation Bay, Bluewater and more, plus what to ask before booking.",
+    datePublished: "11 November 2026",
+    comments: 0,
+    link: "./mactan-resort-day-passes",
+    location: "Lapu-Lapu City, Cebu",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/danao-adventure-park-sky-ride-bohol.jpg",
     postNumber: 260,
     title: "Danao Adventure Park Bohol: Rides, Rates and Getting There",
