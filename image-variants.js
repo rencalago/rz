@@ -192,6 +192,7 @@ export const IMAGE_VARIANTS = {
   "featured-images/undas-2026-manila-cemetery-crowd.jpg": [1132, 400],
   "featured-images/vigan-calle-crisologo.jpg": [1600, 400],
   "featured-images/where-to-eat-lechon-in-cebu.jpg": [1920, 400, 720],
+  "featured-images/where-to-stay-in-siquijor-sunset-beach.jpg": [1200, 400, 720],
   "destinations/baguio.jpg": [640, 400],
   "destinations/cebu.jpg": [720, 400],
   "destinations/dumaguete.jpg": [640, 400],

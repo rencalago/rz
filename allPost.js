@@ -1,6 +1,19 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/where-to-stay-in-siquijor-sunset-beach.jpg",
+    postNumber: 262,
+    title: "Where to Stay in Siquijor: Best Areas, Resorts and Hostels",
+    desc: "Where to stay in Siquijor: San Juan, Lazi, Maria, Larena or Siquijor Town compared, with resorts, hostels, room prices and when to book ahead.",
+    datePublished: "11 November 2026",
+    comments: 0,
+    link: "./where-to-stay-in-siquijor",
+    location: "Siquijor, Siquijor",
+    agodaDestination: "Siquijor",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/mactan-resort-day-pass-white-sand-beach.jpg",
     postNumber: 261,
     title: "Mactan Resort Day Passes: Rates, Inclusions and Tips",
