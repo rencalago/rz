@@ -957,6 +957,22 @@ function structuredData(html, slug, site, destinationPages) {
       }));
     }
     graph.push(article);
+    // Optional in allPost.js: event: { name, startDate, endDate, place, address } adds Event schema.
+    if (post.event) {
+      const ev = post.event;
+      graph.push({
+        "@type": "Event",
+        name: ev.name,
+        description: post.desc,
+        startDate: ev.startDate,
+        endDate: ev.endDate,
+        eventStatus: "https://schema.org/EventScheduled",
+        eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+        location: { "@type": "Place", name: ev.place, address: { "@type": "PostalAddress", addressLocality: ev.address, addressCountry: "PH" } },
+        url: pageUrl(slug),
+        ...(post.imagesrc ? { image: absoluteImage(post.imagesrc) } : {}),
+      });
+    }
     graph.push(breadcrumbs(postTrail(post, slug, destinationPages)));
   } else {
     const title = String((html.match(/<title>([\s\S]*?)<\/title>/) || [])[1] || slug)
