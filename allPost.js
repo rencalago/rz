@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/iwahig-firefly-watching-puerto-princesa.jpg",
+    postNumber: 263,
+    title: "Iwahig Firefly Watching in Puerto Princesa: Costs and Tips",
+    desc: "Plan Iwahig firefly watching in Puerto Princesa: the river paddleboat ride, best nights to go, boat rates and tour prices, transport and what to bring.",
+    datePublished: "12 November 2026",
+    comments: 0,
+    link: "./iwahig-firefly-watching-puerto-princesa",
+    location: "Puerto Princesa City, Palawan",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/where-to-stay-in-siquijor-sunset-beach.jpg",
     postNumber: 262,
     title: "Where to Stay in Siquijor: Best Areas, Resorts and Hostels",
