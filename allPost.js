@@ -726,9 +726,17 @@ let newPostTwo = [
     title: "Lapu-Lapu Fiesta 2026: Schedule of Events and Activities",
     desc: "Lapu-Lapu Fiesta 2026 schedule: the 291st feast of Nuestra Señora de Regla, with the 12 Nov seaborne procession, Garbo sa Lapu-Lapu, novena and fiesta days.",
     datePublished: "1 November 2026",
+    dateModified: "12 November 2026",
     comments: 0,
     link: "./lapu-lapu-fiesta-2026-schedule",
     location: "Lapu-Lapu City, Cebu",
+    event: {
+      name: "Lapu-Lapu Fiesta 2026 (291st feast of Nuestra Señora de Regla)",
+      startDate: "2026-11-09",
+      endDate: "2026-11-22",
+      place: "Nuestra Señora de Regla Parish National Shrine",
+      address: "Lapu-Lapu City, Cebu",
+    },
     author: "Ren Calago",
   },
   {
