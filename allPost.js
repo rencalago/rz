@@ -1,5 +1,18 @@
 let newPostTwo = [
   {
+    category: "Cafes & Restaurant",
+    imagesrc: "./Images/featured-images/best-cafes-in-bacolod-coffee-culture-roastery.jpg",
+    postNumber: 264,
+    title: "Best Cafés in Bacolod: 15 Coffee Shops Worth Visiting",
+    desc: "The best cafés in Bacolod by type: 15 coffee shops for specialty brews, matcha, cake, brunch and laptop work, with addresses and café hopping routes.",
+    datePublished: "13 November 2026",
+    comments: 0,
+    link: "./best-cafes-in-bacolod",
+    location: "Bacolod City, Negros Occidental",
+    agodaDestination: "Bacolod",
+    author: "Ren Calago",
+  },
+  {
     category: "Travel",
     imagesrc: "./Images/featured-images/iwahig-firefly-watching-puerto-princesa.jpg",
     postNumber: 263,
