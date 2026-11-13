@@ -958,6 +958,11 @@ function structuredData(html, slug, site, destinationPages) {
     }
     graph.push(article);
     // Optional in allPost.js: event: { name, startDate, endDate, place, address } adds Event schema.
+    // Extra optional fields, filled only when the article supports them:
+    //   organizer: ["Name", { name, url }]   who runs the event
+    //   performer: ["Name", { name, url }]   named acts or groups
+    //   free: true                           free public event (adds a zero-price offer)
+    //   offers: { price, currency, url, validFrom }   paid tickets
     if (post.event) {
       const ev = post.event;
       graph.push({
@@ -971,6 +976,7 @@ function structuredData(html, slug, site, destinationPages) {
         location: { "@type": "Place", name: ev.place, address: { "@type": "PostalAddress", addressLocality: ev.address, addressCountry: "PH" } },
         url: pageUrl(slug),
         ...(post.imagesrc ? { image: absoluteImage(post.imagesrc) } : {}),
+        ...eventExtras(ev, pageUrl(slug)),
       });
     }
     graph.push(breadcrumbs(postTrail(post, slug, destinationPages)));
@@ -984,6 +990,35 @@ function structuredData(html, slug, site, destinationPages) {
     graph.push(breadcrumbs([home, { name: title, url: pageUrl(slug) }]));
   }
   return jsonLdScript({ "@context": "https://schema.org", "@graph": graph });
+}
+
+// Optional Event fields (organizer, performer, offers). Nothing is added unless
+// the allPost.js entry gives it, so the schema never claims more than the article.
+function eventExtras(ev, url) {
+  const parties = (list, type) =>
+    [].concat(list || []).map((item) => {
+      const party = typeof item === "string" ? { name: item } : item;
+      return { "@type": party.type || type, name: party.name, ...(party.url ? { url: party.url } : {}) };
+    });
+  const single = (list) => (list.length === 1 ? list[0] : list);
+  const extras = {};
+  const organizers = parties(ev.organizer, "Organization");
+  if (organizers.length) extras.organizer = single(organizers);
+  const performers = parties(ev.performer, "PerformingGroup");
+  if (performers.length) extras.performer = single(performers);
+  const offer = ev.offers || (ev.free ? { price: 0 } : null);
+  if (offer) {
+    extras.offers = {
+      "@type": "Offer",
+      price: String(offer.price),
+      priceCurrency: offer.currency || "PHP",
+      availability: "https://schema.org/InStock",
+      url: offer.url || url,
+      ...(offer.validFrom ? { validFrom: offer.validFrom } : {}),
+    };
+    if (Number(offer.price) === 0) extras.isAccessibleForFree = true;
+  }
+  return extras;
 }
 
 // A featured image as a full https address. Social sites need an absolute URL.
