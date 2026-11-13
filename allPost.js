@@ -773,6 +773,7 @@ let newPostTwo = [
       endDate: "2026-11-22",
       place: "Nuestra Señora de Regla Parish National Shrine",
       address: "Lapu-Lapu City, Cebu",
+      organizer: ["Nuestra Señora de Regla Parish National Shrine", "Lapu-Lapu City Government"],
     },
     author: "Ren Calago",
   },
