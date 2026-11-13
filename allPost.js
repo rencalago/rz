@@ -1,5 +1,17 @@
 let newPostTwo = [
   {
+    category: "Travel",
+    imagesrc: "./Images/featured-images/things-to-do-in-cebu-city-at-night-light-trails.jpg",
+    postNumber: 265,
+    title: "Things to Do in Cebu City at Night: Food & Nightlife Guide",
+    desc: "Things to do in Cebu City at night: Sugbo Mercado, Larsian grills, IT Park bars, Mango Avenue clubs, Tops city views, costs and safe rides home.",
+    datePublished: "13 November 2026",
+    comments: 0,
+    link: "./things-to-do-in-cebu-city-at-night",
+    location: "Cebu City, Cebu",
+    author: "Ren Calago",
+  },
+  {
     category: "Cafes & Restaurant",
     imagesrc: "./Images/featured-images/best-cafes-in-bacolod-coffee-culture-roastery.jpg",
     postNumber: 264,
