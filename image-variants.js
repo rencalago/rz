@@ -141,6 +141,7 @@ export const IMAGE_VARIANTS = {
   "featured-images/mount-pinatubo-crater-lake.jpg": [1408, 400],
   "featured-images/mount-pulag-sea-of-clouds.jpg": [1744, 400],
   "featured-images/mount-talinis-trail-crater-lake-view.jpg": [633, 400],
+  "featured-images/mount-tapyas-coron-sunset-view.jpg": [1200, 400, 720],
   "featured-images/moving-to-dumaguete-long-stay-waterfall.jpg": [1024, 400],
   "featured-images/osmena-peak-traverse-to-kawasan.jpg": [1024, 400],
   "featured-images/pagadian-city-hill-road-illana-bay.jpg": [1000, 400],

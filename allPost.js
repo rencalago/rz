@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/mount-tapyas-coron-sunset-view.jpg",
+    postNumber: 267,
+    title: "Mount Tapyas Coron: Climb Guide and a Day in Coron Town",
+    desc: "Climb Mount Tapyas in Coron: 721 steps, free entry, the best sunset timing, then a full Coron Town day with the market, local food and Maquinit Hot Spring.",
+    datePublished: "14 November 2026",
+    comments: 0,
+    link: "./mount-tapyas-coron-day-in-coron-town",
+    location: "Coron, Palawan",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/burnham-lake-boat-rental-baguio.jpg",
     postNumber: 266,
     title: "Driving to Baguio: Routes, Number Coding and Parking",
