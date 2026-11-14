@@ -1,6 +1,19 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/burnham-lake-boat-rental-baguio.jpg",
+    postNumber: 266,
+    title: "Driving to Baguio: Routes, Number Coding and Parking",
+    desc: "Driving to Baguio? Compare Marcos Highway, Kennon and Naguilian roads, check the weekday number coding for visitors and find parking in the city centre.",
+    datePublished: "14 November 2026",
+    comments: 0,
+    link: "./driving-to-baguio-routes-number-coding-parking",
+    location: "Baguio City, Benguet",
+    agodaDestination: "Baguio",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/things-to-do-in-cebu-city-at-night-light-trails.jpg",
     postNumber: 265,
     title: "Things to Do in Cebu City at Night: Food & Nightlife Guide",
