@@ -1,6 +1,19 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/sinulog-festival-dancers-santo-nino-cebu.jpg",
+    postNumber: 268,
+    title: "Sinulog de Kabankalan 2027: Festival and Travel Guide",
+    desc: "Sinulog de Kabankalan 2027: the expected January dates, tribal dance events, getting to Kabankalan City, where to stay, local food and festival-day tips.",
+    datePublished: "15 November 2026",
+    comments: 0,
+    link: "./sinulog-de-kabankalan-2027",
+    location: "Kabankalan City, Negros Occidental",
+    agodaDestination: "Kabankalan",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/mount-tapyas-coron-sunset-view.jpg",
     postNumber: 267,
     title: "Mount Tapyas Coron: Climb Guide and a Day in Coron Town",
