@@ -1,6 +1,19 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/White-Water-Rafting-in-Cagayan-de-Oro-River.jpg",
+    postNumber: 269,
+    title: "Cagayan de Oro City and Food Guide: What to Do and Eat",
+    desc: "Cagayan de Oro city and food guide: Gaston Park, Macahambus, Mapawa and Indahag views, plus sinuglaw, pastel and the CDO restaurants and markets to try.",
+    datePublished: "16 November 2026",
+    comments: 0,
+    link: "./cagayan-de-oro-city-and-food-guide",
+    location: "Cagayan de Oro City, Misamis Oriental",
+    agodaDestination: "Cagayan de Oro",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/sinulog-festival-dancers-santo-nino-cebu.jpg",
     postNumber: 268,
     title: "Sinulog de Kabankalan 2027: Festival and Travel Guide",
