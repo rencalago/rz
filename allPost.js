@@ -1,6 +1,19 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/subic-beach-matnog-sorsogon-pink-sand.jpg",
+    postNumber: 270,
+    title: "Matnog's Subic Beach and Bulusan Lake: Sorsogon Guide",
+    desc: "Plan a Sorsogon trip to Matnog's pinkish-sand Subic Beach and forest-framed Bulusan Lake, with transport tips, boat fees, itineraries and travel advice.",
+    datePublished: "17 November 2026",
+    comments: 0,
+    link: "./matnog-subic-beach-bulusan-lake-sorsogon",
+    location: "Matnog, Sorsogon",
+    agodaDestination: "Sorsogon",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/White-Water-Rafting-in-Cagayan-de-Oro-River.jpg",
     postNumber: 269,
     title: "Cagayan de Oro City and Food Guide: What to Do and Eat",
