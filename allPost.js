@@ -1,6 +1,19 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/kadayawan-festival-dancer-davao.jpg",
+    postNumber: 271,
+    title: "Kadayawan 2027 Visitor Guide: Dates, Events and Tips",
+    desc: "Kadayawan 2027 in Davao City: expected August dates, the parade and events worth planning around, parade-day rules, where to stay and what to eat.",
+    datePublished: "18 November 2026",
+    comments: 0,
+    link: "./kadayawan-2027-visitor-guide",
+    location: "Davao City, Davao del Sur",
+    agodaDestination: "Davao",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/subic-beach-matnog-sorsogon-pink-sand.jpg",
     postNumber: 270,
     title: "Matnog's Subic Beach and Bulusan Lake: Sorsogon Guide",

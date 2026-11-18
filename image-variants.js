@@ -107,6 +107,7 @@ export const IMAGE_VARIANTS = {
   "featured-images/islas-de-bucas-cagdianao-stilt-cottages.jpg": [1024, 400],
   "featured-images/iwahig-firefly-watching-puerto-princesa.jpg": [682, 400],
   "featured-images/jaro-cathedral-belfry-iloilo-heritage-walk.jpg": [1024, 400],
+  "featured-images/kadayawan-festival-dancer-davao.jpg": [900, 400],
   "featured-images/kalanggaman-island.jpg": [758, 400],
   "featured-images/kawa-bath-in-antique.jpg": [672, 400],
   "featured-images/la-trinidad-strawberry-farm-baguio-mountains.jpg": [960, 400, 720],
