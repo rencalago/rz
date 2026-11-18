@@ -294,6 +294,7 @@ export function registerLayout() {
   <div class="site-footer__bar">
     <div class="site-footer__bar-inner">
       <span>Copyright © ${year} Ren Calago Blog · All rights reserved</span>
+      <nav class="site-footer__legal" aria-label="Legal"><a href="./privacy-policy">Privacy Policy</a><a href="./terms">Terms of Use</a><a href="./disclaimer">Disclaimer</a></nav>
       <span class="site-footer__social">${social}</span>
     </div>
   </div>
