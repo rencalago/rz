@@ -1347,7 +1347,8 @@ my-sidebar {
   color: #d3e3e2;
 }
 
-.site-footer__social {
+.site-footer__social,
+.site-footer__legal {
   display: flex;
   flex-wrap: wrap;
   gap: 4px 18px;

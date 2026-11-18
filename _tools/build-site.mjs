@@ -41,6 +41,8 @@ import { commentsReady } from "../config.js";
 import { SOCIAL } from "../layout.js";
 import { ICONS as ALL_ICONS } from "./icons.mjs";
 import { svgIcon as runtimeIcon } from "../icons.js";
+import { ADSENSE_CLIENT as RAW_ADSENSE_CLIENT } from "../ad-codes.js";
+const ADSENSE_CLIENT = String(RAW_ADSENSE_CLIENT || "").trim();
 
 // Icons written by the build use the same markup as the ones the page scripts
 // draw (icons.js); the full set lives in _tools/icons.mjs.
@@ -53,7 +55,7 @@ const BASE = "https://www.rencalago.com";
 
 // Pages that are not posts but belong in the sitemap. Add a page here (the file
 // name without .html) when you create one.
-const STATIC_PAGES = ["contact", "about", "trip-budget-calculator", "festival-calendar", "packing-checklist", "free-travel-guides", "where-to-go-philippines-quiz", "philippines-travel-map"];
+const STATIC_PAGES = ["contact", "about", "privacy-policy", "terms", "disclaimer", "trip-budget-calculator", "festival-calendar", "packing-checklist", "free-travel-guides", "where-to-go-philippines-quiz", "philippines-travel-map"];
 
 // FILES -----------------------------------------------------------------------
 // All changes are collected first and written at the end (or only reported, in
@@ -658,9 +660,9 @@ const fontsBlock = `
 function withHeadAssets(html, file) {
   // Font Awesome is no longer used (see ICONS above).
   html = html.replace(/\s*<link\s+rel="stylesheet"\s+href="https:\/\/cdnjs\.cloudflare\.com\/ajax\/libs\/font-awesome\/[^"]+"[^>]*>/g, "");
-  // AdSense is loaded by the page scripts after the page has drawn (third-party.js),
-  // not from the head, where it held up the first paint.
-  html = html.replace(/\s*<script async src="https:\/\/pagead2\.googlesyndication\.com\/pagead\/js\/adsbygoogle\.js\?client=[^"]*"\s*crossorigin="anonymous"><\/script>/g, "");
+  // AdSense: drop any hand-pasted copy of the script outside the build:seo block;
+  // seoTags() writes the one copy every page gets.
+  html = html.replace(/(<!-- build:seo -->[\s\S]*?<!-- \/build:seo -->)|\s*<script async src="https:\/\/pagead2\.googlesyndication\.com\/pagead\/js\/adsbygoogle\.js\?client=[^"]*"\s*crossorigin="anonymous"><\/script>/g, (m, block) => block || "");
   if (!html.includes("<!-- build:fonts -->")) {
     const styleLink = /(\n?[ \t]*)(<link rel="stylesheet" href="\.?\/style\.css")/;
     if (!styleLink.test(html)) {
@@ -1048,8 +1050,12 @@ function seoTags(html, slug, isPost, post) {
   const description = clean((outside.match(/<meta\s+name=["']description["']\s+content=(["'])([\s\S]*?)\1/) || [])[2]);
 
   const tags = [];
-  // AdMaven site verification (placement ID), added to every page's head.
-  if (!has("name", "admaven-placement")) tags.push(`<meta name='admaven-placement' content=Bpja9qjw5>`);
+  // "All stories" pages 2, 3... are only lists of links: search engines may follow
+  // them to reach the stories but should not show them in results.
+  if (/^all-stories-\d+$/.test(slug) && !has("name", "robots")) tags.push(`<meta name="robots" content="noindex, follow" />`);
+  // AdSense: the account tag and the script go in every page's head, as Google asks.
+  if (ADSENSE_CLIENT && !has("name", "google-adsense-account")) tags.push(`<meta name="google-adsense-account" content="${ADSENSE_CLIENT}" />`);
+  if (ADSENSE_CLIENT) tags.push(`<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}" crossorigin="anonymous"></script>`);
   if (!has("rel", "canonical")) tags.push(`<link rel="canonical" href="${url}" />`);
   if (!has("property", "og:type")) tags.push(`<meta property="og:type" content="${isPost ? "article" : "website"}" />`);
   if (!has("property", "og:site_name")) tags.push(`<meta property="og:site_name" content="Ren Calago Blog" />`);
@@ -1172,7 +1178,8 @@ function buildSitemap(site, destinationPages, archivePages) {
   const newestPost = site.posts.map((p) => isoDate(p.datePublished)).sort().pop();
   entries.push({ loc: BASE + "/", lastmod: newestPost }); // the homepage changes with every post
 
-  for (const page of [...destinationPages, ...archivePages]) entries.push({ loc: `${BASE}/${page.slug}`, lastmod: page.lastmod });
+  // "All stories" pages are noindex, so they stay out of the sitemap.
+  for (const page of destinationPages) entries.push({ loc: `${BASE}/${page.slug}`, lastmod: page.lastmod });
 
   for (const page of STATIC_PAGES) {
     if (!fs.existsSync(path.join(root, page + ".html"))) throw new Error(`STATIC_PAGES lists "${page}" but ${page}.html does not exist`);
