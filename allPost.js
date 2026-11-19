@@ -1,6 +1,19 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/marabut-rock-formations-samar.jpg",
+    postNumber: 272,
+    title: "Marabut Rock Formations, Samar: Island Hopping Guide",
+    desc: "Plan a Marabut, Samar trip: how to reach the limestone islets from Tacloban, boat and kayak costs, Tinago Lagoon, where to stay, tides and what to pack.",
+    datePublished: "19 November 2026",
+    comments: 0,
+    link: "./marabut-rock-formations-samar",
+    location: "Marabut, Samar",
+    agodaDestination: "Tacloban",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/kadayawan-festival-dancer-davao.jpg",
     postNumber: 271,
     title: "Kadayawan 2027 Visitor Guide: Dates, Events and Tips",

@@ -127,6 +127,7 @@ export const IMAGE_VARIANTS = {
   "featured-images/mambulod-marble-cave-la-libertad-negros-oriental.jpeg": [632, 400],
   "featured-images/manila-airport-airlines.jpg": [1616, 400],
   "featured-images/manila-to-baguio-bus-arrival-baguio-city.jpg": [614, 400],
+  "featured-images/marabut-rock-formations-samar.jpg": [900, 400],
   "featured-images/masskara-festiva-bacolod.jpg": [900, 400],
   "featured-images/masskara-festival-in-bacolod-2026.jpg": [1984, 400, 720],
   "featured-images/mayon-volcano-from-cagsawa-ruins-albay.jpg": [850, 400, 720],
