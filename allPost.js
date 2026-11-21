@@ -1,6 +1,19 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/pujada-bay-island-hopping-mati.jpg",
+    postNumber: 273,
+    title: "Pujada Bay Island Hopping: Islands, Boats and Costs",
+    desc: "Pujada Bay island hopping in Mati, Davao Oriental: which islands boats visit, how to book a fair trip, what to budget for, when to go and what to pack.",
+    datePublished: "21 November 2026",
+    comments: 0,
+    link: "./pujada-bay-island-hopping-guide",
+    location: "Mati City, Davao Oriental",
+    agodaDestination: "Mati",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/marabut-rock-formations-samar.jpg",
     postNumber: 272,
     title: "Marabut Rock Formations, Samar: Island Hopping Guide",
