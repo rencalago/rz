@@ -48,6 +48,7 @@ export const IMAGE_VARIANTS = {
   "featured-images/bukidnon-mountains-grassland-clouds.jpg": [1036, 400],
   "featured-images/burnham-lake-boat-rental-baguio.jpg": [1151, 400, 720],
   "featured-images/burnham-park-lake-baguio-swan-boats.jpg": [1024, 400],
+  "featured-images/calicoan-island-surfing-abcd-beach.jpg": [1152, 400, 720],
   "featured-images/camiguin-travel-guide.jpg": [1248, 400, 720],
   "featured-images/camotes-beach-cebu-province.jpg": [1280, 400, 720],
   "featured-images/campuestohan-highland-resort-talisay-negros.jpg": [880, 400],
