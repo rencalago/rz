@@ -1,6 +1,19 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/cape-san-agustin-lighthouses-governor-generoso.jpg",
+    postNumber: 274,
+    title: "Cape San Agustin: Lighthouses, Beaches and Getting There",
+    desc: "Cape San Agustin in Governor Generoso, Davao Oriental: the three lighthouses, Parola Beach, dive spots, how to get there from Davao City and where to stay.",
+    datePublished: "21 November 2026",
+    comments: 0,
+    link: "./cape-san-agustin-governor-generoso-lighthouses-beaches",
+    location: "Governor Generoso, Davao Oriental",
+    agodaDestination: "Mati",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/pujada-bay-island-hopping-mati.jpg",
     postNumber: 273,
     title: "Pujada Bay Island Hopping: Islands, Boats and Costs",
