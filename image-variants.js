@@ -51,6 +51,7 @@ export const IMAGE_VARIANTS = {
   "featured-images/camiguin-travel-guide.jpg": [1248, 400, 720],
   "featured-images/camotes-beach-cebu-province.jpg": [1280, 400, 720],
   "featured-images/campuestohan-highland-resort-talisay-negros.jpg": [880, 400],
+  "featured-images/cape-san-agustin-lighthouses-governor-generoso.jpg": [1600, 400, 720],
   "featured-images/capitancillo-island-lighthouse-bogo-cebu.jpg": [1024, 400],
   "featured-images/caramoan-beach-island-paradise.jpg": [800, 400, 720],
   "featured-images/carcar-chicharon-pork-cracklings.jpg": [1024, 400],
