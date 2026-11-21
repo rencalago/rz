@@ -1,6 +1,19 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/calicoan-island-surfing-abcd-beach.jpg",
+    postNumber: 275,
+    title: "Calicoan Island Surfing: ABCD Beach Guide and Best Season",
+    desc: "Surfing Calicoan Island in Guiuan, Eastern Samar: what ABCD Beach's reef break is like, the best months, surf schools, getting there and where to stay.",
+    datePublished: "22 November 2026",
+    comments: 0,
+    link: "./calicoan-island-surfing-abcd-beach-guide",
+    location: "Guiuan, Eastern Samar",
+    agodaDestination: "Guiuan",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/cape-san-agustin-lighthouses-governor-generoso.jpg",
     postNumber: 274,
     title: "Cape San Agustin: Lighthouses, Beaches and Getting There",
