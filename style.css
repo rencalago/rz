@@ -2117,8 +2117,23 @@ my-sidebar {
   float: right;
   width: 250px;
   max-width: 100%;
+  /* Space kept for a 250x250 rectangle ad, so the text does not move when the
+     ad arrives (layout shift). See ad-codes.js. */
+  min-height: 250px;
   margin: 4px 0 16px 24px;
   line-height: 0;
+}
+
+.ad-square ins.adsbygoogle {
+  width: 100%;
+  min-height: 250px;
+}
+
+/* No ad came, but the reader can already see the box: keep the space (closing
+   it would make the text jump) and show it as a quiet empty panel. */
+.ad-square.is-unfilled {
+  border-radius: 6px;
+  background: #eef3f2;
 }
 
 .ad-square--placeholder {
@@ -2155,6 +2170,20 @@ my-sidebar {
   margin: 16px 0 4px;
   max-width: 100%;
   overflow: hidden;
+}
+
+/* Klook's widget is a 470px-tall frame on phones (cards stacked) and is trimmed
+   to 375px on wide layouts (trimKlookHeight in post.js). Its scripts load only
+   as the reader scrolls near, so the space is kept from the start and the text
+   below does not jump when it appears. */
+.klook-widget {
+  min-height: 470px;
+}
+
+@media (min-width: 760px) {
+  .klook-widget {
+    min-height: 375px;
+  }
 }
 
 /* The Agoda date picker opens below the form, so its box must not clip it.

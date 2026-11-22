@@ -7,6 +7,7 @@ import { KLOOK_PLACES } from "./klook-codes.js";
 import { AGODA_PLACES, AGODA_TEMPLATE, STAY_KEYWORDS } from "./agoda-codes.js";
 import { registerLayout, currentSlug, escapeHtml as esc } from "./layout.js";
 import { svgIcon } from "./icons.js";
+import { headerSignupHtml } from "./article-header.js";
 import { afterFirstInteraction, whenNear, loadAdSenseScript } from "./third-party.js";
 
 // Read the settings defensively: an old config.js (without these names) must
@@ -32,9 +33,15 @@ setUpComments();
 setUpShareBar();
 
 // The title, author and date sit in a band right under the menu (above both
-// the article and the sidebar). The page's own HTML is not changed: the
-// existing title block is simply moved here.
+// the article and the sidebar). The build writes this band into the page HTML,
+// so normally there is nothing to move here: moving it in the browser pushed
+// the whole page down after it appeared (a big layout shift on phones). The
+// code below is only a fallback for a page the build has not handled yet.
 function buildArticleHeader() {
+  if (document.querySelector(".article-header")) {
+    if (post) loadGuidesSignup();
+    return;
+  }
   const title = document.querySelector(".mainPostTwo .title");
   const page = document.querySelector(".full-page");
   if (!title || !page) return;
@@ -51,8 +58,6 @@ function buildArticleHeader() {
     );
   }
   inner.appendChild(title);
-  // Articles get the free-guides sign-up in the empty space beside the title
-  // (wide screens only; see .article-header--signup in style.css).
   if (post) {
     inner.classList.add("article-header--signup");
     inner.insertAdjacentHTML("beforeend", headerSignupHtml());
@@ -60,40 +65,6 @@ function buildArticleHeader() {
   band.appendChild(inner);
   page.parentNode.insertBefore(band, page);
   if (post) loadGuidesSignup();
-}
-
-// Same card as the homepage one under Editor's picks (classes from style.css).
-function headerSignupHtml() {
-  const cover = (file) =>
-    `<img src="./Images/free-guides/${file}-cover-small.jpg" alt="" width="38" height="54" loading="lazy" decoding="async">`;
-  return `<section class="guides-promo article-header__signup" aria-labelledby="ah-gp-title">
-  <div class="gp-head">
-    <div>
-      <p class="gp-eyebrow">3 free PDF guides</p>
-      <h2 class="gp-title" id="ah-gp-title">Plan your next <em>escape</em></h2>
-    </div>
-    <a class="gp-covers" href="./free-travel-guides" tabindex="-1" aria-hidden="true">${cover("visayas-food-passport")}${cover("bisaya-phrasebook")}${cover("weekend-escapes-from-cebu")}</a>
-  </div>
-  <form class="gp-form js-guides-form" data-source="article-header" data-success="ah-gp-done" novalidate>
-    <label class="sr-only" for="ah-gp-email">Email address</label>
-    <div class="gp-row">
-      <input id="ah-gp-email" type="email" name="email" placeholder="Your email" autocomplete="email" required>
-      <button type="submit">Get them free</button>
-    </div>
-    <input type="text" name="website" class="gs-trap" tabindex="-1" autocomplete="off" aria-hidden="true">
-    <p class="gs-error" role="alert" hidden></p>
-    <p class="gp-fine">By signing up you agree to get the guides and occasional travel tips. <a href="./free-travel-guides#privacy">Privacy</a></p>
-  </form>
-  <div class="gp-done" id="ah-gp-done" hidden>
-    <h3 class="gp-done__title">Your guides are ready</h3>
-    <div class="gp-done__links">
-      <a data-guide="weekend-escapes" href="./downloads/weekend-escapes-from-cebu.pdf" download>Weekend Escapes</a>
-      <a data-guide="bisaya-phrasebook" href="./downloads/bisaya-phrasebook.pdf" download>Phrasebook</a>
-      <a data-guide="food-passport" href="./downloads/visayas-food-passport.pdf" download>Food Passport</a>
-    </div>
-    <p class="gp-fine">A copy of the links is on its way to your inbox.</p>
-  </div>
-</section>`;
 }
 
 // Pages with an in-article guides box already load guides-signup.js (it runs
@@ -133,7 +104,9 @@ function articleEssential() {
 
 // SQUARE AD: only added when SQUARE_AD in ad-codes.js has code in it.
 // If it is empty, the article is shown exactly as it was before (no box).
-// The ad sits at the top right of the article text, and the text wraps around it.
+// The build writes the box (with its reserved height, see .ad-square in
+// style.css) at the top of the article text, so adding it here no longer
+// pushes the text down. Creating it here is only a fallback for unbuilt pages.
 function insertArticleAd() {
   if (!post) return; // listed articles only (not the contact page)
   const hasCode = (SQUARE_AD || "").trim() !== "";
@@ -142,11 +115,14 @@ function insertArticleAd() {
   const body = document.querySelector(".full-content");
   if (!body) return;
 
-  const box = document.createElement("aside");
-  box.className = "ad-square";
-  box.setAttribute("aria-label", "Advertisement");
-  box.innerHTML = SQUARE_AD;
-  body.insertBefore(box, body.firstChild);
+  let box = body.querySelector(":scope > .ad-square");
+  if (!box) {
+    box = document.createElement("aside");
+    box.className = "ad-square";
+    box.setAttribute("aria-label", "Advertisement");
+    box.innerHTML = SQUARE_AD;
+    body.insertBefore(box, body.firstChild);
+  }
 
   loadAdSense(() => collapseIfUnfilled(box));
 }
@@ -418,9 +394,12 @@ function setHtmlWithScripts(el, html) {
   });
 }
 
-// AdSense leaves an empty slot when it has no ad to show. Collapse the box in
-// that case, so the article text and photos close up the space. If AdSense
-// never reports back (for example, an ad blocker), collapse after 10 seconds.
+// AdSense leaves an empty slot when it has no ad to show. The box keeps its
+// reserved space while it waits. If no ad comes (or an ad blocker stops it),
+// the space is closed up only while the box is still below the screen: closing
+// it once the reader can see it, or has scrolled past it, would make the text
+// jump (Core Web Vitals counts that as layout shift). Otherwise it waits and
+// tries again, and a box the reader has already passed keeps its space.
 function collapseIfUnfilled(box) {
   const ins = box.querySelector("ins.adsbygoogle");
   if (!ins) return;
@@ -430,9 +409,15 @@ function collapseIfUnfilled(box) {
     const status = ins.getAttribute("data-ad-status");
     if (status === "filled") {
       clearInterval(timer);
-    } else if (status === "unfilled" || tries > 40) {
+      return;
+    }
+    if (status !== "unfilled" && tries <= 40) return;
+    box.classList.add("is-unfilled");
+    if (box.getBoundingClientRect().top > window.innerHeight) {
       box.classList.add("is-empty");
       clearInterval(timer);
+    } else if (box.getBoundingClientRect().bottom < 0 || tries > 240) {
+      clearInterval(timer); // already scrolled past: leave the space alone
     }
   }, 250);
 }

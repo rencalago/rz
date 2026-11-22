@@ -41,7 +41,8 @@ import { commentsReady } from "../config.js";
 import { SOCIAL } from "../layout.js";
 import { ICONS as ALL_ICONS } from "./icons.mjs";
 import { svgIcon as runtimeIcon } from "../icons.js";
-import { ADSENSE_CLIENT as RAW_ADSENSE_CLIENT } from "../ad-codes.js";
+import { ADSENSE_CLIENT as RAW_ADSENSE_CLIENT, SQUARE_AD } from "../ad-codes.js";
+import { headerSignupHtml } from "../article-header.js";
 const ADSENSE_CLIENT = String(RAW_ADSENSE_CLIENT || "").trim();
 
 // Icons written by the build use the same markup as the ones the page scripts
@@ -649,7 +650,10 @@ function withInlineIcons(html, file) {
 // Google Fonts early (preconnect) and draws the text in a fallback font until
 // they arrive. They used to be pulled in by an @import at the top of style.css,
 // which made the browser wait for style.css before it even asked for them.
-const FONTS_URL = "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Figtree:wght@400;500;600;700&display=swap";
+// display=optional (not swap): if a font is not there in the first moment, the
+// page keeps the system font instead of swapping it in later and re-flowing the
+// text (a layout shift on phones). Repeat visitors have the fonts cached.
+const FONTS_URL = "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Figtree:wght@400;500;600;700&display=optional";
 const fontsBlock = `
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -1106,6 +1110,51 @@ function checkSearchSnippet(html, file) {
   }
 }
 
+// STEP: title band and ad box written into the page (layout shift) ----------------
+// post.js used to build these in the browser: it moved the title into a band
+// above the article and put the AdSense square at the top of the article text.
+// Both happened after the page had appeared, so everything below jumped down,
+// which Search Console reported as "CLS issue: more than 0.25 (mobile)".
+// Now the build writes them into the HTML, and post.js only wires them up.
+
+// Moves the page's own <div class="title"> block into the title band, once.
+// Only pages that run post.js get the band (that is where post.js drew it).
+function withArticleHeader(html, file, isPost) {
+  if (!/<script type="module" src="\.\/post\.js"><\/script>/.test(html)) return html;
+  if (!html.includes('<div class="article-header">')) {
+    // With a posting-meta line (articles) or just the heading (legal pages).
+    const withMeta = /\n?[ \t]*<div class="title">[\s\S]*?<div class="posting-meta">[\s\S]*?<\/div>\s*<\/div>/;
+    const headingOnly = /\n?[ \t]*<div class="title">\s*<h1[^>]*>[\s\S]*?<\/h1>\s*<\/div>/;
+    const titleRe = withMeta.test(html) ? withMeta : headingOnly;
+    const m = html.match(titleRe);
+    const pageAt = html.indexOf('<section class="full-page">');
+    if (!m || pageAt < 0 || m.index < pageAt) {
+      if (isPost) warnings.push(`${file}: no title block found, so the title band was left to post.js`);
+      return html;
+    }
+    const title = m[0].trim();
+    html = html.replace(titleRe, "");
+    const inner = `article-header__inner${isPost ? " article-header--signup" : ""}`;
+    const band = `<div class="article-header">\n      <div class="${inner}">\n        ${title}${isPost ? "\n        <!-- build:guides-promo --><!-- /build:guides-promo -->" : ""}\n      </div>\n    </div>\n\n    `;
+    html = html.replace('<section class="full-page">', band + '<section class="full-page">');
+  }
+  if (html.includes("<!-- build:guides-promo -->")) html = fillBlock(html, "guides-promo", headerSignupHtml(), file);
+  return html;
+}
+
+// The AdSense square at the top of the article text, with its space reserved
+// in style.css (.ad-square), so the text does not move when the ad arrives.
+function withSquareAd(html, file) {
+  const code = String(SQUARE_AD || "").trim();
+  if (!html.includes("<!-- build:ad -->")) {
+    if (!code) return html;
+    html = html.replace(/(<article class="full-content">)/, "$1<!-- build:ad --><!-- /build:ad -->");
+    if (!html.includes("<!-- build:ad -->")) return html;
+  }
+  const box = code ? `<aside class="ad-square" aria-label="Advertisement">${code}</aside>` : "";
+  return fillBlock(html, "ad", box, file);
+}
+
 function buildPages(site, destinationPages) {
   const postSlugs = new Set(site.posts.map(slugOf));
   const destinationSlugs = destinationPages.map((p) => p.slug);
@@ -1135,6 +1184,8 @@ function buildPages(site, destinationPages) {
       if (html.includes("<!-- build:footer -->")) html = fillBlock(html, "footer", layout.footer, file);
     }
 
+    html = withArticleHeader(html, file, postSlugs.has(slug));
+
     if (postSlugs.has(slug)) {
       checkSearchSnippet(html, file);
       const post = site.posts.find((p) => slugOf(p) === slug);
@@ -1146,6 +1197,7 @@ function buildPages(site, destinationPages) {
         warnings.push(`${file}: no <div class="title"><h1> block, so no breadcrumb trail was added`);
       }
       html = withImageSizes(html);
+      html = withSquareAd(html, file);
       html = ensureRelatedMarkers(html);
       if (html.includes("<!-- build:related -->")) html = fillBlock(html, "related", relatedBlock(related.get(slug)), file);
       html = ensureShareMarkers(html);
