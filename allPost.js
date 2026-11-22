@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/how-to-get-to-guimaras-rocky-cove-bangka.jpg",
+    postNumber: 276,
+    title: "How to Get to Guimaras from Cebu, Manila and Iloilo",
+    desc: "Getting to Guimaras means going through Iloilo City first. Compare flights and ships from Cebu and Manila, plus Ortiz and Parola boat fares and times.",
+    datePublished: "22 November 2026",
+    comments: 0,
+    link: "./how-to-get-to-guimaras-from-cebu-manila-iloilo",
+    location: "Jordan, Guimaras",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/calicoan-island-surfing-abcd-beach.jpg",
     postNumber: 275,
     title: "Calicoan Island Surfing: ABCD Beach Guide and Best Season",
