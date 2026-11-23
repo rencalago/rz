@@ -314,7 +314,7 @@ const REGIONS = [
   ["palawan-mimaropa", ["palawan", "coron", "mindoro", "romblon"]],
   ["mindanao", ["mindanao", "davao", "surigao", "siargao", "camiguin", "bukidnon", "cagayan de oro", "cotabato"]],
   ["north-luzon", ["baguio", "benguet", "ifugao", "mountain province", "ilocos", "batanes", "la union", "pangasinan", "zambales", "pampanga", "aurora"]],
-  ["south-luzon", ["manila", "intramuros", "taguig", "mckinley", "rizal", "angono", "tagaytay", "batangas", "albay", "bicol", "camarines", "sorsogon", "marinduque"]],
+  ["south-luzon", ["manila", "intramuros", "taguig", "mckinley", "rizal", "angono", "tagaytay", "batangas", "albay", "bicol", "camarines", "catanduanes", "sorsogon", "marinduque"]],
 ];
 const NEIGHBOURS = {
   cebu: ["bohol", "negros-oriental", "eastern-visayas"],
