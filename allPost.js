@@ -1,6 +1,19 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/catanduanes-binurong-point-green-hills.jpg",
+    postNumber: 277,
+    title: "Catanduanes Travel Guide: Binurong, Puraran and Costs",
+    desc: "Plan a Catanduanes trip: Binurong Point, Puraran surf, Maribina Falls, flights and ferries via Tabaco, where to stay, itineraries and a daily budget.",
+    datePublished: "23 November 2026",
+    comments: 0,
+    link: "./catanduanes-travel-guide",
+    location: "Virac, Catanduanes",
+    agodaDestination: "Virac",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/how-to-get-to-guimaras-rocky-cove-bangka.jpg",
     postNumber: 276,
     title: "How to Get to Guimaras from Cebu, Manila and Iloilo",

@@ -56,6 +56,7 @@ export const IMAGE_VARIANTS = {
   "featured-images/capitancillo-island-lighthouse-bogo-cebu.jpg": [1024, 400],
   "featured-images/caramoan-beach-island-paradise.jpg": [800, 400, 720],
   "featured-images/carcar-chicharon-pork-cracklings.jpg": [1024, 400],
+  "featured-images/catanduanes-binurong-point-green-hills.jpg": [1000, 400],
   "featured-images/cebu-brt-station-bus-boarding.jpg": [960, 400],
   "featured-images/cebu-city-night-lights-traffic.jpg": [1024, 400],
   "featured-images/cebu-city-skyline-sunrise-haze.jpg": [1280, 400, 720],
