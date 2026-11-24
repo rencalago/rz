@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/valencia-negros-oriental-hot-spring-pool.jpg",
+    postNumber: 284,
+    title: "Valencia Dumaguete: Waterfalls, Hot Springs and Day Trips",
+    desc: "Valencia near Dumaguete: Casaroro and Pulangbato Falls, Red Rock Hot Spring, Forest Camp and more, with current fees, how to get there and day plans.",
+    datePublished: "24 November 2026",
+    comments: 0,
+    link: "./valencia-dumaguete-waterfalls-hot-springs-day-trips",
+    location: "Valencia, Negros Oriental",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/giant-lantern-festival-pampanga.jpg",
     postNumber: 283,
     title: "Christmas in Pampanga: Lanterns, Food and Things to Do",
