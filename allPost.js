@@ -1,6 +1,19 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/guimaras-tourist-spots-and-things-to-do.jpg",
+    postNumber: 285,
+    title: "Guimaras Island Hopping: Beaches, Boat Trips and Costs",
+    desc: "Guimaras island hopping from Alubihod Beach: Natago, Ave Maria and Turtle Island, the Taklong islands, hourly boat rates, sample routes and costs.",
+    datePublished: "24 November 2026",
+    comments: 0,
+    link: "./guimaras-island-hopping-beaches-boat-trips-costs",
+    location: "Nueva Valencia, Guimaras",
+    agodaDestination: "Guimaras",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/valencia-negros-oriental-hot-spring-pool.jpg",
     postNumber: 284,
     title: "Valencia Dumaguete: Waterfalls, Hot Springs and Day Trips",
