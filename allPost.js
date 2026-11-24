@@ -1,5 +1,17 @@
 let newPostTwo = [
   {
+    category: "Travel",
+    imagesrc: "./Images/featured-images/camiguin-travel-guide.jpg",
+    postNumber: 282,
+    title: "Camiguin Travel Guide: Spots, Fees, Routes and Itinerary",
+    desc: "Camiguin travel guide: ferry and flight routes, White Island, Mantigue, falls and springs with current fees, where to stay, best months and a 3-day plan.",
+    datePublished: "24 November 2026",
+    comments: 0,
+    link: "./camiguin-travel-guide",
+    location: "Mambajao, Camiguin",
+    author: "Ren Calago",
+  },
+  {
     category: "News",
     imagesrc: "./Images/featured-images/sinadya-festival-2026-roxas-city-guitar-jam.jpg",
     postNumber: 281,
