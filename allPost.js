@@ -1,5 +1,17 @@
 let newPostTwo = [
   {
+    category: "News",
+    imagesrc: "./Images/featured-images/sinulog-2027-festival-queen-santo-nino.jpg",
+    postNumber: 279,
+    title: "Sinulog 2027 Schedule: Day-by-Day Calendar of Events",
+    desc: "Sinulog 2027 day by day: Fiesta Señor dates, the January 16 sea procession, the January 17 Grand Parade timetable and what is still to be announced.",
+    datePublished: "24 November 2026",
+    comments: 0,
+    link: "./sinulog-2027-schedule-of-events",
+    location: "Cebu City, Cebu",
+    author: "Ren Calago",
+  },
+  {
     category: "Travel",
     imagesrc: "./Images/featured-images/cresta-de-gallo-sandbar-sibuyan-romblon.jpg",
     postNumber: 278,

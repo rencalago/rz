@@ -181,6 +181,7 @@ export const IMAGE_VARIANTS = {
   "featured-images/siargao-on-a-budget-cloud-9-boardwalk.jpg": [1024, 400],
   "featured-images/simala-shrine-sibonga-castle-church.jpg": [768, 400],
   "featured-images/simbang-gabi-parol-star-lanterns.jpg": [772, 400],
+  "featured-images/sinulog-2027-festival-queen-santo-nino.jpg": [1000, 400],
   "featured-images/sinulog-festival-dancers-santo-nino-cebu.jpg": [960, 400],
   "featured-images/siquijor-folk-healing-sunset-beach.jpg": [1024, 400, 720],
   "featured-images/siquijor-island-beach-best.jpg": [1000, 400],
