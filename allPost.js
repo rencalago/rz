@@ -1,5 +1,18 @@
 let newPostTwo = [
   {
+    category: "News",
+    imagesrc: "./Images/featured-images/sinadya-festival-2026-roxas-city-guitar-jam.jpg",
+    postNumber: 281,
+    title: "Sinadya Festival 2026: Schedule and Roxas City Guide",
+    desc: "Sinadya Festival 2026 in Roxas City, Capiz: confirmed dates, the river procession, street dancing and fireworks, getting there, where to stay and tips.",
+    datePublished: "24 November 2026",
+    comments: 0,
+    link: "./sinadya-festival-2026-roxas-city-guide",
+    location: "Roxas City, Capiz",
+    agodaDestination: "Roxas City",
+    author: "Ren Calago",
+  },
+  {
     category: "Travel",
     imagesrc: "./Images/featured-images/panagbenga-weekend-itinerary-festival-dancer.jpg",
     postNumber: 280,
