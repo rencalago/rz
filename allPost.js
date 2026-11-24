@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/giant-lantern-festival-pampanga.jpg",
+    postNumber: 283,
+    title: "Christmas in Pampanga: Lanterns, Food and Things to Do",
+    desc: "Christmas in Pampanga: the Giant Lantern Festival, lubenas processions, where to buy a parol, heritage churches for Simbang Gabi and Kapampangan holiday food.",
+    datePublished: "24 November 2026",
+    comments: 0,
+    link: "./christmas-in-pampanga-travel-guide",
+    location: "San Fernando, Pampanga",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/camiguin-travel-guide.jpg",
     postNumber: 282,
     title: "Camiguin Travel Guide: Spots, Fees, Routes and Itinerary",
