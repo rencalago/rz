@@ -1,5 +1,17 @@
 let newPostTwo = [
   {
+    category: "Travel",
+    imagesrc: "./Images/featured-images/panagbenga-weekend-itinerary-festival-dancer.jpg",
+    postNumber: 280,
+    title: "Panagbenga on a Budget: Costs, Free Events and Tips",
+    desc: "Panagbenga on a budget: when to go, bus and room costs, the free festival events, cheap food and transport in Baguio, and a sample two-night budget.",
+    datePublished: "24 November 2026",
+    comments: 0,
+    link: "./panagbenga-on-a-budget-baguio",
+    location: "Baguio City, Benguet",
+    author: "Ren Calago",
+  },
+  {
     category: "News",
     imagesrc: "./Images/featured-images/sinulog-2027-festival-queen-santo-nino.jpg",
     postNumber: 279,
