@@ -1,6 +1,19 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/cresta-de-gallo-sandbar-sibuyan-romblon.jpg",
+    postNumber: 278,
+    title: "Cresta de Gallo Travel Guide: Boats, Costs and Tips",
+    desc: "Plan a Cresta de Gallo trip in Sibuyan, Romblon: ferry routes, the boat from Azagra, what it costs, camping rules, the best months and a 3-day plan.",
+    datePublished: "24 November 2026",
+    comments: 0,
+    link: "./cresta-de-gallo-travel-guide",
+    location: "San Fernando, Romblon",
+    agodaDestination: "Romblon",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/catanduanes-binurong-point-green-hills.jpg",
     postNumber: 277,
     title: "Catanduanes Travel Guide: Binurong, Puraran and Costs",
