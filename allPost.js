@@ -1,6 +1,18 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/clark-pampanga-mount-pinatubo-crater-lake.jpg",
+    postNumber: 288,
+    title: "Clark Pampanga Guide: Things to Do and a Weekend Plan",
+    desc: "Things to do in Clark, Pampanga: the museum, Aqua Planet, Dinosaur Island and Clark Safari, how to get there and around, where to stay and 1 to 3-day plans.",
+    datePublished: "25 November 2026",
+    comments: 0,
+    link: "./clark-pampanga-things-to-do-weekend-guide",
+    location: "Clark, Pampanga",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/capisaan-cave-kasibu-nueva-vizcaya.jpg",
     postNumber: 287,
     title: "Capisaan Cave Guide: Kasibu Tours, Routes and Tips",
