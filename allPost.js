@@ -1,6 +1,19 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/capisaan-cave-kasibu-nueva-vizcaya.jpg",
+    postNumber: 287,
+    title: "Capisaan Cave Guide: Kasibu Tours, Routes and Tips",
+    desc: "Capisaan Cave in Kasibu, Nueva Vizcaya: the guided caving route, how to get there, what to confirm before booking, what to bring and a two-day plan.",
+    datePublished: "25 November 2026",
+    comments: 0,
+    link: "./capisaan-cave-kasibu-nueva-vizcaya-guide",
+    location: "Kasibu, Nueva Vizcaya",
+    agodaDestination: "Bayombong",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/calayan-island-sibang-cove-cagayan.jpg",
     postNumber: 286,
     title: "Calayan Island Guide: Sibang Cove, Boat Trips and Tips",
