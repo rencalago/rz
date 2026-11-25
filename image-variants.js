@@ -84,6 +84,7 @@ export const IMAGE_VARIANTS = {
   "featured-images/davao-samal-island-cove-turquoise-water.jpg": [864, 400],
   "featured-images/davao-samal-island.jpg": [1600, 400],
   "featured-images/dinagat-islands-travel-guide-outrigger-boats.jpg": [688, 400],
+  "featured-images/divilacan-isabela-beach-pacific-coast.jpg": [1200, 400],
   "featured-images/don-salvador-benedicto-pine-trees-highway.jpg": [614, 400],
   "featured-images/donsol-whale-sharks.jpg": [600, 400],
   "featured-images/dumaguete-market-street-stalls.jpg": [640, 400],
