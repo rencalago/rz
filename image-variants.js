@@ -166,6 +166,7 @@ export const IMAGE_VARIANTS = {
   "featured-images/paoay-sand-dunes-4x4-sunset.jpg": [1024, 400, 720],
   "featured-images/parada-ng-lechon-balayan-batangas-guide.jpg": [768, 400],
   "featured-images/pasko-fiesta-davao-christmas-tree-confetti.jpg": [864, 400],
+  "featured-images/pasko-sa-tanjay-festival-2026-christmas-lights.jpg": [739, 400],
   "featured-images/philippine-coffee-trail-benguet-sagada-batangas-mt-apo.jpg": [1280, 400, 720],
   "featured-images/philippine-eagle-center.jpg": [2032, 400, 720],
   "featured-images/philippines-ferry-travel-guide-routes-booking.jpg": [1280, 400],

@@ -1,6 +1,19 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/pasko-sa-tanjay-festival-2026-christmas-lights.jpg",
+    postNumber: 291,
+    title: "Pasko sa Tanjay Festival 2026: Dates, Parade and Tips",
+    desc: "Pasko sa Tanjay Festival 2026 in Tanjay City, Negros Oriental: dates, the December 1 Parade of Lights, contests, getting there and visitor tips.",
+    datePublished: "25 November 2026",
+    comments: 0,
+    link: "./pasko-sa-tanjay-festival-2026",
+    location: "Tanjay City, Negros Oriental",
+    agodaDestination: "Dumaguete",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/divilacan-isabela-beach-pacific-coast.jpg",
     postNumber: 290,
     title: "Divilacan, Isabela Guide: Beaches, Mangroves and Road Rules",
