@@ -1,6 +1,19 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/danjugan-island-cove-negros-occidental.jpg",
+    postNumber: 289,
+    title: "Danjugan Island Packages Compared: Tour, Day Trip or Camp",
+    desc: "Danjugan Island packages compared: the 3-hour tour, day trip and two overnight camps, with rates, boat times from Bulata, activities and rules to know.",
+    datePublished: "25 November 2026",
+    comments: 0,
+    link: "./danjugan-island-packages-compared",
+    location: "Cauayan, Negros Occidental",
+    agodaDestination: "Sipalay",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/clark-pampanga-mount-pinatubo-crater-lake.jpg",
     postNumber: 288,
     title: "Clark Pampanga Guide: Things to Do and a Weekend Plan",
