@@ -1,6 +1,19 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/divilacan-isabela-beach-pacific-coast.jpg",
+    postNumber: 290,
+    title: "Divilacan, Isabela Guide: Beaches, Mangroves and Road Rules",
+    desc: "Divilacan, Isabela: Dimasalansan beach and mangroves, kayaking, community visits, Ilagan–Divilacan Road rules, where to stay and a 2–3 day plan.",
+    datePublished: "25 November 2026",
+    comments: 0,
+    link: "./divilacan-isabela-travel-guide",
+    location: "Divilacan, Isabela",
+    agodaDestination: "Ilagan",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/danjugan-island-cove-negros-occidental.jpg",
     postNumber: 289,
     title: "Danjugan Island Packages Compared: Tour, Day Trip or Camp",
