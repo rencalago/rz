@@ -70,6 +70,7 @@ export const IMAGE_VARIANTS = {
   "featured-images/christmas-in-baguio-2026-hillside-pines-houses.jpg": [1024, 400, 720],
   "featured-images/christmas-in-baguio-2026-pine-trees.jpg": [1024, 400, 720],
   "featured-images/christmas-manila-street-market-stalls.jpg": [1024, 400],
+  "featured-images/clark-pampanga-mount-pinatubo-crater-lake.jpg": [1000, 400],
   "featured-images/cordova-most-visited-town-in-2026.jpg": [1459, 400],
   "featured-images/coron-island-hopping-lagoon-boardwalk.jpg": [742, 400],
   "featured-images/coron-palawan-paradise.jpg": [700, 400],
