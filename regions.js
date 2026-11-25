@@ -9,7 +9,7 @@ export const REGIONS = [
   { name: "National Capital Region", group: "Luzon", places: ["manila", "metro manila", "taguig", "makati", "pasay", "quezon city", "intramuros", "binondo", "bgc"] },
   { name: "Cordillera Administrative Region", group: "Luzon", places: ["baguio", "benguet", "ifugao", "mountain province", "sagada", "banaue", "kalinga", "abra", "apayao"] },
   { name: "Ilocos Region", group: "Luzon", places: ["ilocos", "vigan", "la union", "pangasinan"] },
-  { name: "Cagayan Valley", group: "Luzon", places: ["batanes", "cagayan valley", "isabela", "nueva vizcaya", "quirino"] },
+  { name: "Cagayan Valley", group: "Luzon", places: ["batanes", "calayan", "babuyan", "cagayan valley", "isabela", "nueva vizcaya", "quirino"] },
   { name: "Central Luzon", group: "Luzon", places: ["pampanga", "zambales", "aurora", "bulacan", "tarlac", "bataan", "nueva ecija"] },
   { name: "CALABARZON", group: "Luzon", places: ["cavite", "tagaytay", "laguna", "batangas", "anilao", "rizal", "angono", "quezon province"] },
   { name: "MIMAROPA Region", group: "Luzon", places: ["mindoro", "marinduque", "romblon", "palawan", "coron", "el nido", "puerto princesa"] },

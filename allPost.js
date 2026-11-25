@@ -1,6 +1,19 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/calayan-island-sibang-cove-cagayan.jpg",
+    postNumber: 286,
+    title: "Calayan Island Guide: Sibang Cove, Boat Trips and Tips",
+    desc: "Calayan Island, Cagayan: Sibang Cove, Nagudungan Hills and Lusok Cave, boats from Claveria or Aparri, the calmest months and a six-day plan with buffers.",
+    datePublished: "25 November 2026",
+    comments: 0,
+    link: "./calayan-island-travel-guide",
+    location: "Calayan Island, Cagayan",
+    agodaDestination: "Claveria",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/guimaras-tourist-spots-and-things-to-do.jpg",
     postNumber: 285,
     title: "Guimaras Island Hopping: Beaches, Boat Trips and Costs",
