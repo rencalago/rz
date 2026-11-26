@@ -78,6 +78,7 @@ export const IMAGE_VARIANTS = {
   "featured-images/cresta-de-gallo-sandbar-sibuyan-romblon.jpg": [1200, 400, 720],
   "featured-images/culion-palawan-beach-palm-trees-sunset.jpg": [848, 400],
   "featured-images/daanbantayan-island-hopping-beach.jpg": [1400, 400, 720],
+  "featured-images/dagitab-festival-naga-cebu-2026-led-dancers.jpg": [1000, 400],
   "featured-images/danao-adventure-park-sky-ride-bohol.jpg": [700, 400],
   "featured-images/danjugan-island-cove-negros-occidental.jpg": [1000, 400],
   "featured-images/davao-city-downtown-street.jpg": [682, 400],

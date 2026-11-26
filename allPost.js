@@ -1,6 +1,19 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/dagitab-festival-naga-cebu-2026-led-dancers.jpg",
+    postNumber: 292,
+    title: "Dagitab Festival 2026: Naga Cebu Festival of Lights",
+    desc: "Dagitab Festival 2026 in Naga, Cebu opens December 8. See what is confirmed, the Festival of Lights, an evening plan, how to get there and festival-night tips.",
+    datePublished: "26 November 2026",
+    comments: 0,
+    link: "./dagitab-festival-naga-cebu-2026",
+    festival: [{ name: "Dagitab Festival", place: "City of Naga, Cebu", month: 12, start: "2026-12-08", end: "2026-12-08", region: "cebu", when: "Opens every 8 December", about: "Naga's festival of light, tied to the city's role as an energy centre, with the Festival of Lights running through Christmas." }],
+    location: "Naga, Cebu",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/pasko-sa-tanjay-festival-2026-christmas-lights.jpg",
     postNumber: 291,
     title: "Pasko sa Tanjay Festival 2026: Dates, Parade and Tips",
