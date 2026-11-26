@@ -177,6 +177,7 @@ export const IMAGE_VARIANTS = {
   "featured-images/puerto-galera-oriental-mindoro.jpg": [800, 400, 720],
   "featured-images/puerto-princesa-palawan-best-tourist-spot.jpg": [800, 400, 720],
   "featured-images/pujada-bay-island-hopping-mati.jpg": [900, 400],
+  "featured-images/quezon-province-island-hopping-boats-aerial.jpg": [1200, 400, 720],
   "featured-images/rizal-shrine-dapitan-city.jpg": [936, 400],
   "featured-images/rombon-beach.jpg": [1209, 400],
   "featured-images/roxas-city-capiz-seafood-scallops-feast.jpg": [960, 400],
