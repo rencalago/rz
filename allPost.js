@@ -1,6 +1,19 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/sarangani-beach-palm-tree-aerial.jpg",
+    postNumber: 294,
+    title: "Sarangani Travel Guide: Gumasa Beach, Islands and Maitum",
+    desc: "Sarangani travel guide: Gumasa Beach in Glan, Tuka Marine Park, offshore islands, the Maitum burial jars, seafood, routes from GenSan and sample plans.",
+    datePublished: "26 November 2026",
+    comments: 0,
+    link: "./sarangani-travel-guide",
+    location: "Glan, Sarangani",
+    agodaDestination: "General Santos",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/quezon-province-island-hopping-boats-aerial.jpg",
     postNumber: 293,
     title: "Quezon Province Travel Guide: Islands, Food and Heritage",

@@ -186,6 +186,7 @@ export const IMAGE_VARIANTS = {
   "featured-images/san-vicente-long-beach-palawan.jpg": [640, 400],
   "featured-images/sandugo-festival-bohol-guide.jpg": [1280, 400],
   "featured-images/sandurot-festival-2026-street-dancers-red-costumes.jpg": [1024, 400, 720],
+  "featured-images/sarangani-beach-palm-tree-aerial.jpg": [869, 400, 720],
   "featured-images/siargao-on-a-budget-cloud-9-boardwalk.jpg": [1024, 400],
   "featured-images/simala-shrine-sibonga-castle-church.jpg": [768, 400],
   "featured-images/simbang-gabi-parol-star-lanterns.jpg": [772, 400],
