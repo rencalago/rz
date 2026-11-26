@@ -1,6 +1,19 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/quezon-province-island-hopping-boats-aerial.jpg",
+    postNumber: 293,
+    title: "Quezon Province Travel Guide: Islands, Food and Heritage",
+    desc: "Quezon Province travel guide: Cagbalete, Jomalig and Borawan islands, Lucban and Tayabas, Tumiis Falls, local food, routes and how many days you need.",
+    datePublished: "26 November 2026",
+    comments: 0,
+    link: "./quezon-province-travel-guide",
+    location: "Lucena City, Quezon Province",
+    agodaDestination: "Lucena",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/dagitab-festival-naga-cebu-2026-led-dancers.jpg",
     postNumber: 292,
     title: "Dagitab Festival 2026: Naga Cebu Festival of Lights",
