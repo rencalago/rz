@@ -1,6 +1,19 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/surip-beach-cove-bani-pangasinan.jpg",
+    postNumber: 298,
+    title: "Bani, Pangasinan Guide: Surip Coves and the Redeemer's Cross",
+    desc: "Bani, Pangasinan travel guide: Surip's rocky coves, the Redeemer's Cross climb, Polipol Island, the Pakwan Festival, buses from Manila and where to stay.",
+    datePublished: "27 November 2026",
+    comments: 0,
+    link: "./bani-pangasinan-travel-guide",
+    location: "Bani, Pangasinan",
+    agodaDestination: "Bolinao",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/great-santa-cruz-island-pink-sand-beach-zamboanga.jpg",
     postNumber: 297,
     title: "Zamboanga City Travel Guide: Pink Beach, Food and Heritage",

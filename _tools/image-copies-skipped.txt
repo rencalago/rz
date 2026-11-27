@@ -4,3 +4,4 @@ Images/featured-images/guimaras-tourist-spots-and-things-to-do.jpg
 Images/featured-images/hinatuan-enchanted-river-surigao.jpg
 Images/featured-images/intramuros-manila.jpg
 Images/featured-images/siargao-island-resort-surfing.jpg
+Images/featured-images/surip-beach-cove-bani-pangasinan.jpg
