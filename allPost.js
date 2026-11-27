@@ -1,6 +1,19 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/bislig-city-tinuy-an-falls-surigao-del-sur.jpg",
+    postNumber: 296,
+    title: "Bislig City Travel Guide: Tinuy-an Falls and Beyond",
+    desc: "Bislig City travel guide: Tinuy-an Falls, Kawa-Kawa rock pools, Hagonoy Island, Lawigan Beach, local food, getting there and a two-day plan for Surigao del Sur.",
+    datePublished: "27 November 2026",
+    comments: 0,
+    link: "./bislig-city-travel-guide",
+    location: "Bislig City, Surigao del Sur",
+    agodaDestination: "Bislig",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/papaya-cove-nasugbu-batangas-beach.jpg",
     postNumber: 295,
     title: "Papaya Cove, Nasugbu: Beach Camping and How to Get There",
