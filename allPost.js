@@ -1,6 +1,19 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/papaya-cove-nasugbu-batangas-beach.jpg",
+    postNumber: 295,
+    title: "Papaya Cove, Nasugbu: Beach Camping and How to Get There",
+    desc: "Papaya Cove in Nasugbu, Batangas: beach camping, cove hopping to Taytayin and Santelmo, the boat from Patungan, a two-day plan and what to pack.",
+    datePublished: "26 November 2026",
+    comments: 0,
+    link: "./papaya-cove-nasugbu-travel-guide",
+    location: "Nasugbu, Batangas",
+    agodaDestination: "Nasugbu",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/sarangani-beach-palm-tree-aerial.jpg",
     postNumber: 294,
     title: "Sarangani Travel Guide: Gumasa Beach, Islands and Maitum",
