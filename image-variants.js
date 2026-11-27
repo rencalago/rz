@@ -101,6 +101,7 @@ export const IMAGE_VARIANTS = {
   "featured-images/gcash-booth-trade-fair.jpeg": [1024, 400],
   "featured-images/general-santos-tuna-festival-float.jpg": [1024, 400, 720],
   "featured-images/giant-lantern-festival-pampanga.jpg": [928, 400],
+  "featured-images/great-santa-cruz-island-pink-sand-beach-zamboanga.jpg": [650, 400],
   "featured-images/halad-inasal-festival-talisay-cebu.jpg": [850, 400, 720],
   "featured-images/higantes-festival-angono-rizal.jpg": [900, 400],
   "featured-images/hinagdanan-cave-bohol-visitor-guide.jpg": [1171, 400],

@@ -1,6 +1,19 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/great-santa-cruz-island-pink-sand-beach-zamboanga.jpg",
+    postNumber: 297,
+    title: "Zamboanga City Travel Guide: Pink Beach, Food and Heritage",
+    desc: "Zamboanga City travel guide: booking Great Santa Cruz Island's pink beach, Fort Pilar, Once Islas, curacha and satti, flights in and a simple three-day plan.",
+    datePublished: "27 November 2026",
+    comments: 0,
+    link: "./zamboanga-city-travel-guide",
+    location: "Zamboanga City, Zamboanga del Sur",
+    agodaDestination: "Zamboanga",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/bislig-city-tinuy-an-falls-surigao-del-sur.jpg",
     postNumber: 296,
     title: "Bislig City Travel Guide: Tinuy-an Falls and Beyond",
