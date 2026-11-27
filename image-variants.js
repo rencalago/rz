@@ -125,6 +125,7 @@ export const IMAGE_VARIANTS = {
   "featured-images/kawa-bath-in-antique.jpg": [672, 400],
   "featured-images/la-trinidad-strawberry-farm-baguio-mountains.jpg": [960, 400, 720],
   "featured-images/la-union-surfing.jpg": [1872, 400],
+  "featured-images/laguindingan-diving-coral-reef-anthias.jpg": [516, 400],
   "featured-images/lakawon-island-sunset-beach-letters.jpg": [896, 400],
   "featured-images/lake-sebu-south-cotabato.jpg": [960, 400],
   "featured-images/lanzones-festival-in-camiguin.jpg": [761, 400],

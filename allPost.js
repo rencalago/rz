@@ -1,6 +1,19 @@
 let newPostTwo = [
   {
     category: "Travel",
+    imagesrc: "./Images/featured-images/laguindingan-diving-coral-reef-anthias.jpg",
+    postNumber: 299,
+    title: "Laguindingan Diving Guide: Lembeh Sea Dragon and Tips",
+    desc: "Laguindingan diving guide: the rare Lembeh Sea Dragon, what macro dives here involve, getting there, where to stay, a two-day plan and questions for operators.",
+    datePublished: "28 November 2026",
+    comments: 0,
+    link: "./laguindingan-diving-lembeh-sea-dragon",
+    location: "Laguindingan, Misamis Oriental",
+    agodaDestination: "Cagayan de Oro",
+    author: "Ren Calago",
+  },
+  {
+    category: "Travel",
     imagesrc: "./Images/featured-images/surip-beach-cove-bani-pangasinan.jpg",
     postNumber: 298,
     title: "Bani, Pangasinan Guide: Surip Coves and the Redeemer's Cross",
